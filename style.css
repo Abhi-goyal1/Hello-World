@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&family=Varela+Round&display=swap');
+
+:root {
+   --box-shadow:0px 2px 10px #97c8f0;
+   --body-background-color:#f4f9fd;
+}
+
+
+
+body{
+    background-color:#f4f9fd;
+}
+.navbar{
+    
+    padding:0px;
+}/* box-shadow: 0px 2px 10px #97c8f0; */
+.container-fluid{
+    
+  
+}
+.nav-item{
+    
+    padding: 6px;
+    font-weight:900;
+    font-family: 'Varela Round', sans-serif;
+    
+}
+.nav-link{
+    color: #2baffc;
+}
+#signuplogin{
+
+    
+}
+#signup{
+    background-color: #000;
+    font-weight:900;
+    font-family: 'Varela Round', sans-serif;
+    color: white;
+}
+#signup:hover{
+    background-color: #2baffc;
+    color: white ;
+    
+}
+#login{
+    background-color: #000;
+    font-weight:900;
+    font-family: 'Varela Round', sans-serif;
+    color: white;
+}
+#login:hover{
+    background-color: #2baffc;
+    color: white ;
+    
+}
+.new-nav{
+    /* background-color:  #2baffc; */
+    background-color: #000;
+    box-shadow: 10px 7px 15px #97c8f0;
+    padding: 0%;
+    
+    
+    
+    
+    
+    
+}
+.new-nav-col{
+    padding: 0;
+    /* margin: 0%; */
+    
+}
+.new-nav-element{
+    color: white;
+    border-radius: 0;
+    width: 100%;
+    font-family: 'Varela Round', sans-serif;
+    
+    
+}
+.new-nav-element:hover{
+    background-color:#2baffc;
+    color: white;
+
+}
+
+.darkmode{
+    width: 100%;
+    background-color: #2baffc;
+    color: white;
+    
+   
+
+    
+}
+.darkmode:hover{
+    background-color: #000;
+    color: white;
+   
+}
+
+@media screen and (max-width:950px){
+    #sql2{
+        display: none;
+    }
+}
+@media screen and (max-width:891px){
+    #sql1{
+        display: none;
+    }
+}
+@media screen and (max-width:836px){
+    #python{
+        display: none;
+    }
+}
+@media screen and (max-width:742px){
+    #java{
+        display: none;
+    }
+}
+@media screen and (max-width:678px){
+    #c{
+        display: none;
+    }
+}
+@media screen and (max-width:642px){
+    #react{
+        display: none;
+    }
+}
+@media screen and (max-width:564px){
+    #nodejs{
+        display: none;
+    }
+}
+@media screen and (max-width:475px){
+    #tailwind{
+        display: none;
+    }
+}
+@media screen and (max-width:372px){
+    #bootstrap{
+        display: none;
+    }
+}
