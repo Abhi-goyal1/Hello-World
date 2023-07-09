@@ -350,7 +350,8 @@ background: linear-gradient(to bottom right, #F156FC 36%, #FCFCFC 100%);
   font-family: "Caudex", serif;
 }
 .skill-section {
-  background-color: #dcecf9;
+  /* background-color: #dcecf9; */
+  background-image: url(images/pngwing.com\ \(3\).png);
 }
 .skill-section img {
   max-width: 100%;
