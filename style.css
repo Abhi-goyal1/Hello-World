@@ -32,6 +32,7 @@
   background-color: #000;
   font-weight: 900;
   font-family: "Varela Round", sans-serif;
+  border-radius: 30px;
   color: white;
 }
 #signup:hover {
@@ -43,6 +44,7 @@
   font-weight: 900;
   font-family: "Varela Round", sans-serif;
   color: white;
+  border-radius: 30px;
 }
 #login:hover {
   background-color: #2baffc;
@@ -269,6 +271,9 @@ background: linear-gradient(to bottom right, #F156FC 36%, #FCFCFC 100%);
   #searching input {
     padding: 10px;
   }
+  #searching input::placeholder{
+    font-size: 13px;
+  }
 }
 
 @media screen and (max-width: 385px) {
@@ -348,10 +353,11 @@ background: linear-gradient(to bottom right, #F156FC 36%, #FCFCFC 100%);
 
 .card-body {
   font-family: "Caudex", serif;
+  
 }
 .skill-section {
-  /* background-color: #dcecf9; */
-  background-image: url(images/pngwing.com\ \(3\).png);
+  background-color: #dcecf9;
+  /* background-image: url(images/pngwing.com\ \(3\).png); */
 }
 .skill-section img {
   max-width: 100%;
@@ -368,6 +374,7 @@ background: linear-gradient(to bottom right, #F156FC 36%, #FCFCFC 100%);
 #heading-pera {
   color: #000000;
   font-family: "Caudex", serif;
+  font-size: 20px;
 }
 #skill-section1 {
   padding: 20px;
@@ -409,6 +416,7 @@ background: linear-gradient(to bottom right, #F156FC 36%, #FCFCFC 100%);
   padding: 10px;
   background-color: #000;
   border: none;
+  border-radius: 30px;
   color: white;
   font-family: "Varela Round", sans-serif;
 }
@@ -446,7 +454,130 @@ background: linear-gradient(to bottom right, #F156FC 36%, #FCFCFC 100%);
 /* !Tutorial section End---------------------------------------------------------- */
 
 /* !Courses section start---------------------------------------------------------- */
-
-
+/* .courses{
+ 
+ 
+}
+.courses-card{
+  padding: 20px;
+  border-radius: 3px;
+  border: none;
+  
+}
+.courses-card-body{
+  border-radius: 5px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.courses-card-body img{
+  max-width: 30%;
+  
+} */
 
 /* !Courses section End---------------------------------------------------------- */
+
+
+.courses-content{
+  /* margin-bottom: 100px; */
+  overflow: hidden;
+}
+
+
+.container .pikachu {
+  position: relative;
+  max-width : 200px;
+  height : 205px;  
+  background-color : #fff;
+  margin : 30px 20px;
+  padding : 20px 15px;
+  
+  display : flex;
+  flex-direction : column;
+  box-shadow : 0 5px 20px rgba(0,0,0,0.5);
+  transition : 0.3s ease-in-out;
+  border-radius : 15px;
+  margin-top: 90px;
+  
+  
+}
+.container .pikachu:hover {
+  height : 250px;    
+}
+.content h3{
+  font-size: 20px;
+  font-family: "Caudex", serif;
+}
+
+
+.container .pikachu .image {
+  position : relative;
+  width : 140px;
+  /* height : 20px; */
+  
+  top : -40%;
+  left: 15px;
+  box-shadow : 0 5px 20px rgba(0,0,0,0.2);
+  z-index : 1;
+  border-radius: 20px;
+  background-color: white;
+}
+
+.container .pikachu .image img {
+ max-width : 140px;
+  border-radius : 15px;
+  object-fit: cover;
+}
+
+.container .pikachu .content {
+  position : relative;
+  top : -40px;
+  /* padding : 10px 15px; */
+  color : #111;
+  text-align : center;
+  
+  
+  /* visibility : hidden; */
+  opacity : 1;
+  transition : 0.3s ease-in-out;
+  
+    
+}
+.container .pikachu .content a{
+   visibility : hidden;
+   opacity : 0;
+   transition : 0.2s ease;
+}
+
+
+.container .pikachu:hover .content a{
+   /* margin-top : 30px; */
+   visibility : visible;
+   opacity : 1;
+   transition-delay: 0.2s;
+  
+}
+.content a{
+  background-color: #000000;
+  border: none;
+  border-radius: 30px;
+}
+
+@media screen and (max-width:500px) {
+ .container .pikachu{
+  max-width : 290px;
+  
+  }
+  .container .pikachu .image{
+    left: 57px;
+  }
+}
+
+
+
+
+.about-us-main{
+  padding: 0;
+}
+.about-us-second{
+  margin: 0;
+}
