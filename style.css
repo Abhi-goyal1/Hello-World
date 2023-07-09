@@ -1,14 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@600&family=Varela+Round&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Caudex:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Caudex:wght@700&display=swap");
 
 :root {
   --box-shadow: 0px 2px 10px #97c8f0;
   --body-background-color: #f4f9fd;
-}
-
-body {
-  /* background-color: #f4f9fd; */
 }
 
 .navbar {
@@ -16,8 +12,6 @@ body {
 
   padding: 0px;
 } /* box-shadow: 0px 2px 10px #97c8f0; */
-.container-fluid {
-}
 .nav-item {
   padding: 1px;
   font-weight: 900;
@@ -267,17 +261,20 @@ background: linear-gradient(to bottom right, #F156FC 36%, #FCFCFC 100%);
   }
   .mainbody-text h3 {
     padding: 25px;
-    /* font-size: 20px; */
+    font-size: 20px;
   }
 }
 @media screen and (max-width: 500px) {
   #searching input {
     padding: 10px;
   }
+  #mainbody-img{
+    margin-top: -20px;
+  }
 }
 @media screen and (max-width: 385px) {
   .mainbody-text {
-    margin-top: 55px;
+    margin-top: 50px;
   }
   .mainbody-text h1 {
     font-size: 32px;
@@ -288,187 +285,168 @@ background: linear-gradient(to bottom right, #F156FC 36%, #FCFCFC 100%);
   .roadmap {
     font-size: 14px;
   }
+  
 }
 /* !Main container End---------------------------------------------------------- */
 
-
 /* !Why hello world section start---------------------------------------------------------- */
 
-.hello-world-section{
-    /* padding: 0px 0px; */
-    padding: 0%;
-    padding-bottom: 19px;
+.hello-world-section {
+  /* padding: 0px 0px; */
+  padding: 0%;
+  padding-bottom: 19px;
 }
-.hello-world-section1{
-    margin: 0 -50px;
-    margin: 0;
-
-}
-
-.hello-world-section h1{
-    padding: 20px;
-    font-family: "Manrope", sans-serif;
-    font-size: 45px;
-    color: #000;
-
-}
-.hello-world-section span{
-    color: #2baffc;
+.hello-world-section1 {
+  margin: 0 -50px;
+  margin: 0;
 }
 
-.hello-world-section-content{
-    border-radius: 5px;
-    
-    /* height: 300px; */
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-    margin: 20px;
-    
-    
+.hello-world-section h1 {
+  padding: 20px;
+  font-family: "Manrope", sans-serif;
+  font-size: 45px;
+  color: #000;
 }
-.hello-world-section-content:hover{
-   
-    /* box-shadow: rgb(43, 175, 252) 0px 20px 30px -10px; */
-    box-shadow: rgba(43, 175, 252, 0.25) 0px 14px 28px, rgba(43, 175, 252, 0.22) 0px 10px 10px;
-    
-    
+.hello-world-section span {
+  color: #2baffc;
 }
-.hello-world-section-content img{
-    max-width: 20%;
-    margin: 10px;
-    
+
+.hello-world-section-content {
+  border-radius: 5px;
+
+  /* height: 300px; */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  margin: 20px;
 }
-.hello-world-section-content p{
-    padding-top:6px ;
+.hello-world-section-content:hover {
+  /* box-shadow: rgb(43, 175, 252) 0px 20px 30px -10px; */
+  box-shadow: rgba(43, 175, 252, 0.25) 0px 14px 28px,
+    rgba(43, 175, 252, 0.22) 0px 10px 10px;
 }
-@media screen and (max-width:475px) {
-  .hello-world-section h1{
-    text-align: center!important;
+.hello-world-section-content img {
+  max-width: 20%;
+  margin: 10px;
+}
+.hello-world-section-content p {
+  padding-top: 6px;
+}
+@media screen and (max-width: 475px) {
+  .hello-world-section h1 {
+    text-align: center !important;
     font-size: 35px;
   }
 }
-@media screen and (max-width:355px) {
-  .hello-world-section h1{
-    
+@media screen and (max-width: 355px) {
+  .hello-world-section h1 {
     font-size: 25px;
   }
 }
 
+/* !Why hello world section End---------------------------------------------------------- */
 
+/* !Tutorial section start---------------------------------------------------------- */
 
-
-
-
-.card-body{
-  font-family: 'Caudex', serif;
+.card-body {
+  font-family: "Caudex", serif;
 }
-.skill-section{
-    background-color:#dcecf9;
+.skill-section {
+  background-color: #dcecf9;
 }
-.skill-section img{
-    max-width: 100%;
-    
+.skill-section img {
+  max-width: 100%;
 }
-.heading{
-    padding: 20px;
-    font-family: "Manrope", sans-serif;
-    font-size: 45px;
-    color: #000;
-
+.heading {
+  padding: 20px;
+  font-family: "Manrope", sans-serif;
+  font-size: 45px;
+  color: #000;
 }
-.heading span{
-    color: #2baffc;
-
+.heading span {
+  color: #2baffc;
 }
-#heading-pera{
+#heading-pera {
   color: #000000;
-  font-family: 'Caudex', serif;
-  
+  font-family: "Caudex", serif;
 }
-#skill-section1{
-    padding: 20px;
-    
-  
-    
+#skill-section1 {
+  padding: 20px;
 }
-#skill-section1 a{
-    text-decoration: none;
-    color: #000;
-  
-    
+#skill-section1 a {
+  text-decoration: none;
+  color: #000;
 }
-#skill-content{
+#skill-content {
   padding: 10px;
 
-  background-color:white;
+  background-color: white;
   margin-top: 40px;
 
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   transition: all 100ms ease-in-out;
   /* transform: translateZ(0);
   transition-duration: 0.5s; */
-  
 }
-#skill-content:hover{
-  box-shadow: rgba(43, 175, 252, 0.538) 0px 2px 4px 0px, rgba(43, 175, 252, 0.521) 0px 2px 16px 0px;
+#skill-content:hover {
+  box-shadow: rgba(43, 175, 252, 0.538) 0px 2px 4px 0px,
+    rgba(43, 175, 252, 0.521) 0px 2px 16px 0px;
   transition: all 500ms cubic-bezier(1.19, 1, 0.22, 1);
   border: 1px solid #2baffc;
   /* transform: scale(1.1); */
-  
-  
 }
-#skill-content img{
+#skill-content img {
   max-width: 30%;
   height: auto;
 }
-#more-tutorials{
+#more-tutorials {
   padding: 30px;
 }
-#more-tutorials i{
+#more-tutorials i {
   padding-left: 9px;
 }
-#more-tutorials button{
+#more-tutorials button {
   width: 200px;
   padding: 10px;
   background-color: #000;
   border: none;
   color: white;
   font-family: "Varela Round", sans-serif;
-
 }
-#more-tutorials button:hover{
- 
-  background-color:#2baffc;
+#more-tutorials button:hover {
+  background-color: #2baffc;
   border: none;
   color: white;
- 
-
 }
-.bottom-img2{
+.bottom-img2 {
   max-width: 100%;
 }
-@media screen and (max-width:475px) {
-  .heading{
-    text-align: center!important;
+@media screen and (max-width: 475px) {
+  .heading {
+    text-align: center !important;
     font-size: 35px;
   }
-  #heading-pera{
+  #heading-pera {
     font-size: 17px;
   }
-  .card-title{
-    font-size:19px;
-
+  .card-title {
+    font-size: 19px;
   }
 }
-@media screen and (max-width:382px) {
-  .heading{
+@media screen and (max-width: 382px) {
+  .heading {
     font-size: 25px;
   }
-  #heading-pera{
-    
+  #heading-pera {
     font-size: 14px;
   }
-  .card-title{
-    font-size:15px;
-
+  .card-title {
+    font-size: 15px;
   }
 }
+/* !Tutorial section End---------------------------------------------------------- */
+
+/* !Courses section start---------------------------------------------------------- */
+
+
+
+/* !Courses section End---------------------------------------------------------- */
