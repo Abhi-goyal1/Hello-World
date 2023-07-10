@@ -91,7 +91,7 @@
   color: white;
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 993px) {
   .navbar-collapse {
     height: 100vh;
   }
@@ -106,11 +106,28 @@
     width: 100%;
     padding: 10px;
   }
+  .nav-link{
+
+    margin-top: 35px;
+    background-color: #2baffc;
+    color: #fdfdfd;
+    border-radius: 30px;
+    font-size: 20px;
+    
+  }
+  #signup{
+    margin-top: 25px;
+  }
+  #login{
+    margin-top: 34px;
+
+  }
 }
 @media screen and (max-width: 950px) {
   #js {
     display: none;
   }
+  
 }
 @media screen and (max-width: 891px) {
   #sql1 {
@@ -136,7 +153,12 @@
   #react {
     display: none;
   }
+
+ 
+ 
 }
+
+
 @media screen and (max-width: 564px) {
   #nodejs {
     display: none;
