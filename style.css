@@ -415,6 +415,7 @@ background: linear-gradient(to bottom right, #F156FC 36%, #FCFCFC 100%);
   transition: all 100ms ease-in-out;
   /* transform: translateZ(0);
   transition-duration: 0.5s; */
+  
 }
 #skill-content:hover {
   box-shadow: rgba(43, 175, 252, 0.538) 0px 2px 4px 0px,
@@ -598,8 +599,251 @@ background: linear-gradient(to bottom right, #F156FC 36%, #FCFCFC 100%);
 
 
 .about-us-main{
+
+
   padding: 0;
+  /* background-image: linear-gradient(to right top, #2baffc, #49adf9, #5dacf5, #6caaf1, #78a9ed, #7da2e9, #839be4, #8993de, #9082d3, #9870c5, #a15cb4, #a8459f); */
+  background-image: linear-gradient(to right top, #7bc9f7, #d8e9ff, #a7a9d297, #9781aa88, #a845a0af);
 }
 .about-us-second{
   margin: 0;
+ 
+}
+.card-div{
+  margin-top: 100px;
+}
+#about-us-body{
+  width: 240px;
+  padding-bottom: 10px;
+  padding-right: 40px;
+  
+}
+#about-us-number{
+  border-radius: 10px;
+  background-image: linear-gradient(to right top, #fbf2fc, #fcf1fb, #fdf1fa, #fef0f8, #fff0f7);
+  
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  height: 250px;
+  -webkit-animation: about-us-number 6.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
+	        animation: about-us-number 6.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
+}
+@-webkit-keyframes about-us-number {
+  0%,
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  10%,
+  30%,
+  50%,
+  70% {
+    -webkit-transform: translateY(-8px);
+            transform: translateY(-8px);
+  }
+  20%,
+  40%,
+  60% {
+    -webkit-transform: translateY(8px);
+            transform: translateY(8px);
+  }
+  80% {
+    -webkit-transform: translateY(6.4px);
+            transform: translateY(6.4px);
+  }
+  90% {
+    -webkit-transform: translateY(-6.4px);
+            transform: translateY(-6.4px);
+  }
+}
+/* @keyframes shake-vertical {
+  0%,
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  10%,
+  30%,
+  50%,
+  70% {
+    -webkit-transform: translateY(-8px);
+            transform: translateY(-8px);
+  }
+  20%,
+  40%,
+  60% {
+    -webkit-transform: translateY(8px);
+            transform: translateY(8px);
+  }
+  80% {
+    -webkit-transform: translateY(6.4px);
+            transform: translateY(6.4px);
+  }
+  90% {
+    -webkit-transform: translateY(-6.4px);
+            transform: translateY(-6.4px);
+  }
+} */
+
+
+
+.about-us-card2{
+  margin-top: 40px;
+  
+
+}
+.about-us-card4{
+  margin-top: 40px;
+
+}
+#about-us-number img{
+  max-width: 75%;
+
+}
+.counter{
+  font-size: 40px;
+  /* font-family: "Varela Round", sans-serif; */
+  /* font-family: "Caudex", serif; */
+  font-family: "Manrope", sans-serif;
+}
+.counter-box h5{
+  font-family: "Caudex", serif;
+}
+.plus{
+  font-size: 40px;
+  font-family: "Manrope", sans-serif;
+}
+.heading{
+ 
+}
+.helloworldlogo2{
+  margin-left: -27px;
+}
+.about-us-details h1{
+  font-size: 60px;
+  font-family: "Manrope", sans-serif;
+  margin-top: 30px;
+  color:black;
+}
+.about-us-details p{
+  font-size: 20px;
+  color: #000000a5;
+  /* word-spacing: 3px; */
+}
+.fa-heart{
+  color: red;
+  font-size: 30px;
+  background-color:#f8d8e3;
+  padding: 10px;
+  border-radius: 30px;
+  
+}
+.fa-book{
+  color: #3427c2;
+  font-size: 30px;
+  background-color:#b2c1f96e;
+  padding: 10px;
+  border-radius: 30px;
+}
+.fa-folder-tree{
+  color: rgb(244, 149, 40);
+  font-size: 30px;
+  background-color:#f0e0b29e;
+  padding: 10px;
+  border-radius: 30px;
+}
+.about-us-icon{
+  margin-top: 30px;
+  
+}
+.about-us-icon i{
+  margin-right: 20px;
+}
+.about-us-icon h5{
+  font-size: 30px;
+  font-weight: 700;
+  color: #000000;
+}
+.about-us-icon p{
+  font-size: 16px;
+  margin-left: 72px;
+
+  
+  
+}
+.about-us-icon2{
+  margin-top: 0px;
+}
+
+@media screen and (max-width:960px) {
+  .about-us-card2{
+    margin: 20px;
+
+  }
+  .about-us-card4{
+   margin: 20px;
+  }
+  
+}
+@media screen and (max-width:913px) {
+  
+  .about-us-icon h5{
+    font-size:24px ;
+  }
+}
+@media screen and (max-width:760px) {
+  
+  .about-us-icon h5{
+    font-size:20px ;
+  }
+}
+
+@media screen and (max-width:660px) {
+  .about-us-icon h5{
+    font-size:18px ;
+  }
+}
+@media screen and (max-width:580px) {
+  .about-us-details{
+    order: 1;
+  }
+  .about-us-third{
+    order: 2;
+  }
+}
+@media screen and (max-width:576px) {
+ .card-div{
+  margin-left: 30px;
+ }
+}
+
+
+@media screen and (max-width:476px) {
+  .about-us-details{
+    order: 1;
+  }
+  .about-us-third{
+    order: 2;
+  }
+  .helloworldlogo2{
+    /* margin-left: 45px; */
+  }
+}
+@media screen and (max-width:455px) {
+  .about-us-icon h5{
+    font-size:20px ;
+  }
+  #about-us-number{
+
+  }
+  .card-div{
+    margin-top: 50px;
+    margin-left: 10px;
+  }
+  .about-us-card2{
+    margin: 20px;
+
+  }
+  .about-us-card4{
+   margin: 20px;
+  }
 }

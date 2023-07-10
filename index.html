@@ -12,6 +12,9 @@
       rel="stylesheet"
       integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
       crossorigin="anonymous"/>
+      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js" integrity="sha512-d8F1J2kyiRowBB/8/pAWsqUl0wSEOkG5KATkVV4slfblq9VRQ6MyDZVxWl2tWd+mPhuCbpTB4M7uU/x9FlgQ9Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -208,7 +211,7 @@
           </div>
         </div>
 
-        <div class="col-lg-6 object-fit-fill">
+        <div class="col-lg-6 object-fit-fill" data-aos="fade-left"  data-aos-duration="700">
           <img id="mainbody-img" src="images/Mainbodypic.png" alt="">
         </div>
         <!-- <h1>Everyone start the Coding journey with hello world</h1> -->
@@ -604,9 +607,76 @@
 
 <div class="container-fluid  about-us-main">
   <img src="images/wave2.png" alt="" style="max-width: 100%; ">
-  <div class="row about-us-second">
-    <h1 class="heading text-center"> Know About <span>Hello World</span></h1>
+  <div class="row about-us-second " >
+    <h1 class="heading text-center"> Know <span>About Us</span></h1>
+    
+    <!-- <p id="heading-pera" class="text-center "  data-aos="fade-right"  data-aos-duration="900">Creating A Community Of Life Long Learners.</p> -->
+    
+    <div class="col-sm-6 col-md-6 text-center justify-content-center about-us-third">
+     <div class="row justify-content-center card-div" >
+      <div class="four col-6 " id="about-us-body"  data-aos="fade-up"  data-aos-duration="1000">
+        <div class="counter-box colored about-us-card1" id="about-us-number">
+          <img src="images/counter-01.png" alt="">
+          <span class="counter">10000 </span><span class="plus">+</span>
+          <h5>Happy Learners</h5>
+        </div>
+      </div>
+      <div class="four col-6 about-us-card2" id="about-us-body"  data-aos="fade-up"  data-aos-duration="1200">
+        <div class="counter-box "  id="about-us-number">
+          <img src="images/counter-02.png" alt="">
+          <span class="counter">300</span><span class="plus">+</span>
+          <h5>Courses and Tutorials</h5>
+        </div>
+      </div>
+      <div class="four col-6" id="about-us-body"  data-aos="fade-up"  data-aos-duration="1100">
+        <div class="counter-box about-us-card3"id="about-us-number">
+         <img src="images/counter-04.png" alt="">
+          <span class="counter">1000</span><span class="plus">+</span>
+          <h5>Certified Students</h5>
+        </div>
+      </div>
+      <div class="four col-6 about-us-card4" id="about-us-body"  data-aos="fade-up"  data-aos-duration="1200">
+        <div class="counter-box " id="about-us-number">
+          <img src="images/counter-03.png" alt="">
+          <span class="counter">250</span><span class="plus">+</span>
+          <h5>Road-Maps</h5>
+        </div>
+      </div>
+     </div>
+
+    </div>
+
+    <div class="col-sm-6 col-md-6 about-us-details ">
+
+      
+     
+       <!-- <h1>Hello World</h1> --> 
+      <img class="helloworldlogo2" src="images/logo2.png" alt="" style="max-width: 80%;" data-aos="fade-left"  data-aos-duration="1100">
+      <p data-aos="fade-up"  data-aos-duration="1200">is all in one E-learning platform that is designed to be interactive, engaging, and learner-centric. You'll find a variety of learning resources such as video tutorials, interactive coding exercises, quizzes, and forums to enhance your understanding and facilitate active learning and provide</p>
+
+     <div class="about-us-icon"  data-aos="fade-up"  data-aos-duration="1100">
+      <h5><i class="fa-regular fa-heart"></i>Easy Learning</h5>
+      <p>Hello World has focus on simple code examples and simple illustrations of how to use it. Simplicity is at the heart of our user interface, ensuring a clean and intuitive learning environment.</p>
+     </div>
+
+     <div class="about-us-icon about-us-icon2" data-aos="fade-up"  data-aos-duration="1100">
+      <h5><i class="fa-solid fa-book"></i></i>Learn From Anywhere</h5>
+      <p>Our platform opens the doors to a wealth of knowledge, just tap on tutorial and start learning from "hello world" to master. whether you're on the move with your phone,laptop and tablet, let our platform be your gateway to limitless knowledge.</p>
+     </div>
+
+     <div class="about-us-icon about-us-icon2" data-aos="fade-up"  data-aos-duration="1100">
+      <h5><i class="fa-solid fa-folder-tree"></i></i>Structured Learning Path</h5>
+      <p>Our learning roadmaps offer carefully curated and structured learning paths, designed by industry experts, to help you build a strong foundation and progress systematically.</p>
+     </div>
+
+
+     
+
+    </div>
+
+
   </div>
+  <img src="images/wave1.png" class="bottom-img" style="max-width: 100%;  padding: 0;" alt="">
 </div>
 
 
@@ -623,6 +693,29 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init();
+    </script>
+
+    <script>
+              
+$(document).ready(function() {
+
+$('.counter').each(function () {
+$(this).prop('Counter',0).animate({
+Counter: $(this).text()
+}, {
+  
+
+duration: 10000,
+easing: 'swing',
+step: function (now) {
+    $(this).text(Math.ceil(now));
+}
+});
+});
+
+});  
+
+
     </script>
   </body>
 </html>
