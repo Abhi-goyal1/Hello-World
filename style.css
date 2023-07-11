@@ -604,7 +604,7 @@ background: linear-gradient(to bottom right, #F156FC 36%, #FCFCFC 100%);
 
   padding: 0;
   /* background-image: linear-gradient(to right top, #2baffc, #49adf9, #5dacf5, #6caaf1, #78a9ed, #7da2e9, #839be4, #8993de, #9082d3, #9870c5, #a15cb4, #a8459f); */
-  background-image: linear-gradient(to right top, #7bc9f7, #d8e9ff, #a7a9d297, #9781aa88, #a845a0af);
+  background-image: linear-gradient(to right top, #6ac2f5, #c0d9fa, #cfd1e162);
 }
 .about-us-second{
   margin: 0;
@@ -726,7 +726,7 @@ background: linear-gradient(to bottom right, #F156FC 36%, #FCFCFC 100%);
   color:black;
 }
 .about-us-details p{
-  font-size: 20px;
+  font-size: 16px;
   color: #000000a5;
   /* word-spacing: 3px; */
 }
@@ -765,7 +765,7 @@ background: linear-gradient(to bottom right, #F156FC 36%, #FCFCFC 100%);
   color: #000000;
 }
 .about-us-icon p{
-  font-size: 16px;
+  font-size: 15px;
   margin-left: 72px;
 
   
