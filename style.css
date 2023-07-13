@@ -1073,6 +1073,7 @@ box-shadow: inset 5px 5px 7px #30698a,
   .graph h1{
    font-size: 40px;
    font-weight: 800;
+   margin-top: 20px;
   }
   .graph a{
     margin-bottom: 50px;
@@ -1086,6 +1087,7 @@ box-shadow: inset 5px 5px 7px #30698a,
   .graph h1{
    font-size: 30px;
    font-weight: 800;
+   margin-top: 10px;
   }
   .graph a{
     margin-bottom: 50px;
