@@ -1009,7 +1009,7 @@ background: linear-gradient(to bottom right, #F156FC 36%, #FCFCFC 100%);
   padding: 0%;
 }
 .badge-img{
-  max-width: 10%;
+  
   
 }
 
@@ -1045,7 +1045,7 @@ box-shadow: inset 5px 5px 7px #30698a,
   font-family: 'Lexend', sans-serif;
   font-size: 45px;
   font-weight: 800;
-  /* margin-top: 30px; */
+  margin-top: 40px;
   color:black;
   
 }
@@ -1103,8 +1103,25 @@ box-shadow: inset 5px 5px 7px #30698a,
   .graph a{
     margin-bottom: 20px;
     margin-top: 15px;
-    padding: 5px;
-    font-size: 10px;
+    padding: 15px;
+    font-size: 15px;
+
+
+  }
+  #freepik_stories-certification{
+    margin-bottom: 50px;
+  }
+}
+@media screen and (max-width:370px) {
+  .graph h1{
+   font-size: 30px;
+   font-weight: 800;
+  }
+  .graph a{
+    margin-bottom: 20px;
+    margin-top: 15px;
+    padding: 10px;
+    font-size: 15px;
 
 
   }
@@ -1234,6 +1251,10 @@ box-shadow: inset 5px 5px 7px #30698a,
     padding: 15px;
     
   }
+  .email1 input::placeholder{
+    font-size: 15px;
+    padding-bottom: 5px;
+  }
   
 }
 @media screen and (max-width:380px) {
@@ -1262,6 +1283,7 @@ box-shadow: inset 5px 5px 7px #30698a,
   }
   .email1 input::placeholder{
     font-size: 10px;
+    padding-bottom: 5px;
   }
   .email1 i{
     display: none;
