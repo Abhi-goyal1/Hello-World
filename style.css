@@ -2,9 +2,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Caudex:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@600&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montez&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montez&display=swap");
 
 :root {
   --box-shadow: 0px 2px 10px #97c8f0;
@@ -60,14 +59,11 @@
 }
 
 .new-nav {
-  /* background-color:  #2baffc; */
   background-color: #000;
-  /* box-shadow: 10px 7px 15px #97c8f0; */
   padding: 0%;
 }
 .new-nav-col {
   padding: 0;
-  /* margin: 0%; */
 }
 
 .new-nav-element {
@@ -174,12 +170,7 @@
 /* !Main container start---------------------------------------------------------- */
 
 #mainbody {
-  /* height: 700px; */
-  /* background-color:#dad5d591; */
-  /* background-color:#d9eaf3d6; */
-
   padding: 0%;
-
   font-family: "Manrope", sans-serif;
   background-image: linear-gradient(
     140deg,
@@ -187,27 +178,16 @@
     hsl(213deg 52% 35%) 70%,
     hsla(202, 51%, 66%, 0.12) 100%
   );
-  /* background-image: linear-gradient(to right, #000000, #030102, #050304, #060407, #07060a, #17181d, #22252e, #2b3440, #435569, #5a7a94, #71a0c1, #87c9f0); */
 }
-
 .mainbody2 {
   margin: 0;
-}
-.mainbody-text {
-  /* margin-top: -10%; */
 }
 .mainbody-text h1 {
   font-size: 50px;
   font-weight: 900;
-  /* color: #000; */
   color: white;
 }
 .mainbody-text h3 {
-  /* color: #c860d0; */
-  /* background: #F156FC;
-background: linear-gradient(to bottom right, #F156FC 36%, #FCFCFC 100%);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent; */
   background: #2baffc;
   background: linear-gradient(to right, #2baffc 0%, #fcfcfc 100%);
   -webkit-background-clip: text;
@@ -220,7 +200,6 @@ background: linear-gradient(to bottom right, #F156FC 36%, #FCFCFC 100%);
 }
 .bottom-img {
   max-width: 100%;
-  /* margin-top: -30px; */
   margin-top: 5%;
 }
 #searching {
@@ -293,7 +272,6 @@ background: linear-gradient(to bottom right, #F156FC 36%, #FCFCFC 100%);
     font-size: 13px;
   }
 }
-
 @media screen and (max-width: 385px) {
   .mainbody-text {
     margin-top: 100px;
@@ -310,10 +288,9 @@ background: linear-gradient(to bottom right, #F156FC 36%, #FCFCFC 100%);
 }
 /* !Main container End---------------------------------------------------------- */
 
-/* !Why hello world section start---------------------------------------------------------- */
+/* !Why hello world section start----------------------------------------------- */
 
 .hello-world-section {
-  /* padding: 0px 0px; */
   padding: 0%;
   padding-bottom: 19px;
 }
@@ -321,7 +298,6 @@ background: linear-gradient(to bottom right, #F156FC 36%, #FCFCFC 100%);
   margin: 0 -50px;
   margin: 0;
 }
-
 .hello-world-section h1 {
   padding: 20px;
   font-family: "Manrope", sans-serif;
@@ -334,14 +310,11 @@ background: linear-gradient(to bottom right, #F156FC 36%, #FCFCFC 100%);
 
 .hello-world-section-content {
   border-radius: 5px;
-
-  /* height: 300px; */
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   margin: 20px;
 }
 .hello-world-section-content:hover {
-  /* box-shadow: rgb(43, 175, 252) 0px 20px 30px -10px; */
   box-shadow: rgba(43, 175, 252, 0.25) 0px 14px 28px,
     rgba(43, 175, 252, 0.22) 0px 10px 10px;
 }
@@ -372,9 +345,7 @@ background: linear-gradient(to bottom right, #F156FC 36%, #FCFCFC 100%);
   font-family: "Caudex", serif;
 }
 .skill-section {
-  /* background-color: #dcecf9; */
   background-image: linear-gradient(to right top, #6ac2f5, #c0d9fa, #cfd1e162);
-  /* background-image: url(images/pngwing.com\ \(3\).png); */
 }
 .skill-section img {
   max-width: 100%;
@@ -402,21 +373,16 @@ background: linear-gradient(to bottom right, #F156FC 36%, #FCFCFC 100%);
 }
 #skill-content {
   padding: 10px;
-
   background-color: white;
   margin-top: 40px;
-
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   transition: all 100ms ease-in-out;
-  /* transform: translateZ(0);
-  transition-duration: 0.5s; */
 }
 #skill-content:hover {
   box-shadow: rgba(43, 175, 252, 0.538) 0px 2px 4px 0px,
     rgba(43, 175, 252, 0.521) 0px 2px 16px 0px;
   transition: all 500ms cubic-bezier(1.19, 1, 0.22, 1);
   border: 1px solid #2baffc;
-  /* transform: scale(1.1); */
 }
 #skill-content img {
   max-width: 30%;
@@ -471,33 +437,10 @@ background: linear-gradient(to bottom right, #F156FC 36%, #FCFCFC 100%);
 /* !Tutorial section End---------------------------------------------------------- */
 
 /* !Courses section start---------------------------------------------------------- */
-/* .courses{
- 
- 
-}
-.courses-card{
-  padding: 20px;
-  border-radius: 3px;
-  border: none;
-  
-}
-.courses-card-body{
-  border-radius: 5px;
-  border: none;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-.courses-card-body img{
-  max-width: 30%;
-  
-} */
-
-/* !Courses section End---------------------------------------------------------- */
 
 .courses-content {
-  /* margin-bottom: 100px; */
   overflow: hidden;
 }
-
 .container .pikachu {
   position: relative;
   max-width: 200px;
@@ -505,7 +448,6 @@ background: linear-gradient(to bottom right, #F156FC 36%, #FCFCFC 100%);
   background-color: #fff;
   margin: 30px 20px;
   padding: 20px 15px;
-
   display: flex;
   flex-direction: column;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
@@ -524,8 +466,6 @@ background: linear-gradient(to bottom right, #F156FC 36%, #FCFCFC 100%);
 .container .pikachu .image {
   position: relative;
   width: 140px;
-  /* height : 20px; */
-
   top: -40%;
   left: 15px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
@@ -543,11 +483,8 @@ background: linear-gradient(to bottom right, #F156FC 36%, #FCFCFC 100%);
 .container .pikachu .content {
   position: relative;
   top: -40px;
-  /* padding : 10px 15px; */
   color: #111;
   text-align: center;
-
-  /* visibility : hidden; */
   opacity: 1;
   transition: 0.3s ease-in-out;
 }
@@ -578,9 +515,12 @@ background: linear-gradient(to bottom right, #F156FC 36%, #FCFCFC 100%);
   }
 }
 
+/* !Courses section End---------------------------------------------------------- */
+
+/* !About us section Start-------------------------------------------------------- */
+
 .about-us-main {
   padding: 0;
-  /* background-image: linear-gradient(to right top, #2baffc, #49adf9, #5dacf5, #6caaf1, #78a9ed, #7da2e9, #839be4, #8993de, #9082d3, #9870c5, #a15cb4, #a8459f); */
   background-image: linear-gradient(to right top, #6ac2f5, #c0d9fa, #cfd1e162);
 }
 .about-us-second {
@@ -640,35 +580,6 @@ background: linear-gradient(to bottom right, #F156FC 36%, #FCFCFC 100%);
     transform: translateY(-6.4px);
   }
 }
-/* @keyframes shake-vertical {
-  0%,
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-  10%,
-  30%,
-  50%,
-  70% {
-    -webkit-transform: translateY(-8px);
-            transform: translateY(-8px);
-  }
-  20%,
-  40%,
-  60% {
-    -webkit-transform: translateY(8px);
-            transform: translateY(8px);
-  }
-  80% {
-    -webkit-transform: translateY(6.4px);
-            transform: translateY(6.4px);
-  }
-  90% {
-    -webkit-transform: translateY(-6.4px);
-            transform: translateY(-6.4px);
-  }
-} */
-
 .about-us-card2 {
   margin-top: 40px;
 }
@@ -680,8 +591,6 @@ background: linear-gradient(to bottom right, #F156FC 36%, #FCFCFC 100%);
 }
 .counter {
   font-size: 40px;
-  /* font-family: "Varela Round", sans-serif; */
-  /* font-family: "Caudex", serif; */
   font-family: "Manrope", sans-serif;
 }
 .counter-box h5 {
@@ -705,7 +614,6 @@ background: linear-gradient(to bottom right, #F156FC 36%, #FCFCFC 100%);
 .about-us-details p {
   font-size: 16px;
   color: #000000a5;
-  /* word-spacing: 3px; */
 }
 .fa-heart {
   color: red;
@@ -765,7 +673,6 @@ background: linear-gradient(to bottom right, #F156FC 36%, #FCFCFC 100%);
     font-size: 20px;
   }
 }
-
 @media screen and (max-width: 660px) {
   .about-us-icon h5 {
     font-size: 18px;
@@ -784,7 +691,6 @@ background: linear-gradient(to bottom right, #F156FC 36%, #FCFCFC 100%);
     margin-left: 30px;
   }
 }
-
 @media screen and (max-width: 476px) {
   .about-us-details {
     order: 1;
@@ -814,7 +720,10 @@ background: linear-gradient(to bottom right, #F156FC 36%, #FCFCFC 100%);
     margin: 20px;
   }
 }
+/* !About us section end-------------------------------------------------------- */
 
+
+/* ! our services section Start-------------------------------------------------- */
 .separator {
   position: relative;
   display: inline-block;
@@ -832,7 +741,6 @@ background: linear-gradient(to bottom right, #F156FC 36%, #FCFCFC 100%);
   height: 3px;
   background: #060607;
   top: 50%;
-  /* border-radius: 5px; */
 }
 
 .separator i {
@@ -849,13 +757,11 @@ background: linear-gradient(to bottom right, #F156FC 36%, #FCFCFC 100%);
 
 .services-sec {
   margin-top: 30px;
-
 }
 
 .services-small-item {
   display: block;
   background: #fff;
-  /* box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; */
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   border-radius: 10px;
   padding: 10px 2px;
@@ -878,7 +784,6 @@ background: linear-gradient(to bottom right, #F156FC 36%, #FCFCFC 100%);
   top: 0px;
   left: 0px;
   border-radius: 10px;
-  /* background-image: linear-gradient(135deg, #80d0c7 0%, #13547a 100%); */
   background-image: linear-gradient(to right top, #2baffc, #c0d9fa, #cfd1e178);
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
@@ -928,12 +833,10 @@ background: linear-gradient(to bottom right, #F156FC 36%, #FCFCFC 100%);
   height: 11px;
   margin: auto;
   position: relative;
-  /* margin-bottom: 20px; */
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
-  /* padding: 30px; */
 }
 
 .services-small-item .icon i {
@@ -982,7 +885,6 @@ background: linear-gradient(to bottom right, #F156FC 36%, #FCFCFC 100%);
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
-  /* margin-bottom: 30px; */
 }
 
 .services-small-item .button {
@@ -1000,317 +902,268 @@ background: linear-gradient(to bottom right, #F156FC 36%, #FCFCFC 100%);
   -moz-border-radius: 100px;
   border-radius: 100px;
   border: 1px solid #2baffc;
-
   padding-left: 3px;
 }
+/* !our services section End-------------------------------------------------------- */
 
-
-
-.certificate-main{
+/* !certification section Start-------------------------------------------------------- */
+.certificate-main {
   background-image: linear-gradient(to right top, #6ac2f5, #c0d9fa, #cfd1e162);
   padding: 0%;
 }
-.badge-img{
-  
-  
-}
-
-.graph a{
+.graph a {
   border: none;
   font-weight: 600;
-  color:white;
+  color: white;
   width: 40%;
   background-color: white;
   padding: 10px;
   margin-top: 25px;
   text-decoration: none;
   border-radius: 30px;
-background: #02a2ffde;
-font-family: 'Lexend', sans-serif;
-box-shadow:  5px 5px 9px #165981,
-             -5px -5px 9px #eef2f2;
-             font-size: 20px
-             
+  background: #02a2ffde;
+  font-family: "Lexend", sans-serif;
+  box-shadow: 5px 5px 9px #165981, -5px -5px 9px #eef2f2;
+  font-size: 20px;
 }
-.graph a:hover{
-  background-color:#02a2ffde;
+.graph a:hover {
+  background-color: #02a2ffde;
   color: white;
 }
-.graph a:active{
+.graph a:active {
   border-radius: 42px;
-background: #02a2ffde;
-box-shadow: inset 5px 5px 7px #30698a,
-            inset -5px -5px 7px #eef2f2;
-          color: white;
+  background: #02a2ffde;
+  box-shadow: inset 5px 5px 7px #30698a, inset -5px -5px 7px #eef2f2;
+  color: white;
 }
-.graph h1{
-  font-family: 'Lexend', sans-serif;
+.graph h1 {
+  font-family: "Lexend", sans-serif;
   font-size: 45px;
   font-weight: 800;
   margin-top: 40px;
-  color:black;
-  
+  color: black;
 }
 
-#freepik_stories-certification{
+#freepik_stories-certification {
   max-width: 100%;
   border-radius: 30px;
   border-radius: 30px;
-  background: #E0E8F5;
-  box-shadow: inset 5px 5px 9px #72767d,
-              inset -5px -5px 9px #ffffff;
+  background: #e0e8f5;
+  box-shadow: inset 5px 5px 9px #72767d, inset -5px -5px 9px #ffffff;
 }
 
-
-@media screen and (max-width:900px) {
-  .graph h1{
-   font-size: 30px;
-   font-weight: 700;
+@media screen and (max-width: 900px) {
+  .graph h1 {
+    font-size: 30px;
+    font-weight: 700;
   }
-  .graph a{
-
+  .graph a {
   }
 }
-@media screen and (max-width:750px) {
-  .graph h1{
-   font-size: 40px;
-   font-weight: 800;
-   margin-top: 20px;
+@media screen and (max-width: 750px) {
+  .graph h1 {
+    font-size: 40px;
+    font-weight: 800;
+    margin-top: 20px;
   }
-  .graph a{
+  .graph a {
     margin-bottom: 50px;
-
   }
-  #freepik_stories-certification{
+  #freepik_stories-certification {
     margin-bottom: 50px;
   }
 }
-@media screen and (max-width:480px) {
-  .graph h1{
-   font-size: 30px;
-   font-weight: 800;
-   margin-top: 10px;
+@media screen and (max-width: 480px) {
+  .graph h1 {
+    font-size: 30px;
+    font-weight: 800;
+    margin-top: 10px;
   }
-  .graph a{
+  .graph a {
     margin-bottom: 50px;
-
   }
-  #freepik_stories-certification{
+  #freepik_stories-certification {
     margin-bottom: 50px;
   }
 }
-@media screen and (max-width:430px) {
-  .graph h1{
-   font-size: 30px;
-   font-weight: 800;
+@media screen and (max-width: 430px) {
+  .graph h1 {
+    font-size: 30px;
+    font-weight: 800;
   }
-  .graph a{
+  .graph a {
     margin-bottom: 20px;
     margin-top: 15px;
     padding: 15px;
     font-size: 15px;
-
-
   }
-  #freepik_stories-certification{
+  #freepik_stories-certification {
     margin-bottom: 50px;
   }
 }
-@media screen and (max-width:370px) {
-  .graph h1{
-   font-size: 30px;
-   font-weight: 800;
+@media screen and (max-width: 370px) {
+  .graph h1 {
+    font-size: 30px;
+    font-weight: 800;
   }
-  .graph a{
+  .graph a {
     margin-bottom: 20px;
     margin-top: 15px;
     padding: 10px;
     font-size: 15px;
-
-
   }
-  #freepik_stories-certification{
+  #freepik_stories-certification {
     margin-bottom: 50px;
   }
 }
+/* !certification section End-------------------------------------------------------- */
 
 
-.newsletter img{
+/* !Newsletter section Start-------------------------------------------------------- */
+.newsletter img {
   max-width: 40%;
   margin-top: -10%;
 }
-.newsletter-text h1{
+.newsletter-text h1 {
   font-size: 40px;
   font-weight: 900;
-  font-family: 'Lexend', sans-serif;
+  font-family: "Lexend", sans-serif;
   color: #000;
-
-
 }
-.newsletter-text span{
+.newsletter-text span {
   color: #2baffc;
 }
-.newsletter-text{
+.newsletter-text {
   margin-top: -8%;
 }
-.newsletter-text h3{
+.newsletter-text h3 {
   font-weight: 400;
-  font-family: 'Lexend', sans-serif;
-  
-
-  
+  font-family: "Lexend", sans-serif;
 }
-.text-start{
+.text-start {
   margin-bottom: 50px;
   margin: 20px;
-  /* box-shadow: rgba(43, 175, 252, 0.24) 0px 3px 8px; */
   box-shadow: rgba(43, 175, 252, 0.65) 0px 0px 20px;
 }
-.email1{
-  /* background-color: #000; */
+.email1 {
   width: 600px;
- /* margin-left: 29%; */
- margin-left: auto;
- margin-right: auto;
-
+  margin-left: auto;
+  margin-right: auto;
   padding: 10px;
   border-radius: 100px;
   border: 1px solid #2baffc;
 }
-.email1 input{
+.email1 input {
   padding: 15px;
   width: 70%;
   border: none;
   border-radius: 100px;
 }
-.email1 input:focus{
+.email1 input:focus {
   outline: none;
 }
-.email1 input::placeholder{
+.email1 input::placeholder {
   font-size: 20px;
 }
-.email1 a{
-  background-color:black;
+.email1 a {
+  background-color: black;
   padding: 15px;
-
-  font-family: 'Lexend', sans-serif;
+  font-family: "Lexend", sans-serif;
   font-size: 20px;
   text-decoration: none;
   border-radius: 100px;
   margin-left: 10px;
   color: white;
-  /* margin-left: 30px; */
-  
 }
-.email1 a:hover{
+.email1 a:hover {
   background-color: #2baffc;
 }
-
-
-@media screen and (max-width:620px) {
-  .newsletter-text h1{
+@media screen and (max-width: 620px) {
+  .newsletter-text h1 {
     font-size: 30px;
   }
-  .newsletter img{
+  .newsletter img {
     max-width: 70%;
     margin-top: -10%;
   }
-  .email1{
+  .email1 {
     width: 500px;
     padding: 5px;
   }
-  .email1 input{
-
+  .email1 input {
   }
-  
-  .email1 a{
+
+  .email1 a {
     margin-left: 5px;
     font-size: 17px;
     padding: 10px;
   }
-  
 }
-
-@media screen and (max-width:555px) {
-  .newsletter-text h1{
+@media screen and (max-width: 555px) {
+  .newsletter-text h1 {
     font-size: 30px;
   }
-  .newsletter img{
+  .newsletter img {
     max-width: 70%;
     margin-top: -10%;
   }
-  .email1{
+  .email1 {
     width: 350px;
     padding: 0px;
-    
   }
-  .email1 input{
-    
-    padding-bottom: 20px
+  .email1 input {
+    padding-bottom: 20px;
   }
-  
-  .email1 a{
+
+  .email1 a {
     margin-left: -2px;
     font-size: 10px;
     padding: 15px;
-    
   }
-  .email1 input::placeholder{
+  .email1 input::placeholder {
     font-size: 15px;
     padding-bottom: 5px;
   }
-  
 }
-@media screen and (max-width:380px) {
-  .newsletter-text h1{
+@media screen and (max-width: 380px) {
+  .newsletter-text h1 {
     font-size: 30px;
   }
-  .newsletter img{
+  .newsletter img {
     max-width: 70%;
     margin-top: -10%;
   }
-  .email1{
+  .email1 {
     width: 250px;
     padding: 0px;
-    
   }
-  .email1 input{
+  .email1 input {
     padding: 5px;
-    padding-bottom: 10px
+    padding-bottom: 10px;
   }
-  
-  .email1 a{
+
+  .email1 a {
     margin-left: -3px;
     font-size: 10px;
     padding: 10px;
-    
   }
-  .email1 input::placeholder{
+  .email1 input::placeholder {
     font-size: 10px;
     padding-bottom: 5px;
   }
-  .email1 i{
+  .email1 i {
     display: none;
   }
-  
 }
+/* !Newsletter section End-------------------------------------------------------- */
 
-
-
-
-
-.footer-02{
-  /* background-image: linear-gradient(to right top, #6ac2f5, #c0d9fa, #cfd1e162); */
-  background-color: #F4F9FD;
-  /* background-color: black; */
+/* !Footer section Start-------------------------------------------------------- */
+.footer-02 {
+  background-color: #f4f9fd;
   margin-top: 70px;
   padding: 20px;
-  
-  
 }
-
-
-.share{
+.share {
   background: #fafafa;
   height: 50px;
   width: 280px;
@@ -1323,10 +1176,8 @@ box-shadow: inset 5px 5px 7px #30698a,
   display: flex;
   box-shadow: rgba(43, 175, 252, 0.65) 0px 0px 20px;
   border: none;
-  
 }
-
-.share span{
+.share span {
   position: absolute;
   background: #080809;
   width: 100%;
@@ -1337,105 +1188,98 @@ box-shadow: inset 5px 5px 7px #30698a,
   color: #fff;
   font-size: 20px;
   font-weight: bold;
-  transition : 0.3s linear;
+  transition: 0.3s linear;
   z-index: 999;
   border-radius: 40px;
 }
-.share span .fa-share-alt{
+.share span .fa-share-alt {
   margin-right: 5px;
   font-size: 16px;
 }
-.share:hover span{
- transform: translateX(-100%);
+.share:hover span {
+  transform: translateX(-100%);
 }
-.share a{
+.share a {
   margin: 10px;
   font-size: 30px;
   text-decoration: none;
 }
-.share a:hover{
+.share a:hover {
   transform: translateY(-10%);
 }
-.share a .fa-facebook{
-  color:  #3b5998;
+.share a .fa-facebook {
+  color: #3b5998;
 }
-.share a .fa-pinterest{
-  color:  #E60023;
+.share a .fa-pinterest {
+  color: #e60023;
 }
-.share a .fa-whatsapp{
-  color:  #075e54;
+.share a .fa-whatsapp {
+  color: #075e54;
 }
-.share a .fa-twitter{
-  color:   #00acee;
+.share a .fa-twitter {
+  color: #00acee;
 }
-
-
-.footer-heading{
+.footer-heading {
   font-size: 22px;
-  font-family: 'Lexend', sans-serif;
+  font-family: "Lexend", sans-serif;
   color: #000;
 }
-.list-unstyled a{
+.list-unstyled a {
   text-decoration: none;
   color: #2baffc;
   padding-top: 10px;
 }
-  /* .list-unstyled a:hover{
-    color: #000;
-  } */
-  .py-1{
-    display: inline-block;
-    position: relative;
-  }
+.py-1 {
+  display: inline-block;
+  position: relative;
+}
 .py-1:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
-
-.py-1::after{
-  content: '';
+.py-1::after {
+  content: "";
   position: absolute;
   width: 80%;
   transform: scaleX(0);
   height: 2px;
   bottom: 0;
   left: 0;
-  top:30px;
+  top: 30px;
   background-color: #000000;
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }
-.list-unstyled i{
+.list-unstyled i {
   color: black;
   padding-right: 10px;
 }
-.hr1{
+.hr1 {
   border: 1px solid black;
 }
-.partner-name{
-  font-family: 'Montez', cursive;
+.partner-name {
+  font-family: "Montez", cursive;
   font-size: 20px;
 }
-.copyright{
+.copyright {
   background-color: #000;
   padding: 20px;
   border-radius: 50px;
   color: white;
-  box-shadow: rgba(43, 175, 252, 0.65) 0px 0px 20px;  
-  
+  box-shadow: rgba(43, 175, 252, 0.65) 0px 0px 20px;
 }
-.copyright p{
+.copyright p {
   margin-bottom: 0px;
 }
-.copyr{
+.copyr {
   padding: 0px;
 }
-
-@media screen and (max-width:770px) {
-  .list-unstyled-main{
+@media screen and (max-width: 770px) {
+  .list-unstyled-main {
     margin-top: 30px;
   }
- .disclaimer{
-  margin-top: -60px;
- }
+  .disclaimer {
+    margin-top: -60px;
+  }
 }
+/* !Footer section End-------------------------------------------------------- */
