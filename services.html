@@ -4,8 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .container{
+            height: 100vh;
+            /* background-color: black; */
+            display: grid;
+            grid-template-columns:repeat(6 , 1fr);
+            grid-template-rows: repeat(9, 1fr);
+            grid-gap: 10px;
+            
+        }
+        .header{
+            grid-column: 1 / span 6;
+            background-color: red;
+            color: white;
+            
+        }
+        .sidebar{
+            grid-column: 1 / span 2;
+            grid-row: 2 / span 7;
+            background-color: blue;
+        }
+        .navigation-bar{
+            
+            grid-column: 3 / span 3;
+            background-color: blanchedalmond;
+        }
+        .ads{
+            grid-column: 6 / span 1;
+            grid-row: 2 / span 7;
+            background-color: yellow;
+        }
+        .main{
+            color: white;
+            background-color:black;
+            grid-column: 3 / span 3;
+            grid-row: 3 / span 6;
+
+        }
+
+
+    </style>
 </head>
+
 <body>
-    
+    <div class="container">
+        <div class="header">Header</div>
+        <div class="sidebar">Sidebar</div>
+        <div class="navigation-bar">navigation bar</div>
+        <div class="ads">ads</div>
+        <div class="main">main</div>
+        <div class="footer">footer</div>
+    </div>
 </body>
 </html>
