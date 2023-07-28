@@ -425,7 +425,7 @@
   top: 0;
   bottom: 0;
   left: 50%;
-  border-left: 1px solid rgba(220, 28, 28, 0.4);
+  border-left: 1px solid rgba(57, 50, 50, 0.6);
 }
 @media (min-width: 1000px) {
   #timeline .demo-card-wrapper::after {
@@ -438,6 +438,7 @@
   margin: 10px auto 80px;
   max-width: 94%;
   z-index: 2;
+  border-radius: 10px;
 }
 @media (min-width: 480px) {
   #timeline .demo-card {
@@ -499,7 +500,7 @@
   font-size: 35px;
   line-height: 35px;
   font-weight: 600;
-  background: rgba(0, 0, 0, 0.17);
+  background: rgba(112, 94, 94, 0.324);
 }
 #timeline .demo-card .head h2 {
   text-transform: uppercase;
@@ -540,6 +541,7 @@
   border: 1px solid rgba(191, 191, 191, 0.4);
   border-top: 0;
   padding: 15px;
+  border-radius: 10px;
 }
 @media (min-width: 1000px) {
   #timeline .demo-card .body {
@@ -563,6 +565,7 @@
 }
 #timeline .demo-card--step2 {
   background-color: #000;
+
 }
 #timeline .demo-card--step2 .head::after {
   border-color: #000;
