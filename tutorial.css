@@ -213,7 +213,7 @@
   font-family: "Caudex", serif;
 }
 .skill-section {
-  border-radius: 20px;
+  /* border-radius: 20px; */
 
   margin: 0px;
   /* background-image: linear-gradient(to right top, #6ac2f5, #c0d9fa, #cfd1e162); */
@@ -329,13 +329,16 @@
   }
 }
 
+
+
+
 /* !Tutorial section End---------------------------------------------------------- */
 
 /* !Footer section Start-------------------------------------------------------- */
 
 .footer-02 {
   background-color: #f4f9fd;
-  margin-top: 70px;
+ 
   padding: 20px;
 }
 .share {
