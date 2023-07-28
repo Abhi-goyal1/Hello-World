@@ -175,6 +175,7 @@
 /* !Tutorial section start---------------------------------------------------------- */
 #searching {
   /* margin-top: 5%; */
+  margin-bottom: 40px;
 }
 #searching input {
   box-shadow: rgba(43, 175, 252, 0.65) 0px 0px 20px;
@@ -239,7 +240,7 @@
 #skill-section1 {
   padding: 20px;
   padding-bottom: 60px;
-  margin-top: 50px;
+  /* margin-top: 50px; */
 }
 #skill-section1 a {
   text-decoration: none;
@@ -289,7 +290,7 @@
 @media screen and (max-width: 700px) {
   #searching input {
     padding: 10px;
-    width: 50%;
+    width: 60%;
   }
   #searching input::placeholder {
     font-size: 13px;
@@ -385,14 +386,14 @@
 .share a:hover {
   transform: translateY(-10%);
 }
-.share a .fa-facebook {
-  color: #3b5998;
+.share a .fa-linkedin{
+  color: #0278B7;
 }
-.share a .fa-pinterest {
+.share a .fa-instagram {
   color: #e60023;
 }
-.share a .fa-whatsapp {
-  color: #075e54;
+.share a .fa-telegram{
+  color: #30ACEC;
 }
 .share a .fa-twitter {
   color: #00acee;
@@ -461,3 +462,7 @@
   }
 }
 /* !Footer section End-------------------------------------------------------- */
+.abi{
+  background:url(images/White.jpg);
+ 
+}

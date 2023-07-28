@@ -171,6 +171,8 @@
     display: none;
   }
 }
+
+
 /* !Nav section Start-------------------------------------------------------- */
 
 
@@ -239,14 +241,14 @@
 .share a:hover {
   transform: translateY(-10%);
 }
-.share a .fa-facebook {
-  color: #3b5998;
+.share a .fa-linkedin{
+  color: #0278B7;
 }
-.share a .fa-pinterest {
+.share a .fa-instagram {
   color: #e60023;
 }
-.share a .fa-whatsapp {
-  color: #075e54;
+.share a .fa-telegram{
+  color: #30ACEC;
 }
 .share a .fa-twitter {
   color: #00acee;
