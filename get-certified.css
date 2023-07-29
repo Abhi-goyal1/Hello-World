@@ -192,7 +192,7 @@
 
 .footer-02 {
   background-color: #f4f9fd;
-  margin-top: 70px;
+  margin-top: 60px;
   padding: 20px;
 }
 .share {
@@ -315,3 +315,159 @@
   }
 }
 /* !Footer section End-------------------------------------------------------- */
+
+
+.heading {
+  /* padding-left: 20px; */
+  font-family: "Manrope", sans-serif;
+  font-size: 45px;
+  color: #000;
+}
+.heading span {
+  color: #2baffc;
+}
+.get-certified-section{
+  margin-top: 40px;
+  /* background-color: red; */
+  /* background-image: url(images/10782708_19197912.jpg) ; */
+
+ 
+  
+}
+
+
+.get-certified img{
+  max-width: 100%;
+  margin-top: 60px;
+  
+}
+.certificate-body{
+  color: #0000008b;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+#more-tutorials {
+  padding: 30px;
+}
+#more-tutorials i {
+  padding-left: 9px;
+}
+#more-tutorials button {
+  width: 200px;
+  padding: 10px;
+  background-color: #000;
+  border: none;
+  border-radius: 30px;
+  color: white;
+  font-size: 20px;
+  font-family: "Varela Round", sans-serif;
+}
+#more-tutorials button:hover {
+  background-color: #2baffc;
+  border: none;
+  color: white;
+}
+
+
+.timeline {
+  list-style: none;
+  padding: 0;
+}
+
+.timeline li {
+  position: relative;
+  /* padding: 30px 0; */
+}
+.timeline-icon2{
+  background-color: ;
+}
+
+.timeline-icon {
+  position: absolute;
+  top: 0;
+  left: -20px; /* Adjust the left position to move the icon to the left side */
+  width: 50px;
+  height: 50px;
+  background-color: #007bff;
+  border-radius: 7%;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 25px;
+}
+
+.timeline-content {
+  margin-left: 70px;
+}
+.timeline-content-last {
+  margin-left: 70px;
+}
+
+.timeline-content::before {
+  content: '';
+  position: absolute;
+  left: 4px; /* Adjust the left position to connect the icon vertically */
+  top: 40px;
+  width: 2px;
+  height:70px;
+  background-color: #007bff;
+}
+
+.timeline h3 {
+  margin: 0;
+  font-size: 25px;
+  font-family: "Manrope", sans-serif;
+  
+}
+
+.timeline p {
+  margin: 10px 0;
+  font-size: 14px;
+  color: #0000008d;
+}
+
+.timeline-date {
+  font-size: 14px;
+  color: #777;
+}
+
+/* Add media queries for responsiveness as needed */
+@media (max-width: 770px) {
+ .timeline-sec{
+  padding-left: 20px;
+  width: 100%;
+ }
+ .get-certified img{
+  
+  margin-top: 10px;
+  
+}
+  
+}
+@media (max-width: 620px) {
+  .timeline-content::before {
+    height: 80px;
+  }
+  
+}
+@media (max-width: 440px) {
+  .timeline-content::before {
+    height: 100px;
+  }
+  
+}
+@media (max-width: 865px) {
+  .timeline-content::before {
+    height: 100px;
+  }
+  
+}
+@media (max-width: 431px) {
+  .heading {
+    
+    font-size: 40px;
+    
+  }
+  
+}
