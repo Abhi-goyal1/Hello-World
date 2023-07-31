@@ -229,13 +229,16 @@ color:#2baffc;
 #more-tutorials {
   padding:20px;
 }
+.orange{
+  font-size: 20px;
+}
 
 #more-tutorials i {
   padding-left: 9px;
 }
 #more-tutorials button {
-  width: 200px;
-  padding: 10px;
+  width: 240px;
+  padding: 15px;
   background-color: #000;
   border: none;
   border-radius: 30px;
@@ -249,13 +252,23 @@ color:#2baffc;
 }
 
 
-
-
-
 .info{
   margin-top: 20px;
 }
 
+@media screen and (max-width:500px) {
+  .heading-1{
+    margin-top:-20px;
+
+  }
+  .signup2 img{
+    width: 85%;
+   
+  }
+  .info2{
+    gap: 20px;
+  }
+}
 
 
 
@@ -267,7 +280,7 @@ color:#2baffc;
 /* !Footer section Start-------------------------------------------------------- */
 .footer-02 {
     background-color: #f4f9fd;
-    margin-top: 70px;
+    margin-top: 40px;
     padding: 20px;
   }
   .share {
