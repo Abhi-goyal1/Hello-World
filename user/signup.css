@@ -190,17 +190,71 @@ box-shadow: 0px 2px 10px #97c8f0;
   border-radius: 60px;
 }
 .signup-main{
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
 
 .heading-2{
   font-family: "Lexend", sans-serif;
   font-weight: 800;
-  color: #263238;
-  padding: 10px;
+  color: #000000;
+  padding-top: 20px;
+}
+.card i{
+color:#2baffc;
 }
 
+.card { transition: all .2s ease-in-out; }
+.card:hover { transform: scale(1.1); }
+.card{
+  margin-top: 10px;
+  box-shadow: rgba(43, 175, 252, 0.45) 0px 0px 8px;
+  
+ /* border: 1px solid; */
+  /* background-color: #00abee43; */
+}
+.card-body h6,h3{
+  font-family: "Lexend", sans-serif;
+}
+.card-body h6{
+  color:#0000005e;
+}
+
+
+
+
+
+
+
+#more-tutorials {
+  padding:20px;
+}
+
+#more-tutorials i {
+  padding-left: 9px;
+}
+#more-tutorials button {
+  width: 200px;
+  padding: 10px;
+  background-color: #000;
+  border: none;
+  border-radius: 30px;
+  color: white;
+  font-family: "Varela Round", sans-serif;
+}
+#more-tutorials button:hover {
+  background-color: #2baffc;
+  border: none;
+  color: white;
+}
+
+
+
+
+
+.info{
+  margin-top: 20px;
+}
 
 
 
