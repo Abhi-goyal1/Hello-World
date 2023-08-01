@@ -12,6 +12,7 @@
 
 .navbar {
   background-color: #f4f9fd;
+  box-shadow: 0px 2px 10px #97c8f0;
 
   padding: 0px;
 } /* box-shadow: 0px 2px 10px #97c8f0; */
@@ -49,15 +50,14 @@
   color: white;
 }
 #login {
-  background-color: #000;
+  background-color: #2baffc;
   font-weight: 900;
   font-family: "Varela Round", sans-serif;
-  color: white;
+  color: white; 
   border-radius: 30px;
-  
 }
 #login:hover {
-  background-color: #2baffc;
+  background-color: #000;
   color: white;
 }
 .navbar-toggler {
@@ -174,3 +174,71 @@
     display: none;
   }
 }
+
+body{
+  background-color:#ecf1f3;
+}
+.login-main{
+  padding:60px 60px 30px 60px;
+  
+}
+
+.login-main-2{
+  /* justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center; */
+  height: 100vh;
+  border-radius: 0px 30px 30px 0px;
+  /* background-color:#ecf1f3; */
+  /* background: #ecf1f3;
+box-shadow:  5px 5px 10px #c4c8ca,
+             -5px -5px 10px #ffffff; */
+}
+.login-main-1{
+  border-radius: 30px 0px 0px 30px;
+  /* background-color:#ecf1f3; */
+ 
+background: #ecf1f3;
+box-shadow:  5px 5px 10px #c4c8ca,
+             -5px -5px 10px #ffffff;
+}
+.login-row{
+  background: #ecf1f3;
+  border-radius: 30px;
+box-shadow:  5px 5px 10px #c4c8ca,
+             -5px -5px 10px #ffffff;
+}
+.login-img{
+  max-width: 100%;
+}
+.hwatom{
+ max-width: 14%;
+}
+
+#more-tutorials {
+  padding: 20px;
+}
+.orange {
+  font-size: 20px;
+}
+
+#more-tutorials i {
+  padding-left: 9px;
+}
+#more-tutorials button {
+  width: 240px;
+  padding: 15px;
+  background-color: #000;
+  border: none;
+  border-radius: 30px;
+  color: white;
+  font-family: "Varela Round", sans-serif;
+}
+#more-tutorials button:hover {
+  background-color: #2baffc;
+  border: none;
+  color: white;
+}
+
+

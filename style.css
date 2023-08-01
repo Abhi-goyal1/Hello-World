@@ -49,15 +49,14 @@
   color: white;
 }
 #login {
-  background-color: #000;
+  background-color: #2baffc;
   font-weight: 900;
   font-family: "Varela Round", sans-serif;
-  color: white;
+  color: white; 
   border-radius: 30px;
-  
 }
 #login:hover {
-  background-color: #2baffc;
+  background-color: #000;
   color: white;
 }
 .navbar-toggler {
