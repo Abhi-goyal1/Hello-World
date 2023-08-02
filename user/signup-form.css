@@ -197,7 +197,8 @@ box-shadow:  5px 5px 10px #c4c8ca,
              -5px -5px 10px #ffffff; */
 }
 .login-main-1{
-  border-radius: 30px 0px 0px 30px;
+   
+  border-radius: 0px 30px 30px 0px;
   /* background-color:#ecf1f3; */
 
  
@@ -205,6 +206,11 @@ background: #ecf1f3;
 box-shadow:  5px 5px 10px#c7dbe8,
              -5px -5px 10px #ffffff;
 }
+.login-main-1 svg{
+    margin-top: 40px;
+    display: block;
+}
+
 .login-main-1 img{
 /* margin-top: 30px; */
 }
@@ -220,7 +226,7 @@ box-shadow:  5px 5px 10px#c7dbe8,
   width :70%!important ;
   padding: 10px;
   padding-left: 30px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   border: none;
   border-radius: 30px;
   background: #ECF0F3;
@@ -374,6 +380,7 @@ box-shadow:  5px 5px 10px #c4c8ca,
   .login-main-2{
     margin-top: 40px;
   }
+ 
 }
 
 @media screen and (max-width:570px) {
@@ -389,6 +396,9 @@ box-shadow:  5px 5px 10px #c4c8ca,
   #more-tutorials button {
     width:80%;
    
+  }
+  .login-main1 svg{
+    display: none;
   }
 }
 @media screen and (max-width:500px) {
@@ -460,15 +470,13 @@ box-shadow:  5px 5px 10px #c4c8ca,
  }
 }
 
-
-
 .rights{
-  background-color: #000;
-  color: white;
-  padding: 20px;
-  word-spacing: 3px;
-  
-}
-.rights a{
-  text-decoration: none;
-}
+    background-color: #000;
+    color: white;
+    padding: 20px;
+    word-spacing: 3px;
+    
+  }
+  .rights a{
+    text-decoration: none;
+  }
