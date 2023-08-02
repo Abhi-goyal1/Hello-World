@@ -374,6 +374,9 @@ box-shadow:  5px 5px 10px #c4c8ca,
   .login-main-2{
     margin-top: 40px;
   }
+  .login-main-1{
+    display: none;
+  }
 }
 
 @media screen and (max-width:570px) {
@@ -471,4 +474,11 @@ box-shadow:  5px 5px 10px #c4c8ca,
 }
 .rights a{
   text-decoration: none;
+}
+@media screen and (max-width:530px) {
+ 
+  .rights h6{
+      font-size: 10px;
+  }
+ 
 }
