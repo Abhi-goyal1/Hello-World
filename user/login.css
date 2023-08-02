@@ -179,7 +179,8 @@ body{
   background-color:#ecf1f3;
 }
 .login-main{
-  padding:60px 60px 30px 60px;
+  padding:30px 60px 30px 60px;
+  /* height:100vh; */
   
 }
 
@@ -188,7 +189,7 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center; */
-  height: 100vh;
+  /* height: 100vh; */
   border-radius: 0px 30px 30px 0px;
   /* background-color:#ecf1f3; */
   /* background: #ecf1f3;
@@ -198,11 +199,77 @@ box-shadow:  5px 5px 10px #c4c8ca,
 .login-main-1{
   border-radius: 30px 0px 0px 30px;
   /* background-color:#ecf1f3; */
+
  
 background: #ecf1f3;
-box-shadow:  5px 5px 10px #c4c8ca,
+box-shadow:  5px 5px 10px#c7dbe8,
              -5px -5px 10px #ffffff;
 }
+.login-main-1 img{
+/* margin-top: 30px; */
+}
+.login-main-2 h2{
+  font-family: "Lexend", sans-serif;
+  color: #000;
+}
+.login-main-2 h6{
+  padding: 10px;
+  color: #00000078;
+}
+.email input{
+  width :70%!important ;
+  padding: 10px;
+  padding-left: 30px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 30px;
+  background: #ECF0F3;
+  box-shadow: inset 5px 5px 10px#c7dbe8,
+              inset -5px -5px 10px #ffffff;
+}
+.password input{
+
+  width :70%!important ;
+  padding: 10px;
+  padding-left: 30px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 30px;
+  background: #ECF0F3;
+box-shadow: inset 5px 5px 10px #c7dbe8,
+            inset -5px -5px 10px #ffffff;
+}
+.email input:focus{
+  outline: none;
+}
+.password input:focus{
+  outline: none;
+}
+.email ::placeholder{
+  color: #00000078;
+  font-family: "Varela Round", sans-serif;
+
+
+}
+.password ::placeholder{
+  color: #00000078;
+  font-family: "Varela Round", sans-serif;
+}
+
+.form-check-input{
+
+}
+.form-check-label{
+  color: #00000078;
+  font-family: "Varela Round", sans-serif;
+  
+}
+.forgot-password-link{
+  text-decoration: none;
+}
+
+
+
 .login-row{
   background: #ecf1f3;
   border-radius: 30px;
@@ -213,11 +280,11 @@ box-shadow:  5px 5px 10px #c4c8ca,
   max-width: 100%;
 }
 .hwatom{
- max-width: 14%;
+ max-width: 18%;
 }
 
 #more-tutorials {
-  padding: 20px;
+  padding: 10px;
 }
 .orange {
   font-size: 20px;
@@ -227,8 +294,8 @@ box-shadow:  5px 5px 10px #c4c8ca,
   padding-left: 9px;
 }
 #more-tutorials button {
-  width: 240px;
-  padding: 15px;
+  width:70%;
+  padding: 6px;
   background-color: #000;
   border: none;
   border-radius: 30px;
@@ -242,3 +309,153 @@ box-shadow:  5px 5px 10px #c4c8ca,
 }
 
 
+.or-login{
+  color: #00000078;
+  font-family: "Varela Round", sans-serif;
+}
+
+.social1 button{
+
+   border: none;
+   /* background-color: #000; */
+   color: white;
+   width:130px;
+   padding: 10px;
+   font-family: "Varela Round", sans-serif;
+   border-radius: 30px;
+}
+.social1 i{
+  padding-right: 10px;
+  /* font-size: 20px; */
+ 
+}
+.social2 i{
+  padding-right: 10px;
+  /* font-size: 20px; */
+ 
+}
+.social2 button{
+   border: none;
+   /* background-color: #000; */
+   color: white;
+   width:130px;
+   padding: 10px;
+  
+   border-radius: 30px;
+}
+.github{
+  background-color: #000;
+}
+.facebook{
+  background: #3B5999;
+}
+.linkedin{
+  background-color: #0077B5;
+}
+.account{
+  color: #00000078;
+  font-family: "Varela Round", sans-serif;  
+  
+}
+.account h6{
+  padding-top: 0;
+}
+.account a{
+  text-decoration: none;
+}
+
+@media screen and (max-width:768px) {
+  .login-main-1 img{
+    max-width: 80%;
+    }
+  .login-main-1{
+    border-radius: 30px 30px 30px 30px;
+  }
+  .login-main-2{
+    margin-top: 40px;
+  }
+}
+
+@media screen and (max-width:570px) {
+  .email input{
+    width :80%!important ;
+   
+  }
+  .password input{
+  
+    width :80%!important ;
+  
+  }
+  #more-tutorials button {
+    width:80%;
+   
+  }
+}
+@media screen and (max-width:500px) {
+  .email input{
+    width :90%!important ;
+   
+  }
+  .password input{
+  
+    width :90%!important ;
+  
+  }
+  #more-tutorials button {
+    width:90%;
+   
+  }
+}
+@media screen and (max-width:460px) {
+ 
+  .login-main{
+    padding:30px 30px 30px 30px;
+
+    
+  }
+}
+@media screen and (max-width:400px) {
+  .email input{
+    width :100%!important ;
+   
+  }
+  .password input{
+  
+    width :100%!important ;
+  
+  }
+  #more-tutorials button {
+    width:100%;
+   
+  }
+ 
+}
+@media screen and (max-width:350px) {
+  
+  .social1 button{
+
+    border: none;
+    /* background-color: #000; */
+    color: white;
+    width:120px;
+    padding: 10px;
+    font-family: "Varela Round", sans-serif;
+    border-radius: 30px;
+ }
+  .social2 button{
+
+    border: none;
+    /* background-color: #000; */
+    color: white;
+    width:120px;
+    padding: 10px;
+    font-family: "Varela Round", sans-serif;
+    border-radius: 30px;
+ }
+ .form-check{
+  padding-right: 0px;
+ }
+ .forgot{
+  padding-left: 0px;
+ }
+}

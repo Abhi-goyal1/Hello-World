@@ -69,7 +69,7 @@
 
 <div class="container-fluid login-main">
   <div class="row login-row">
-    <div class="col-sm-12 col-md-6 login-main-1">
+    <div class="col-sm-12 col-md-6 login-main-1 text-center">
       <img src="../images/login.png" alt="" class="login-img">
     </div>
     <div class="col-sm-12 col-md-6 login-main-2 text-center">
@@ -83,40 +83,60 @@
 
      <form action="">
 
-      <div>
+      <div class="email">
         <input type="email" placeholder="Email Address" required>
       </div>
-     <div>
+     <div class="password">
       <input type="password" placeholder="Password" required>
      </div>
 
-     <div >
+     <!-- <div class="row">
+      
+     <div class="remember-me1 col-md-6 d-flex justify-content-end " >
       <input type="checkbox"> Remember me
+     </div>
+     
+     <div class="remember-me2 col-md-6 d-flex justify-content-start " >
       <a href="">Forgot Password?</a>
      </div>
 
-     <div id="more-tutorials" class="col-12 text-center" >
-      <a href=""><button class="btn  circle pulse orange ">Sign Up <i class="fa-solid fa-user-plus"></i></button></a>
+     </div> -->
+
+
+     <div class="row justify-content-evenly">
+      <div class="col-auto">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="rememberMe">
+          <label class="form-check-label" for="rememberMe">Remember Me</label>
+        </div>
+      </div>
+      <div class="col-auto forgot">
+        <a href="#" class="forgot-password-link">Forgot Password?</a>
+      </div>
     </div>
 
-    <p>Or Login With</p>
+     <div id="more-tutorials" class="col-12 text-center" >
+      <a href=""><button class="btn  circle pulse orange ">Login <i class="fa-solid fa-forward"></i></button></a>
+    </div>
+
+    <p class="or-login">Or Login With</p>
 
  <div class="">
-  <div class="d-flex flex-wrap justify-content-evenly">
-    <a href=""><button class="">Google</button></a>
-    <a href=""><button class="">Google</button></a>
+  <div class="d-flex flex-wrap justify-content-evenly pb-2 social1">
+    <a href=""><button class="google bg-danger"><i class="fa-brands fa-google"></i> Google</button></a>
+    <a href=""><button class="facebook"><i class="fa-brands fa-facebook-f"></i> Facebook</button></a>
    </div>
-   <div class="d-flex flex-wrap justify-content-evenly">
-    <a href=""><button class="">Google</button></a>
-    <a href=""><button class="">Google</button></a>
+   <div class="d-flex flex-wrap justify-content-evenly pb-2 social2">
+    <a href=""><button class="github text-center"><i class="fa-brands fa-github"></i> GitHub </button></a>
+    <a href=""><button class="linkedin"> <i class="fa-brands fa-linkedin"></i> Linkedin</button></a>
    </div>
 
   </div>
 
 <br>
 
-<div>
-  <h6>Don't have an account? <a href="">Sign Up</a></h6>
+<div class="account">
+  <h6 >Don't have an account? <a href="">Sign Up</a></h6>
 </div>
 
      </form>
