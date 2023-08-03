@@ -177,10 +177,11 @@
 
 body{
   background-color:#ecf1f3;
+  height: 100px;
 }
 .login-main{
-  padding:30px 60px 30px 60px;
-  /* height:100vh; */
+  padding:60px 60px 30px 60px;
+
   
 }
 
