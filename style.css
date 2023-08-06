@@ -32,6 +32,13 @@
 .nav-link:hover {
   color: #000;
 }
+.nav-item a.active{
+
+  /* color: white!important;
+  background-color: black;
+  border-radius: 30px;
+  border: none; */
+}
 
 #signuplogin {
   

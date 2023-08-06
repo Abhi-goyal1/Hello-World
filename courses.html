@@ -16,7 +16,7 @@
 
 </head>
 
-<body>
+<body id="courses">
   <!-- !Navigation Bar -->
   <div class="nav-sum sticky-top">
     <section class="sticky-top " id="nav-bar">
@@ -30,24 +30,23 @@
           <div class="collapse navbar-collapse " id="navbarNav">
             <ul class="navbar-nav ms-auto text-center nav-underline">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="index.html"><i
+                <a class="nav-link" aria-current="page" data-active="index" href="index.html"><i
                     class="fa-solid fa-house text-black "></i>Home</a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="tutorial.html"><i
-                    class="fa-solid fa-chalkboard-user text-black"></i>Tutorials</a>
+                <a class="nav-link" data-active="tutorial" href="tutorial.html"><i class="fa-solid fa-chalkboard-user text-black"></i>Tutorials</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="courses.html"><i class="fa-solid fa-book-open text-black"></i>Courses</a>
+                <a class="nav-link" data-active="courses" href="courses.html"><i class="fa-solid fa-book-open text-black"></i>Courses</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="services.html"><i class="fa-solid fa-briefcase text-black"></i>Services</a>
+                <a class="nav-link" data-active="service" href="services.html"><i class="fa-solid fa-briefcase text-black"></i>Services</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="get-certified.html"><i class="fa-solid fa-star text-black"></i>Get
-                  Certified</a>
+                <a class="nav-link" data-active="get-certified" href="get-certified.html"><i class="fa-solid fa-star text-black"></i>Get Certified</a>
               </li>
+
             </ul>
             <div id="signuplogin" class="d-grid gap-2 d-md-flex justify-content-md-end ms-auto">
               <a href="user/signup.html"> <button id="signup" class="btn align-self-center " type="button"><i class="fa-solid fa-user-plus"></i>
@@ -393,6 +392,7 @@
       });
     });
   </script>
+    <script src="script.js"></script>
 </body>
 
 </html>

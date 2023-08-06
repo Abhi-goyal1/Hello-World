@@ -1,5 +1,5 @@
-let links = document.querySelectorAll(".nav-underline a");
-let bodyId = document.querySelector("body").id;
+let links = document.querySelectorAll(".tech-sectionl a");
+let bodyId = document.querySelector("html").id;
  
 for(let link of links){
     if(link.dataset.active == bodyId){
