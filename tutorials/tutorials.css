@@ -77,9 +77,142 @@
 .new-nav-col {
   padding: 0;
 }
-.tech-section a.active{
+/* .tech-section a.active{
   background-color: #2baffc;
+} */
+
+
+
+
+
+
+ /* Custom CSS to change active tab content color to blue */
+ .nav-tabs .nav-item.show ,
+ .nav-tabs .active {
+   background-color: #2baffc!important; 
+   color: white!important;
+  border-radius: 0px;
+  border: none;
+  /* padding: 0%; */
+ 
+  
+ }
+ .nav-items:hover {
+  background-color:#2baffc;
+ border-radius: 0px;
+  color: #fff!important;
+  border:none;
+ 
 }
+.nav-tabs .nav-item:hover .nav-link {
+  border: none; /* Remove border on hover */
+  color: white;
+  
+}
+.nav-links{
+  border:none!important;
+  padding: 8px 20px 8px 20px;
+  
+}
+
+.tech-section{
+  background-color: #000;
+ padding: 0%;
+  border: none;
+}
+.nav-links{
+  border-radius: 0px;
+  border: none;
+  color: white;
+  border: none;
+}
+ 
+ /* Additional custom CSS for tab content */
+.tab-content {
+  background-color: #f2f2f2;
+  padding: 20px;
+  position: relative; /* Add this line */
+}
+ /* Custom styles for each tab content */
+ #tab1 {
+   background-color: #e0ffff;
+ }
+ 
+ #tab2 {
+   background-color: #ffb6c1;
+ }
+ .last-tab {
+  margin-left: auto;
+}
+
+
+
+
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -20%;
+  height: 100vh;
+  width: 20%;
+  background-color: #f8f9fa;
+  transition: left 0.3s ease-in-out;
+}
+.sidebar.show {
+  left: 0;
+}
+.toggle-btn {
+  display: none;
+}
+@media (max-width: 768px) {
+  .sidebar {
+    left: -100%;
+  }
+  .sidebar.show {
+    left: 0;
+  }
+  .toggle-btn:checked + .sidebar {
+    left: 0;
+  }
+  .toggle-btn:checked ~ .toggle-label:before {
+    content: "\f00d"; /* FontAwesome X icon */
+  }
+}
+.toggle-label {
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 1rem;
+  display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .new-nav-element {
   color: white;
@@ -92,9 +225,26 @@
   background-color: #2baffc;
   color: white;
 }
+.button-link.active .btn {
+  background-color: #2baffc;
+  color: #fff;
+}
+.new-nav a.active{
+  background-color: #2baffc;
+}
 .new-nav a:active {
   background-color: black;
   color: white;
+}
+
+
+
+.button-link.active .btn {
+  background-color: #007bff;
+  color: #fff;
+}
+#darkmode{
+
 }
 
 .darkmode {
@@ -122,7 +272,7 @@
     width: 100%;
     padding: 10px;
   }
-  .nav-link {
+  .navlink {
     margin-top: 35px;
     background-color: #2baffc;
     color: #fdfdfd;
@@ -136,38 +286,38 @@
     margin-top: 34px;
   }
 }
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 1125px) {
   #js {
     display: none;
   }
 }
-@media screen and (max-width: 891px) {
+@media screen and (max-width: 989px) {
   #sql1 {
     display: none;
   }
 }
-@media screen and (max-width: 836px) {
+@media screen and (max-width: 913px) {
   #python {
     display: none;
   }
 }
-@media screen and (max-width: 742px) {
+@media screen and (max-width: 805px) {
   #java {
     display: none;
   }
 }
-@media screen and (max-width: 678px) {
+@media screen and (max-width: 726px) {
   #c {
     display: none;
   }
 }
-@media screen and (max-width: 642px) {
+@media screen and (max-width: 677px) {
   #react {
     display: none;
   }
 }
 
-@media screen and (max-width: 564px) {
+@media screen and (max-width: 582px) {
   #nodejs {
     display: none;
   }
@@ -177,7 +327,7 @@
     display: none;
   }
 }
-@media screen and (max-width: 372px) {
+@media screen and (max-width: 352px) {
   #bootstrap {
     display: none;
   }
