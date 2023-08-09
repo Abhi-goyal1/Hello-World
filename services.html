@@ -5,153 +5,131 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Hello World</title>
+
   <link rel="icon" href="images/icon.png" type="image/icon type" />
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
-  <!-- <link rel="stylesheet" href="style.css" /> -->
-  <link rel="stylesheet" href="services.css">
+  <link rel="stylesheet" href="services.css" />
 
 </head>
 
 <body id="service">
-  <!-- !Navigation Bar -->
-  <div class="nav-sum sticky-top">
-    <section class="sticky-top " id="nav-bar">
-      <nav class="navbar navbar-expand-lg sticky-top">
-        <div class="container-fluid ">
-          <a class="navbar-brand" href="index.html"><img src="images/logo1.png" width="55" alt="" /></a>
-          <button class="navbar-toggler border-0 rounded-19 shadow-lg " type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse " id="navbarNav">
-            <ul class="navbar-nav ms-auto text-center nav-underline">
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" data-active="index" href="index.html"><i
-                    class="fa-solid fa-house text-black "></i>Home</a>
-              </li>
+ <!-- !Navigation Bar -->
+ <div class="nav-sum sticky-top">
+  <section class="sticky-top " id="nav-bar">
+    <nav class="navbar navbar-expand-lg sticky-top">
+      <div class="container-fluid ">
+        <a class="navbar-brand" href="index.html"><img src="images/logo1.png" width="55" alt="" /></a>
+        <button class="navbar-toggler border-0 rounded-19 shadow-lg " type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarNav">
+          <ul class="navbar-nav ms-auto text-center nav-underline">
+            <li class="nav-item">
+              <a class="nav-link navlink" aria-current="page" data-active="index" href="index.html"><i
+                  class="fa-solid fa-house text-black "></i>Home</a>
+            </li>
 
-              <li class="nav-item">
-                <a class="nav-link" data-active="tutorial" href="tutorial.html"><i class="fa-solid fa-chalkboard-user text-black"></i>Tutorials</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-active="courses" href="courses.html"><i class="fa-solid fa-book-open text-black"></i>Courses</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-active="service" href="services.html"><i class="fa-solid fa-briefcase text-black"></i>Services</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-active="get-certified" href="get-certified.html"><i class="fa-solid fa-star text-black"></i>Get Certified</a>
-              </li>
+            <li class="nav-item">
+              <a class="nav-link navlink" data-active="tutorial" href="tutorial.html"><i class="fa-solid fa-chalkboard-user text-black"></i>Tutorials</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link navlink" data-active="courses" href="courses.html"><i class="fa-solid fa-book-open text-black"></i>Courses</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link navlink" data-active="service" href="services.html"><i class="fa-solid fa-briefcase text-black"></i>Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link navlink" data-active="get-certified" href="get-certified.html"><i class="fa-solid fa-star text-black"></i>Get Certified</a>
+            </li>
 
-            </ul>
-            <div id="signuplogin" class="d-grid gap-2 d-md-flex justify-content-md-end ms-auto">
-              <a href="user/signup.html"> <button id="signup" class="btn align-self-center " type="button"><i class="fa-solid fa-user-plus"></i>
-               Sign Up
-             </button></a>
-              <a href="user/login.html"> <button id="login" class="btn" type="button">Log in</button></a>
-             </div>
-          </div>
-        </div>
-      </nav>
-    </section>
-
-
-
-    <!-- !Menu Bar -->
-
-    <div class="container-fluid tech-section">
-      <div class="row new-nav justify-content-center align-items-center">
-        <div class="col new-nav-col">
-          <a href="">
-            <button type="button" class="btn btn-block new-nav-element">
-              HTML
-            </button></a>
-        </div>
-        <div class="col justify-content-center new-nav-col">
-          <a href="">
-            <button class="btn align-items-center btn-block new-nav-element">
-              CSS
-            </button></a>
-        </div>
-        <div id="js" class="col justify-content-center new-nav-col">
-          <a href="">
-            <button class="btn  align-items-center btn-block new-nav-element">
-              JAVASCRIPT
-            </button></a>
-        </div>
-        <div id="bootstrap" class="col justify-content-center new-nav-col">
-          <a href="">
-            <button class="btn align-items-center btn-block new-nav-element">
-              BOOTSTRAP
-            </button></a>
-        </div>
-        <div id="tailwind" class="col justify-content-center new-nav-col">
-          <a href="">
-            <button class="btn align-items-center btn-block new-nav-element">
-              TAILWIND
-            </button></a>
-        </div>
-        <div id="nodejs" class="col justify-content-center new-nav-col">
-          <a href="">
-            <button class="btn align-items-center btn-block new-nav-element">
-              NODEJS
-            </button></a>
-        </div>
-        <div id="react" class="col justify-content-center new-nav-col">
-          <a href="">
-            <button class="btn align-items-center btn-block new-nav-element">
-              REACT
-            </button></a>
-        </div>
-        <div id="c" class="col justify-content-center new-nav-col">
-          <a href="">
-            <button class="btn align-items-center btn-block new-nav-element">
-              C
-            </button></a>
-        </div>
-        <div id="java" class="col justify-content-center new-nav-col">
-          <a href="">
-            <button class="btn align-items-center btn-block new-nav-element">
-              JAVA
-            </button></a>
-        </div>
-        <div id="python" class="col justify-content-center new-nav-col">
-          <a href="">
-            <button class="btn align-items-center btn-block new-nav-element">
-              PYTHON
-            </button></a>
-        </div>
-        <div id="sql1" class="col justify-content-center new-nav-col">
-          <a href="">
-            <button class="btn align-items-center new-nav-element">
-              SQL
-            </button></a>
-        </div>
-        <div id="sql2" class="col justify-content-center new-nav-col ">
-          <div id="darkmode" class=" dropdown">
-            <a class="btn border-0  rounded-0 dropdown-toggle darkmode" href="#" id="dropdownMenuLink"
-              data-bs-toggle="dropdown" aria-expanded="false">
-              <i class="fa-solid fa-circle-half-stroke fa-bounce"></i>
-            </a>
-
-            <ul class="dropdown-menu rounded-0" aria-labelledby="dropdownMenuLink">
-              <li><a class="dropdown-item" href="#">Light Mode</a></li>
-              <li><a class="dropdown-item" href="#">Dark Mode</a></li>
-
-            </ul>
-          </div>
+          </ul>
+          <div id="signuplogin" class="d-grid gap-2 d-md-flex justify-content-md-end ms-auto">
+            <a href="../user/signup.html"> <button id="signup" class="btn align-self-center " type="button"><i class="fa-solid fa-user-plus"></i>
+             Sign Up
+           </button></a>
+            <a href="../user/login.html"> <button id="login" class="btn" type="button">Log in</button></a>
+           </div>
         </div>
       </div>
-    </div>
+    </nav>
+  </section>
 
-    <!-- !Menu bar End -->
 
+
+  <!-- !Menu bar End -->
+
+  <div class="container-fluid tech-section">
+    <ul class="nav nav-tabs ">
+      <li class="nav-item nav-items">
+        <a class="nav-link nav-links " href="/tutorials/html.html">HTML</a>
+      </li>
+      <li class="nav-item nav-items" id="css">
+        <a class="nav-link nav-links"  href="/tutorials/css.html">CSS</a>
+      </li>
+      <li class="nav-item nav-items" id="js">
+        <a class="nav-link nav-links"  href="/tutorials/js.html">JAVASCRIPT</a>
+      </li>
+      <li class="nav-item nav-items" id="bootstrap">
+        <a class="nav-link nav-links"  href="/tutorials/bootstrap.html">BOOTSTRAP</a>
+      </li>
+      <li class="nav-item nav-items" id="tailwind">
+        <a class="nav-link nav-links"  href="/tutorials/tailwind.html">TAILWIND</a>
+      </li>
+      <li class="nav-item nav-items" id="nodejs">
+        <a class="nav-link nav-links"  href="/tutorials/nodejs.html">NODEJS</a>
+      </li>
+      <li class="nav-item nav-items" id="react">
+        <a class="nav-link nav-links"  href="/tutorials/reactjs.html">REACT</a>
+      </li>
+      <li class="nav-item nav-items" id="c">
+        <a class="nav-link nav-links"  href="/tutorials/c.html">C</a>
+      </li>
+      <li class="nav-item nav-items" id="java">
+        <a class="nav-link nav-links"  href="/tutorials/java.html">JAVA</a>
+      </li>
+      <li class="nav-item nav-items" id="python">
+        <a class="nav-link nav-links"  href="/tutorials/python.html">PYTHON</a>
+      </li>
+      <li  class="nav-item nav-items" id="sql1" >
+        <a class="nav-link nav-links"  href="/tutorials/sql.html">SQL</a>
+      </li>
+      <li class="nav-item nav-items   last-tab ">
+        <!-- <div id="darkmode" class=" dropdown">
+          <a class="btn border-0  rounded-0 dropdown-toggle darkmode" href="#" id="dropdownMenuLink"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-circle-half-stroke fa-bounce"></i>
+          </a>
+
+          <ul class="dropdown-menu rounded-0" aria-labelledby="dropdownMenuLink">
+            <li><a class="dropdown-item" href="#">Light Mode</a></li>
+            <li><a class="dropdown-item" href="#">Dark Mode</a></li>
+
+          </ul>
+        </div> -->
+
+        <div class="mode">
+          <input type="checkbox" class="checkbox" id="checkbox">
+          <label for="checkbox" class="checkbox-label">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <span class="ball"></span>
+          </label>
+        </div>
+        
+        
+      </li>
+    </ul>
   </div>
-  <!-- !Navigation Bar End -->
+</div> 
+
+
+
+<!-- !Navigation Bar End -->
 
 
 
@@ -259,8 +237,8 @@
         <div class="col-md-4 col-lg-5">
           <div class="row">
             <div class="col-md-12 col-lg-11 mb-md-0 mb-4">
-              <h2 class="footer-heading"><a href="#" class="logo"><img src="images/logo1.png" alt=""
-                    style="max-width: 20%;"></a></h2>
+              <h2 class="footer-heading"><a href="index.html" class="logo"><img src="images/footer-logo.png" alt=""
+                    style="max-width: 60%; margin-left: -20px;"></a></h2>
               <p>Hello World is designed for easy and structured learning. Our examples are simplified to enhance
                 readability and comprehension and for better relationship and communication</p>
               <!-- <a href="#">read more <span class="ion-ios-arrow-round-forward"></span></a> -->
@@ -352,6 +330,9 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://kit.fontawesome.com/86234a9440.js" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://kit.fontawesome.com/86234a9440.js" crossorigin="anonymous"></script>
   <script>
     AOS.init();
   </script>

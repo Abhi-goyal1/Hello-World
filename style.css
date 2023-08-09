@@ -32,16 +32,15 @@
 .nav-link:hover {
   color: #000;
 }
-.nav-item a.active{
+/* .nav-item a.active{
 
-  /* color: white!important;
+  color: white!important;
   background-color: black;
   border-radius: 30px;
-  border: none; */
-}
+  border: none;
+} */
 
 #signuplogin {
-  
 }
 #signup {
   background-color: #000;
@@ -78,6 +77,129 @@
 .new-nav-col {
   padding: 0;
 }
+/* .tech-section a.active{
+  background-color: #2baffc;
+} */
+
+
+
+.nav-tabs .nav-item .nav-link.active {
+  background-color: #007bff; /* Change this color to your desired active link color */
+  color: #ffffff; /* Change this color to your desired text color */
+}
+ /* Custom CSS to change active tab content color to blue */
+ .nav-tabs .nav-item.show ,
+ .nav-tabs .active {
+   background-color: #2baffc!important; 
+   color: white!important;
+  border-radius: 0px;
+  border: none;
+  /* padding: 0%; */
+ 
+  
+ }
+ .nav-items:hover {
+  background-color:#2baffc;
+ border-radius: 0px;
+  color: #fff!important;
+  border:none;
+ 
+}
+.nav-tabs .nav-item:hover .nav-link {
+  border: none; /* Remove border on hover */
+  color: white;
+  
+}
+.nav-links{
+  border:none!important;
+  padding: 8px 20px 8px 20px;
+  
+}
+.nav-tabs{
+  border-bottom: 0px;
+}
+
+.tech-section{
+  background-color: #000;
+ padding: 0%;
+  border: none;
+}
+.nav-links{
+  border-radius: 0px;
+  border: none;
+  color: white;
+  border: none;
+}
+ 
+ /* Additional custom CSS for tab content */
+.tab-content {
+  background-color: #f2f2f2;
+  padding: 20px;
+  position: relative; /* Add this line */
+}
+ /* Custom styles for each tab content */
+
+ .last-tab {
+  margin-left: auto;
+}
+
+.last-tab:hover{
+ background-color: transparent;
+}
+
+
+
+
+.mode{
+  display: flex;
+  justify-content: center;
+  padding-right: 10px;
+ 
+}
+
+
+.checkbox {
+  opacity: 0;
+ 
+  
+}
+
+.checkbox-label {
+  background-color: #fff;
+  margin-top: 4px;
+  width: 60px;
+  height: 26px;
+  border-radius: 50px;
+  position: relative;
+  padding: 5px;
+ 
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+
+.fa-moon {color: #f1c40f;}
+
+.fa-sun {color: #f39c12;}
+
+.checkbox-label .ball {
+  background-color: #000;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  transition: transform 0.1s linear;
+}
+
+.checkbox:checked + .checkbox-label .ball {
+  transform: translateX(34px);
+}
+
+
 
 .new-nav-element {
   color: white;
@@ -85,13 +207,31 @@
   width: 100%;
   font-family: "Varela Round", sans-serif;
 }
+
 .new-nav-element:hover {
   background-color: #2baffc;
   color: white;
 }
+.button-link.active .btn {
+  background-color: #2baffc;
+  color: #fff;
+}
+.new-nav a.active{
+  background-color: #2baffc;
+}
 .new-nav a:active {
   background-color: black;
   color: white;
+}
+
+
+
+.button-link.active .btn {
+  background-color: #007bff;
+  color: #fff;
+}
+#darkmode{
+
 }
 
 .darkmode {
@@ -103,7 +243,6 @@
   background-color: #000;
   color: white;
 }
-
 
 @media screen and (max-width: 993px) {
   .navbar-collapse {
@@ -120,7 +259,7 @@
     width: 100%;
     padding: 10px;
   }
-  .nav-link {
+  .navlink {
     margin-top: 35px;
     background-color: #2baffc;
     color: #fdfdfd;
@@ -134,52 +273,56 @@
     margin-top: 34px;
   }
 }
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 1152px) {
   #js {
     display: none;
   }
 }
-@media screen and (max-width: 891px) {
+@media screen and (max-width: 1014px) {
   #sql1 {
     display: none;
   }
 }
-@media screen and (max-width: 836px) {
+@media screen and (max-width: 942px) {
   #python {
     display: none;
   }
 }
-@media screen and (max-width: 742px) {
+@media screen and (max-width: 834px) {
   #java {
     display: none;
   }
 }
-@media screen and (max-width: 678px) {
+@media screen and (max-width: 751px) {
   #c {
     display: none;
   }
 }
-@media screen and (max-width: 642px) {
+@media screen and (max-width: 702px) {
   #react {
     display: none;
   }
 }
 
-@media screen and (max-width: 564px) {
+@media screen and (max-width: 605px) {
   #nodejs {
     display: none;
   }
 }
-@media screen and (max-width: 475px) {
+@media screen and (max-width: 507px) {
   #tailwind {
     display: none;
   }
 }
-@media screen and (max-width: 372px) {
+@media screen and (max-width: 385px) {
   #bootstrap {
     display: none;
   }
 }
+
+
+
+
 
 /* !Main container start---------------------------------------------------------- */
 
