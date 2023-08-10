@@ -66,6 +66,14 @@
 
     <div class="container-fluid tech-section">
       <ul class="nav nav-tabs ">
+        <li class="nav-item nav-items ">
+          <div class="top-bar">
+            <div class="hamburger" onclick="toggleSidebar()">
+              &#9776;
+            </div>
+          </div>
+        
+        </li>
         <li class="nav-item nav-items">
           <a class="nav-link nav-links active-link" href="/tutorials/html.html">HTML</a>
         </li>
@@ -132,10 +140,37 @@
 
     </div>
   </div> 
-
-
-
   <!-- !Navigation Bar End -->
+
+
+
+
+
+
+
+
+
+<div >
+    
+  <div class="sidebar" id="sidebar">
+    <a href="#" onclick="showContent('home')" id="home-link">Home</a>
+    <a href="#" onclick="showContent('about')" id="about-link">About</a>
+    <a href="#" onclick="showContent('services')" id="services-link">Services</a>
+    <a href="#" onclick="showContent('contact')" id="contact-link">Contact</a>
+  </div>
+
+  <div class="main-container" id="main-container">
+    <h1>Welcome to the Home Page</h1>
+    <p>This is the main content area that will change when you click on a link in the sidebar.</p>
+  </div>
+
+
+
+</div>
+
+
+
+
 
 
 

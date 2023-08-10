@@ -244,54 +244,135 @@
     margin-top: 34px;
   }
 }
-@media screen and (max-width: 1125px) {
+@media screen and (max-width: 1151px) {
   #js {
     display: none;
   }
 }
-@media screen and (max-width: 989px) {
+@media screen and (max-width: 1011px) {
   #sql1 {
     display: none;
   }
 }
-@media screen and (max-width: 913px) {
+@media screen and (max-width: 969px) {
   #python {
     display: none;
   }
 }
-@media screen and (max-width: 805px) {
+@media screen and (max-width: 866px) {
   #java {
     display: none;
   }
 }
-@media screen and (max-width: 726px) {
+@media screen and (max-width: 779px) {
   #c {
     display: none;
   }
 }
-@media screen and (max-width: 677px) {
+@media screen and (max-width: 733px) {
   #react {
     display: none;
   }
 }
 
-@media screen and (max-width: 582px) {
+@media screen and (max-width: 633px) {
   #nodejs {
     display: none;
   }
 }
-@media screen and (max-width: 475px) {
+@media screen and (max-width: 528px) {
   #tailwind {
     display: none;
   }
 }
-@media screen and (max-width: 352px) {
+@media screen and (max-width: 418px) {
   #bootstrap {
     display: none;
   }
 }
 
 /* !------------------------TOP NAVBAR END---------------------- */
+
+
+.top-bar {
+  /* position: fixed; */
+  /* top: 0;
+  left: 0px;
+  right: 0; */
+  /* height: 10px; */
+  font-size: 10px;
+  /* background-color: #d22020; */
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: flex-end; */
+  /* z-index: 1000; */
+  /* width:40px ; */
+  padding: 0px;
+}
+
+.hamburger {
+   display: none;
+  padding: 7px 11px 8px 11px;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+
+
+/* Sidebar styling */
+.sidebar {
+  position: fixed;
+  top: 96px;
+  /* left: -250px; */
+  width: 250px;
+  height: calc(100vh - 50px);
+  background-color: #343a40;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+.sidebar a {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar a:hover {
+  background-color: #495057;
+}
+
+/* Main content styling */
+.main-container {
+  margin-top: 0px;
+  margin-left: 250px; /* Changed from 270px */
+  padding: 20px;
+  background-color: #f0f0f0;
+  min-height: calc(100vh - 50px);
+}
+
+
+
+@media screen and (max-width: 989px) {
+  .hamburger{
+    display: block; /* Show only on small devices */
+  }
+  .sidebar{
+    left: -250px;
+  }
+  .main-container{
+    margin-left: 0px;
+  }
+}
+
+
+
+
+
+
+
 
 /* !---------------------Footer section Start------------------------------------- */
 
