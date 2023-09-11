@@ -153,16 +153,25 @@
 <div >
     
   <div class="sidebar" id="sidebar">
-    <a href="#" onclick="showContent('home')" id="home-link">Home</a>
+    <!-- <a href="#" onclick="showContent('home')" id="home-link">Home</a>
     <a href="#" onclick="showContent('about')" id="about-link">About</a>
     <a href="#" onclick="showContent('services')" id="services-link">Services</a>
-    <a href="#" onclick="showContent('contact')" id="contact-link">Contact</a>
+    <a href="#" onclick="showContent('contact')" id="contact-link">Contact</a> -->
+    <ul>
+      <li><a href="home.html" target="contentFrame">Home</a></li>
+      <li><a href="about.html" target="contentFrame">About</a></li>
+      <!-- Add other sidebar links here -->
+  </ul>
   </div>
+  <!-- Content iframe -->
+  <div class="content main-container"  id="main-container">
+    <iframe name="contentFrame"  src="home.html"></iframe>
+</div>
 
-  <div class="main-container" id="main-container">
+  <!-- <div class="main-container" id="main-container">
     <h1>Welcome to the Home Page</h1>
     <p>This is the main content area that will change when you click on a link in the sidebar.</p>
-  </div>
+  </div> -->
 
 
 

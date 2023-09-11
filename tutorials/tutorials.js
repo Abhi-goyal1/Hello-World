@@ -14,6 +14,9 @@
 
 
 
+
+  
+
   let isSidebarOpen = false;
   const sidebar = document.getElementById('sidebar');
   const mainContainer = document.getElementById('main-container');
@@ -49,3 +52,17 @@
       link.classList.remove('active-link');
     });
   }
+
+
+  function updateActiveLinkColor() {
+    const iframe = document.querySelector('iframe[name="contentFrame"]');
+    const page = iframe.contentWindow.location.pathname.split('/').pop().split('.')[0];
+    
+    const links = document.querySelectorAll('.sidebar a');
+    links.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('data-page') === page) {
+            link.classList.add('active');
+        }
+    });
+}

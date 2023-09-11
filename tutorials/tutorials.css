@@ -343,6 +343,9 @@
 .sidebar a:hover {
   background-color: #495057;
 }
+.active-link {
+  background-color: #495057;
+}
 
 /* Main content styling */
 .main-container {
