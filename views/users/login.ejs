@@ -1,0 +1,409 @@
+<% layout("/layouts/boilerplate") %>
+<style>
+  .login-main {
+    padding: 60px 60px 30px 60px;
+
+  }
+
+  .login-main-1 {
+    border-radius: 30px 0px 0px 30px;
+
+    /* background-color:#ecf1f3; */
+
+
+    background: #ecf1f3;
+    box-shadow: 5px 5px 10px#c7dbe8,
+      -5px -5px 10px #ffffff;
+  }
+
+  .login-main-1 img {
+    /* margin-top: 30px; */
+  }
+
+  .login-main-2 h2 {
+    font-family: "Lexend", sans-serif;
+    color: #000;
+  }
+
+  .login-main-2 h6 {
+    padding: 10px;
+    color: #00000078;
+  }
+
+  .email input {
+    width: 70% !important;
+    padding: 10px;
+    padding-left: 30px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 30px;
+    background: #ECF0F3;
+    box-shadow: inset 5px 5px 10px#c7dbe8,
+      inset -5px -5px 10px #ffffff;
+  }
+
+  .password input {
+
+    width: 70% !important;
+    padding: 10px;
+    padding-left: 30px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 30px;
+    background: #ECF0F3;
+    box-shadow: inset 5px 5px 10px #c7dbe8,
+      inset -5px -5px 10px #ffffff;
+  }
+
+  .email input:focus {
+    outline: none;
+  }
+
+  .password input:focus {
+    outline: none;
+  }
+
+  .email ::placeholder {
+    color: #00000078;
+    font-family: "Varela Round", sans-serif;
+
+
+  }
+
+  .password ::placeholder {
+    color: #00000078;
+    font-family: "Varela Round", sans-serif;
+  }
+
+  .form-check-input {}
+
+  .form-check-label {
+    color: #00000078;
+    font-family: "Varela Round", sans-serif;
+
+  }
+
+  .forgot-password-link {
+    text-decoration: none;
+  }
+
+
+
+  .login-row {
+    background: #ecf1f3;
+    border-radius: 30px;
+    box-shadow: 5px 5px 10px #c4c8ca,
+      -5px -5px 10px #ffffff;
+  }
+
+  .login-img {
+    max-width: 100%;
+  }
+
+  .hwatom {
+    max-width: 18%;
+  }
+
+  #more-tutorials {
+    padding: 10px;
+  }
+
+  .orange {
+    font-size: 20px;
+  }
+
+  #more-tutorials i {
+    padding-left: 9px;
+  }
+
+  #more-tutorials button {
+    width: 70%;
+    padding: 6px;
+    background-color: #000;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-family: "Varela Round", sans-serif;
+  }
+
+  #more-tutorials button:hover {
+    background-color: #2baffc;
+    border: none;
+    color: white;
+  }
+
+
+  .or-login {
+    color: #00000078;
+    font-family: "Varela Round", sans-serif;
+  }
+
+  .social1 button {
+
+    border: none;
+    /* background-color: #000; */
+    color: white;
+    width: 130px;
+    padding: 10px;
+    font-family: "Varela Round", sans-serif;
+    border-radius: 30px;
+  }
+
+  .social1 i {
+    padding-right: 10px;
+    /* font-size: 20px; */
+
+  }
+
+  .social2 i {
+    padding-right: 10px;
+    /* font-size: 20px; */
+
+  }
+
+  .social2 button {
+    border: none;
+    /* background-color: #000; */
+    color: white;
+    width: 130px;
+    padding: 10px;
+
+    border-radius: 30px;
+  }
+
+  .github {
+    background-color: #000;
+  }
+
+  .facebook {
+    background: #3B5999;
+  }
+
+  .linkedin {
+    background-color: #0077B5;
+  }
+
+  .account {
+    color: #00000078;
+    font-family: "Varela Round", sans-serif;
+
+  }
+
+  .account h6 {
+    padding-top: 0;
+  }
+
+  .account a {
+    text-decoration: none;
+  }
+
+  @media screen and (max-width:768px) {
+    .login-main-1 img {
+      max-width: 80%;
+    }
+
+    .login-main-1 {
+      border-radius: 30px 30px 30px 30px;
+    }
+
+    .login-main-2 {
+      margin-top: 40px;
+    }
+
+    .login-main-1 {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width:570px) {
+    .email input {
+      width: 80% !important;
+
+    }
+
+    .password input {
+
+      width: 80% !important;
+
+    }
+
+    #more-tutorials button {
+      width: 80%;
+
+    }
+  }
+
+  @media screen and (max-width:500px) {
+    .email input {
+      width: 90% !important;
+
+    }
+
+    .password input {
+
+      width: 90% !important;
+
+    }
+
+    #more-tutorials button {
+      width: 90%;
+
+    }
+  }
+
+  @media screen and (max-width:460px) {
+
+    .login-main {
+      padding: 30px 30px 30px 30px;
+
+
+    }
+  }
+
+  @media screen and (max-width:400px) {
+    .email input {
+      width: 100% !important;
+
+    }
+
+    .password input {
+
+      width: 100% !important;
+
+    }
+
+    #more-tutorials button {
+      width: 100%;
+
+    }
+
+  }
+
+  @media screen and (max-width:350px) {
+
+    .social1 button {
+
+      border: none;
+      /* background-color: #000; */
+      color: white;
+      width: 120px;
+      padding: 10px;
+      font-family: "Varela Round", sans-serif;
+      border-radius: 30px;
+    }
+
+    .social2 button {
+
+      border: none;
+      /* background-color: #000; */
+      color: white;
+      width: 120px;
+      padding: 10px;
+      font-family: "Varela Round", sans-serif;
+      border-radius: 30px;
+    }
+
+    .form-check {
+      padding-right: 0px;
+    }
+
+    .forgot {
+      padding-left: 0px;
+    }
+  }
+
+
+
+  .rights {
+    background-color: #000;
+    color: white;
+    padding: 20px;
+    word-spacing: 3px;
+
+  }
+
+  .rights a {
+    text-decoration: none;
+  }
+
+  @media screen and (max-width:530px) {
+
+    .rights h6 {
+      font-size: 10px;
+    }
+
+  }
+
+
+  .footer-02 {
+    background-color: #f4f9fd;
+    margin-top: 3rem;
+    padding: 20px;
+  }
+  
+</style>
+
+
+
+<!-- !login Main section Start -->
+
+<div class="container-fluid login-main">
+  <div class="row login-row">
+    <div class="col-sm-12 col-md-6 login-main-1 text-center">
+      <img src="../images/login.png" alt="" class="login-img">
+    </div>
+    <div class="col-sm-12 col-md-6 login-main-2 text-center">
+      <a href="../index.html"> <img src="../images/hwatom.png" alt="" class="hwatom "></a>
+      <div>
+        <a href="../index.html"> <img src="../images/heloworldhead.png" alt="" class="hwatom "></a>
+      </div>
+      <h2>Welcome back!</h2>
+      <h6>Log in to continue learning</h6>
+
+      <form action="/login" method="POST"  class="needs-validation">
+        <div class="email">
+          <input type="email" placeholder="Email Address" id="email" name="email" required>
+        </div>
+        <div class="password">
+          <input type="password" placeholder="Password" id="password" name="password" required>
+        </div>
+
+        <div class="row justify-content-evenly">
+          <div class="col-auto">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="rememberMe">
+              <label class="form-check-label" for="rememberMe">Remember Me</label>
+            </div>
+          </div>
+          <div class="col-auto forgot">
+            <a href="#" class="forgot-password-link">Forgot Password?</a>
+          </div>
+        </div>
+
+        <div id="more-tutorials" class="col-12 text-center">
+          <a href=""><button class="btn  circle pulse orange ">Login <i class="fa-solid fa-forward"></i></button></a>
+        </div>
+        <p class="or-login">Or Login With</p>
+      </form>
+
+
+      <div class="">
+        <div class="d-flex flex-wrap justify-content-evenly pb-2 social1">
+          <a href=""><button class="google bg-danger"><i class="fa-brands fa-google"></i> Google</button></a>
+          <a href=""><button class="facebook"><i class="fa-brands fa-facebook-f"></i> Facebook</button></a>
+        </div>
+        <div class="d-flex flex-wrap justify-content-evenly pb-2 social2">
+          <a href=""><button class="github text-center"><i class="fa-brands fa-github"></i> GitHub </button></a>
+          <a href=""><button class="linkedin"> <i class="fa-brands fa-linkedin"></i> Linkedin</button></a>
+        </div>
+      </div>
+      <br>
+      <div class="account">
+        <h6>Don't have an account? <a href="/user/signup">Sign Up</a></h6>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- !login Main section End -->

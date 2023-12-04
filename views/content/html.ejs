@@ -1,0 +1,62 @@
+
+<% layout("/layouts/boilerplate") %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Sidebar</title>
+  <style>
+    /* Add some basic CSS to style the sidebar and content area */
+    #container {
+      display: flex;
+    }
+
+    #sidebar {
+      width: 200px;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+
+    #content {
+      flex: 1;
+      padding: 20px;
+    }
+
+    #sidebar a {
+      display: block;
+      margin-bottom: 10px;
+      text-decoration: none;
+      color: #333;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="sidebar">
+      <a href="#" onclick="loadContent('page1')">Page 1</a>
+      <a href="#" onclick="loadContent('page2')">Page 2</a>
+      <!-- Add more links for additional pages -->
+    </div>
+    <div id="content">
+      <h2>Welcome to Dynamic Content</h2>
+      <div id="dynamicContent">
+        <!-- Dynamic content will be loaded here -->
+      </div>
+    </div>
+  </div>
+  <script>
+    async function loadContent(page) {
+      try {
+        const response = await fetch(`/api/page/${page}`);
+        const data = await response.json();
+        document.getElementById('dynamicContent').innerHTML = `<p>${data.content}</p>`;
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  </script>
+</body>
+</html>

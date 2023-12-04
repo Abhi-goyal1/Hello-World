@@ -1,0 +1,170 @@
+<% layout("/layouts/contentboilerplate") %>
+
+  <style>
+ 
+    /* Sidebar styles */
+    .sidebar {
+      
+      width: 250px;
+      position: fixed;
+      top: 90px;
+      left: -250px;
+      background-color: #333;
+      padding-top: 20px;
+      color: white;
+      transition: 0.5s;
+      z-index: 1;
+      overflow-y: auto; /* Make the sidebar scrollable */
+    }
+
+    .sidebar a {
+      padding:8px;
+      text-decoration: none;
+      font-size: 18px;
+      color: white;
+      display: block;
+    }
+
+    .sidebar a:hover {
+      background-color: #555;
+    }
+
+    .menu-icon {
+      cursor: pointer;
+      font-size: 24px;
+      margin-left: 10px;
+      margin-top: 10px;
+    }
+
+    /* Content styles */
+    .content {
+      margin-left: 0;
+      transition: margin-left 0.5s;
+      padding: 16px;
+      flex: 1; /* Fill the remaining vertical space */
+      overflow-y: auto; /* Make the content area scrollable */
+    }
+    .tab-content{
+      background-color: white;
+    }
+    .tab-pane.active::after {
+      background-color: transparent;
+    }
+  
+ /* Style for the active link in the sidebar */
+ .sidebar a.active {
+    background-color: #2baffc;
+  }
+
+  .sidebar a:hover {
+    background-color: #2baffc;
+  }
+
+
+
+
+  .dropdown {
+  width : 300px; 
+  background: #d9d9d9;
+  margin : 40px auto; 
+}
+
+.checkbox-label .ball{
+  display: none;
+}
+
+span {
+ display: none;
+}
+
+
+
+.slide {
+  clear:both;
+  width:100%;
+  height:0px;
+  overflow: hidden;
+  text-align: center;
+  transition: height .4s ease;
+}
+
+.slide li {padding : 30px;}
+
+#touch {position: absolute; opacity: 0; height: 0px;}    
+
+#touch:checked + .slide {height: 300px;} 
+
+
+
+    @media screen and (min-width: 998px) {
+      .sidebar {
+        height: 100%;
+        width: 250px;
+        position: fixed;
+        top: 90px;
+        left: 0px;
+        background-color: #000000;
+        padding-top: 20px;
+        color: white;
+        transition: 0.5s;
+      }
+      #main-content{
+    margin-left: 230px;
+  }
+    }
+
+
+
+
+
+
+
+
+
+
+  </style>
+  <title>Responsive Sidebar with EJS</title>
+</head>
+<body>
+    
+<div class="sidebar" id="sidebar">
+  <h4 class="text-center py-2"><b>HTML BASICS</b></h4>
+  <a href="#intro">HTML Introduction</a>
+  <a href="#about"></a>
+  <a href="#services">Services</a>
+
+ 
+ 
+  </div>
+  
+  <!-- <div class="dropdown">
+    <label for="touch"><b>HTML Basics</b></label>               
+    <input type="checkbox" id="touch"> 
+    <ul class="slide">
+      <li><a href="#">Lorem Ipsum</a></li> 
+      <li><a href="#">Lorem Ipsum</a></li>
+      <li><a href="#">Lorem Ipsum</a></li>
+      <li><a href="#">Lorem Ipsum</a></li>
+    </ul>
+  </div>  -->
+  
+</div>
+
+
+<div class="content" id="main-content">
+  <div class="tab-content">
+    <div class="tab-pane fade show active" id="intro">
+      <% layout("/tutorials/HTML/htmlIntro") %>
+    </div>
+    <div class="tab-pane fade" id="about">
+      <p> ipsum dolor sit amet consectetur adipisicing elit. Ad, repellat! Vitae porro, architecto dolor quis ex, blanditiis incidunt obcaecati tenetur molestiae quos repudiandae illo? Obcaecati qui molestiae vel eos? Cum?</p>
+    </div>
+    <div class="tab-pane fade" id="services">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, repellat! Vitae porro, architecto dolor quis ex, blanditiis incidunt obcaecati tenetur molestiae quos repudiandae illo? Obcaecati qui molestiae vel eos? Cum?</p>
+    </div>
+    <div class="tab-pane fade" id="contact">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, repellat! Vitae porro, architecto dolor quis ex, blanditiis incidunt obcaecati tenetur molestiae quos repudiandae illo? Obcaecati qui molestiae vel eos? Cum?</p>
+    </div>
+  </div>
+</div>
+

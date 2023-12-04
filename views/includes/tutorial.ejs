@@ -1,0 +1,467 @@
+
+
+<% layout("/layouts/boilerplate") %>
+<style>
+  
+
+/* !Tutorial section start---------------------------------------------------------- */
+#searching {
+  margin-top: 0%;
+  margin-bottom: 40px;
+}
+#searching input {
+  box-shadow: rgba(43, 175, 252, 0.65) 0px 0px 20px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border: none;
+  padding: 15px;
+  margin-top: 10px;
+  width: 40%;
+  /* box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+    rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+    rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset; */
+}
+#searching button {
+  box-shadow: rgba(43, 175, 252, 0.65) 0px 0px 20px;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  border: none;
+  background-color: #000;
+  color: white;
+  width: 20%;
+  margin-top: 10px;
+  font-size: 20px;
+  /* box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+    rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+    rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset; */
+}
+#searching button:hover {
+  background-color: #2baffc;
+}
+#searching input:focus {
+  outline: none;
+  border: 1px solid #00acee;
+}
+.card-body {
+  font-family: "Caudex", serif;
+}
+.skill-section {
+  /* border-radius: 20px; */
+
+  margin: 0px;
+  /* background-image: linear-gradient(to right top, #6ac2f5, #c0d9fa, #cfd1e162); */
+  background-image: url(images/vecteezy_abstract-gradient-pastel-blue-and-purple-background-neon_8617161.jpg);
+}
+.skill-section img {
+  max-width: 100%;
+}
+.heading {
+  padding: 20px;
+  font-family: "Manrope", sans-serif;
+  font-size: 45px;
+  color: #000;
+}
+.heading span {
+  color: #2baffc;
+}
+#heading-pera {
+  color: #000000;
+  font-family: "Caudex", serif;
+  font-size: 20px;
+}
+#skill-section1 {
+  padding: 20px;
+  padding-bottom: 60px;
+  /* margin-top: 50px; */
+}
+#skill-section1 a {
+  text-decoration: none;
+  color: #000;
+}
+#skill-content {
+  padding: 10px;
+
+  background-color: white;
+  margin-top: 40px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: all 100ms ease-in-out;
+}
+#skill-content:hover {
+  box-shadow: rgba(43, 175, 252, 0.538) 0px 2px 4px 0px,
+    rgba(43, 175, 252, 0.521) 0px 2px 16px 0px;
+  transition: all 500ms cubic-bezier(1.19, 1, 0.22, 1);
+  border: 1px solid #2baffc;
+}
+#skill-content img {
+  max-width: 30%;
+  height: auto;
+}
+#more-tutorials {
+  padding: 30px;
+}
+#more-tutorials i {
+  padding-left: 9px;
+}
+#more-tutorials button {
+  width: 200px;
+  padding: 10px;
+  background-color: #000;
+  border: none;
+  border-radius: 30px;
+  color: white;
+  font-family: "Varela Round", sans-serif;
+}
+#more-tutorials button:hover {
+  background-color: #2baffc;
+  border: none;
+  color: white;
+}
+.bottom-img2 {
+  max-width: 100%;
+}
+@media screen and (max-width: 700px) {
+  #searching input {
+    padding: 10px;
+    width: 60%;
+  }
+  #searching input::placeholder {
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 572px) {
+  #skill-section1 {
+    margin-top: 30px;
+  }
+}
+@media screen and (max-width: 475px) {
+  .heading {
+    text-align: center !important;
+    font-size: 35px;
+  }
+  #heading-pera {
+    font-size: 17px;
+  }
+  .card-title {
+    font-size: 19px;
+  }
+}
+@media screen and (max-width: 382px) {
+  .heading {
+    font-size: 25px;
+  }
+  #heading-pera {
+    font-size: 14px;
+  }
+  .card-title {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 770px) {
+  .boys {
+    display: none;
+  }
+}
+
+.footer-02 {
+ margin-top: 0;
+}
+/* Style for the active link */
+
+
+</style>
+
+
+<!-- !featured tutorial Section Start -->
+ <div class="container-fluid abi">
+    <div >
+      <h1 class="heading text-center">Featured <span> Tutorials</span></h1>
+      <div class=" underline2 separator text-center" style="margin-left: 49%;"></div>
+
+    <div class="row">
+      <div class="col-sm-12 col-md-12 ">
+        <form id="searching" class="d-flex justify-content-center" action="">
+          <input  type="search" placeholder="Search e.g. HTML">
+          <button id="searchInput" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="skill-section">
+    <div class="container">
+     <div id="skill-section1" class="row">
+        <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-duration="900">
+          <div id="skill-content" class="card text-center">
+            <a href="page1.html">
+              <img src="images/html-5_5968267.png" class="card-img-top" alt="Image 1">
+              <div class="card-body">
+                <h4 class="card-title">HTML</h4>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-duration="1200">
+          <div id="skill-content" class="card text-center">
+            <a href="page1.html">
+              <img src="images/css-3_5968242.png" class="card-img-top" alt="Image 1">
+              <div class="card-body">
+                <h4 class="card-title">CSS</h4>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-duration="1400">
+          <div id="skill-content" class="card text-center">
+            <a href="page1.html">
+              <img src="images/js_5968292.png" class="card-img-top" alt="Image 1">
+              <div class="card-body">
+                <h4 class="card-title">JAVASCRIPT</h4>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-duration="900">
+          <div id="skill-content" class="card text-center">
+            <a href="page1.html">
+              <img src="images/Bootstrap.png" class="card-img-top" alt="Image 1">
+              <div class="card-body">
+                <h4 class="card-title">BOOTSTRAP</h4>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-duration="1400">
+          <div id="skill-content" class="card text-center">
+            <a href="page1.html">
+              <img src="images/react.png" class="card-img-top" alt="Image 1">
+              <div class="card-body">
+                <h4 class="card-title">REACT</h4>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-duration="1600">
+          <div id="skill-content" class="card text-center">
+            <a href="page1.html">
+              <img src="images/nodejs.png" class="card-img-top" alt="Image 1">
+              <div class="card-body">
+                <h4 class="card-title">NODE.JS</h4>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-duration="900">
+          <div id="skill-content" class="card text-center">
+            <a href="page1.html">
+              <img src="images/c.png" class="card-img-top" alt="Image 1">
+              <div class="card-body">
+                <h4 class="card-title">C</h4>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-duration="1400">
+          <div id="skill-content" class="card text-center">
+            <a href="page1.html">
+              <img src="images/java.png" class="card-img-top" alt="Image 1">
+              <div class="card-body">
+                <h4 class="card-title">JAVA</h4>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-duration="1600">
+          <div id="skill-content" class="card text-center">
+            <a href="page1.html">
+              <img src="images/python.png" class="card-img-top" alt="Image 1">
+              <div class="card-body">
+                <h4 class="card-title">PYTHON</h4>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-duration="1600">
+          <div id="skill-content" class="card text-center">
+            <a href="page1.html">
+              <img src="images/icons8-django-512.png" class="card-img-top" alt="Image 1">
+              <div class="card-body">
+                <h4 class="card-title">DJANGO</h4>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-duration="1600">
+          <div id="skill-content" class="card text-center">
+            <a href="page1.html">
+              <img src="images/c-sharp.png" class="card-img-top" alt="Image 1">
+              <div class="card-body">
+                <h4 class="card-title">C-SHARP</h4>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-duration="1600">
+          <div id="skill-content" class="card text-center">
+            <a href="page1.html">
+              <img src="images/c-.png" class="card-img-top" alt="Image 1">
+              <div class="card-body">
+                <h4 class="card-title">C++</h4>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-duration="1600">
+          <div id="skill-content" class="card text-center">
+            <a href="page1.html">
+              <img src="images/php.png" class="card-img-top" alt="Image 1">
+              <div class="card-body">
+                <h4 class="card-title">PHP</h4>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-duration="1600">
+          <div id="skill-content" class="card text-center">
+            <a href="page1.html">
+              <img src="images/tailwind.png" class="card-img-top" alt="Image 1">
+              <div class="card-body">
+                <h4 class="card-title">TAILWIND</h4>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-duration="1600">
+          <div id="skill-content" class="card text-center">
+            <a href="page1.html">
+              <img src="images/angular.png" class="card-img-top" alt="Image 1">
+              <div class="card-body">
+                <h4 class="card-title">ANGULAR</h4>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-duration="1600">
+          <div id="skill-content" class="card text-center">
+            <a href="page1.html">
+              <img src="images/nextjs.png" class="card-img-top" alt="Image 1">
+              <div class="card-body">
+                <h4 class="card-title">NEXTJS</h4>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-duration="1600">
+          <div id="skill-content" class="card text-center">
+            <a href="page1.html">
+              <img src="images/vuejs.png" class="card-img-top" alt="Image 1">
+              <div class="card-body">
+                <h4 class="card-title">VUE.JS</h4>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-duration="1600">
+          <div id="skill-content" class="card text-center">
+            <a href="page1.html">
+              <img src="images/kotlin-512.png" class="card-img-top" alt="Image 1">
+              <div class="card-body">
+                <h4 class="card-title">KOTLIN</h4>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-duration="1600">
+          <div id="skill-content" class="card text-center">
+            <a href="page1.html">
+              <img src="images/jquery.png" class="card-img-top" alt="Image 1">
+              <div class="card-body">
+                <h4 class="card-title">JQUERY</h4>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-duration="1600">
+          <div id="skill-content" class="card text-center">
+            <a href="page1.html">
+              <img src="images/json-file.png" class="card-img-top" alt="Image 1">
+              <div class="card-body">
+                <h4 class="card-title">JSON</h4>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-duration="1600">
+          <div id="skill-content" class="card text-center">
+            <a href="page1.html">
+              <img src="images/mysql.png" class="card-img-top" alt="Image 1">
+              <div class="card-body">
+                <h4 class="card-title">MySql</h4>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-duration="1600">
+          <div id="skill-content" class="card text-center">
+            <a href="page1.html">
+              <img src="images/mongodb.png" class="card-img-top" alt="Image 1">
+              <div class="card-body">
+                <h4 class="card-title">MONGODB</h4>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-duration="1600">
+          <div id="skill-content" class="card text-center">
+            <a href="page1.html">
+              <img src="images/postgresql.png" class="card-img-top" alt="Image 1">
+              <div class="card-body">
+                <h4 class="card-title">PostgreSQL</h4>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-duration="1600">
+          <div id="skill-content" class="card text-center">
+            <a href="page1.html">
+              <img src="images/sass.png" class="card-img-top" alt="Image 1">
+              <div class="card-body">
+                <h4 class="card-title">SASS</h4>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-duration="1600">
+          <div id="skill-content" class="card text-center">
+            <a href="page1.html">
+              <img src="images/ruby.png" class="card-img-top" alt="Image 1">
+              <div class="card-body">
+                <h4 class="card-title">RUBY</h4>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-duration="1600">
+          <div id="skill-content" class="card text-center">
+            <a href="page1.html">
+              <img src="images/git.png" class="card-img-top" alt="Image 1">
+              <div class="card-body">
+                <h4 class="card-title">GIT</h4>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="row  ">
+      <div id="more-tutorials" class="col-12 text-center" data-aos="fade-right" data-aos-duration="1000">
+        <a href=""><button class="btn  ">All Tutorials <i class="fa-solid fa-angles-right fa-bounce"></i></button></a>
+      </div> -->
+    </div>
+    
+  </div>
+  
+</div>
+</body>

@@ -1,0 +1,156 @@
+<% layout("/layouts/boilerplate") %>
+<style>
+    
+/* !Signup main Section start  */
+
+.heading-1 {
+  /* font-family: "Manrope", sans-serif; */
+  font-family: "Lexend", sans-serif;
+  font-weight: 600;
+  color: #2baffc;
+  background-color: #00abee43;
+  padding: 10px;
+  border-radius: 60px;
+}
+.signup-main {
+  margin-top: 40px;
+}
+
+.heading-2 {
+  font-family: "Lexend", sans-serif;
+  font-weight: 800;
+  color: #000000;
+  padding-top: 20px;
+}
+.card i {
+  color: #2baffc;
+}
+
+.card{
+  transition: all 0.2s ease-in-out;
+}
+.card:hover {
+  transform: scale(1.1);  
+}
+.card {
+  margin-top: 10px;
+  box-shadow: rgba(43, 175, 252, 0.45) 0px 0px 8px;
+
+  /* border: 1px solid; */
+  /* background-color: #00abee43; */
+}
+.card-body h6,
+h3 {
+  font-family: "Lexend", sans-serif;
+}
+.card-body h6 {
+  color: #0000005e;
+}
+
+#more-tutorials {
+  padding: 20px;
+}
+.orange {
+  font-size: 20px;
+}
+
+#more-tutorials i {
+  padding-left: 9px;
+}
+#more-tutorials button {
+  width: 240px;
+  padding: 15px;
+  background-color: #000;
+  border: none;
+  border-radius: 30px;
+  color: white;
+  font-family: "Varela Round", sans-serif;
+}
+#more-tutorials button:hover {
+  background-color: #2baffc;
+  border: none;
+  color: white;
+}
+
+.info {
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 500px) {
+  .heading-1 {
+    margin-top: -20px;
+  }
+  .signup2 img {
+    width: 85%;
+  }
+  .info2 {
+    gap: 20px;
+  }
+}
+
+/* !Signup main section End */
+
+</style>
+
+ <!-- !Signup main section start -->
+
+ <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12 col-md-5 signup2 d-flex justify-content-center">
+          <img src="../images/signup.jpg" alt="" style="max-width: 100%;">
+      </div>
+        <div class="col-sm-12 col-md-7  signup-main">
+          <h2 class="text-center heading-1">A World of Knowledge Awaits You !</h2>
+          <h1 class="text-center heading-2">Sign Up For Free</h1>
+        <div class="text-center">
+          <!-- <img src="../images/underline.png" alt="" style="max-width: 50%; margin-top: -40px; opacity:0.3; " class=""> -->
+        </div>
+
+        <div class="center">
+          <div class="row  ">
+            <div id="more-tutorials" class="col-12 text-center" data-aos="fade-right" data-aos-duration="1000">
+              <a href="/user/signup"><button class="btn  circle pulse orange ">Sign Up <i class="fa-solid fa-user-plus"></i></button></a>
+            </div> 
+          </div>
+       
+         <div class="container-fluid info">
+          <div class="row justify-content-space-evenly info2">
+            <div class="col-md-4" data-aos="fade-up" data-aos-duration="1000">
+              <div class="card" >
+                <div class="card-body text-center">
+                  <h1 class="card-title"><i class="fa-solid fa-users"></i></h1>
+                  <h3 class="card-text">10000+ </h3>
+                  <h6 class="card-text">Monthly Users</h6>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4" data-aos="fade-up" data-aos-duration="1000">
+              <div class="card">
+                <div class="card-body text-center">
+                  <h1 class="card-title"><i class="fa-solid fa-circle-nodes"></i></h1>
+                  <h3 class="card-text">Connect</h3>
+                  <h6 class="card-text">With Community</h6>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4" data-aos="fade-up" data-aos-duration="1000">
+              <div class="card">
+                <div class="card-body text-center">
+                  <h1 class="card-title"><i class="fa-brands fa-leanpub"></i></h1>
+                  <h3 class="card-text">Learning</h3>
+                  <h6 class="card-text">Without Boundaries</h6>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- !Signup main section End -->
+
+

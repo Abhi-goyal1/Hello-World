@@ -1,0 +1,204 @@
+<% layout("/layouts/boilerplate") %>
+<style>
+    .heading {
+        font-weight: 900;
+        padding: 10px 0px 0px 0px;
+
+    }
+
+    .para {
+        opacity: 0.6;
+    }
+
+    .list-unstyled i {
+        color: #2BAFFC;
+        font-weight: 700;
+    }
+
+    .nav-pills li {
+        text-decoration: none;
+    }
+
+    .nav-itemss a {
+        text-decoration: none;
+        box-shadow: none;
+        margin: 10px;
+        font-size: 2rem;
+
+    }
+
+    /* .nav-pills{
+    background-color: #2BAFFC; 
+    padding: 2rem;
+    width: 60%;
+    border-radius: 100px;
+} */
+    .cat {
+        font-weight: 700;
+
+
+
+    }
+
+    .pill {
+        color: antiquewhite;
+    }
+
+    .opening {
+        font-weight: 700;
+    }
+
+    .card {
+
+
+        border: none;
+
+    }
+
+    .btn-outline-dark {
+        border-radius: 35px;
+        font-size: 10px;
+        box-shadow: none
+    }
+
+    .col-md-3 {
+        margin-top: 5px
+    }
+
+    .tab-content {
+        background-color: white;
+    }
+
+    .job {
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        margin-right: 3rem;
+        margin-top: 2rem;
+
+    }
+
+    .job1 {
+        border-radius: 2rem;
+    }
+
+    #tab-1.active::after {
+        background-color: white;
+    }
+
+    #tab-2.active::after {
+        background-color: white;
+    }
+</style>
+
+
+<div class="container mt-5">
+    <div class="row">
+        <!-- Image Column -->
+        <div class="col-md-6">
+            <img src="/images/career.jpg" alt="Sample Image" class="img-fluid">
+        </div>
+        <!-- Text and Features Column -->
+        <div class="col-md-6">
+            <h1 class="heading">Join Our Team, Transform Your Career</h1>
+            <p class="para">Welcome to Hello World Careers, where every journey begins with a warm "Hello" and a promise
+                of endless possibilities. Join us on an exciting expedition that values you as an individual,
+                emphasizing our firm belief in an "Employee-First" culture.</p>
+            <!-- Feature Points -->
+            <ul class="list-unstyled">
+                <li class="d-flex align-items-center mb-2">
+                    <i class="fa-solid fa-circle-check"></i>
+                    Competitive salaries.
+                </li>
+                <li class="d-flex align-items-center mb-2">
+                    <i class="fa-solid fa-circle-check"></i>
+                    Flexible work hours.
+                </li>
+                <li class="d-flex align-items-center mb-2">
+                    <i class="fa-solid fa-circle-check"></i>
+                    A great work environment.
+                </li>
+                <li class="d-flex align-items-center mb-2">
+                    <i class="fa-solid fa-circle-check"></i>
+                    Annual team retreats.
+                </li>
+                <!-- Add more feature points as needed -->
+            </ul>
+        </div>
+    </div>
+    <!-- Jobs Start -->
+
+    <div class="container py-0">
+        <h1 class="text-center mb-5 mt-3 opening " data-wow-delay="0.1s">Current Opening</h1>
+        <div class="tab-class text-center ">
+            <ul class="nav nav-pills d-inline-flex justify-content-center border-bottom">
+                <li class="nav-itemss">
+                    <a class="d-flex align-items-center text-start pb-2 mx-3 active" data-bs-toggle="pill"
+                        href="#tab-1">
+                        <h5 class="mt-n1 mb-0 cat">full Time</h5>
+                    </a>
+                </li>
+                <li class="nav-itemss">
+                    <a class="d-flex align-items-center text-start pb-2 mx-3" data-bs-toggle="pill" href="#tab-2">
+                        <h5 class="mt-n1 mb-0 cat ">Part Time</h5>
+                    </a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab-1">
+                    <div class="row mt-2 g-1">
+                        <div class="col-md-3 job">
+                            <div class="card p-2 ">
+                                <div class="text-right"> <small><b>Full Time</b></small> </div>
+                                <div class="text-center "> <img src="/images/logo3.jpg" width="90" /> <span
+                                        class="d-block font-weight-bold"><b>Technical Content Writer</b></span>
+                                    <hr> <span class="">Hello World Inc.</span>
+                                    <div class="d-flex flex-row align-items-center justify-content-center"> <i
+                                            class="fa fa-map-marker mx-1"></i> <small class="ml-1">Noida</small> </div>
+                                    <div class="d-flex justify-content-between mt-3"> <span>3Lpa - 5Lpa</span> <a
+                                            href="/career-detail"><button class="btn btn-sm btn-outline-dark">Learn
+                                                more</button></a> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 job">
+                            <div class="card p-2 ">
+                                <div class="text-right"> <small><b>Full Time</b></small> </div>
+                                <div class="text-center "> <img src="/images/logo3.jpg" width="90" /> <span
+                                        class="d-block font-weight-bold"><b>Web Developer</b></span>
+                                    <hr> <span class="">Hello World Inc.</span>
+                                    <div class="d-flex flex-row align-items-center justify-content-center"> <i
+                                            class="fa fa-map-marker mx-1"></i> <small class="ml-1">Noida</small> </div>
+                                    <div class="d-flex justify-content-between mt-3"> <span>3Lpa - 7Lpa</span> <a
+                                            href="/career-detail"><button class="btn btn-sm btn-outline-dark">Learn
+                                                more</button></a> </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="container tab-pane" id="tab-2">
+                    <div class="row mt-2 g-1">
+                        <div class="col-md-3 job">
+                            <div class="card p-2 ">
+                                <div class="text-right"> <small><b>Part Time</b></small> </div>
+                                <div class="text-center "> <img src="/images/logo3.jpg" width="90" /> <span
+                                        class="d-block font-weight-bold"><b>Technical Content Writer</b></span>
+                                    <hr> <span class="">Hello World Inc.</span>
+                                    <div class="d-flex flex-row align-items-center justify-content-center"> <i
+                                            class="fa fa-map-marker mx-1"></i> <small class="ml-1">Noida</small> </div>
+                                    <div class="d-flex justify-content-between mt-3"> <span>2Lpa - 3Lpa</span> <a
+                                            href=""><button class="btn btn-sm btn-outline-dark">Learn more</button></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jobs End -->
+
+
+</div>

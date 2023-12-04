@@ -1,0 +1,110 @@
+
+<% layout("/layouts/boilerplate") %>
+
+
+    <style>
+      
+
+        .contact-container {
+            max-width: 1000px;
+            padding-top: 3rem;
+            padding-left: 2rem;
+            padding-right: 2rem;
+          
+        }
+
+        .contact-form {
+            background-color: #fff;
+            padding: 2rem;
+
+            border-radius: 24px;
+background: #F4F9FD;
+box-shadow:  9px 9px 11px #cfd4d7,
+             -9px -9px 11px #ffffff;
+        }
+        .contact-image h1{
+            font-weight: 700;
+        }
+
+        .contact-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .form-group input{
+            padding: 0.8rem;
+            border-radius: 24px;
+background: #ffffff;
+box-shadow:  5px 5px 13px #e0e0e0,
+             -5px -5px 13px #ffffff;
+        }
+        .form-group textarea{
+            padding: 0.8rem;
+            border-radius: 24px;
+background: #ffffff;
+box-shadow:  5px 5px 13px #e0e0e0,
+             -5px -5px 13px #ffffff;
+        }
+        .form-group{
+            padding-bottom: 2rem;
+        }
+        .btn-primary{
+            width: 100%;
+            border-radius: 24px;
+            background-color: #000000 !important;
+            border:none;
+        }
+        .footer-02{
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .contact-image,
+            .contact-form {
+                width: 100%;
+            }
+            .contact-image{
+                margin-bottom: 1rem;
+            }
+            .contact-form{
+                
+            }
+        }
+    </style>
+</head>
+ 
+<body>
+    <div class="container-fluid contact-container">
+        <div class="row">
+            <!-- Contact Image Section -->
+            <div class="col-md-6  contact-image">
+                <h1 class="mb-1 text-center">Let's talk about everything!</h1>
+                <img src="/images/contact.jpg" alt="Contact Image">
+            </div>
+
+            <!-- Contact Form Section -->
+            <div class="col-md-6 contact-form">
+               
+                <form action="" method="" novalidate class="needs-validation">
+                    <div class="form-group">
+                        <!-- <label for="name">Your Name</label> -->
+                        <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <!-- <label for="email">Your Email</label> -->
+                        <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <!-- <label for="message">Your Message</label> -->
+                        <textarea class="form-control" id="message" rows="4" required placeholder="Enter your message"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message <i class="fa-solid fa-envelope-open-text"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+  
+</body>
+
+</html>

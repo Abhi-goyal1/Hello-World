@@ -1,0 +1,294 @@
+<% layout("/layouts/boilerplate") %>
+
+<style>
+
+/* !Courses section start---------------------------------------------------------- */
+
+.courses-content {
+  
+  margin-top: 50px;
+
+ 
+  /* background-image: url(images/White.jpg); */
+  /* background-image: url(images/vecteezy_abstract-gradient-pastel-blue-and-purple-background-neon_8617161.jpg); */
+
+}
+.container .pikachu {
+  position: relative;
+  max-width: 200px;
+  height: 205px;
+  background-color: #fff;
+  margin: 30px 20px;
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  transition: 0.3s ease-in-out;
+  border-radius: 15px;
+  margin-top: 90px;
+}
+.container .pikachu:hover {
+  height: 250px;
+}
+.content h3 {
+  font-size: 20px;
+  font-family: "Caudex", serif;
+}
+
+.container .pikachu .image {
+  position: relative;
+  width: 140px;
+  top: -40%;
+  left: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 20px;
+  background-color: white;
+}
+
+.container .pikachu .image img {
+  max-width: 140px;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+.container .pikachu .content {
+  position: relative;
+  top: -40px;
+  color: #111;
+  text-align: center;
+  opacity: 1;
+  transition: 0.3s ease-in-out;
+}
+.container .pikachu .content a {
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.2s ease;
+}
+
+.container .pikachu:hover .content a {
+  /* margin-top : 30px; */
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0.2s;
+}
+.content a {
+  background-color: #000000;
+  border: none;
+  border-radius: 30px;
+}
+
+@media screen and (max-width: 500px) {
+  .container .pikachu {
+    max-width: 290px;
+  }
+  .container .pikachu .image {
+    left: 57px;
+  }
+}
+
+
+/* !Courses section End---------------------------------------------------------- */
+
+#searching {
+  margin-top: 1rem;
+}
+#searching input {
+  box-shadow: rgba(43, 175, 252, 0.65) 0px 0px 20px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border: none;
+  padding: 15px;
+  margin-top: 10px;
+  width: 40%;
+  /* box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+    rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+    rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset; */
+}
+#searching button {
+  box-shadow: rgba(43, 175, 252, 0.65) 0px 0px 20px;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  border: none;
+  background-color: #000;
+  color: white;
+  width: 20%;
+  margin-top: 10px;
+  font-size: 20px;
+  /* box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+    rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+    rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset; */
+}
+#searching button:hover {
+  background-color: #2baffc;
+}
+#searching input:focus {
+  outline: none;
+  border: 1px solid #00acee;
+}
+.heading {
+  padding: 20px;
+  font-family: "Manrope", sans-serif;
+  font-size: 3rem !important;
+  color: #000;
+}
+.heading span {
+  color: #2baffc;
+}
+#heading-pera {
+  color: #000000;
+  font-family: "Caudex", serif;
+  font-size: 20px;
+}
+@media screen and (max-width: 700px) {
+  #searching input{
+    padding: 10px;
+    width: 60%;
+  }
+  #searching input::placeholder{
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 530px) {
+    .heading {
+
+  font-size: 2rem !important;
+ 
+}
+}
+@media screen and (max-width: 376px) {
+    .heading {
+  
+  font-size: 1.7rem !important;
+  
+}
+}
+
+
+
+.abi{
+  background:url(images/White.jpg);
+ 
+}
+
+</style>
+
+
+
+ <!-- ! Courses Section start -->
+ <div class="container courses ">
+    <h1 class="heading text-center">Courses <span>Categories</span></h1>
+    <div class=" underline2 separator text-center" style="margin-left: 49%;" ></div>
+    
+    <div class="row">
+      <div class="col-sm-12 col-md-12 ">
+        <form id="searching" class="d-flex justify-content-center" action="">
+          <input  type="search" placeholder="Search Courses">
+          <button id="searchInput" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+      </div>
+    </div>
+   
+    <div class="row text-center justify-content-center courses-content " data-aos="fade-up" data-aos-duration="1800">
+    
+    <div class="pikachu  ">
+      <div class="image">
+        <img href="#" src="images/web-design.png">
+      </div>
+      <div class="content ">
+        <h3>Graphic Design </h3>
+        <h3><i class="fa-solid fa-angles-down fa-bounce"></i></h3>
+        <a href="/courses/graphic-design" class="btn btn-primary">Explore Course</a>
+      </div>
+    </div>
+
+    <div class="pikachu ">
+      <div class="image">
+        <img href="#" src="images/responsive.png">
+      </div>
+      <div class="content">
+        <h3>Frontend Development</h3>
+        <h3><i class="fa-solid fa-angles-down fa-bounce"></i></h3>
+        <a href="#" class="btn btn-primary">Explore Course</a>
+      </div>
+    </div>
+
+    <div class="pikachu ">
+      <div class="image">
+        <img href="#" src="images/backend.png">
+      </div>
+      <div class="content">
+        <h3>Backend Development</h3>
+        <h3><i class="fa-solid fa-angles-down fa-bounce"></i></h3>
+        <a href="#" class="btn btn-primary">Explore Course</a>
+      </div>
+    </div>
+
+    <div class="pikachu ">
+      <div class="image">
+        <img href="#" src="images/smartphone.png">
+      </div>
+      <div class="content">
+        <h3>App Development</h3>
+        <h3><i class="fa-solid fa-angles-down fa-bounce"></i></h3>
+        <a href="#" class="btn btn-primary">Explore Course</a>
+      </div>
+    </div>
+
+
+    <div class="pikachu ">
+      <div class="image">
+        <img href="#" src="images/web-development.png">
+
+      </div>
+
+      <div class="content">
+        <h3>Web Development</h3>
+        <h3><i class="fa-solid fa-angles-down fa-bounce"></i></h3>
+        <a href="#" class="btn btn-primary">Explore Course</a>
+
+      </div>
+    </div>
+
+    <div class="pikachu ">
+      <div class="image">
+        <img href="#" src="images/hacking.png">
+      </div>
+      <div class="content">
+        <h3>Cyber Security</h3>
+        <h3><i class="fa-solid fa-angles-down fa-bounce"></i></h3>
+        <a href="#" class="btn btn-primary">Explore Course</a>
+      </div>
+    </div>
+
+    <div class="pikachu ">
+      <div class="image">
+        <img href="#" src="images/data-management.png">
+      </div>
+      <div class="content">
+        <h3>Cloud Computing</h3>
+        <h3><i class="fa-solid fa-angles-down fa-bounce"></i></h3>
+        <a href="#" class="btn btn-primary">Explore Course</a>
+      </div>
+    </div>
+
+    <div class="pikachu ">
+      <div class="image">
+        <img href="#" src="images/programming-language.png">
+      </div>
+      <div class="content">
+        <h3>Programming</h3>
+        <h3><i class="fa-solid fa-angles-down fa-bounce"></i></h3>
+        <a href="#" class="btn btn-primary">Explore Course</a>
+      </div>
+    </div>
+
+    <!-- <div class="row  ">
+      <div id="more-tutorials" class="col-12 text-center" data-aos="fade-right" data-aos-duration="1000">
+        <a href="courses.html"><button class="btn  ">All Courses<i class="fa-solid fa-angles-right fa-bounce"></i></button></a>
+      </div>
+    </div> -->
+    </div>
+  </div>
+</div>
+<!-- ! Courses Section End -->

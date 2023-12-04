@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,300);
+ ul {
+	 padding: 0;
+	 margin: 0;
+}
+ li {
+	 list-style-type: none;
+}
+ input[type='radio'] {
+	 display: none;
+}
+ label {
+	 cursor: pointer;
+}
+ ::-webkit-scrollbar {
+	 display: none;
+}
+
+
+ body .swanky_wrapper {
+	 width: 250px;
+	 height: auto;
+	 overflow: hidden;
+	 /* border-radius: 4px; */
+	 background: #000;
+}
+ body .swanky_wrapper label {
+	 padding: 25px;
+	 float: left;
+	 height: 72px;
+	 border-bottom: 1px solid #293649;
+	 position: relative;
+	 width: 100%;
+	 color: #eff4fa;
+	 transition: text-indent 0.15s, height 0.3s;
+	 box-sizing: border-box;
+}
+
+ body .swanky_wrapper label strong{
+	 position: relative;
+	 top: -3px;
+   /* color: #000; */
+
+
+}
+
+
+ body .swanky_wrapper label .bar {
+	 width: 0px;
+	 transition: width 0.15s;
+	 height: 2px;
+	 position: absolute;
+	 display: block;
+	 background: #355789;
+	 bottom: 0;
+	 left: 0;
+}
+ body .swanky_wrapper label .lil_arrow {
+	 width: 5px;
+	 height: 5px;
+	 -webkit-transition: transform 0.8s;
+	 transition: transform 0.8s;
+	 -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	 border-top: 2px solid white;
+	 border-right: 2px solid white;
+	 float: right;
+	 position: relative;
+	 top: 6px;
+	 right: 2px;
+	 transform: rotate(45deg);
+}
+ body .swanky_wrapper__content {
+	 position: absolute;
+	 display: none;
+	 overflow: hidden;
+	 left: 0;
+	 width: 100%;
+}
+ body .swanky_wrapper__content li {
+	 width: 100%;
+	 opacity: 0;
+	 left: -100%;
+	 /* background: #15a4fa; */
+	 padding: 25px 0px;
+	 text-indent: 25px;
+	 box-shadow: 0px 0px #126ca1 inset;
+	 transition: box-shadow 0.3s, text-indent 0.3s;
+	 position: relative;
+}
+
+ body .swanky_wrapper__content .clear {
+	 clear: both;
+}
+ input[type='radio']:checked + label .swanky_wrapper__content {
+	 display: block;
+	 top: 68px;
+	 border-bottom: 1px solid #212e41;
+}
+ input[type="radio"]:checked + label > .lil_arrow {
+	 -webkit-transition: -webkit-transform 0.8s;
+	 transition: transform 0.8s;
+	 -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	 -webkit-transform: rotate(135deg);
+	 -ms-transform: rotate(135deg);
+	 transform: rotate(135deg);
+	 border-top: 2px solid #14a3f9;
+	 border-right: 2px solid #14a3f9;
+}
+ input[type='radio']:checked + label {
+	 height: 380px;
+	 background: #212e41;
+	 text-indent: 4px;
+	 transition-property: height;
+	 transition-duration: 0.6s;
+	 -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+ input[type='radio']:checked + label .bar {
+	 width: 0;
+}
+ input[type='radio']:checked + label li:nth-of-type(1) {
+	 animation: in 0.15s 0.575s forwards;
+	 -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	 -moz-animation: in 0.15s 0.575s forwards;
+	 -moz-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+ input[type='radio']:checked + label li:nth-of-type(2) {
+	 animation: in 0.15s 0.7s forwards;
+	 -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	 -moz-animation: in 0.15s 0.7s forwards;
+	 -moz-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+ input[type='radio']:checked + label li:nth-of-type(3) {
+	 animation: in 0.15s 0.825s forwards;
+	 -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	 -moz-animation: in 0.15s 0.825s forwards;
+	 -moz-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+ input[type='radio']:checked + label li:nth-of-type(4) {
+	 animation: in 0.15s 0.95s forwards;
+	 -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	 -moz-animation: in 0.15s 0.95s forwards;
+	 -moz-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+ input[type='radio']:checked + label li:nth-of-type(5) {
+	 animation: in 0.15s 0.95s forwards;
+	 -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	 -moz-animation: in 0.15s 0.95s forwards;
+	 -moz-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+ @keyframes in {
+	 from {
+		 left: -100%;
+		 opacity: 0;
+	}
+	 to {
+		 left: 0;
+		 opacity: 1;
+	}
+}
+ 
+</style>
+<body>
+
+	<div class="swanky_wrapper">
+		<input id="Dashboard" name="radio" type="radio"></input>
+		<label for="Dashboard">
+		  <strong>Dashboard</strong>
+		  <div class="lil_arrow"></div>
+		  <div class="bar"></div>
+		  <div class="swanky_wrapper__content">
+			<ul>
+			  <li>Tools</li>
+			  <li>Reports</li>
+			  <li>Analytics</li>
+			  <li>Code Blocks</li>
+			  <li>Tools</li>
+			  <li>Reports</li>
+			  <li>Analytics</li>
+			  <li>Code Blocks</li>
+			  <li>Tools</li>
+			  <li>Reports</li>
+			  <li>Analytics</li>
+			  <li>Code Blocks</li>
+			</ul>
+		  </div>
+		</label>
+		<input id="Sales" name="radio" type="radio"></input>
+		<label for="Sales">
+		  <strong>Sales</strong>
+		  <div class="lil_arrow"></div>
+		  <div class="bar"></div>
+		  <div class="swanky_wrapper__content">
+			<ul>
+			  <li>New Sales</li>
+			  <li>Expired Sales</li>
+			  <li>Sales Reports</li>
+			  <li>Deliveries</li>
+			</ul>
+		  </div>
+		</label>
+		<input id="Messages" name="radio" type="radio"></input>
+		<label for="Messages">
+		
+		  <strong>Messages</strong>
+		  <div class="lil_arrow"></div>
+		  <div class="bar"></div>
+		  <div class="swanky_wrapper__content">
+			<ul>
+			  <li>Inbox</li>
+			  <li>Outbox</li>
+			  <li>Sent</li>
+			  <li>Archived</li>
+			</ul>
+		  </div>
+		</label>
+		<input id="Users" name="radio" type="radio"></input>
+		<label for="Users">
+		  <strong>Users</strong>
+		  <div class="lil_arrow"></div>
+		  <div class="bar"></div>
+		  <div class="swanky_wrapper__content">
+			<ul>
+			  <li>New User</li>
+			  <li>User Groups</li>
+			  <li>Permissions</li>
+			  <li>Passwords</li>
+			</ul>
+		  </div>
+		</label>
+		<input id="Settings" radio="radio" type="radio"></input>
+		<label for="Settings">
+  
+		  <strong>Settings</strong>
+		  <div class="lil_arrow"></div>
+		  <div class="swanky_wrapper__content">
+			<ul>
+			  <li>Databases</li>
+			  <li>Design</li>
+			  <li>Change User</li>
+			  <li>Log Out</li>
+			</ul>
+		  </div>
+		</label>
+	  </div>
+ <script>
+    const radioInputs = document.querySelectorAll('input[type="radio"]');
+    
+    radioInputs.forEach(input => {
+      input.addEventListener('change', function () {
+        const content = this.nextElementSibling.nextElementSibling;
+        if (this.checked) {
+          if (content.style.opacity === '1') {
+            content.style.opacity = '0';
+            content.style.left = '-100%';
+          } else {
+            content.style.opacity = '1';
+            content.style.left = '0';
+          }
+        }
+      });
+    });
+</script>
+
+</body>
+</html>

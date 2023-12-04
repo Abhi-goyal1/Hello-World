@@ -1,0 +1,225 @@
+<% layout("/layouts/boilerplate") %>
+<style>
+
+
+.heading {
+  /* padding-left: 20px; */
+  font-family: "Manrope", sans-serif;
+  font-size: 45px;
+  color: #000;
+}
+.heading span {
+  color: #2baffc;
+}
+.get-certified-section{
+  margin-top: 40px;
+  /* background-color: red; */
+  /* background-image: url(images/10782708_19197912.jpg) ; */
+
+ 
+  
+}
+
+
+.get-certified img{
+  max-width: 100%;
+  margin-top: 60px;
+  
+}
+.certificate-body{
+  color: #0000008b;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+#more-tutorials {
+  padding: 30px;
+}
+#more-tutorials i {
+  padding-left: 9px;
+}
+#more-tutorials button {
+  width: 200px;
+  padding: 10px;
+  background-color: #000;
+  border: none;
+  border-radius: 30px;
+  color: white;
+  font-size: 20px;
+  font-family: "Varela Round", sans-serif;
+}
+#more-tutorials button:hover {
+  background-color: #2baffc;
+  border: none;
+  color: white;
+}
+
+
+.timeline {
+  list-style: none;
+  padding: 0;
+}
+
+.timeline li {
+  position: relative;
+  /* padding: 30px 0; */
+}
+.timeline-icon2{
+  background-color: ;
+}
+
+.timeline-icon {
+  position: absolute;
+  top: 0;
+  left: -20px; /* Adjust the left position to move the icon to the left side */
+  width: 50px;
+  height: 50px;
+  background-color: #007bff;
+  border-radius: 7%;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 25px;
+}
+
+.timeline-content {
+  margin-left: 70px;
+}
+.timeline-content-last {
+  margin-left: 70px;
+}
+
+.timeline-content::before {
+  content: '';
+  position: absolute;
+  left: 4px; /* Adjust the left position to connect the icon vertically */
+  top: 40px;
+  width: 2px;
+  height:70px;
+  background-color: #007bff;
+}
+
+.timeline h3 {
+  margin: 0;
+  font-size: 25px;
+  font-family: "Manrope", sans-serif;
+  
+}
+
+.timeline p {
+  margin: 10px 0;
+  font-size: 14px;
+  color: #0000008d;
+}
+
+.timeline-date {
+  font-size: 14px;
+  color: #777;
+}
+
+/* Add media queries for responsiveness as needed */
+@media (max-width: 770px) {
+ .timeline-sec{
+  padding-left: 20px;
+  width: 100%;
+ }
+ .get-certified img{
+  
+  margin-top: 10px;
+  
+}
+  
+}
+@media (max-width: 620px) {
+  .timeline-content::before {
+    height: 80px;
+  }
+  
+}
+@media (max-width: 440px) {
+  .timeline-content::before {
+    height: 100px;
+  }
+  
+}
+@media (max-width: 865px) {
+  .timeline-content::before {
+    height: 100px;
+  }
+  
+}
+@media (max-width: 431px) {
+  .heading {
+    
+    font-size: 40px;
+    
+  }
+  
+}
+</style>
+
+
+<!-- !Main certification section start -->
+
+<div class="container-fluid get-certified-section">
+    <div class="row ">
+      <div class="col-sm-12 col-md-6 get-certified">
+        <img class="" src="images/10782708_19197912.jpg" alt="">
+  
+        <div id="more-tutorials" class="col-12 text-center" data-aos="fade-right" data-aos-duration="900" >
+          <a href="services.html"><button class="btn  ">Get Started <img src="images/certificate (1).png" alt="" style="max-width: 30%; margin: 0;"></button></a>
+        </div>
+        
+      </div>
+      <div class="col-sm-12 col-md-6">
+        <div class="certificate-body">
+          <h1 class="heading">Get <span> Certified</span></h1>
+          <p class="">Welcome to Hello World Certification, your pathway to excellence and recognition in the tech industry. Whether you're an aspiring professional or a seasoned expert seeking to enhance your skillset, Hello World Certification is here to propel you toward success. Embrace the transformative power of knowledge and gain the confidence to tackle any challenge that comes your way. </p>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 timeline-sec">
+              <ul class="timeline" data-aos="fade-up" data-aos-duration="1000">
+                <li >
+                  <div class="timeline-icon timeline-icon1"><i class="fa-solid fa-book-open-reader"></i></div>
+                  <div class="timeline-content">
+                    <h3>Select Course</h3>
+                    <p>Begin your journey by choosing from our wide range of courses.Whether you're a beginner or an advanced learner, there's a course for everyone.</p>
+                    
+                  </div>
+                </li>
+                <li>
+                  <div class="timeline-icon timeline-icon2"><i class="fa-solid fa-chalkboard-user"></i></div>
+                  <div class="timeline-content">
+                    <h3>Learn Your Skills</h3>
+                    <p>Forget the traditional rote learning methods. Our approach is dynamic and adaptive, encouraging you to actively participate in your learning journey.</p>
+                  
+                  </div>
+                </li>
+                <li>
+                  <div class="timeline-icon timeline-icon3"><i class="fa-solid fa-list-check"></i></i></div>
+                  <div class="timeline-content">
+                    <h3>Complete Exercise</h3>
+                    <p>Put your knowledge into practice with real-world examples. Our practical approach ensures that you gain confidence in applying what you've learned.</p>
+                    <spa
+                  </div>
+                </li>
+                <li>
+                  <div class="timeline-icon timeline-icon4"><i class="fa-solid fa-certificate fa-spin"></i></i></div>
+                  <div class="timeline-content-last">
+                    <h3>Get Certificate</h3>
+                    <p>Upon successful completion of the course and exercises, you'll receive a prestigious certificate. This certificate will add value to your resume and open doors to exciting career opportunities.</p>
+                    
+                  </div>
+                </li>
+                <!-- Add more timeline items here -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   </div>
+  
+  <!-- !Main certification section End -->
+  
