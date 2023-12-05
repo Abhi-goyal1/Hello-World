@@ -116,9 +116,10 @@ app.get("/career-detail", (req, res) => {
 
 //! Tutorial routes.
 // Html routes and functionality. 
-app.get("/html/html_into", (req, res) => {
+app.get("/html/html_intro", (req, res) => {
   res.render("tutorials/HTML/html", { active: "" });
 });
+
 // css routes and functionality. 
 app.get("/css/css_into", (req, res) => {
   res.render("tutorials/CSS/css", { active: "" });

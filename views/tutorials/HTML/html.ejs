@@ -1,7 +1,6 @@
 <% layout("/layouts/contentboilerplate") %>
 
   <style>
- 
     /* Sidebar styles */
     .sidebar {
       
@@ -23,7 +22,12 @@
       font-size: 18px;
       color: white;
       display: block;
+   
     }
+    .sidebar h4{
+      background-color: #beb7b76b;
+    }
+    
 
     .sidebar a:hover {
       background-color: #555;
@@ -79,24 +83,13 @@ span {
 
 
 
-.slide {
-  clear:both;
-  width:100%;
-  height:0px;
-  overflow: hidden;
-  text-align: center;
-  transition: height .4s ease;
-}
-
-.slide li {padding : 30px;}
-
 #touch {position: absolute; opacity: 0; height: 0px;}    
 
 #touch:checked + .slide {height: 300px;} 
 
 
 
-    @media screen and (min-width: 998px) {
+ @media screen and (min-width: 998px) {
       .sidebar {
         height: 100%;
         width: 250px;
@@ -107,54 +100,78 @@ span {
         padding-top: 20px;
         color: white;
         transition: 0.5s;
-      }
-      #main-content{
-    margin-left: 230px;
-  }
-    }
+}
 
-
-
-
-
-
-
-
-
-
+#main-content{
+  margin-left: 230px;
+ }
+}
   </style>
   <title>Responsive Sidebar with EJS</title>
 </head>
+
 <body>
     
 <div class="sidebar" id="sidebar">
-  <h4 class="text-center py-2"><b>HTML BASICS</b></h4>
+  <h4 class="text-center py-2 my-2"><b>HTML BASICS</b></h4>
   <a href="#intro">HTML Introduction</a>
-  <a href="#about"></a>
-  <a href="#services">Services</a>
+  <a href="#about">HTML Basic</a>
+  <a href="#services">HTML Tags</a>
+  <a href="#services">HTML Heading</a>
+  <a href="#services">HTML Attribute</a>
+  <a href="#services">HTML Paragraph</a>
+  <a href="#services">HTML Lists</a>
+  <a href="#services">HTML Links</a>
+  <a href="#services">HTML Images</a>
+  <a href="#services">HTML Table</a>
+  <a href="#services">HTML Colors</a>
+  <a href="#services">HTML Div</a>
+  <a href="#services">HTML Iframe</a>
+  <a href="#services">HTML Symbols</a>
+  <a href="#services">HTML Block & Inline</a>
+  <a href="#services">HTML File Paths</a>
+  <h4 class="text-center py-2 my-2"><b> HTML LAYOUT AND STYLING</b></h4>
+  <a href="#services">HTML Head</a>
+  <a href="#services">HTML Responsive</a>
+  <a href="#services">HTML Layout</a>
+  <a href="#services">HTML Entities</a>
+  <a href="#services">HTML Emojis</a>
+  <a href="#services">HTML Charsets</a>
+  <a href="#services">HTML URL Encode</a>
+  <a href="#services">HTML vs. XHTML</a>
+  <h4 class="text-center py-2 my-2"><b>HTML Forms and Input</b></h4>
+  <a href="#services">HTML Forms</a>
+  <a href="#services">HTML Form Attributes</a>
+  <a href="#services">HTML Form Elements</a>
+  <a href="#services">HTML Input Types</a>
+  <a href="#services">HTML Input Attributes</a>
+  <a href="#services">HTML Input Form Attributes</a>
+  <h4 class="text-center py-2 my-2"><b>HTML Graphics and Media</b></h4>
+  <a href="#services">HTML Graphics</a> 
+  <a href="#services">HTML Canvas</a> 
+  <a href="#services">HTML SVG</a> 
+  <a href="#services">HTML Media</a> 
+  <a href="#services">HTML Video</a> 
+  <a href="#services">HTML Audio</a> 
+  <a href="#services">HTML Plug-ins</a> 
+  <a href="#services">HTML YouTube</a> 
+  <h4 class="text-center py-2 my-2"><b>HTML APIs and Advanced Topics</b></h4>
+  <a href="#services">HTML APIs</a>
+  <a href="#services">HTML Geolocation</a>
+  <a href="#services">HTML Web Storage</a>
+  <a href="#services">HTML SSE</a>
+  <a href="#services">HTML Web Workers</a>
+  <h4 class="text-center py-2 my-2 last"><b>REFERENCE</b></h4>
+  
 
- 
- 
-  </div>
-  
-  <!-- <div class="dropdown">
-    <label for="touch"><b>HTML Basics</b></label>               
-    <input type="checkbox" id="touch"> 
-    <ul class="slide">
-      <li><a href="#">Lorem Ipsum</a></li> 
-      <li><a href="#">Lorem Ipsum</a></li>
-      <li><a href="#">Lorem Ipsum</a></li>
-      <li><a href="#">Lorem Ipsum</a></li>
-    </ul>
-  </div>  -->
-  
 </div>
-
+</div>
 
 <div class="content" id="main-content">
   <div class="tab-content">
     <div class="tab-pane fade show active" id="intro">
-      <% layout("/tutorials/HTML/htmlIntro") %>
+      <p> ipsum dolor sit amet consectetur adipisicing elit. Ad, repellat! Vitae porro, architecto dolor quis ex, blanditiis incidunt obcaecati tenetur molestiae quos repudiandae illo? Obcaecati qui molestiae vel eos? Cum?</p>
+
     </div>
     <div class="tab-pane fade" id="about">
       <p> ipsum dolor sit amet consectetur adipisicing elit. Ad, repellat! Vitae porro, architecto dolor quis ex, blanditiis incidunt obcaecati tenetur molestiae quos repudiandae illo? Obcaecati qui molestiae vel eos? Cum?</p>
