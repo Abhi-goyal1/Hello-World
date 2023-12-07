@@ -110,18 +110,47 @@ function toggleSidebar() {
     mainContent.classList.add('content-with-sidebar');
   }
 }
+document.addEventListener("DOMContentLoaded", function () {
+  const sidebarLinks = document.querySelectorAll(".sidebar a");
 
-function toggleDropdown(dropdownId) {
-  const dropdown = document.getElementById(dropdownId);
-  dropdown.classList.toggle('open');
-}
+  // Get the active tab from the query parameter in the URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const activeTab = urlParams.get('tab');
 
-// Close dropdowns when clicking outside
-document.addEventListener('click', function (event) {
-  const dropdowns = document.getElementsByClassName('dropdown');
-  for (const dropdown of dropdowns) {
-    if (!dropdown.contains(event.target)) {
-      dropdown.classList.remove('open');
+  // If there's an active tab, set it as active
+  if (activeTab) {
+    const targetTab = document.getElementById(activeTab);
+    if (targetTab) {
+      targetTab.classList.add('show', 'active-tab');
     }
   }
+
+  sidebarLinks.forEach(function (link) {
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
+
+      // Remove 'active' class from all sidebar links
+      sidebarLinks.forEach(function (sidebarLink) {
+        sidebarLink.classList.remove('active');
+      });
+
+      // Add 'active' class to the clicked sidebar link
+      link.classList.add('active');
+
+      // Remove 'show' class from all tab-panes
+      document.querySelectorAll('.tab-pane').forEach(function (tabPane) {
+        tabPane.classList.remove('show', 'active-tab');
+      });
+
+      // Add 'show' class to the clicked tab-pane
+      const targetTabId = link.getAttribute('href').substring(1);
+      const targetTab = document.getElementById(targetTabId);
+      targetTab.classList.add('show', 'active-tab');
+
+      // Update the URL with the active tab as a query parameter
+      const url = new URL(window.location.href);
+      url.searchParams.set("tab", targetTabId);
+      window.history.replaceState({}, '', url);
+    });
+  });
 });

@@ -311,37 +311,37 @@ li {
     display: none;
   }
 }
-@media screen and (max-width: 942px) {
+@media screen and (max-width: 983px) {
   #python {
     display: none;
   }
 }
-@media screen and (max-width: 834px) {
+@media screen and (max-width: 875px) {
   #java {
     display: none;
   }
 }
-@media screen and (max-width: 751px) {
+@media screen and (max-width: 793px) {
   #c {
     display: none;
   }
 }
-@media screen and (max-width: 702px) {
+@media screen and (max-width: 743px) {
   #react {
     display: none;
   }
 }
-@media screen and (max-width: 605px) {
+@media screen and (max-width: 652px) {
   #nodejs {
     display: none;
   }
 }
-@media screen and (max-width: 507px) {
+@media screen and (max-width: 541px) {
   #tailwind {
     display: none;
   }
 }
-@media screen and (max-width: 385px) {
+@media screen and (max-width: 432px) {
   #bootstrap {
     display: none;
   }
