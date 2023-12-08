@@ -119,10 +119,45 @@ app.get("/career-detail", (req, res) => {
 app.get("/html/html_intro", (req, res) => {
   res.render("tutorials/HTML/html", { active: "" });
 });
-
 // css routes and functionality. 
-app.get("/css/css_into", (req, res) => {
+app.get("/css/css_intro", (req, res) => {
   res.render("tutorials/CSS/css", { active: "" });
+});
+//  javaScript routes and functionality. 
+app.get("/js/js_intro", (req, res) => {
+  res.render("tutorials/JAVASCRIPT/js", { active: "" });
+});
+//  Bootstrap routes and functionality. 
+app.get("/bootstrap/bootstrap_intro", (req, res) => {
+  res.render("tutorials/BOOTSTRAP/bootstrap", { active: "" });
+});
+//  tailwind routes and functionality. 
+app.get("/tailwind/tailwind_intro", (req, res) => {
+  res.render("tutorials/TAILWIND/tailwind", { active: "" });
+});
+//  Nodejs routes and functionality. 
+app.get("/nodejs/nodejs_intro", (req, res) => {
+  res.render("tutorials/NODEJS/nodejs", { active: "" });
+});
+//  React routes and functionality. 
+app.get("/react/react_intro", (req, res) => {
+  res.render("tutorials/REACT/react", { active: "" });
+});
+//  C routes and functionality. 
+app.get("/c/c_intro", (req, res) => {
+  res.render("tutorials/C/c", { active: "" });
+});
+//  JAVA routes and functionality. 
+app.get("/java/java_intro", (req, res) => {
+  res.render("tutorials/JAVA/java", { active: "" });
+});
+//  Python routes and functionality. 
+app.get("/python/python_intro", (req, res) => {
+  res.render("tutorials/PYTHON/python", { active: "" });
+});
+//  Sql routes and functionality. 
+app.get("/sql/sql_intro", (req, res) => {
+  res.render("tutorials/SQL/sql", { active: "" });
 });
 
 //! Signup Route and functionality.
