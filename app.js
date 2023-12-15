@@ -6,6 +6,7 @@ const path = require("path");
 const flash = require("connect-flash");
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
+require('dotenv').config();
 
 // !Module
 const User = require("./models/user");
@@ -30,6 +31,7 @@ main()
   });
 async function main() {
   await mongoose.connect(MONGO_URL);
+  
 }
 
 const store = MongoStore.create({
