@@ -106,10 +106,19 @@
           </li>
         </ul>
         <div id="signuplogin" class="">
-          <a href="../user/signup.html"> <button id="signup" class="btn align-self-center " type="button"><i
-                class="fa-solid fa-user-plus"></i> Sign Up
-            </button></a>
-          <a href="../user/login.html"> <button id="login" class="btn" type="button">Log in</button></a>
+          <% if(!currUser){ %>
+            <a href="/signup"> <button id="signup" class="btn align-self-center " type="button"><i
+                  class="fa-solid fa-user-plus"></i>
+                Sign Up
+              </button></a>
+            <a href="/login"> <button id="login" class="btn" type="button">Log in<i
+                  class="fa-solid fa-right-to-bracket px-1 pt-1"></i></button></a>
+            <% } %>
+
+            <% if(currUser){%>
+            <a href="/logout"> <button id="login" class="btn" type="button">Logout<i
+                  class="fa-solid fa-right-to-bracket px-1 pt-1"></i></button></a>
+            <% } %>
         </div>
 
 
