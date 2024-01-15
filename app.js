@@ -61,6 +61,39 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local");
 
 
+
+
+// ! Google Authentication 
+
+
+const googleStrategy = require("passport-google-oauth20")
+passport.use(new googleStrategy({
+
+  clientID:"858164119318-t2m3oqtl8uk1mepis54oq8kheo0cmfkq.apps.googleusercontent.com",
+clientSecret:"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",
+callbackURL : "/auth/google/callback",
+
+ 
+
+
+}, (accessToken, refreshToken, profile,done) =>{
+console.log(accessToken)
+console.log(refreshToken)
+console.log(profile)
+}))
+
+app.get("/auth/google", passport.authenticate("google",{
+scope: ["profile","email"]
+}))
+app.get("/auth/google/callback", passport.authenticate("google"))
+
+
+ 
+
+
+
+
+
 app.use(bodyParser.json());
 app.use(session(sessionOption));
 app.use(flash());
