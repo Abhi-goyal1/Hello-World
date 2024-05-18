@@ -1,9 +1,124 @@
 <style>
+
+
+.action {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+ 
+}
+
+.action .profile {
+  position: relative;
+  
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.action .profile img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.action .menu {
+  position: absolute;
+  top: 120px;
+  right: -20px;
+  padding: 10px 20px;
+  background: #fff;
+  width: 200px;
+  box-sizing: 0 5px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  transition: 0.5s;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.action .menu.active {
+  top: 50px;
+  visibility: visible;
+  opacity: 1;
+}
+
+.action .menu::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  right: 28px;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  transform: rotate(45deg);
+}
+
+.action .menu h3 {
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  padding: 20px 0;
+  font-weight: 500;
+  color: #555;
+  line-height: 1.5em;
+}
+
+.action .menu h3 span {
+  font-size: 14px;
+  color: #cecece;
+  font-weight: 300;
+}
+
+.action .menu ul li {
+  list-style: none;
+  padding: 15px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+}
+.action .menu ul {
+ margin: ;
+}
+
+div.menu.active::after{
+  background: none;
+}
+
+.action .menu ul li img {
+  max-width: 20px;
+  margin-right: 10px;
+  opacity: 0.5;
+  transition: 0.5s;
+}
+
+.action .menu ul li:hover img {
+  opacity: 1;
+}
+
+.action .menu ul li a {
+  display: inline-block;
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  transition: 0.5s;
+}
+
+.action .menu ul li:hover a {
+  color: #ff5d94;
+}
+
+
   .btn-close{
     font-size:30px;
   }
   .nav-links.active::after{
     background-color: #2baffc00;
+    
     
   }
   .nav-links{
@@ -69,8 +184,28 @@
             <% } %>
 
             <% if(currUser){%>
-            <a href="/logout"> <button id="login" class="btn" type="button">Logout<i
-                  class="fa-solid fa-right-to-bracket px-1 pt-1"></i></button></a>
+            <!-- <a href="/logout"> <button id="login" class="btn" type="button">Logout<i
+                  class="fa-solid fa-right-to-bracket px-1 pt-1"></i></button></a> -->
+                  <div class="action">
+                    <div class="profile" onclick="menuToggle();">
+                      <img src="/images/user.jpg" />
+                    </div>
+                    <div class="menu">
+                      <ul>
+                        <li>
+                          <i class="fa-solid fa-user px-2"></i><a href="#">My profile</a>
+                        </li>
+                        <li>
+                          <i class="fa-solid fa-pen px-2"></i><a href="#">Edit profile</a>
+                        </li>
+                        <li>
+                          <i
+                  class="fa-solid fa-right-to-bracket px-2"></i><a href="/logout">Logout</a>
+                        </li>
+
+                      </ul>
+                    </div>
+                  </div>
             <% } %>
           </div>
         </div>
@@ -181,3 +316,10 @@
 
   </div>
 </div>
+
+<script>
+  function menuToggle() {
+    const toggleMenu = document.querySelector(".menu");
+    toggleMenu.classList.toggle("active");
+  }
+</script>

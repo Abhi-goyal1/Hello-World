@@ -64,8 +64,59 @@ const LocalStrategy = require("passport-local");
 
 
 // ! Google Authentication 
+// passport-setup.js
 
+// const GoogleStrategy = require('passport-google-oauth20').Strategy;
+// // const User = require('./models/User'); // Create a User model
 
+// passport.use(
+//     new GoogleStrategy(
+//         {
+//             clientID: '858164119318-t2m3oqtl8uk1mepis54oq8kheo0cmfkq.apps.googleusercontent.com',
+//             clientSecret: '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',
+//             callbackURL: '/auth/google/callback',
+//         },
+//         async (accessToken, refreshToken, profile, done) => {
+//             // Check if user already exists in the database
+//             const existingUser = await User.findOne({ googleId: profile.id });
+
+//             if (existingUser) {
+//                 return done(null, existingUser);
+//             }
+
+//             // Create a new user
+//             const newUser = new User({
+//                 googleId: profile.id,
+//                 displayName: profile.displayName,
+//                 // Add other relevant user details
+//             });
+
+//             await newUser.save();
+//             done(null, newUser);
+//         }
+//     )
+// );
+
+// passport.serializeUser((user, done) => {
+//     done(null, user.id);
+// });
+
+// passport.deserializeUser((id, done) => {
+//     User.findById(id, (err, user) => {
+//         done(err, user);
+//     });
+// });
+
+// app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
+
+// app.get(
+//     '/auth/google/callback',
+//     passport.authenticate('google', { failureRedirect: '/' }),
+//     (req, res) => {
+//         // Successful authentication, redirect home
+//         res.redirect('/');
+//     }
+// );
 const googleStrategy = require("passport-google-oauth20")
 passport.use(new googleStrategy({
 
@@ -205,6 +256,7 @@ app.get("/user/signup", async (req, res) => {
 app.post("/user/signup", wrapAsync (async (req, res) => {
  try {
   let { username, email, password } = req.body;
+  
   const newUser = new User({ email, username });
   const registeredUser = await User.register(newUser, password);
   

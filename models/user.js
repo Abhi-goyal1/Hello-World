@@ -13,7 +13,6 @@ const userSchema = new Schema({
 
 
 
-
 userSchema.plugin(passportLocalMongoose, { usernameField: 'email' });
 
 
