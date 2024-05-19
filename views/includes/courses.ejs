@@ -183,9 +183,10 @@
     <div class="row">
       <div class="col-sm-12 col-md-12 ">
         <form id="searching" class="d-flex justify-content-center" action="">
-          <input  type="search" placeholder="Search Courses">
-          <button id="searchInput" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+          <input id="searchInputCourses" type="search" placeholder="Search Courses">
+          <button type="submit" id="searchInput" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
+       
       </div>
     </div>
    
@@ -292,3 +293,21 @@
   </div>
 </div>
 <!-- ! Courses Section End -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+     // Search functionality for courses
+     document.getElementById('searching').addEventListener('submit', function(event) {
+        event.preventDefault();
+        var searchTerm = document.getElementById('searchInputCourses').value.toLowerCase();
+
+        var courses = document.querySelectorAll('.pikachu');
+        courses.forEach(function(course) {
+            var title = course.querySelector('h3').textContent.toLowerCase();
+            if (title.includes(searchTerm)) {
+                course.style.display = 'block';
+            } else {
+                course.style.display = 'none';
+            }
+        });
+    });
+</script>
