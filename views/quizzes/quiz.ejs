@@ -1,0 +1,193 @@
+<% layout("/layouts/boilerplate") %>
+
+
+<style>
+
+</style>
+
+
+
+    <!-- Hero Section -->
+    <section class="jumbotron text-center bg-primary text-white mb-0">
+        <div class="container">
+            <h1 class="display-4">Welcome to the Quiz Website</h1>
+            <p class="lead">Test your knowledge in various technologies with our quizzes.</p>
+        </div>
+    </section>
+
+    <!-- Quiz Categories Section -->
+    <section class="container my-4" id="quiz-categories">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">HTML Quiz</h5>
+                        <p class="card-text">Test your knowledge of HTML.</p>
+                        <a href="#" class="btn btn-primary" onclick="startQuiz('html', 1)">Start Quiz</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">CSS Quiz</h5>
+                        <p class="card-text">Test your knowledge of CSS.</p>
+                        <a href="#" class="btn btn-primary" onclick="startQuiz('css', 1)">Start Quiz</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">JavaScript Quiz</h5>
+                        <p class="card-text">Test your knowledge of JavaScript.</p>
+                        <a href="#" class="btn btn-primary" onclick="startQuiz('javascript', 1)">Start Quiz</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Container -->
+    <div id="quiz-container" class="container my-4" style="display:none;">
+        <div class="card">
+            <div class="card-body">
+                <h5 id="question-title" class="card-title"></h5>
+                <div id="question-options" class="mb-3"></div>
+                <button id="prev-button" class="btn btn-secondary" onclick="prevQuestion()">Previous</button>
+                <button id="next-button" class="btn btn-primary" onclick="nextQuestion()">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Result Page -->
+    <div id="result-container" class="container my-4" style="display:none;">
+        <div class="jumbotron">
+            <h1 class="display-4">Your Score</h1>
+            <p id="score"></p>
+            <a href="index.html" class="btn btn-primary">Go back to home</a>
+        </div>
+    </div>
+
+<script>
+    const quizzes = {
+    html: {
+        1: {
+            title: "HTML Quiz",
+            questions: [
+                {
+                    question: "What does HTML stand for?",
+                    options: ["Hyper Text Markup Language", "Hot Mail", "How to Make Lasagna", "Hyperlinks and Text Markup Language"],
+                    answer: "Hyper Text Markup Language"
+                },
+                {
+                    question: "Who is making the Web standards?",
+                    options: ["Google", "Microsoft", "Mozilla", "The World Wide Web Consortium"],
+                    answer: "The World Wide Web Consortium"
+                }
+            ]
+        }
+    },
+    css: {
+        1: {
+            title: "CSS Quiz",
+            questions: [
+                {
+                    question: "What does CSS stand for?",
+                    options: ["Creative Style Sheets", "Cascading Style Sheets", "Computer Style Sheets", "Colorful Style Sheets"],
+                    answer: "Cascading Style Sheets"
+                },
+                {
+                    question: "Where in an HTML document is the correct place to refer to an external style sheet?",
+                    options: ["At the end of the document", "In the <body> section", "In the <head> section", "In the <footer> section"],
+                    answer: "In the <head> section"
+                }
+            ]
+        }
+    },
+    javascript: {
+        1: {
+            title: "JavaScript Quiz",
+            questions: [
+                {
+                    question: "Inside which HTML element do we put the JavaScript?",
+                    options: ["<js>", "<scripting>", "<script>", "<javascript>"],
+                    answer: "<script>"
+                },
+                {
+                    question: "What is the correct syntax for referring to an external script called 'xxx.js'?",
+                    options: ["<script href='xxx.js'>", "<script name='xxx.js'>", "<script src='xxx.js'>", "<script file='xxx.js'>"],
+                    answer: "<script src='xxx.js'>"
+                }
+            ]
+        }
+    }
+};
+
+let currentQuiz = null;
+let currentQuestionIndex = 0;
+let score = 0;
+const answers = [];
+
+function startQuiz(category, quizId) {
+    currentQuiz = quizzes[category][quizId];
+    currentQuestionIndex = 0;
+    score = 0;
+    answers.length = 0;
+    document.querySelector('#quiz-container').style.display = 'block';
+    document.querySelector('#result-container').style.display = 'none';
+    document.querySelector('#quiz-categories').style.display = 'none';
+    displayQuestion();
+}
+
+function displayQuestion() {
+    const question = currentQuiz.questions[currentQuestionIndex];
+    document.querySelector('#question-title').innerText = question.question;
+    const optionsContainer = document.querySelector('#question-options');
+    optionsContainer.innerHTML = question.options.map(option => `
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="option" value="${option}" ${answers[currentQuestionIndex] === option ? 'checked' : ''}>
+            <label class="form-check-label">${option}</label>
+        </div>`).join('');
+    document.querySelector('#prev-button').style.display = currentQuestionIndex > 0 ? 'inline-block' : 'none';
+    document.querySelector('#next-button').innerText = currentQuestionIndex < currentQuiz.questions.length - 1 ? 'Next' : 'Submit';
+}
+
+function prevQuestion() {
+    if (currentQuestionIndex > 0) {
+        saveAnswer();
+        currentQuestionIndex--;
+        displayQuestion();
+    }
+}
+
+function nextQuestion() {
+    if (!saveAnswer()) return;
+    if (currentQuestionIndex < currentQuiz.questions.length - 1) {
+        currentQuestionIndex++;
+        displayQuestion();
+    } else {
+        displayResult();
+    }
+}
+
+function saveAnswer() {
+    const selectedOption = document.querySelector('input[name="option"]:checked');
+    if (!selectedOption) {
+        alert('Please select an option!');
+        return false;
+    }
+    answers[currentQuestionIndex] = selectedOption.value;
+    if (selectedOption.value === currentQuiz.questions[currentQuestionIndex].answer) {
+        score++;
+    }
+    return true;
+}
+
+function displayResult() {
+    document.querySelector('#quiz-container').style.display = 'none';
+    document.querySelector('#result-container').style.display = 'block';
+    document.querySelector('#score').innerText = `You scored ${score} out of ${currentQuiz.questions.length}`;
+}
+
+</script>

@@ -325,6 +325,17 @@ app.get("/logout", (req, res, next) => {
 // });
 
 
+
+app.get("/privacy-policy", (req, res, next) => {
+res.send("its working");
+});
+
+app.get("/quizzes", (req, res, next) => {
+res.render("quizzes/quiz",{ active: "" } )
+});
+
+
+
 app.get("/courses/graphic-design", (req, res) => {
   // res.render("includes/courses", { active: "courses" });
   if(!req.isAuthenticated()){
