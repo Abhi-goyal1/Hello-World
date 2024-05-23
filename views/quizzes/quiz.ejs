@@ -3,20 +3,42 @@
 
 <style>
 
+#quiz-img{
+  max-width: 35%;
+}
+
+.main-sec h1{
+    font-size: 5rem;
+    font-weight: 600;
+}
+.main-sec p{
+    font-weight: 500;
+}
+.card{
+    background-color: #2baffc;
+    color: white;
+    border: none;
+}
+.btn{ 
+    background-color: black;
+    border: none;
+   
+}
 </style>
 
 
 
     <!-- Hero Section -->
-    <section class="jumbotron text-center bg-primary text-white mb-0">
-        <div class="container">
-            <h1 class="display-4">Welcome to the Quiz Website</h1>
+    <section class="jumbotron text-center mb-0">
+        <div class="container main-sec">
+            <img src="/images/Develop-Skills-in-Online-Quizzes.jpg" alt="" id="quiz-img">
+            <h1 class="display-4 ">Welcome to the Quiz World</h1>
             <p class="lead">Test your knowledge in various technologies with our quizzes.</p>
         </div>
     </section>
 
     <!-- Quiz Categories Section -->
-    <section class="container my-4" id="quiz-categories">
+    <section class="container my-5" id="quiz-categories">
         <div class="row">
             <div class="col-md-4 mb-4">
                 <div class="card">
@@ -40,6 +62,60 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">JavaScript Quiz</h5>
+                        <p class="card-text">Test your knowledge of JavaScript.</p>
+                        <a href="#" class="btn btn-primary" onclick="startQuiz('javascript', 1)">Start Quiz</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Bootstrap Quiz</h5>
+                        <p class="card-text">Test your knowledge of HTML.</p>
+                        <a href="#" class="btn btn-primary" onclick="startQuiz('html', 1)">Start Quiz</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">React Quiz</h5>
+                        <p class="card-text">Test your knowledge of CSS.</p>
+                        <a href="#" class="btn btn-primary" onclick="startQuiz('css', 1)">Start Quiz</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Nodejs Quiz</h5>
+                        <p class="card-text">Test your knowledge of JavaScript.</p>
+                        <a href="#" class="btn btn-primary" onclick="startQuiz('javascript', 1)">Start Quiz</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Java Quiz</h5>
+                        <p class="card-text">Test your knowledge of HTML.</p>
+                        <a href="#" class="btn btn-primary" onclick="startQuiz('html', 1)">Start Quiz</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">C Quiz</h5>
+                        <p class="card-text">Test your knowledge of CSS.</p>
+                        <a href="#" class="btn btn-primary" onclick="startQuiz('css', 1)">Start Quiz</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Python Quiz</h5>
                         <p class="card-text">Test your knowledge of JavaScript.</p>
                         <a href="#" class="btn btn-primary" onclick="startQuiz('javascript', 1)">Start Quiz</a>
                     </div>
