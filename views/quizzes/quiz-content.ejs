@@ -1,0 +1,150 @@
+<% layout("/layouts/boilerplate") %>
+
+
+
+
+    <!-- Quiz Container -->
+    <section class="container my-4" id="quiz-container">
+        <!-- Quiz content will be dynamically inserted here -->
+    </section>
+
+    <!-- Result Container -->
+    <section class="container my-4 d-none" id="result-container">
+        <h2>Your Result</h2>
+        <p id="result-score"></p>
+        <a href="index.html" class="btn btn-primary">Go Back to Quiz Categories</a>
+    </section>
+
+<script>
+    const quizzes = {
+    html: {
+        1: {
+            title: "HTML Quiz",
+            questions: [
+                {
+                    question: "What does HTML stand for?",
+                    options: ["Hyper Text Markup Language", "Hot Mail", "How to Make Lasagna", "Hyperlinks and Text Markup Language"],
+                    answer: "Hyper Text Markup Language"
+                },
+                {
+                    question: "Who is making the Web standards?",
+                    options: ["Google", "Microsoft", "Mozilla", "The World Wide Web Consortium"],
+                    answer: "The World Wide Web Consortium"
+                }
+            ]
+        }
+    },
+    css: {
+        1: {
+            title: "CSS Quiz",
+            questions: [
+                {
+                    question: "What does CSS stand for?",
+                    options: ["Creative Style Sheets", "Cascading Style Sheets", "Computer Style Sheets", "Colorful Style Sheets"],
+                    answer: "Cascading Style Sheets"
+                },
+                {
+                    question: "Where in an HTML document is the correct place to refer to an external style sheet?",
+                    options: ["At the end of the document", "In the <body> section", "In the <head> section", "In the <footer> section"],
+                    answer: "In the <head> section"
+                }
+            ]
+        }
+    },
+    javascript: {
+        1: {
+            title: "JavaScript Quiz",
+            questions: [
+                {
+                    question: "Inside which HTML element do we put the JavaScript?",
+                    options: ["<js>", "<scripting>", "<script>", "<javascript>"],
+                    answer: "<script>"
+                },
+                {
+                    question: "What is the correct syntax for referring to an external script called 'xxx.js'?",
+                    options: ["<script href='xxx.js'>", "<script name='xxx.js'>", "<script src='xxx.js'>", "<script file='xxx.js'>"],
+                    answer: "<script src='xxx.js'>"
+                }
+            ]
+        }
+    }
+};
+
+let currentQuiz, currentQuestionIndex, userAnswers;
+
+function getQueryParams() {
+    const params = {};
+    const queryString = window.location.search.substring(1);
+    const regex = /([^&=]+)=([^&]*)/g;
+    let match;
+    while (match = regex.exec(queryString)) {
+        params[decodeURIComponent(match[1])] = decodeURIComponent(match[2]);
+    }
+    return params;
+}
+
+function startQuiz() {
+    const params = getQueryParams();
+    const category = params.category;
+    currentQuiz = quizzes[category][1];
+    currentQuestionIndex = 0;
+    userAnswers = [];
+    showQuestion();
+}
+
+function showQuestion() {
+    const quizContainer = document.getElementById('quiz-container');
+    quizContainer.innerHTML = `
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">${currentQuiz.title}</h5>
+                <p class="card-text">${currentQuiz.questions[currentQuestionIndex].question}</p>
+                ${currentQuiz.questions[currentQuestionIndex].options.map((option, index) => `
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="question${currentQuestionIndex}" id="option${index}" value="${option}">
+                        <label class="form-check-label" for="option${index}">
+                            ${option}
+                        </label>
+                    </div>
+                `).join('')}
+                <div class="mt-3">
+                    ${currentQuestionIndex > 0 ? `<button class="btn btn-secondary" onclick="prevQuestion()">Previous</button>` : ''}
+                    <button class="btn btn-primary" onclick="${currentQuestionIndex < currentQuiz.questions.length - 1 ? 'nextQuestion()' : 'showResult()'}">${currentQuestionIndex < currentQuiz.questions.length - 1 ? 'Next' : 'Submit'}</button>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+function nextQuestion() {
+    const selectedOption = document.querySelector(`input[name="question${currentQuestionIndex}"]:checked`);
+    if (selectedOption) {
+        userAnswers[currentQuestionIndex] = selectedOption.value;
+        currentQuestionIndex++;
+        showQuestion();
+    } else {
+        alert('Please select an option.');
+    }
+}
+
+function prevQuestion() {
+    if (currentQuestionIndex > 0) {
+        currentQuestionIndex--;
+        showQuestion();
+    }
+}
+
+function showResult() {
+    const selectedOption = document.querySelector(`input[name="question${currentQuestionIndex}"]:checked`);
+    if (selectedOption) {
+        userAnswers[currentQuestionIndex] = selectedOption.value;
+        let score = 0;
+        currentQuiz.questions.forEach((q, index) => {
+            if (userAnswers[index] === q.answer) {
+                score++;
+            }
+        });
+        document.getElementById('quiz-container').classList.add('d-none');
+        document.getElementById('result-container').classList.remove('
+
+</script>
