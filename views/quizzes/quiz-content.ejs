@@ -5,16 +5,27 @@
 
     <!-- Quiz Container -->
     <section class="container my-4" id="quiz-container">
-        <!-- Quiz content will be dynamically inserted here -->
+         <div class="card">
+                <div class="card-body">
+                    <h5 id="question-title" class="card-title"></h5>
+                    <div id="question-options" class="mb-3"></div>
+                    <button id="prev-button" class="btn btn-secondary" onclick="prevQuestion()">Previous</button>
+                    <button id="next-button" class="btn btn-primary" onclick="nextQuestion()">Next</button>
+                </div>
+            </div>
     </section>
 
     <!-- Result Container -->
     <section class="container my-4 d-none" id="result-container">
         <h2>Your Result</h2>
         <p id="result-score"></p>
-        <a href="index.html" class="btn btn-primary">Go Back to Quiz Categories</a>
+        <a href="/quizzes" class="btn btn-primary">Go Back to Quiz Categories</a>
     </section>
-
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            startQuiz();
+        });
+    </script>
 <script>
     const quizzes = {
     html: {
@@ -145,6 +156,10 @@ function showResult() {
             }
         });
         document.getElementById('quiz-container').classList.add('d-none');
-        document.getElementById('result-container').classList.remove('
-
+        document.getElementById('result-container').classList.remove('d-none');
+        document.getElementById('result-score').textContent = `You scored ${score} out of ${currentQuiz.questions.length}`;
+    } else {
+        alert('Please select an option.');
+    }
+}
 </script>

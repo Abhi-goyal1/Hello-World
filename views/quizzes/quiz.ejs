@@ -24,6 +24,51 @@
     border: none;
    
 }
+@media  (max-width: 1200px) {
+    .main-sec h1{
+    font-size: 4.4rem;
+    font-weight: 600;
+}
+.main-sec p{
+    font-size: 20px;
+}
+}
+@media  (max-width: 994px) {
+    .main-sec h1{
+    font-size: 3.3rem;
+    font-weight: 600;
+}
+.main-sec p{
+    font-size: 15px;
+}
+}
+@media  (max-width: 770px) {
+    .main-sec h1{
+    font-size: 2.4rem;
+    font-weight: 600;
+}
+.main-sec p{
+    font-size: 10px;
+}
+}
+@media  (max-width: 510px) {
+    .main-sec h1{
+    font-size: 2rem;
+    font-weight: 600;
+}
+.main-sec p{
+    font-size: 10px;
+}
+}
+@media  (max-width: 436px) {
+    .main-sec h1{
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+.main-sec p{
+    font-size: 10px;
+}
+}
 </style>
 
 
@@ -46,7 +91,7 @@
                         <h5 class="card-title">HTML Quiz</h5>
                         <p class="card-text">Test your knowledge of HTML.</p>
                        
-                        <a href="/quizzes-content?category=html" class="btn btn-primary">Start Quiz</a>
+                        <a href="/quizzes-content?category=html" class="btn btn-primary"  onclick="startQuiz('html', 1)">Start Quiz</a>
                     </div>
                 </div>
             </div>

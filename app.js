@@ -334,6 +334,13 @@ app.get("/quizzes", (req, res, next) => {
 res.render("quizzes/quiz",{ active: "" } )
 });
 
+app.get('/quizzes-content', (req, res , next) => {
+    const category = req.query.category;
+    if (!category) {
+        return res.status(400).send('Category is required');
+    }
+    res.render('quizzes/quiz-content', { category , active: "" } );
+});
 
 
 app.get("/courses/graphic-design", (req, res) => {
