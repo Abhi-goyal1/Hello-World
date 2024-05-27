@@ -1,6 +1,4 @@
-Sure, here is the README file code in markdown format for your GitHub repository:
 
-```markdown
 # Hello World E-Learning Project
 
 ## Table of Contents
