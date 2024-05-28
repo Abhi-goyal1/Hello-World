@@ -327,7 +327,7 @@ app.get("/logout", (req, res, next) => {
 
 
 app.get("/privacy-policy", (req, res, next) => {
-res.send("its working");
+  res.render("includes/privacy-policy",{ active: "" } )
 });
 
 app.get("/quizzes", (req, res, next) => {
