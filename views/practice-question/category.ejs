@@ -1,0 +1,101 @@
+<% layout("/layouts/boilerplate") %>
+
+
+<style>
+ 
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.categories {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.category {
+    background-color: #007BFF;
+    color: white;
+    padding: 15px 25px;
+    margin: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.category:hover {
+    background-color: #0056b3;
+}
+
+.question {
+    background-color: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+pre {
+    background-color: #f8f8f8;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+button.show-answer {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button.show-answer:hover {
+    background-color: #218838;
+}
+
+p.answer {
+    display: none;
+    margin-top: 10px;
+    color: #333;
+    background-color: #e9ecef;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+</style>
+
+
+<div class="container">
+    <h1><%= category %> Practice Questions</h1>
+    <% questions.forEach(function(question) { %>
+        <div class="question">
+            <p><%= question.text %></p>
+            <pre><%= question.code %></pre>
+            <button class="show-answer">Show Answer</button>
+            <p class="answer">Answer: <%= question.answer %></p>
+        </div>
+    <% }) %>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll(".show-answer");
+    buttons.forEach(button => {
+        button.addEventListener("click", function () {
+            const answer = this.nextElementSibling;
+            answer.style.display = answer.style.display === "block" ? "none" : "block";
+        });
+    });
+});
+
+</script>

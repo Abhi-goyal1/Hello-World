@@ -334,6 +334,12 @@ app.get("/quizzes", (req, res, next) => {
 res.render("quizzes/quiz",{ active: "" } )
 });
 
+
+app.get("/quizzes", (req, res, next) => {
+res.render("quizzes/quiz",{ active: "" } )
+});
+
+
 app.get('/quizzes-content', (req, res , next) => {
     const category = req.query.category;
     if (!category) {
@@ -355,6 +361,63 @@ app.get("/courses/graphic-design", (req, res) => {
 
 
 
+
+//! ---------------------------------Category routes-------------------------------------
+const questions = {
+  python: [
+      {
+          text: 'What is the output of the following code?',
+          code: 'def add(a, b):\n    return a + b\n\nprint(add(1, 2))',
+          answer: '3'
+      },
+      {
+          text: 'What is the output of the following code?',
+          code: 'def add(a, b):\n    return a + b\n\nprint(add(1, 2))',
+          answer: '3'
+      },
+      {
+          text: 'What is the output of the following code?',
+          code: 'def add(a, b):\n    return a + b\n\nprint(add(1, 2))',
+          answer: '3'
+      }
+      // Add more Python questions here
+  ],
+  java: [
+      {
+          text: 'What does the following Java code output?',
+          code: 'public class Main {\n    public static void main(String[] args) {\n        System.out.println("Hello, World!");\n    }\n}',
+          answer: 'Hello, World!'
+      }
+      // Add more Java questions here
+  ],
+  html: [
+      {
+          text: 'What does the following HTML code do?',
+          code: '<!DOCTYPE html>\n<html>\n<head>\n    <title>Page Title</title>\n</head>\n<body>\n    <h1>This is a Heading</h1>\n    <p>This is a paragraph.</p>\n</body>\n</html>',
+          answer: 'It displays a heading and a paragraph.'
+      }
+      // Add more HTML questions here
+  ],
+  css: [
+      {
+          text: 'What does the following CSS code do?',
+          code: 'body {\n    background-color: lightblue;\n}',
+          answer: 'It sets the background color of the body to light blue.'
+      }
+      // Add more CSS questions here
+  ]
+};
+
+app.get('/category/:name', (req, res) => {
+  const category = req.params.name;
+  res.render('practice-question/category', { category, questions: questions[category] || [],  active: ''  });
+});
+
+
+app.get('/questions', (req, res) => {
+ res.render("practice-question/question-category",{ active: "" } );
+});
+//! ---------------------------------Category routes Ends -------------------------------------
 
 
 //! Route for undefine.
