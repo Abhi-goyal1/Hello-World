@@ -3,84 +3,181 @@
 
 <style>
  
-    .container {
-        width: 80%;
-        margin: auto;
-        overflow: hidden;
-    }
-    
-    h1 {
-        text-align: center;
-        margin-top: 20px;
-    }
-    
-    .categories {
-        display: flex;
-        justify-content: center;
-        margin-top: 30px;
-    }
-    
-    .category {
-        background-color: #007BFF;
-        color: white;
-        padding: 15px 25px;
-        margin: 10px;
-        text-decoration: none;
-        border-radius: 5px;
-        transition: background-color 0.3s;
-    }
-    
-    .category:hover {
-        background-color: #0056b3;
-    }
-    
-    .question {
-        background-color: white;
-        padding: 20px;
-        margin: 20px 0;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    
-    pre {
-        background-color: #f8f8f8;
-        padding: 10px;
-        border-radius: 5px;
-        overflow-x: auto;
-    }
-    
-    button.show-answer {
-        background-color: #28a745;
-        color: white;
-        padding: 10px 15px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-    }
-    
-    button.show-answer:hover {
-        background-color: #218838;
-    }
-    
-    p.answer {
-        display: none;
-        margin-top: 10px;
-        color: #333;
-        background-color: #e9ecef;
-        padding: 10px;
-        border-radius: 5px;
-    }
-    
+
+.containerss {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.containerss {
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+}
+
+.categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    justify-items: center;
+    margin-top: 30px;
+}
+
+.category {
+    background-color: white;
+    color: black;
+    padding: 10px;
+    margin: 20px;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.category img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.category span {
+    padding: 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.category:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.question {
+    background-color: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+pre {
+    background-color: #f8f8f8;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+button.show-answer {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button.show-answer:hover {
+    background-color: #218838;
+}
+
+p.answer {
+    display: none;
+    margin-top: 10px;
+    color: #333;
+    background-color: #e9ecef;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
     </style>
 
 
-<div class="container">
+<div class="containerss">
     <h1>Practice Questions</h1>
     <div class="categories">
-        <a href="/category/python" class="category">Python</a>
-        <a href="/category/java" class="category">Java</a>
-        <a href="/category/html" class="category">HTML</a>
-        <a href="/category/css" class="category">CSS</a>
+        <a href="/category/python" class="category">
+            <img src="/images/python.png" alt="Python">
+            <span>Python</span>
+        </a>
+        <a href="/category/java" class="category">
+            <img src="/images/java.png" alt="Java">
+            <span>Java</span>
+        </a>
+        <a href="/category/html" class="category">
+            <img src="/images/html.png" alt="HTML">
+            <span>HTML</span>
+        </a>
+        <a href="/category/css" class="category">
+            <img src="/images/python.png" alt="CSS">
+            <span>CSS</span>
+        </a>
+        <a href="/category/css" class="category">
+            <img src="/images/c.png" alt="CSS">
+            <span>C</span>
+        </a>
+        <a href="/category/css" class="category">
+            <img src="/images/react.png" alt="CSS">
+            <span>React</span>
+        </a>
+        <a href="/category/css" class="category">
+            <img src="/images/nodejs.png" alt="CSS">
+            <span>Node.js</span>
+        </a>
+        <a href="/category/css" class="category">
+            <img src="/images/expres.png" alt="CSS">
+            <span>Express.js</span>
+        </a>
+        <a href="/category/css" class="category">
+            <img src="/images/js_5968292.png" alt="CSS">
+            <span>JavaScript</span>
+        </a>
+        <a href="/category/css" class="category">
+            <img src="/images/c-.png" alt="CSS">
+            <span>C++</span>
+        </a>
+        <a href="/category/css" class="category">
+            <img src="/images/angular.png" alt="CSS">
+            <span>Angular</span>
+        </a>
+        <a href="/category/css" class="category">
+            <img src="/images/nextjs.png" alt="CSS">
+            <span>Next.js</span>
+        </a>
+        <a href="/category/css" class="category">
+            <img src="/images/php.png" alt="CSS">
+            <span>PHP</span>
+        </a>
+        <a href="/category/css" class="category">
+            <img src="/images/bootstrap.png" alt="CSS">
+            <span>Bootstrap</span>
+        </a>
+        <a href="/category/css" class="category">
+            <img src="/images/kotlin-512.png" alt="CSS">
+            <span>Kotlin</span>
+        </a>
     </div>
 </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll(".show-answer");
+    buttons.forEach(button => {
+        button.addEventListener("click", function () {
+            const answer = this.nextElementSibling;
+            answer.style.display = answer.style.display === "block" ? "none" : "block";
+        });
+    });
+});
+
+  </script>
