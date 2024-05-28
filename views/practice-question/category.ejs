@@ -75,7 +75,7 @@ p.answer {
 </style>
 
 
-<div class="containerss">
+<!-- <div class="containerss">
     <h1><%= category %> Practice Questions</h1>
     <% questions.forEach(function(question) { %>
         <div class="question">
@@ -85,6 +85,21 @@ p.answer {
             <p class="answer">Answer: <%= question.answer %></p>
         </div>
     <% }) %>
+</div> -->
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4"><%= category %> Questions</h1>
+    <% questions.forEach(question => { %>
+        <div class="question">
+            <h3>Question:</h3>
+            <p><%= question.question %></p>
+            <h3>Answer:</h3>
+            <p><%= question.answer %></p>
+        </div>
+    <% }) %>
+    <div class="text-center mt-4">
+        <button id="downloadPdf" class="btn btn-primary">Download as PDF</button>
+    </div>
 </div>
 
 <script>
@@ -98,4 +113,25 @@ p.answer {
     });
 });
 
+</script>
+
+
+<script>
+    document.getElementById('downloadPdf').addEventListener('click', function() {
+        const { jsPDF } = window.jspdf;
+
+        const pdf = new jsPDF();
+
+        // Add watermark
+        pdf.setFontSize(40);
+        pdf.setTextColor(150);
+        pdf.text(35, 80, 'Watermark Text', { angle: 45 });
+
+        // Convert HTML to canvas
+        html2canvas(document.body).then(canvas => {
+            const imgData = canvas.toDataURL('image/png');
+            pdf.addImage(imgData, 'PNG', 10, 10);
+            pdf.save('<%= category %>_questions.pdf');
+        });
+    });
 </script>
