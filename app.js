@@ -436,7 +436,7 @@ const questionsData = {
 app.get('/category/:category', (req, res) => {
   const category = req.params.category;
   const questions = questionsData[category] || [];
-  res.render('practice-question/category', { category, questions,active: ''   });
+  res.render('practice-question/category', { category, questions, active: ''   });
 });
 
 app.get('/questions', (req, res) => {

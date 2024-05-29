@@ -11,7 +11,13 @@
 
 h1 {
     text-align: center;
-    margin-top: 20px;
+    margin: 30px;
+    margin-bottom: 20px;
+    font-size: 3.5rem;
+    font-weight: 600;
+    text-transform:capitalize;
+    color: black;
+    
 }
 
 .categories {
@@ -91,15 +97,15 @@ p.answer {
     <h1 class="text-center mb-4"><%= category %> Questions</h1>
     <% questions.forEach(question => { %>
         <div class="question">
-            <h3>Question:</h3>
+            <h5>Question:</h5>
             <p><%= question.question %></p>
-            <h3>Answer:</h3>
+            <h5>Answer:</h5>
             <p><%= question.answer %></p>
         </div>
     <% }) %>
-    <div class="text-center mt-4">
+    <!-- <div class="text-center mt-4">
         <button id="downloadPdf" class="btn btn-primary">Download as PDF</button>
-    </div>
+    </div> -->
 </div>
 
 <script>
@@ -115,7 +121,6 @@ p.answer {
 
 </script>
 
-
 <script>
     document.getElementById('downloadPdf').addEventListener('click', function() {
         const { jsPDF } = window.jspdf;
@@ -125,7 +130,7 @@ p.answer {
         // Add watermark
         pdf.setFontSize(40);
         pdf.setTextColor(150);
-        pdf.text(35, 80, 'Watermark Text', { angle: 45 });
+        pdf.text(35, 80, 'Hello World', { angle: 45 });
 
         // Convert HTML to canvas
         html2canvas(document.body).then(canvas => {
