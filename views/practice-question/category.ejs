@@ -119,9 +119,9 @@ background: black;
 </div> -->
 
 <div class="container mt-5">
-    <h1 class="text-center mb-4 fun-underline"><span><%= category %> </span>Questions</h1>
+    <h1  data-aos="fade-up" data-aos-duration="1000" class="text-center mb-4 fun-underline"><span><%= category %> </span>Questions</h1>
 
-    <% questions.forEach(question => { %>
+    <%  questions.forEach(question => { %>
         <div class="question">
             <h5>Question:</h5>
             <p><%= question.question %></p>

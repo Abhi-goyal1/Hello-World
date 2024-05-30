@@ -433,7 +433,7 @@ const questionsData = {
 //   const category = req.params.name;
 //   res.render('practice-question/category', { category, questions: questions[category] || [],  active: ''  });
 // });
-app.get('/category/:category', (req, res) => {
+app.get('/question/:category', (req, res) => {
   const category = req.params.category;
   const questions = questionsData[category] || [];
   res.render('practice-question/category', { category, questions, active: ''   });
@@ -442,7 +442,27 @@ app.get('/category/:category', (req, res) => {
 app.get('/questions', (req, res) => {
  res.render("practice-question/question-category",{ active: "" } );
 });
+
 //! ---------------------------------Category routes Ends -------------------------------------
+
+
+
+app.get('/roadmap', (req, res) => {
+  res.render("roadmaps/roadmap",{ active: "" } );
+ });
+app.get('/roadmaps/frontend', (req, res) => {
+  res.render("roadmaps/frontend",{ active: "" } );
+ });
+ 
+
+//  app.get('/roadmap/:category', (req, res) => {
+//   const category = req.params.category;
+  
+//   res.render('practice-question/category', { category, questions, active: ''   });
+// });
+
+
+
 
 
 //! Route for undefine.
