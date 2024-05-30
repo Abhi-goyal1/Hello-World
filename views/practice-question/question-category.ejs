@@ -16,10 +16,14 @@
 }
 
 h1 {
+    font-family: "Manrope", sans-serif;
     text-align: center;
     margin-top: 20px;
-    color: #333;
-    padding: 20px;
+    font-size: 3.5rem;
+    color: #2baffc;
+}
+h1 span{
+    color: black;
 }
 
 .categories {
@@ -102,11 +106,29 @@ p.answer {
 }
 
 
+
+.fun-underline {
+  position: relative;
+}
+
+.fun-underline::after {
+  content: '';
+  position: absolute;
+  left: 35%;
+  bottom: -10px;
+  height: 3px;
+  width: 30%;
+background: black;
+  border-radius: 5px;
+
+  animation: underline-animation 5s linear infinite;
+}
     </style>
 
 
 <div class="containerss">
-    <h1>Practice Questions</h1>
+    <h1 class="fun-underline"> <span>Practice</span> Questions</h1>
+   
     <div class="categories">
         <a href="/category/python" class="category">
             <img src="/images/python.png" alt="Python">
@@ -124,47 +146,47 @@ p.answer {
             <img src="/images/python.png" alt="CSS">
             <span>CSS</span>
         </a>
-        <a href="/category/css" class="category">
+        <a href="/category/C" class="category">
             <img src="/images/c.png" alt="CSS">
             <span>C</span>
         </a>
-        <a href="/category/css" class="category">
+        <a href="/category/React" class="category">
             <img src="/images/react.png" alt="CSS">
             <span>React</span>
         </a>
-        <a href="/category/css" class="category">
+        <a href="/category/Node.js" class="category">
             <img src="/images/nodejs.png" alt="CSS">
             <span>Node.js</span>
         </a>
-        <a href="/category/css" class="category">
+        <a href="/category/Express.js" class="category">
             <img src="/images/expres.png" alt="CSS">
             <span>Express.js</span>
         </a>
-        <a href="/category/css" class="category">
+        <a href="/category/JavaScript" class="category">
             <img src="/images/js_5968292.png" alt="CSS">
             <span>JavaScript</span>
         </a>
-        <a href="/category/css" class="category">
+        <a href="/category/C++" class="category">
             <img src="/images/c-.png" alt="CSS">
             <span>C++</span>
         </a>
-        <a href="/category/css" class="category">
+        <a href="/category/Angular" class="category">
             <img src="/images/angular.png" alt="CSS">
             <span>Angular</span>
         </a>
-        <a href="/category/css" class="category">
+        <a href="/category/Next.js" class="category">
             <img src="/images/nextjs.png" alt="CSS">
             <span>Next.js</span>
         </a>
-        <a href="/category/css" class="category">
+        <a href="/category/PHP" class="category">
             <img src="/images/php.png" alt="CSS">
             <span>PHP</span>
         </a>
-        <a href="/category/css" class="category">
+        <a href="/category/Bootstrap" class="category">
             <img src="/images/bootstrap.png" alt="CSS">
             <span>Bootstrap</span>
         </a>
-        <a href="/category/css" class="category">
+        <a href="/category/Kotlin" class="category">
             <img src="/images/kotlin-512.png" alt="CSS">
             <span>Kotlin</span>
         </a>

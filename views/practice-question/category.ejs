@@ -17,8 +17,11 @@ h1 {
     font-weight: 600;
     text-transform:capitalize;
     color:#2baffc;
+    font-family: "Manrope", sans-serif;
     
-    
+}
+h1 span{
+    color: black;
 }
 
 .categories {
@@ -116,7 +119,7 @@ background: black;
 </div> -->
 
 <div class="container mt-5">
-    <h1 class="text-center mb-4 fun-underline"><%= category %> Questions</h1>
+    <h1 class="text-center mb-4 fun-underline"><span><%= category %> </span>Questions</h1>
 
     <% questions.forEach(question => { %>
         <div class="question">
