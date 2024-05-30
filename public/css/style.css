@@ -506,6 +506,9 @@ li {
 }
 .hello-world-section-content p {
   padding-top: 6px;
+  text-align: justify;
+  text-justify: inter-word;
+  padding: 10px;
 }
 @media screen and (max-width: 475px) {
   .hello-world-section h1 {
@@ -704,6 +707,13 @@ li {
   padding: 0;
   background-image: linear-gradient(to right top, #6ac2f5, #c0d9fa, #cfd1e162);
 }
+
+.about-us-details p{
+  text-align: justify;
+  text-justify: inter-word;
+  padding-right: 15px;
+}
+
 .about-us-second {
   margin: 0;
 }
@@ -949,6 +959,10 @@ li {
 
 .services-sec {
   margin-top: 30px;
+  display: flex;
+  justify-content: center;
+
+  
 }
 
 .services-small-item {
@@ -964,8 +978,10 @@ li {
   transition: all 0.3s ease 0s;
   position: relative;
   z-index: 2;
-  margin-bottom: 30px;
+  margin: 0 auto 30px auto;  /* Reduced margin-bottom from 30px to 15px */
   text-decoration: none;
+ 
+  width:90%;
 }
 
 .services-small-item:before {
@@ -983,41 +999,14 @@ li {
   transition: all 0.3s ease 0s;
   opacity: 0;
 }
-.services-small-item.active:before,
-.services-small-item:hover:before {
-  opacity: 1;
-}
-
-.services-small-item.active .icon:before,
-.services-small-item:hover .icon:before {
-  opacity: 0.26;
-}
-
-.services-small-item.active .icon i,
-.services-small-item:hover .icon i {
-  background: -webkit-linear-gradient(#fff, #fff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.services-small-item.active .services-title,
-.services-small-item:hover .services-title {
-  color: black;
-}
-
-.services-small-item.active p,
-.services-small-item:hover p {
-  color: #072c4d73;
-}
-
-.services-small-item.active .button i,
-.services-small-item:hover .button i {
-  background-image: linear-gradient(135deg, #fff 0%, #fff 100%) !important;
-  color: #2baffc !important;
-}
 
 .services-small-item:hover {
-  margin-top: -15px;
+background-color: #c3e4f7;
+
+}
+.services-small-item:hover p{
+color: black;
+
 }
 
 .services-small-item .icon {
@@ -1066,13 +1055,14 @@ li {
 }
 
 .services-small-item p {
-  font-weight: 700;
-  font-size: 14px;
+ 
+  font-size: 16px;
   color: #698dae;
-  letter-spacing: 0.88px;
-  line-height: 26px;
+  text-align: justify;
+  text-justify: inter-word;
   position: relative;
-  z-index: 2;
+  padding: 10px;
+  /* z-index: 2; */
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
@@ -1082,19 +1072,21 @@ li {
 .services-small-item .button {
   position: relative;
   z-index: 2;
+  
 }
 
 .services-small-item .button i {
   width: 142px;
   height: 42px;
-  color: #2baffc;
+  color: white;
   line-height: 42px;
   text-align: center;
   -webkit-border-radius: 100px;
   -moz-border-radius: 100px;
   border-radius: 100px;
-  border: 1px solid #2baffc;
+  font-size: 20px;
   padding-left: 3px;
+  background-color: #000;
 }
 /* !our services section End-------------------------------------------------------- */
 

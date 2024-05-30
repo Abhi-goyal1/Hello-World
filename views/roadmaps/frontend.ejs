@@ -1,1 +1,152 @@
-<h1>hhhh</h1>
+<% layout("/layouts/boilerplate") %>
+
+<style>
+body {
+    
+    font-family: Arial, sans-serif;
+}
+
+.roadmap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    position: relative;
+}
+
+.roadmap-item {
+    background-color: #ffffff;
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    width: 200px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+.arrow{
+    color: black;
+}
+
+.roadmap-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.roadmap-item h2 {
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+
+.subcategories {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.subcategory {
+    display: none;
+    background-color: #ffffff;
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+}
+
+.subcategory h3 {
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.subcategory p {
+    color: #333333;
+    margin: 5px 0;
+}
+
+
+</style>
+
+
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-5">Front-End Roadmap</h1>
+        <div class="roadmap">
+            <div class="roadmap-item" onclick="toggleSubcategories('html')">
+                <h2>HTML</h2>
+            </div>
+            <div class="arrow"><i class="fa-solid fa-minus"></i>  <i class="fa-solid fa-arrow-right-long"></i></div>
+            <div class="roadmap-item" onclick="toggleSubcategories('css')">
+                <h2>CSS</h2>
+            </div>
+            <div class="arrow"><i class="fa-solid fa-minus"></i>  <i class="fa-solid fa-arrow-right-long"></i></div>
+            <div class="roadmap-item" onclick="toggleSubcategories('javascript')">
+                <h2>JavaScript</h2>
+            </div>
+            <div class="arrow"><i class="fa-solid fa-minus"></i>  <i class="fa-solid fa-arrow-right-long"></i></div>
+            <div class="roadmap-item" onclick="toggleSubcategories('frameworks')">
+                <h2>Frameworks</h2>
+            </div>
+            <div class="arrow"><i class="fa-solid fa-minus"></i>  <i class="fa-solid fa-arrow-right-long"></i></div>
+            <div class="roadmap-item" onclick="toggleSubcategories('tools')">
+                <h2>Tools</h2>
+            </div>
+        </div>
+        <div class="subcategories">
+            <div class="subcategory" id="html">
+                <h3>HTML Subcategories</h3>
+                <p>HTML Basics</p>
+                <p>Forms and Tables</p>
+                <p>SEO Basics</p>
+            </div>
+            <div class="subcategory" id="css">
+                <h3>CSS Subcategories</h3>
+                <p>CSS Basics</p>
+                <p>Flexbox</p>
+                <p>Grid</p>
+                <p>Responsive Design</p>
+            </div>
+            <div class="subcategory" id="javascript">
+                <h3>JavaScript Subcategories</h3>
+                <p>JavaScript Basics</p>
+                <p>DOM Manipulation</p>
+                <p>ES6 and Beyond</p>
+                <p>APIs</p>
+            </div>
+            <div class="subcategory" id="frameworks">
+                <h3>Frameworks Subcategories</h3>
+                <p>React</p>
+                <p>Angular</p>
+                <p>Vue</p>
+            </div>
+            <div class="subcategory" id="tools">
+                <h3>Tools Subcategories</h3>
+                <p>Webpack</p>
+                <p>Babel</p>
+                <p>npm</p>
+                <p>Git</p>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+function toggleSubcategories(id) {
+    const subcategory = document.getElementById(id);
+    const allSubcategories = document.querySelectorAll('.subcategory');
+    allSubcategories.forEach(sub => {
+        if (sub.id === id) {
+            sub.style.display = sub.style.display === 'block' ? 'none' : 'block';
+        } else {
+            sub.style.display = 'none';
+        }
+    });
+}
+
+
+</script>
