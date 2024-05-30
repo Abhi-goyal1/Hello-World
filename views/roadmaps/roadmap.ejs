@@ -2,110 +2,120 @@
 
 
 <style>
+    h1 {
+        color: #2baffc;
+        font-family: "Manrope", sans-serif;
+        padding-bottom: 40px;
+    }
 
-h1{
-    color:#2baffc;
-    font-family: "Manrope", sans-serif;
-    padding-bottom: 40px;
-}    
+    h1 span {
+        color: black;
+    }
 
-h1 span{
-   color: black;
-}
-img{
-max-width: 100%;
+    img {
+        max-width: 100%;
 
-}
-.img-con{
-    padding: 0px;
-}
-.containerss {
-    text-align: center;
-    color: white;
-    /* background-color: black; */
-    padding: 20px;
-}
+    }
 
-.cards {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
+    .img-con {
+        padding: 0px;
+    }
 
-.card {
-    color: white;
-    background: black;
-    border: 2px solid white;
-    border-radius: 10px;
-    padding: 20px;
-    width: 300px;
-    cursor: pointer;
-    transition: transform 0.3s, background 0.3s;
-}
+    .containerss {
+        text-align: center;
+        color: white;
+        /* background-color: black; */
+        padding: 20px;
+    }
 
-.card:hover {
-    transform: translateY(-10px);
-    background:#2baffc;
-    
-}
-
-.card h2 {
-    margin-top: 0;
-}
-
-.card p {
-    color: #ddd;
-}
-
-.divider {
-    position: relative;
-    margin: 40px 0;
-}
-
-.divider hr {
-    border: 0;
-    height: 2px;
-   background-color: black;
-    width: 100%;
-    margin: 0;
-}
-
-.divider span {
-    position: absolute;
-    top: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #2baffc;
-    padding: 0 10px;
-    color: white;
-    font-weight: bold;
-    border-radius: 20px;
-}
-
-@media (max-width: 768px) {
     .cards {
-        flex-direction: column;
-        align-items: center;
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .card {
-        width: 80%;
+        color: white;
+        background: black;
+        border: 2px solid white;
+        border-radius: 10px;
+        padding: 20px;
+        width: 300px;
+        cursor: pointer;
+        transition: transform 0.3s, background 0.3s;
     }
-}
 
+    .card:hover {
+        transform: translateY(-10px);
+        background: #2baffc;
+
+    }
+
+    .card h2 {
+        margin-top: 0;
+    }
+
+    .card p {
+        color: #ddd;
+    }
+
+    .divider {
+        position: relative;
+        margin: 40px 0;
+    }
+
+    .divider hr {
+        border: 0;
+        height: 2px;
+        background-color: black;
+        width: 100%;
+        margin: 0;
+    }
+
+    .divider span {
+        position: absolute;
+        top: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #2baffc;
+        padding: 0 10px;
+        color: white;
+        font-weight: bold;
+        border-radius: 20px;
+    }
+
+    @media (max-width: 768px) {
+        .cards {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card {
+            width: 80%;
+        }
+    }
+
+    @media (max-width: 436px) {
+        .divider span {
+            font-size: 10px;
+            top: -8px;
+        }
+    }
 </style>
 
-  <div class="container-fluid">
+<div class="container-fluid">
     <div class="row">
         <div class="col-md-12 img-con">
-<img src="/images/road-head.png" alt="">
+            <img src="/images/road-head.png" alt="">
         </div>
         <div class="col-md-12">
             <div class="containerss main-con">
-                <h1 data-aos="fade-right" data-aos-duration="1000"> <span>Begin Your Journey with</span> Roadmap World <span>.</span></h1>
+                <h1 data-aos="fade-right" data-aos-duration="1000"> <span>Begin Your Journey with</span> Roadmap World
+                    <span>.</span></h1>
                 <div class="cards">
-                    <div class="card" onclick="location.href='/roadmaps/frontend'" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="card" onclick="location.href='/roadmaps/frontend'" data-aos="fade-up"
+                        data-aos-duration="1000">
                         <h2>Frontend Development</h2>
                         <!-- <p>Learn the path to becoming a frontend developer</p> -->
                     </div>
@@ -117,12 +127,12 @@ max-width: 100%;
                         <h2>Full Stack Development</h2>
                         <!-- <p>Learn the path to becoming a backend developer</p> -->
                     </div>
-                   
+
                     <div class="card" onclick="location.href='/backend'" data-aos="fade-up" data-aos-duration="1000">
                         <h2>Android Development</h2>
                         <!-- <p>Learn the path to becoming a backend developer</p> -->
                     </div>
-                    <div class="card" onclick="location.href='/backend'"  data-aos="fade-up" data-aos-duration="1000">
+                    <div class="card" onclick="location.href='/backend'" data-aos="fade-up" data-aos-duration="1000">
                         <h2>Game Development</h2>
                         <!-- <p>Learn the path to becoming a backend developer</p> -->
                     </div>
@@ -132,65 +142,65 @@ max-width: 100%;
                     </div>
 
                 </div>
-                <div class="divider"  data-aos="fade-up" data-aos-duration="1000">
+                <div class="divider" data-aos="fade-up" data-aos-duration="1000">
                     <hr>
                     <span>Skill Based Roadmaps</span>
                 </div>
-<div class="cards">
-    
-    <div class="card" onclick="location.href='/backend'" data-aos="fade-up" data-aos-duration="1000">
-        <h2>JavaScript</h2>
-        <!-- <p>Learn the path to becoming a backend developer</p> -->
-    </div>
-    <div class="card" onclick="location.href='/backend'" data-aos="fade-up" data-aos-duration="1000">
-        <h2>React</h2>
-        <!-- <p>Learn the path to becoming a backend developer</p> -->
-    </div>
-    <div class="card" onclick="location.href='/backend'" data-aos="fade-up" data-aos-duration="1000">
-        <h2>Angular</h2>
-        <!-- <p>Learn the path to becoming a backend developer</p> -->
-    </div>
-    <div class="card" onclick="location.href='/backend'" data-aos="fade-up" data-aos-duration="1000">
-        <h2>TypeScript</h2>
-        <!-- <p>Learn the path to becoming a backend developer</p> -->
-    </div>
-    <div class="card" onclick="location.href='/backend'"  data-aos="fade-up" data-aos-duration="1000">
-        <h2>Python</h2>
-        <!-- <p>Learn the path to becoming a backend developer</p> -->
-    </div>
-    <div class="card" onclick="location.href='/backend'"  data-aos="fade-up" data-aos-duration="1000">
-        <h2>Java</h2>
-        <!-- <p>Learn the path to becoming a backend developer</p> -->
-    </div>
-    <div class="card" onclick="location.href='/backend'"  data-aos="fade-up" data-aos-duration="1000">
-        <h2>Node.js</h2>
-        <!-- <p>Learn the path to becoming a backend developer</p> -->
-    </div>
-    <div class="card" onclick="location.href='/backend'"  data-aos="fade-up" data-aos-duration="1000">
-        <h2>SQL</h2>
-        <!-- <p>Learn the path to becoming a backend developer</p> -->
-    </div>
-    <div class="card" onclick="location.href='/backend'"  data-aos="fade-up" data-aos-duration="1000">
-        <h2>C++</h2>
-        <!-- <p>Learn the path to becoming a backend developer</p> -->
-    </div>
-    <div class="card" onclick="location.href='/backend'"  data-aos="fade-up" data-aos-duration="1000">
-        <h2>DSA</h2>
-        <!-- <p>Learn the path to becoming a backend developer</p> -->
-    </div>
-    <div class="card" onclick="location.href='/backend'"  data-aos="fade-up" data-aos-duration="1000">
-        <h2>MongoDb</h2>
-        <!-- <p>Learn the path to becoming a backend developer</p> -->
-    </div>
-    <div class="card" onclick="location.href='/backend'"  data-aos="fade-up" data-aos-duration="1000">
-        <h2>Kotlin</h2>
-        <!-- <p>Learn the path to becoming a backend developer</p> -->
-    </div>
-</div>
+                <div class="cards">
+
+                    <div class="card" onclick="location.href='/backend'" data-aos="fade-up" data-aos-duration="1000">
+                        <h2>JavaScript</h2>
+                        <!-- <p>Learn the path to becoming a backend developer</p> -->
+                    </div>
+                    <div class="card" onclick="location.href='/backend'" data-aos="fade-up" data-aos-duration="1000">
+                        <h2>React</h2>
+                        <!-- <p>Learn the path to becoming a backend developer</p> -->
+                    </div>
+                    <div class="card" onclick="location.href='/backend'" data-aos="fade-up" data-aos-duration="1000">
+                        <h2>Angular</h2>
+                        <!-- <p>Learn the path to becoming a backend developer</p> -->
+                    </div>
+                    <div class="card" onclick="location.href='/backend'" data-aos="fade-up" data-aos-duration="1000">
+                        <h2>TypeScript</h2>
+                        <!-- <p>Learn the path to becoming a backend developer</p> -->
+                    </div>
+                    <div class="card" onclick="location.href='/backend'" data-aos="fade-up" data-aos-duration="1000">
+                        <h2>Python</h2>
+                        <!-- <p>Learn the path to becoming a backend developer</p> -->
+                    </div>
+                    <div class="card" onclick="location.href='/backend'" data-aos="fade-up" data-aos-duration="1000">
+                        <h2>Java</h2>
+                        <!-- <p>Learn the path to becoming a backend developer</p> -->
+                    </div>
+                    <div class="card" onclick="location.href='/backend'" data-aos="fade-up" data-aos-duration="1000">
+                        <h2>Node.js</h2>
+                        <!-- <p>Learn the path to becoming a backend developer</p> -->
+                    </div>
+                    <div class="card" onclick="location.href='/backend'" data-aos="fade-up" data-aos-duration="1000">
+                        <h2>SQL</h2>
+                        <!-- <p>Learn the path to becoming a backend developer</p> -->
+                    </div>
+                    <div class="card" onclick="location.href='/backend'" data-aos="fade-up" data-aos-duration="1000">
+                        <h2>C++</h2>
+                        <!-- <p>Learn the path to becoming a backend developer</p> -->
+                    </div>
+                    <div class="card" onclick="location.href='/backend'" data-aos="fade-up" data-aos-duration="1000">
+                        <h2>DSA</h2>
+                        <!-- <p>Learn the path to becoming a backend developer</p> -->
+                    </div>
+                    <div class="card" onclick="location.href='/backend'" data-aos="fade-up" data-aos-duration="1000">
+                        <h2>MongoDb</h2>
+                        <!-- <p>Learn the path to becoming a backend developer</p> -->
+                    </div>
+                    <div class="card" onclick="location.href='/backend'" data-aos="fade-up" data-aos-duration="1000">
+                        <h2>Kotlin</h2>
+                        <!-- <p>Learn the path to becoming a backend developer</p> -->
+                    </div>
+                </div>
 
 
 
             </div>
         </div>
     </div>
-  </div>
+</div>
