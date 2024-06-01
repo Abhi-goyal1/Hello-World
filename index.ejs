@@ -1,4 +1,62 @@
 <% layout("/layouts/boilerplate") %>
+
+<style>
+   .suggestions {
+      position: absolute;
+      background: #fff;
+      border: 1px solid #ccc;
+      width: calc(80% - 22px);
+      max-width: 378px;
+      margin-top: 5px;
+      display: none;
+      z-index: 10;
+    }
+    .suggestions li {
+      padding: 10px;
+      cursor: pointer;
+    }
+    .suggestions li:hover {
+      background: #f0f0f0;
+    }
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 100;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgb(0,0,0);
+      background-color: rgba(0,0,0,0.4);
+      padding-top: 60px;
+    }
+    .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 500px;
+      position: relative;
+      text-align: center;
+    }
+    .close {
+      color: #aaa;
+      position: absolute;
+      right: 20px;
+      top: 10px;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+</style>
 <body id="index html">
  <!-- !Navigation Bar -->
 
@@ -24,10 +82,22 @@
         <h1>Ignite The Passion For Developing.</h1>
 
         <h3>One platform for master all technologies.</h3>
-        <form id="searching" class="d-flex justify-content-center" action="">
-          <input type="search" placeholder="Search Tutorials, e.g. HTML">
-          <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+
+
+        <form id="searching" class="d-flex justify-content-center" onsubmit="searchTutorials(event)">
+          <input type="search" id="searchInput" class="search-box" placeholder="Search Tutorials, e.g. HTML" required oninput="showSuggestions(event)">
+          <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
+        <ul id="suggestions" class="suggestions"></ul>
+
+
+        <div id="errorModal" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p>No tutorials found for your search query.</p>
+          </div>
+        </div>
+        
         <div class="roadmap">
           <a class="" href="">To Start with Road-maps.</a>
         </div>
@@ -508,5 +578,86 @@
   <!-- !Newsletter section End -->
 
 
+  <script>
+    const baseUrl = "/";
+    const tutorials = {
+      "html": "html/html_intro",
+      "css": "css/css_intro",
+      "bootstrap": "bootstrap/bootstrap_intro",
+      "nodejs": "nodejs/nodejs_intro",
+      "javascript": "js/js_intro",
+      "c": "c/c_intro",
+      "java": "java/java_intro",
+      "python": "python/python_intro",
+      "react": "react/react_intro"
+    };
 
+    function searchTutorials(event) {
+      event.preventDefault(); // Prevent the default form submission
+      const query = document.getElementById('searchInput').value.trim().toLowerCase();
+
+      // Find the best match for the query
+      const matchingTutorial = Object.keys(tutorials).find(tutorial => tutorial.startsWith(query));
+
+      if (matchingTutorial) {
+        window.location.href = `${baseUrl}${tutorials[matchingTutorial]}`;
+      } else {
+        // If no match, display the error modal
+        showModal();
+        document.getElementById('suggestions').style.display = 'none';
+      }
+    }
+
+    function showSuggestions(event) {
+      const query = event.target.value.trim().toLowerCase();
+      const suggestionsContainer = document.getElementById('suggestions');
+      suggestionsContainer.innerHTML = ''; // Clear previous suggestions
+
+      if (query) {
+        const filteredTutorials = Object.keys(tutorials).filter(tutorial => tutorial.includes(query));
+        if (filteredTutorials.length > 0) {
+          suggestionsContainer.style.display = 'block';
+          filteredTutorials.forEach(tutorial => {
+            const suggestionItem = document.createElement('li');
+            suggestionItem.textContent = tutorial;
+            suggestionItem.onclick = () => {
+              document.getElementById('searchInput').value = tutorial;
+              suggestionsContainer.style.display = 'none';
+            };
+            suggestionsContainer.appendChild(suggestionItem);
+          });
+        } else {
+          suggestionsContainer.style.display = 'none';
+        }
+      } else {
+        suggestionsContainer.style.display = 'none';
+      }
+    }
+
+    function showModal() {
+      const modal = document.getElementById('errorModal');
+      modal.style.display = 'block';
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('errorModal');
+      modal.style.display = 'none';
+    }
+
+    // Hide modal when clicking outside of it
+    window.onclick = function(event) {
+      const modal = document.getElementById('errorModal');
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    }
+
+    // Hide suggestions when clicking outside the search container
+    document.addEventListener('click', (event) => {
+      const suggestionsContainer = document.getElementById('suggestions');
+      if (!event.target.closest('.search-container')) {
+        suggestionsContainer.style.display = 'none';
+      }
+    });
+  </script>
  </body> 
