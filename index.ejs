@@ -5,18 +5,25 @@
       position: absolute;
       background: #fff;
       border: 1px solid #ccc;
-      width: calc(80% - 22px);
-      max-width: 378px;
-      margin-top: 5px;
+      width: calc(80% - 25px);
+      max-width: 280px;
+      margin-top: px;
       display: none;
       z-index: 10;
+      /* border-bottom-left-radius: 50px; */
+left: 123px;
+list-style-type:none;
+
+    
     }
     .suggestions li {
       padding: 10px;
       cursor: pointer;
+      list-style-type:none;
     }
     .suggestions li:hover {
-      background: #f0f0f0;
+      background: #2baffc;
+      color: white;
     }
     /* Modal styles */
     .modal {
@@ -88,7 +95,7 @@
           <input type="search" id="searchInput" class="search-box" placeholder="Search Tutorials, e.g. HTML" required oninput="showSuggestions(event)">
           <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
-        <ul id="suggestions" class="suggestions"></ul>
+        <ul id="suggestions" class="suggestions text-left"></ul>
 
 
         <div id="errorModal" class="modal">
