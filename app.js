@@ -335,8 +335,8 @@ res.render("quizzes/quiz",{ active: "" } )
 });
 
 
-app.get("/quizzes", (req, res, next) => {
-res.render("quizzes/quiz",{ active: "" } )
+app.get("/faq", (req, res, next) => {
+res.render("includes/faq",{ active: "" } )
 });
 
 
@@ -452,6 +452,30 @@ app.get('/roadmap', (req, res) => {
  });
 app.get('/roadmaps/frontend', (req, res) => {
   res.render("roadmaps/frontend",{ active: "" } );
+ });
+ 
+app.get('/roadmaps/backend', (req, res) => {
+  res.render("roadmaps/backend",{ active: "" } );
+ });
+ 
+app.get('/roadmaps/android', (req, res) => {
+  res.render("roadmaps/android",{ active: "" } );
+ });
+ 
+app.get('/roadmaps/java', (req, res) => {
+  res.render("roadmaps/java",{ active: "" } );
+ });
+ 
+app.get('/roadmaps/devops', (req, res) => {
+  res.render("roadmaps/devops",{ active: "" } );
+ });
+ 
+app.get('/roadmaps/javascript', (req, res) => {
+  res.render("roadmaps/javascript",{ active: "" } );
+ });
+ 
+app.get('/roadmaps/fullstack', (req, res) => {
+  res.render("roadmaps/fullstack",{ active: "" } );
  });
  
 
