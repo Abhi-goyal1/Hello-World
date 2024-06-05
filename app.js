@@ -454,6 +454,10 @@ app.get('/roadmaps/frontend', (req, res) => {
   res.render("roadmaps/frontend",{ active: "" } );
  });
  
+app.get('/roadmaps/game-development', (req, res) => {
+  res.render("roadmaps/game-dev",{ active: "" } );
+ });
+ 
 app.get('/roadmaps/backend', (req, res) => {
   res.render("roadmaps/backend",{ active: "" } );
  });
@@ -474,7 +478,7 @@ app.get('/roadmaps/javascript', (req, res) => {
   res.render("roadmaps/javascript",{ active: "" } );
  });
  
-app.get('/roadmaps/fullstack', (req, res) => {
+app.get('/roadmaps/full-stack', (req, res) => {
   res.render("roadmaps/fullstack",{ active: "" } );
  });
  
