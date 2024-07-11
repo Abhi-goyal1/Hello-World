@@ -39,10 +39,10 @@
   }
 
   .email input {
-    /* width: 70% !important; */
+    width: 100% !important;
     padding: 10px;
     padding-left: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     border: none;
     border-radius: 30px;
     background: #ECF0F3;
@@ -52,7 +52,7 @@
 
   .password input {
 
-    /* width: 70% !important; */
+    width: 100% !important;
     padding: 10px;
     padding-left: 30px;
     margin-bottom: 20px;
@@ -114,6 +114,7 @@
 
   #more-tutorials {
     padding: 10px;
+    width: 100%;
   }
 
   .orange {
@@ -151,7 +152,7 @@
     border: none;
     /* background-color: #000; */
     color: white;
-    width: 130px;
+ width: 70%;
     padding: 10px;
     font-family: "Varela Round", sans-serif;
     border-radius: 30px;
@@ -179,8 +180,10 @@
     border-radius: 30px;
   }
 
-  .github {
-    background-color: #000;
+  .google {
+    background-color:white !important;
+    color: black !important;
+    font-weight: 600 !important;
   }
 
   .facebook {
@@ -189,6 +192,7 @@
 
   .linkedin {
     background-color: #0077B5;
+    
   }
 
   .account {
@@ -226,7 +230,7 @@
   }
 
   @media screen and (max-width:570px) {
-    .email input {
+    /* .email input {
       width: 80% !important;
 
     }
@@ -240,7 +244,7 @@
     #more-tutorials button {
       width: 80%;
 
-    }
+    } */
 
     .login-main1 svg {
       display: none;
@@ -248,7 +252,7 @@
   }
 
   @media screen and (max-width:500px) {
-    .email input {
+    /* .email input {
       width: 90% !important;
 
     }
@@ -262,7 +266,7 @@
     #more-tutorials button {
       width: 90%;
 
-    }
+    } */
 
 
   }
@@ -277,7 +281,7 @@
   }
 
   @media screen and (max-width:400px) {
-    .email input {
+    /* .email input {
       width: 100% !important;
 
     }
@@ -291,33 +295,13 @@
     #more-tutorials button {
       width: 100%;
 
-    }
+    } */
 
   }
 
   @media screen and (max-width:350px) {
 
-    .social1 button {
-
-      border: none;
-      /* background-color: #000; */
-      color: white;
-      width: 120px;
-      padding: 10px;
-      font-family: "Varela Round", sans-serif;
-      border-radius: 30px;
-    }
-
-    .social2 button {
-
-      border: none;
-      /* background-color: #000; */
-      color: white;
-      width: 120px;
-      padding: 10px;
-      font-family: "Varela Round", sans-serif;
-      border-radius: 30px;
-    }
+   
 
     .form-check {
       padding-right: 0px;
@@ -390,7 +374,7 @@
         <div class="password form-group">
           <input type="password" placeholder="Password" id="password" name="password"  class="form-control" required>
         </div>
-        <div id="more-tutorials" class="col-12 text-center">
+        <div id="more-tutorials" class=" text-center">
           <button class="btn  circle pulse orange ">Sign Up <i
                 class="fa-solid fa-user-plus"></i></button>
         </div>
@@ -398,9 +382,13 @@
       </form>
 
       <div class="">
-        <div class="d-flex flex-wrap justify-content-evenly pb-2 social1">
-          <a href="/auth/google"><button class="google bg-danger"><i class="fa-brands fa-google"></i> Google</button></a>
-           <a href=""><button class="linkedin"> <i class="fa-brands fa-linkedin"></i> Linkedin</button></a>
+        <div class=" pb-3 social1  ">
+          <a class="" href="/auth/google"><button class="google bg-danger"><i class="fa-brands fa-google"></i> Google</button></a>
+          
+        </div>
+        <div class="col-12 pb-2 social1">
+          <a href=""><button class="linkedin"> <i class="fa-brands fa-linkedin"></i> Linkedin</button></a>
+          
         </div>
 
         <!-- <div class="d-flex flex-wrap justify-content-evenly pb-2 social2">

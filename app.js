@@ -333,6 +333,9 @@ app.get("/privacy-policy", (req, res, next) => {
 app.get("/quizzes", (req, res, next) => {
 res.render("quizzes/quiz",{ active: "" } )
 });
+app.get("/resume-builder", (req, res, next) => {
+res.render("resume-builder/resume-builder",{ active: "" } )
+});
 
 
 app.get("/faq", (req, res, next) => {
@@ -355,7 +358,9 @@ app.get("/courses/graphic-design", (req, res) => {
     req.flash("error", "You must be logged in for Explore courses!")
     return res.redirect("/login")
   }
-  res.send("This is graphic designing course");
+  // res.send("This is graphic designing course");
+  res.render('courses/courses-category/graphic-design', { active: "" });
+
 });
 
 
@@ -488,6 +493,10 @@ app.get('/roadmaps/full-stack', (req, res) => {
   
 //   res.render('practice-question/category', { category, questions, active: ''   });
 // });
+
+
+
+
 
 
 

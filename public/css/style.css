@@ -965,6 +965,18 @@ li {
   
 }
 
+/* .color-full{
+  background-color: #c3e4f7 !important;
+ 
+}
+.color-full p{
+  color: #000 !important;
+ 
+}
+.color-full:hover{
+  background-color: white !important;
+} */
+
 .services-small-item {
   display: block;
   background: #fff;
@@ -981,7 +993,7 @@ li {
   margin: 0 auto 30px auto;  /* Reduced margin-bottom from 30px to 15px */
   text-decoration: none;
  
-  width:90%;
+  width:100%;
 }
 
 .services-small-item:before {
@@ -1051,7 +1063,7 @@ color: black;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
   font-family: "Lexend", sans-serif;
-  margin-top: 120px;
+  margin-top: 80px;
 }
 
 .services-small-item p {
