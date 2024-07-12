@@ -1,5 +1,11 @@
 <% layout("/layouts/boilerplate") %>
 <style>
+
+.google {
+    background-color: white !important;
+    color: black !important;
+   
+  }
   .login-main {
     padding: 60px 60px 30px 60px;
   }
@@ -124,6 +130,7 @@
   }
 
   .social1 button {
+    font-weight: 600 !important;
     border: none;
     color: white;
     width: 90%;
@@ -142,6 +149,7 @@
   }
 
   .social2 button {
+    
     border: none;
     color: white;
     width: 130px;
@@ -176,7 +184,40 @@
     text-decoration: none;
   }
 
+  .forget-sec {
+    gap: 10rem;
+  }
+
+  @media screen and (max-width:1240px) {
+    .forget-sec {
+    gap: 8rem;
+  }
+  }
+  @media screen and (max-width:1120px) {
+    .forget-sec {
+    gap: 6rem;
+  }
+  }
+  @media screen and (max-width:1000px) {
+    .forget-sec {
+    gap: 4rem;
+  }
+  }
+  @media screen and (max-width:960px) {
+    .forget-sec {
+    gap: 2rem;
+  }
+  }
+  @media screen and (max-width:870px) {
+    .forget-sec {
+    gap: 0rem;
+  }
+  }
   @media screen and (max-width:768px) {
+
+    .forget-sec {
+    gap: 14rem;
+  }
     .login-main-1 img {
       max-width: 80%;
     }
@@ -193,16 +234,48 @@
       display: none;
     }
   }
-
-  @media screen and (max-width:570px) {
-    
+  @media screen and (max-width:720px) {
+    .forget-sec {
+    gap: 12rem;
+  }
+  }
+  @media screen and (max-width:670px) {
+    .forget-sec {
+    gap: 9rem;
+  }
+  }
+  @media screen and (max-width:600px) {
+    .forget-sec {
+    gap: 8rem;
+  }
   }
 
+  @media screen and (max-width:570px) {
+    .forget-sec {
+    gap: 6rem;
+  }
+  }
+
+  @media screen and (max-width:540px) {
+    .forget-sec {
+    gap: 4rem;
+  }
+  }
   @media screen and (max-width:500px) {
-    
+    .forget-sec {
+    gap: 2rem;
+  }
+  }
+  @media screen and (max-width:470px) {
+    .forget-sec {
+    gap: 1rem;
+  }
   }
 
   @media screen and (max-width:460px) {
+    .forget-sec {
+    gap: 0rem;
+  }
 
     .login-main {
       padding: 30px 30px 30px 30px;
@@ -212,6 +285,9 @@
   }
 
   @media screen and (max-width:400px) {
+    .forget-sec {
+    gap: -1rem;
+  }
   }
 
   @media screen and (max-width:350px) {
@@ -249,7 +325,7 @@
     margin-top: 3rem;
     padding: 20px;
   }
-  
+ 
 </style>
 
 
@@ -277,7 +353,7 @@
           <input type="password" placeholder="Password" id="password" name="password" required>
         </div>
 
-        <div class="row justify-content-evenly">
+        <div class="row d-flex justify-content-evenly forget-sec ">
           <div class="col-auto">
             <div class="form-check">
               <input class="form-check-input" type="checkbox" id="rememberMe">
@@ -285,24 +361,25 @@
             </div>
           </div>
           <div class="col-auto forgot">
-            <a href="#" class="forgot-password-link">Forgot Password?</a>
+            <a href="#" class="forgot-password-link">Forget Password?</a>
           </div>
         </div>
 
         <div id="more-tutorials" class="col-12 text-center">
           <a href=""><button class="btn  circle pulse orange ">Login <i class="fa-solid fa-forward"></i></button></a>
         </div>
-        <p class="or-login">Or Login With</p>
+        <p class="or-login">Or</p>
       </form>
 
 
       <div class="">
         <div class=" pb-2 social1">
-          <a href=""><button class="google bg-danger"><i class="fa-brands fa-google"></i> Google</button></a>
-         
+          <a class="" href="/auth/google"><button class="google bg-danger"> <svg style="margin-right: 10px;" xmlns="http://www.w3.org/2000/svg" x="px" y="px" width="20" height="20" viewBox="0 0 48 48">
+            <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"></path><path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"></path><path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"></path><path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"></path>
+            </svg></i>Continue with Google</button></a>
         </div>
         <div class=" pb-2 social1">
-          <a href=""><button class="linkedin"> <i class="fa-brands fa-linkedin"></i> Linkedin</button></a>         
+          <a href=""><button class="linkedin"> <i class="fa-brands fa-linkedin"></i>Continue with Linkedin</button></a>         
         </div>
 
       </div>
