@@ -63,85 +63,6 @@ const LocalStrategy = require("passport-local");
 
 
 
-// ! Google Authentication 
-// passport-setup.js
-
-// const GoogleStrategy = require('passport-google-oauth20').Strategy;
-// // const User = require('./models/User'); // Create a User model
-
-// passport.use(
-//     new GoogleStrategy(
-//         {
-//             clientID: '858164119318-t2m3oqtl8uk1mepis54oq8kheo0cmfkq.apps.googleusercontent.com',
-//             clientSecret: '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',
-//             callbackURL: '/auth/google/callback',
-//         },
-//         async (accessToken, refreshToken, profile, done) => {
-//             // Check if user already exists in the database
-//             const existingUser = await User.findOne({ googleId: profile.id });
-
-//             if (existingUser) {
-//                 return done(null, existingUser);
-//             }
-
-//             // Create a new user
-//             const newUser = new User({
-//                 googleId: profile.id,
-//                 displayName: profile.displayName,
-//                 // Add other relevant user details
-//             });
-
-//             await newUser.save();
-//             done(null, newUser);
-//         }
-//     )
-// );
-
-// passport.serializeUser((user, done) => {
-//     done(null, user.id);
-// });
-
-// passport.deserializeUser((id, done) => {
-//     User.findById(id, (err, user) => {
-//         done(err, user);
-//     });
-// });
-
-// app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
-
-// app.get(
-//     '/auth/google/callback',
-//     passport.authenticate('google', { failureRedirect: '/' }),
-//     (req, res) => {
-//         // Successful authentication, redirect home
-//         res.redirect('/');
-//     }
-// );
-const googleStrategy = require("passport-google-oauth20")
-passport.use(new googleStrategy({
-
-  clientID:"858164119318-t2m3oqtl8uk1mepis54oq8kheo0cmfkq.apps.googleusercontent.com",
-clientSecret:"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",
-callbackURL : "/auth/google/callback",
-
- 
-
-
-}, (accessToken, refreshToken, profile,done) =>{
-console.log(accessToken)
-console.log(refreshToken)
-console.log(profile)
-}))
-
-app.get("/auth/google", passport.authenticate("google",{
-scope: ["profile","email"]
-}))
-app.get("/auth/google/callback", passport.authenticate("google"))
-
-
- 
-
-
 
 
 
@@ -156,6 +77,7 @@ passport.use(
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+
 //! EJS Template.
 app.use(express.static(path.join(__dirname, "/public")));
 app.use(express.static(path.join(__dirname, "/views")));
@@ -169,6 +91,12 @@ app.use((req, res, next) => {
 
   next();
 });
+
+
+
+
+
+
 
 //! Pages Routes.
 app.get("/", (req, res) => {
@@ -281,6 +209,7 @@ app.get("/login", async (req, res) => {
 app.post(
   "/login",
   passport.authenticate("local", {
+    successRedirect: "/",
     failureRedirect: "/login",
     failureFlash:true,
   }),
@@ -362,6 +291,56 @@ app.get("/courses/graphic-design", (req, res) => {
   res.render('courses/courses-category/graphic-design', { active: "" });
 
 });
+
+
+// ! Google Authentication 
+
+const googleStrategy = require("passport-google-oauth20")
+passport.use(new googleStrategy(
+  {
+  clientID : process.env.clientID,
+  clientSecret : process.env.clientSecret, 
+  callbackURL :process.env.callbackURL,
+}
+,  async (accessToken, refreshToken, profile, done) => {
+  try {
+    let user = await User.findOne({ googleId: profile.id });
+    console.log(accessToken)
+    console.log(refreshToken)
+    console.log(profile)
+    if (user) {
+      // If user already exists, return the user
+      return done(null, user);
+    } else {
+      // If user doesn't exist, create a new user
+      const newUser = new User({
+        googleId: profile.id,
+        username: profile.emails[0].value, // Using email as username in this example
+        displayName: profile.displayName,
+        email: profile.emails[0].value
+      });
+
+      user = await newUser.save();
+      return done(null, user);
+    }
+  } catch (err) {
+    console.error(err);
+    return done(err, null);
+  }
+}
+))
+
+app.get("/auth/google", passport.authenticate("google",{
+scope: ["profile","email"]
+}))
+
+app.get('/auth/google/callback',
+  passport.authenticate('google', { failureRedirect: '/' }),
+  (req, res) => {
+    req.flash("success", "Welcome To Hello World !");
+    res.redirect('/'); // Redirect after successful authentication
+  }
+);
 
 
 
