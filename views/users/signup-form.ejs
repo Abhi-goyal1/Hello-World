@@ -11,21 +11,13 @@
 
   .login-main-1 {
     border-radius: 0px 30px 30px 0px;
-    /* background-color:#ecf1f3; */
-
-
     background: #ecf1f3;
-    box-shadow: 5px 5px 10px#c7dbe8,
-      -5px -5px 10px #ffffff;
+    box-shadow: 5px 5px 10px#c7dbe8,-5px -5px 10px #ffffff;
   }
 
   .login-main-1 svg {
     margin-top: 40px;
     display: block;
-  }
-
-  .login-main-1 img {
-    /* margin-top: 30px; */
   }
 
   .login-main-2 h2 {
@@ -36,6 +28,10 @@
   .login-main-2 h6 {
     padding: 10px;
     color: #00000078;
+  }
+
+  .email {
+    width: 90% !important;
   }
 
   .email input {
@@ -50,8 +46,11 @@
       inset -5px -5px 10px #ffffff;
   }
 
-  .password input {
+  .password {
+    width: 90% !important;
+  }
 
+  .password input {
     width: 100% !important;
     padding: 10px;
     padding-left: 30px;
@@ -74,8 +73,6 @@
   .email ::placeholder {
     color: #00000078;
     font-family: "Varela Round", sans-serif;
-
-
   }
 
   .password ::placeholder {
@@ -83,19 +80,14 @@
     font-family: "Varela Round", sans-serif;
   }
 
-  .form-check-input {}
-
   .form-check-label {
     color: #00000078;
     font-family: "Varela Round", sans-serif;
-
   }
 
   .forgot-password-link {
     text-decoration: none;
   }
-
-
 
   .login-row {
     background: #ecf1f3;
@@ -126,7 +118,7 @@
   }
 
   #more-tutorials button {
-    width: 70%;
+    width: 90%;
     padding: 6px;
     background-color: #000;
     border: none;
@@ -141,18 +133,15 @@
     color: white;
   }
 
-
   .or-login {
     color: #00000078;
     font-family: "Varela Round", sans-serif;
   }
 
   .social1 button {
-
     border: none;
-    /* background-color: #000; */
     color: white;
- width: 70%;
+    width: 90%;
     padding: 10px;
     font-family: "Varela Round", sans-serif;
     border-radius: 30px;
@@ -160,28 +149,22 @@
 
   .social1 i {
     padding-right: 10px;
-    /* font-size: 20px; */
-
   }
 
   .social2 i {
     padding-right: 10px;
-    /* font-size: 20px; */
-
   }
 
   .social2 button {
     border: none;
-    /* background-color: #000; */
     color: white;
     width: 130px;
     padding: 10px;
-
     border-radius: 30px;
   }
 
   .google {
-    background-color:white !important;
+    background-color: white !important;
     color: black !important;
     font-weight: 600 !important;
   }
@@ -192,7 +175,6 @@
 
   .linkedin {
     background-color: #0077B5;
-    
   }
 
   .account {
@@ -230,45 +212,10 @@
   }
 
   @media screen and (max-width:570px) {
-    /* .email input {
-      width: 80% !important;
-
-    }
-
-    .password input {
-
-      width: 80% !important;
-
-    }
-
-    #more-tutorials button {
-      width: 80%;
-
-    } */
-
+   
     .login-main1 svg {
       display: none;
     }
-  }
-
-  @media screen and (max-width:500px) {
-    /* .email input {
-      width: 90% !important;
-
-    }
-
-    .password input {
-
-      width: 90% !important;
-
-    }
-
-    #more-tutorials button {
-      width: 90%;
-
-    } */
-
-
   }
 
   @media screen and (max-width:460px) {
@@ -280,29 +227,7 @@
     }
   }
 
-  @media screen and (max-width:400px) {
-    /* .email input {
-      width: 100% !important;
-
-    }
-
-    .password input {
-
-      width: 100% !important;
-
-    }
-
-    #more-tutorials button {
-      width: 100%;
-
-    } */
-
-  }
-
   @media screen and (max-width:350px) {
-
-   
-
     .form-check {
       padding-right: 0px;
     }
@@ -326,11 +251,9 @@
   }
 
   @media screen and (max-width:530px) {
-
     .rights h6 {
       font-size: 10px;
     }
-
   }
 
   .footer-02 {
@@ -338,15 +261,16 @@
     margin-top: 20px;
     padding: 20px;
   }
+
   .center-form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-    
-        .center-form .form-group {
-            width: 70%; /* Adjust the width as needed */
-        }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .center-form .form-group {
+    width: 70%;
+  }
 </style>
 
 
@@ -354,47 +278,41 @@
 
 <div class="container-fluid login-main">
   <div class="row login-row">
-
     <div class="col-sm-12 col-md-6 login-main-2 text-center ">
       <img src="../images/hwatom.png" alt="" class="hwatom ">
+
       <div>
         <img src="../images/heloworldhead.png" alt="" class="hwatom ">
       </div>
 
       <h2>Sign Up</h2>
       <h6>Create an account with Hello world</h6>
-  
+
       <form action="/user/signup" method="POST" novalidate class="needs-validation center-form">
         <div class="email form-group ">
           <input type="text" placeholder="Username" id="username" name="username" class="form-control " required>
         </div>
         <div class="email form-group">
-          <input type="email" placeholder="Email Address" id="email" name="email"  class="form-control" required>
+          <input type="email" placeholder="Email Address" id="email" name="email" class="form-control" required>
         </div>
         <div class="password form-group">
-          <input type="password" placeholder="Password" id="password" name="password"  class="form-control" required>
+          <input type="password" placeholder="Password" id="password" name="password" class="form-control" required>
         </div>
         <div id="more-tutorials" class=" text-center">
-          <button class="btn  circle pulse orange ">Sign Up <i
-                class="fa-solid fa-user-plus"></i></button>
+          <button class="btn  circle pulse orange ">Sign Up <i class="fa-solid fa-user-plus"></i></button>
         </div>
         <p class="or-login">Or Sign up With</p>
       </form>
 
       <div class="">
+
         <div class=" pb-3 social1  ">
-          <a class="" href="/auth/google"><button class="google bg-danger"><i class="fa-brands fa-google"></i> Google</button></a>
-          
-        </div>
-        <div class="col-12 pb-2 social1">
-          <a href=""><button class="linkedin"> <i class="fa-brands fa-linkedin"></i> Linkedin</button></a>
-          
+          <a class="" href="/auth/google"><button class="google bg-danger"><i class="fa-brands fa-google"></i>Google</button></a>
         </div>
 
-        <!-- <div class="d-flex flex-wrap justify-content-evenly pb-2 social2">
-          <a href=""><button class="github text-center"><i class="fa-brands fa-github"></i> GitHub </button></a>
+        <div class="col-12 pb-2 social1">
           <a href=""><button class="linkedin"> <i class="fa-brands fa-linkedin"></i> Linkedin</button></a>
-        </div> -->
+        </div>
 
       </div>
 
