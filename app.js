@@ -215,6 +215,7 @@ app.post(
   }),
   async (req, res) => {
     req.flash("success", "Welcome To Hello World !");
+    // req.flash("success", "Welcome Back" , User.username);
     res.redirect("/");
   }
 );
@@ -335,14 +336,80 @@ scope: ["profile","email"]
 }))
 
 app.get('/auth/google/callback',
-  passport.authenticate('google', { failureRedirect: '/' }),
+  passport.authenticate('google', { failureRedirect: '/signup' }),
   (req, res) => {
     req.flash("success", "Welcome To Hello World !");
     res.redirect('/'); // Redirect after successful authentication
   }
 );
 
+// !linkedin authentication-----------------------
 
+// const LinkedInStrategy = require('passport-linkedin-oauth2').Strategy;
+
+// passport.use(new LinkedInStrategy({
+//   clientID: process.env.LINKEDIN_KEY,
+//   clientSecret: process.env.LINKEDIN_SECRET,
+//   callbackURL: process.env.LINKEDIN_CALLBACK_URL,
+//   scope: ['profile', 'email', 'w_member_social'],
+//   state: true,
+  
+// },async function(accessToken, refreshToken, profile, done) {
+ 
+//   try {
+//     console.log('AccessToken:', accessToken);
+//     console.log('RefreshToken:', refreshToken);
+//     console.log('Profile:', profile);
+
+//     let user = await User.findOne({ linkedinId: profile.id });
+//     if (user) {
+//       // If user already exists, return the user
+//       return done(null, user);
+//     } else {
+//       // If user doesn't exist, create a new user
+//       const newUser = new User({
+//         linkedinId: profile.id,
+//         username: profile.emails[0].value, // Using email as username in this example
+//         displayName: profile.displayName,
+//         email: profile.emails[0].value
+//       });
+
+//       user = await newUser.save();
+//       console.log('New user created and saved:', user);
+//       return done(null, user);
+//     }
+//   } catch (err) {
+//     console.error('LinkedIn Strategy Error:', err);
+//     return done(err);
+//   }
+ 
+// }));
+
+// app.get('/auth/linkedin',
+//   passport.authenticate('linkedin', { state: 'SOME STATE' })
+// );
+
+// app.get('/auth/linkedin/callback',
+//   (req, res, next) => {
+//     passport.authenticate('linkedin', (err, user, info) => {
+//       if (err) {
+//         console.error('Authentication Error:', err);
+//         return res.redirect('/');
+//       }
+//       if (!user) {
+//         console.error('User not found:', info);
+//         return res.redirect('/');
+//       }
+//       req.logIn(user, (err) => {
+//         if (err) {
+//           console.error('Login Error:', err);
+//           return res.redirect('/');
+//         }
+//         return res.redirect('/');
+//       });
+//     })(req, res, next);
+//   }
+// );
 
 
 
