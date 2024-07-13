@@ -188,7 +188,33 @@
   .forget-sec {
     gap: 10rem;
   }
+  .account {
+    color: #00000078;
+    font-family: "Varela Round", sans-serif;
 
+  }
+
+  .account h6 {
+    padding-top: 0;
+  }
+
+  .account a {
+    text-decoration: none;
+  }
+  .password-container {
+    position: relative;
+}
+
+.toggle-password {
+ 
+    position: absolute;
+    right: 50px;
+    top: 36%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 1.2em;
+    user-select: none; /* Prevents text selection on click */
+}
   @media screen and (max-width:1240px) {
     .forget-sec {
     gap: 8rem;
@@ -377,8 +403,11 @@
         <div class="email">
           <input type="email" placeholder="Email Address" id="email" name="email" required>
         </div>
-        <div class="password">
-          <input type="password" placeholder="Password" id="password" name="password" required>
+        <div class="password password-container">
+          <input type="password " placeholder="Password" id="password" name="password" required>
+          <span class="toggle-password" onclick="togglePasswordVisibility()">
+            <i class="fa-solid fa-eye"></i>
+        </span>
         </div>
 
         <div class="row d-flex justify-content-evenly forget-sec ">
@@ -421,3 +450,20 @@
 </div>
 
 <!-- !login Main section End -->
+
+<script>
+  function togglePasswordVisibility() {
+      const passwordField = document.getElementById('password');
+      const toggleIcon = document.querySelector('.toggle-password i.fa-solid');
+
+      if (passwordField.type === 'password') {
+          passwordField.type = 'text';
+          toggleIcon.classList.remove('fa-eye');
+          toggleIcon.classList.add('fa-eye-slash');
+      } else {
+          passwordField.type = 'password';
+          toggleIcon.classList.remove('fa-eye-slash');
+          toggleIcon.classList.add('fa-eye');
+      }
+  }
+</script>

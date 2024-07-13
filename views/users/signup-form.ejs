@@ -192,6 +192,20 @@
   .account a {
     text-decoration: none;
   }
+  .password-container {
+    position: relative;
+}
+
+.toggle-password {
+ 
+    position: absolute;
+    right: 30px;
+    top: 36%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 1.2em;
+    user-select: none; /* Prevents text selection on click */
+}
 
   @media screen and (max-width:768px) {
     .login-main-1 img {
@@ -273,6 +287,11 @@
   .center-form .form-group {
     width: 70%;
   }
+
+  .message{
+    
+  }
+
 </style>
 
 
@@ -291,15 +310,35 @@
       <h6>Create an account with Hello world</h6>
 
       <form action="/user/signup" method="POST" novalidate class="needs-validation center-form">
-        <div class="email form-group ">
+        <div class="email form-group has-validation">
           <input type="text" placeholder="Username" id="username" name="username" class="form-control " required>
+          <div class="invalid-feedback">
+            Please enter username.
+          </div>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
         </div>
         <div class="email form-group">
           <input type="email" placeholder="Email Address" id="email" name="email" class="form-control" required>
+          <div class="invalid-feedback">
+            Please enter email.
+          </div>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
         </div>
-        <div class="password form-group">
+        <div class="password password-container form-group">
           <input type="password" placeholder="Password" id="password" name="password" class="form-control" required>
-        </div>
+          <span class="toggle-password" onclick="togglePasswordVisibility()"><i class="fa-solid fa-eye"></i></span>
+          <div class="invalid-feedback message">
+            Please enter username.
+          </div>
+          <div class="valid-feedback ">
+            Looks good!
+          </div>
+       
+      </div>
         <div id="more-tutorials" class=" text-center">
           <button class="btn  circle pulse orange ">Sign Up <i class="fa-solid fa-user-plus"></i></button>
         </div>
@@ -1285,3 +1324,21 @@
   </div>
    -->
 <!-- !Footer section End -->
+
+<script>
+  function togglePasswordVisibility() {
+      const passwordField = document.getElementById('password');
+      const toggleIcon = document.querySelector('.toggle-password i.fa-solid');
+
+      if (passwordField.type === 'password') {
+          passwordField.type = 'text';
+          toggleIcon.classList.remove('fa-eye');
+          toggleIcon.classList.add('fa-eye-slash');
+      } else {
+          passwordField.type = 'password';
+          toggleIcon.classList.remove('fa-eye-slash');
+          toggleIcon.classList.add('fa-eye');
+      }
+  }
+</script>
+

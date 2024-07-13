@@ -181,26 +181,37 @@ app.get("/signup", async (req, res) => {
 app.get("/user/signup", async (req, res) => {
   res.render("users/signup-form", { active: "" });
 });
-app.post("/user/signup", wrapAsync (async (req, res) => {
- try {
-  let { username, email, password } = req.body;
-  
-  const newUser = new User({ email, username });
-  const registeredUser = await User.register(newUser, password);
-  
-req.login(registeredUser, (err)=>{
-  if(err){
-    return next(err);
-  }
-  req.flash("success","Welcome to Hello World!")
-res.redirect("/");
-})
+app.post(
+  "/user/signup",
+  wrapAsync(async (req, res) => {
+    try {
+      let { username, email, password } = req.body;
 
- } catch (error) {
-  req.flash("error", error.message);
-  res.redirect("/user/signup");
- }
-}));
+      // Check if the email already exists
+      const existingUser = await User.findOne({ email: email });
+      if (existingUser) {
+        req.flash("error", "Email is already registered please Login!");
+        return res.redirect("/user/signup");
+      }
+
+      // Create a new user
+      const newUser = new User({ email, username });
+      const registeredUser = await User.register(newUser, password);
+
+      // Log in the new user
+      req.login(registeredUser, (err) => {
+        if (err) {
+          return next(err);
+        }
+        req.flash("success", "Welcome to Hello World ${username}!");
+        res.redirect("/");
+      });
+    } catch (error) {
+      req.flash("error", error.message);
+      res.redirect("/user/signup");
+    }
+  })
+);
 
 //! login Route and functionality.
 app.get("/login", async (req, res) => {
