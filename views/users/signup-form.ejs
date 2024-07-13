@@ -1,6 +1,7 @@
 <% layout("/layouts/boilerplate") %>
 
 <style>
+ 
   .login-main {
     padding: 60px 60px 30px 60px;
   }
@@ -32,9 +33,12 @@
 
   .email {
     width: 90% !important;
+    margin: 5px;
+   
   }
 
   .email input {
+  
     width: 100% !important;
     padding: 10px;
     padding-left: 30px;
@@ -48,9 +52,11 @@
 
   .password {
     width: 90% !important;
+    margin: 5px;
   }
 
   .password input {
+
     width: 100% !important;
     padding: 10px;
     padding-left: 30px;
@@ -207,6 +213,18 @@
     user-select: none; /* Prevents text selection on click */
 }
 
+#passwordRequirements {
+ position: relative;
+ box-shadow: none;
+ width: 100%;
+ top: 100%;
+  left: 55px;
+  margin: -10px 0px 5px 0px;
+  display: none; /* Hide by default */
+ 
+ }
+
+
   @media screen and (max-width:768px) {
     .login-main-1 img {
       max-width: 80%;
@@ -235,6 +253,13 @@
   }
 
   @media screen and (max-width:460px) {
+    #passwordRequirements {
+ 
+  left: 45px;
+  
+ 
+ }
+
 
     .login-main {
       padding: 30px 30px 30px 30px;
@@ -289,8 +314,31 @@
   }
 
   .message{
-    
+    position: absolute;
+   background-color: transparent;
+   box-shadow: none;
+   margin: -17px 10px 18px 30px;
   }
+ 
+  /* #passwordRequirements {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  
+  background-color: #fff;
+ 
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000; 
+ } */
+ 
+ .requirement.success {
+  color: green;
+}
+
+.requirement.failure {
+  color: #DC3545;
+}
 
 </style>
 
@@ -311,33 +359,42 @@
 
       <form action="/user/signup" method="POST" novalidate class="needs-validation center-form">
         <div class="email form-group has-validation">
-          <input type="text" placeholder="Username" id="username" name="username" class="form-control " required>
-          <div class="invalid-feedback">
+          <input type="text" placeholder="Username" id="username" maxlength="18" name="username" class="form-control " required>
+          <div class="invalid-feedback message text-start">
             Please enter username.
           </div>
-          <div class="valid-feedback">
+          <div class="valid-feedback message text-start">
             Looks good!
           </div>
         </div>
         <div class="email form-group">
           <input type="email" placeholder="Email Address" id="email" name="email" class="form-control" required>
-          <div class="invalid-feedback">
+          <div class="invalid-feedback message text-start">
             Please enter email.
           </div>
-          <div class="valid-feedback">
+          <div class="valid-feedback message text-start">
             Looks good!
           </div>
         </div>
         <div class="password password-container form-group">
-          <input type="password" placeholder="Password" id="password" name="password" class="form-control" required>
+          <input type="password" placeholder="Password" id="password" name="password"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="form-control" required>
           <span class="toggle-password" onclick="togglePasswordVisibility()"><i class="fa-solid fa-eye"></i></span>
-          <div class="invalid-feedback message">
-            Please enter username.
+
+   
+
+          <div class="invalid-feedback message text-start">
+            Please enter valid password.
           </div>
-          <div class="valid-feedback ">
+          <div class="valid-feedback message text-start ">
             Looks good!
           </div>
        
+      </div>
+      <div id="passwordRequirements" class="text-start mt-1">
+        <div class="requirement" id="lengthRequirement"><i class="fa-solid fa-times"></i> At least 8 characters</div>
+        <div class="requirement" id="uppercaseRequirement"><i class="fa-solid fa-times"></i> At least one uppercase letter</div>
+        <div class="requirement" id="specialCharRequirement"><i class="fa-solid fa-times"></i> At least one special character</div>
+        <div class="requirement" id="numberRequirement"><i class="fa-solid fa-times"></i> At least one number</div>
       </div>
         <div id="more-tutorials" class=" text-center">
           <button class="btn  circle pulse orange ">Sign Up <i class="fa-solid fa-user-plus"></i></button>
@@ -347,7 +404,7 @@
 
       <div class="">
 
-        <div class=" pb-3 social1  ">
+        <div class="  social1  ">
           <a class="" href="/auth/google"><button class="google bg-danger"> <svg style="margin-right: 10px;" xmlns="http://www.w3.org/2000/svg" x="px" y="px" width="20" height="20" viewBox="0 0 48 48">
             <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"></path><path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"></path><path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"></path><path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"></path>
             </svg></i>Continue with Google</button></a>
@@ -1326,6 +1383,61 @@
 <!-- !Footer section End -->
 
 <script>
+
+document.addEventListener('DOMContentLoaded', function() {
+  const passwordInput = document.getElementById('password');
+  const requirementsDiv = document.getElementById('passwordRequirements');
+  const requirements = [
+    { element: document.getElementById('lengthRequirement'), regex: /.{8,}/ },
+    { element: document.getElementById('uppercaseRequirement'), regex: /[A-Z]/ },
+    { element: document.getElementById('specialCharRequirement'), regex: /[!@#$%^&*]/ },
+    { element: document.getElementById('numberRequirement'), regex: /\d/ }
+  ];
+
+  passwordInput.addEventListener('input', function() {
+    const password = passwordInput.value;
+
+    // Hide the requirements div if the input field is cleared
+    if (password.length === 0) {
+      requirementsDiv.style.display = 'none';
+      return;
+    }
+
+    requirementsDiv.style.display = 'block'; // Show the requirements div when typing starts
+
+    let allMet = true;
+
+    requirements.forEach(requirement => {
+      if (requirement.regex.test(password)) {
+        requirement.element.classList.add('success');
+        requirement.element.classList.remove('failure');
+        requirement.element.querySelector('i').classList.add('fa-check');
+        requirement.element.querySelector('i').classList.remove('fa-times');
+      } else {
+        requirement.element.classList.add('failure');
+        requirement.element.classList.remove('success');
+        requirement.element.querySelector('i').classList.add('fa-times');
+        requirement.element.querySelector('i').classList.remove('fa-check');
+        allMet = false;
+      }
+    });
+
+    if (allMet) {
+      requirementsDiv.style.display = 'none'; // Hide the requirements div if all requirements are met
+    }
+  });
+
+  passwordInput.addEventListener('blur', function() {
+    requirementsDiv.style.display = 'none'; // Hide the requirements div when the input loses focus
+  });
+
+  passwordInput.addEventListener('focus', function() {
+    if (passwordInput.value.length > 0) {
+      requirementsDiv.style.display = 'block'; // Show the requirements div when the input gains focus if there's already text
+    }
+  });
+});
+
   function togglePasswordVisibility() {
       const passwordField = document.getElementById('password');
       const toggleIcon = document.querySelector('.toggle-password i.fa-solid');
