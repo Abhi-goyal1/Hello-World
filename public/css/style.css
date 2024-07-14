@@ -375,6 +375,7 @@ li {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-align: center;
+  margin-top: 15px;
 }
 #mainbody-img {
   max-width: 70%;
@@ -449,9 +450,17 @@ li {
   }
   #searching input {
     padding: 10px;
+    width: 60%;
+  }
+  #searching button {
+   
+    width: 30%;
   }
   #searching input::placeholder {
     font-size: 13px;
+  }
+  #searching {
+    margin-top:0%;
   }
 }
 @media screen and (max-width: 385px) {
@@ -509,6 +518,9 @@ li {
   text-align: justify;
   text-justify: inter-word;
   padding: 10px;
+  color: #aaa;
+  
+  font-size: 0.9rem;
 }
 @media screen and (max-width: 475px) {
   .hello-world-section h1 {

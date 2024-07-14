@@ -336,6 +336,125 @@ button:hover .button-text {
   color:#2baffc !important;
 }
 
+@media screen and (max-width: 1205px) {
+ .hero h1{
+  font-size: 5em;
+ }
+}
+@media screen and (max-width: 1120px) {
+ .hero h1{
+  font-size: 4.5em;
+ }
+}
+@media screen and (max-width: 1020px) {
+ .hero h1{
+  font-size: 4em;
+ }
+}
+@media screen and (max-width: 840px) {
+ .hero h1{
+  font-size: 3em;
+ }
+ .hero p{
+  font-size: 1rem;
+  max-width: 400px;
+ }
+}
+@media screen and (max-width: 905px) {
+ .hero h1{
+  font-size: 2.5em;
+ }
+ .hero p{
+  font-size: 1rem;
+  max-width: 400px;
+ }
+}
+@media screen and (max-width: 660px) {
+ .hero h1{
+  font-size: 2em;
+ }
+ .hero p{
+  font-size: 0.6rem;
+  max-width: 250px;
+ }
+}
+@media screen and (max-width: 485px) {
+ .hero h1{
+  font-size: 1.7em;
+ }
+ .hero p{
+  font-size: 0.6rem;
+  max-width: 250px;
+ }
+ #searching{
+    margin-bottom:15% !important;
+ }
+ #searching input {
+  box-shadow: rgba(43, 175, 252, 0.65) 0px 0px 20px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border: none;
+  padding: 15px;
+  margin-top: 10px;
+  width: 60%;
+  /* box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+    rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+    rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset; */
+}
+#searching button {
+  box-shadow: rgba(43, 175, 252, 0.65) 0px 0px 20px;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  border: none;
+  background-color: #000;
+  color: white;
+  width: 30%;
+  margin-top: 10px;
+  font-size: 20px;
+  /* box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+    rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+    rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset; */
+}
+}
+@media screen and (max-width: 408px) {
+ .hero h1{
+  font-size: 1.5em;
+ }
+ .hero p{
+  font-size: 0.5rem;
+  max-width: 200px;
+ }
+}
+@media screen and (max-width: 373px) {
+ .hero h1{
+  font-size: 1.4em;
+ }
+ .hero p{
+  font-size: 0.5rem;
+  max-width: 200px;
+ }
+}
+@media screen and (max-width: 345px) {
+ .hero h1{
+  font-size: 1.3em;
+ }
+ .hero p{
+  font-size: 0.4rem;
+  max-width: 200px;
+ }
+}
+@media screen and (max-width: 325px) {
+ .hero h1{
+  font-size: 1.2em;
+ }
+ .hero p{
+  font-size: 0.4rem;
+  max-width: 200px;
+ }
+}
+
+
+
 </style>
 </head>
 <body>
@@ -365,34 +484,39 @@ button:hover .button-text {
                 </form>
               </div>
               <div class="category-grid" id="categoryGrid">
-                  <div class="category-card">
-                      <div class="category-content">
-                          <div class="category-icon">💻</div>
-                          <h3 class="category-title">Web Development</h3>
-                          <p class="category-description">Master the art of creating stunning websites and web applications.</p>
-                          <div class="subcategory-count">4 Subcategories</div>
-                         
-                      </div>
-                  </div>
-                  <div class="category-card">
-                      <div class="category-content">
-                          <div class="category-icon">📊</div>
-                          <h3 class="category-title">Data Science</h3>
-                          <p class="category-description">Unlock insights from data and drive informed decision-making.</p>
-                          <div class="subcategory-count">4 Subcategories</div>
-                          
-                      </div>
-                  </div>
-                  <div class="category-card">
-                      <div class="category-content">
-                          <div class="category-icon">📱</div>
-                          <h3 class="category-title">Mobile Development</h3>
-                          <p class="category-description">Build powerful mobile apps for iOS and Android platforms.</p>
-                          <div class="subcategory-count">4 Subcategories</div>
-                          
-                      </div>
-                  </div>
-                  <div class="category-card">
+                  <a href=""><div class="category-card">
+                    <div class="category-content">
+                        <div class="category-icon">💻</div>
+                        <h3 class="category-title">Web Development</h3>
+                        <p class="category-description">Master the art of creating stunning websites and web applications.</p>
+                        <div class="subcategory-count">4 Subcategories</div>
+                       
+                    </div>
+                </div></a>
+                 <a href="">
+                    <div class="category-card">
+                        <div class="category-content">
+                            <div class="category-icon">📊</div>
+                            <h3 class="category-title">Data Science</h3>
+                            <p class="category-description">Unlock insights from data and drive informed decision-making.</p>
+                            <div class="subcategory-count">4 Subcategories</div>
+                            
+                        </div>
+                    </div>
+                 </a>
+                 <a href="">
+                    <div class="category-card">
+                        <div class="category-content">
+                            <div class="category-icon">📱</div>
+                            <h3 class="category-title">Mobile Development</h3>
+                            <p class="category-description">Build powerful mobile apps for iOS and Android platforms.</p>
+                            <div class="subcategory-count">4 Subcategories</div>
+                            
+                        </div>
+                    </div>
+                 </a>
+                 <a href="">
+                     <div class="category-card">
                       <div class="category-content">
                           <div class="category-icon">🔒</div>
                           <h3 class="category-title">Cybersecurity</h3>
@@ -400,6 +524,7 @@ button:hover .button-text {
                           <div class="subcategory-count">4 Subcategories</div>
                       </div>
                   </div>
+                 </a>
               </div>
           </div>
       </section>
