@@ -110,13 +110,14 @@ background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(43,175,252,1) 1
     color: #000000;
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
-    font-size: 4.5rem;
+    font-size: 5rem;
     margin-bottom: 1rem;
     text-shadow: 2px 2px 4px rgba(184, 177, 177, 0.893);
     animation: fadeInDown 1s ease-out;
   }
   
   .hero p {
+    padding: 5px;
       font-size: 1.3rem;
       margin-bottom: 2rem;
       max-width: 600px;
@@ -245,95 +246,129 @@ background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(43,175,252,1) 1
 
 /* Style for the active link */
 button {
- position: relative;
- display: inline-block;
- cursor: pointer;
- outline: none;
- border: 0;
- vertical-align: middle;
- 
- background: transparent;
- padding: 0;
- font-size: inherit;
- font-family: inherit;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
 }
 
 button.learn-more {
- width: 13rem;
- height: auto;
+  width: 13rem;
+  height: auto;
 }
 
 button.learn-more .circle {
- transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
- position: relative;
- display: block;
- margin: 0;
- width: 3rem;
- height: 3rem;
- background: #000;
- border-radius: 1.625rem;
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: relative;
+  display: block;
+  margin: 0;
+  width: 3rem;
+  height: 3rem;
+  background: #000;
+  border-radius: 1.625rem;
+  top: 0.3rem;
 }
 
 button.learn-more .circle .icon {
- transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
- position: absolute;
- top: 0;
- bottom: 0;
- margin: auto;
- background: #fff;
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: #fff;
 }
 
 button.learn-more .circle .icon.arrow {
- transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
- left: 0.625rem;
- width: 1.125rem;
- height: 0.125rem;
- background: none;
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  left: 0.625rem;
+  width: 1.125rem;
+  height: 0.125rem;
+  background: none;
 }
 
 button.learn-more .circle .icon.arrow::before {
- position: absolute;
- content: "";
- top: -0.29rem;
- right: 0.0625rem;
- width: 0.625rem;
- height: 0.625rem;
- border-top: 0.125rem solid #fff;
- border-right: 0.125rem solid #fff;
- transform: rotate(45deg);
+  position: absolute;
+  content: "";
+  top: -0.29rem;
+  right: 0.0625rem;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-top: 0.125rem solid #fff;
+  border-right: 0.125rem solid #fff;
+  transform: rotate(45deg);
 }
 
 button.learn-more .button-text {
- transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
- position: absolute;
- top: 0;
- left: 0;
- right: 0;
- bottom: 0;
- padding: 0.75rem 0;
- margin: 0 0 0 1.85rem;
- color: #000;
- font-weight: 800;
- line-height: 1.6;
- text-align: center;
-
- text-decoration: underline;
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.75rem 0;
+  margin: 0 0 0 1.85rem;
+  color: #000;
+  font-weight: 800;
+  line-height: 1.6;
+  text-align: center;
+  text-decoration: underline;
 }
 
 button:hover .circle {
- width: 100%;
+  width: 100%;
 }
 
 button:hover .circle .icon.arrow {
- background: #fff;
- transform: translate(1rem, 0);
+  background: #fff;
+  transform: translate(1rem, 0);
 }
 
 button:hover .button-text {
- color: #fff;
+  color: #fff;
 }
-.cat-head{
-  color:#2baffc !important;
+
+.cat-head {
+  color: #2baffc !important;
+}
+
+/* Responsive styles for small devices */
+@media (max-width: 600px) {
+  button.learn-more {
+    width: 9.5rem; /* Adjust the width */
+  }
+
+  button.learn-more .circle {
+    width: 2rem; /* Adjust the circle size */
+    height: 2rem; /* Adjust the circle size */
+    
+  }
+
+  button.learn-more .circle .icon.arrow {
+    left: 0.4rem; /* Adjust the arrow position */
+    width: 0.75rem; /* Adjust the arrow size */
+    height: 0.075rem; /* Adjust the arrow thickness */
+  }
+
+  button.learn-more .circle .icon.arrow::before {
+    top: -0.2rem; /* Adjust the arrow before pseudo-element position */
+    right: 0.04rem; /* Adjust the arrow before pseudo-element position */
+    width: 0.4rem; /* Adjust the arrow before pseudo-element size */
+    height: 0.4rem; /* Adjust the arrow before pseudo-element size */
+    border-top: 0.075rem solid #fff; /* Adjust the arrow before pseudo-element border */
+    border-right: 0.075rem solid #fff; /* Adjust the arrow before pseudo-element border */
+  }
+
+  button.learn-more .button-text {
+    padding: 0.5rem 0; /* Adjust the padding */
+    margin: 0 0 0 1.25rem; /* Adjust the margin */
+    font-size: 0.8rem; /* Adjust the font size */
+  }
 }
 
 @media screen and (max-width: 1205px) {
@@ -357,25 +392,40 @@ button:hover .button-text {
  }
  .hero p{
   font-size: 1rem;
-  max-width: 400px;
+  max-width: 450px;
  }
 }
 @media screen and (max-width: 905px) {
+    
  .hero h1{
   font-size: 2.5em;
  }
  .hero p{
   font-size: 1rem;
-  max-width: 400px;
+  max-width: 450px;
  }
 }
 @media screen and (max-width: 660px) {
+    #searching{
+    margin-bottom:15% !important;
+ }
+    #searching input {
+
+width: 60%;
+
+}
+#searching button {
+
+width: 30%;
+
+}
  .hero h1{
   font-size: 2em;
  }
  .hero p{
-  font-size: 0.6rem;
-  max-width: 250px;
+  font-size: 0.7rem;
+  max-width: 350px;
+  margin-bottom: 1.5rem;
  }
 }
 @media screen and (max-width: 485px) {
@@ -384,45 +434,32 @@ button:hover .button-text {
  }
  .hero p{
   font-size: 0.6rem;
-  max-width: 250px;
+  max-width: 300px;
+  margin-bottom: 1.3rem;
  }
  #searching{
     margin-bottom:15% !important;
  }
  #searching input {
-  box-shadow: rgba(43, 175, 252, 0.65) 0px 0px 20px;
-  border-top-left-radius: 30px;
-  border-bottom-left-radius: 30px;
-  border: none;
-  padding: 15px;
-  margin-top: 10px;
+
   width: 60%;
-  /* box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
-    rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
-    rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset; */
+  
 }
 #searching button {
-  box-shadow: rgba(43, 175, 252, 0.65) 0px 0px 20px;
-  border-top-right-radius: 30px;
-  border-bottom-right-radius: 30px;
-  border: none;
-  background-color: #000;
-  color: white;
+
   width: 30%;
-  margin-top: 10px;
-  font-size: 20px;
-  /* box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
-    rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
-    rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset; */
+  
 }
 }
+
+
 @media screen and (max-width: 408px) {
  .hero h1{
   font-size: 1.5em;
  }
  .hero p{
   font-size: 0.5rem;
-  max-width: 200px;
+  max-width: 250px;
  }
 }
 @media screen and (max-width: 373px) {
@@ -431,7 +468,7 @@ button:hover .button-text {
  }
  .hero p{
   font-size: 0.5rem;
-  max-width: 200px;
+  max-width: 230px;
  }
 }
 @media screen and (max-width: 345px) {

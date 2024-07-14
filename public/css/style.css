@@ -11,6 +11,16 @@
   --box-shadow: 0px 2px 10px #97c8f0;
   --body-background-color: #f4f9fd;
 }
+/* 
+body::-webkit-scrollbar {
+  width: 12px;              
+} */
+ /* width of the entire scrollbar */
+/* body::-webkit-scrollbar-thumb {
+  background-color: blue;   
+  border-radius: 20px;       
+  border: 3px solid orange;  
+} */
 
 .navbar {
   background-color: #f4f9fd;
