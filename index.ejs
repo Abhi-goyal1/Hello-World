@@ -69,7 +69,93 @@ list-style-type:none;
       color: #ff9d00;
      
     }
-    
+    .course-categories {
+      padding: 30px 20px 60px 20px;
+     
+  }
+  
+  .course-categories h2 {
+      text-align: center;
+      margin-bottom: 50px;
+      font-size: 2.5rem;
+      color: #3498db;
+      position: relative;
+  }
+  
+  .course-categories h2::after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 3px;
+      background-color: #3498db;
+      margin: 20px auto 0;
+  }
+  
+  .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+  }
+  
+  .category-card {
+      /* background-color: #222222; */
+      
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(255,255,255,0.05);
+      transition: all 0.3s ease;
+      position: relative;
+      cursor: pointer;
+      color: black;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  
+  .category-card:hover {
+      transform: translateY(-10px);
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  
+  .category-icon {
+      font-size: 3rem;
+      color: #3498db;
+      margin-bottom: 15px;
+  }
+  
+  .category-content {
+      padding: 25px;
+      text-align: center;
+  }
+  
+  .category-title {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      color: #3498db;
+  }
+  
+  .category-description {
+      color: #aaa;
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+  }
+  
+  .subcategory-count {
+      display: inline-block;
+      background-color: #3498db;
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      margin-top: 10px;
+  }
+  
+  .subcategories {
+      list-style-type: none;
+      padding: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+  }
+  
 
 
 </style>
@@ -292,101 +378,53 @@ list-style-type:none;
       <p id="heading-pera" class="text-center" data-aos="fade-right" data-aos-duration="1000">Let the journey of
         organizing your own learning.</p>
       
-      <div class="pikachu  ">
-        <div class="image">
-          <img href="#" src="images/web-design.png">
+     
 
-        </div>
+    
+        <section id="categories" class="course-categories">
+          <div class="containers">
+              <div class="category-grid" id="categoryGrid">
+                  <div class="category-card " data-aos="fade-up" data-aos-duration="1000">
+                      <div class="category-content">
+                          <div class="category-icon">💻</div>
+                          <h3 class="category-title">Web Development</h3>
+                          <!-- <p class="category-description">Master the art of creating stunning websites and web applications.</p> -->
+                          <div class="subcategory-count">4 Subcategories</div>
+                         
+                      </div>
+                  </div>
+                  <div class="category-card" data-aos="fade-up" data-aos-duration="1000">
+                      <div class="category-content">
+                          <div class="category-icon">📊</div>
+                          <h3 class="category-title">Data Science</h3>
+                          <!-- <p class="category-description">Unlock insights from data and drive informed decision-making.</p> -->
+                          <div class="subcategory-count">4 Subcategories</div>
+                          
+                      </div>
+                  </div>
+                  <div class="category-card" data-aos="fade-up" data-aos-duration="1000">
+                      <div class="category-content">
+                          <div class="category-icon">📱</div>
+                          <h3 class="category-title">Mobile Development</h3>
+                          <!-- <p class="category-description">Build powerful mobile apps for iOS and Android platforms.</p> -->
+                          <div class="subcategory-count">4 Subcategories</div>
+                          
+                      </div>
+                  </div>
+                  <div class="category-card" data-aos="fade-up" data-aos-duration="1000">
+                      <div class="category-content">
+                          <div class="category-icon">🔒</div>
+                          <h3 class="category-title">Cybersecurity</h3>
+                          <!-- <p class="category-description">Protect digital assets and learn ethical hacking techniques.</p> -->
+                          <div class="subcategory-count">4 Subcategories</div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+    
 
-        <div class="content ">
-          <h3>Graphic Design </h3>
-          <h3><i class="fa-solid fa-angles-down fa-bounce"></i></h3>
-          <a href="#" class="btn btn-primary">Explore Course</a>
-
-        </div>
-      </div>
-
-      <div class="pikachu ">
-        <div class="image">
-          <img href="#" src="images/responsive.png">
-        </div>
-        <div class="content">
-          <h3>Frontend Development</h3>
-          <h3><i class="fa-solid fa-angles-down fa-bounce"></i></h3>
-          <a href="#" class="btn btn-primary">Explore Course</a>
-        </div>
-      </div>
-
-      <div class="pikachu ">
-        <div class="image">
-          <img href="#" src="images/backend.png">
-        </div>
-        <div class="content">
-          <h3>Backend Development</h3>
-          <h3><i class="fa-solid fa-angles-down fa-bounce"></i></h3>
-          <a href="#" class="btn btn-primary">Explore Course</a>
-        </div>
-      </div>
-
-      <div class="pikachu ">
-        <div class="image">
-          <img href="#" src="images/smartphone.png">
-        </div>
-        <div class="content">
-          <h3>App Development</h3>
-          <h3><i class="fa-solid fa-angles-down fa-bounce"></i></h3>
-          <a href="#" class="btn btn-primary">Explore Course</a>
-        </div>
-      </div>
-
-
-      <div class="pikachu ">
-        <div class="image">
-          <img href="#" src="images/web-development.png">
-
-        </div>
-
-        <div class="content">
-          <h3>Web Development</h3>
-          <h3><i class="fa-solid fa-angles-down fa-bounce"></i></h3>
-          <a href="#" class="btn btn-primary">Explore Course</a>
-
-        </div>
-      </div>
-
-      <div class="pikachu ">
-        <div class="image">
-          <img href="#" src="images/hacking.png">
-        </div>
-        <div class="content">
-          <h3>Cyber Security</h3>
-          <h3><i class="fa-solid fa-angles-down fa-bounce"></i></h3>
-          <a href="#" class="btn btn-primary">Explore Course</a>
-        </div>
-      </div>
-
-      <div class="pikachu ">
-        <div class="image">
-          <img href="#" src="images/data-management.png">
-        </div>
-        <div class="content">
-          <h3>Cloud Computing</h3>
-          <h3><i class="fa-solid fa-angles-down fa-bounce"></i></h3>
-          <a href="#" class="btn btn-primary">Explore Course</a>
-        </div>
-      </div>
-
-      <div class="pikachu ">
-        <div class="image">
-          <img href="#" src="images/programming-language.png">
-        </div>
-        <div class="content">
-          <h3>Programming</h3>
-          <h3><i class="fa-solid fa-angles-down fa-bounce"></i></h3>
-          <a href="#" class="btn btn-primary">Explore Course</a>
-        </div>
-      </div>
-
+      
 
 
       <div class="row  ">

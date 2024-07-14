@@ -1,0 +1,30 @@
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->
+<svg width="800px" height="800px" viewBox="0 0 64.00 64.00" data-name="Layer 1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+<g id="SVGRepo_bgCarrier" stroke-width="0"/>
+<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+<g id="SVGRepo_iconCarrier">
+<defs>
+<style> .cls-1 { fill: #f5dd90; } .cls-2 { fill: #ffbc0a; } .cls-3 { fill: #8b8c89; } .cls-4 { fill: #6096ba; } .cls-5 { fill: #c1d7f0; } </style>
+</defs>
+<rect class="cls-4" height="3" width="2" x="44" y="18"/>
+<rect class="cls-4" height="5" width="2" x="44" y="11"/>
+<circle class="cls-1" cx="45" cy="17" r="2"/>
+<path class="cls-4" d="M24,12.87v2.13c0,2.21,1.79,4,4,4h8c2.21,0,4-1.79,4-4v-2.13l-8,2.13-8-2.13Z"/>
+<polygon class="cls-5" points="32 15 17 11 32 3 47 11 32 15"/>
+<polyline class="cls-4" points="20 59 20 33 32 21 44 33 44 59"/>
+<circle class="cls-2" cx="32" cy="35" r="5"/>
+<polyline class="cls-1" points="12 20 2 20 6 23 2 26 12 26"/>
+<rect class="cls-5" height="20" width="11" x="9" y="39"/>
+<rect class="cls-5" height="20" width="11" x="44" y="39"/>
+<polyline class="cls-1" points="28 59 28 51 36 51 36 59"/>
+<polyline class="cls-3" points="44 33 57 33 57 39 44 39"/>
+<polyline class="cls-3" points="20 39 7 39 7 33 20 33"/>
+<rect class="cls-3" height="2" width="60" x="2" y="59"/>
+<rect class="cls-2" height="8" width="2" x="31" y="51"/>
+<path class="cls-1" d="M32,40c-2.76,0-5-2.24-5-5s2.24-5,5-5"/>
+<rect class="cls-4" height="14" width="2" x="12" y="19"/>
+<polyline class="cls-1" points="52 20 62 20 58 23 62 26 52 26"/>
+<rect class="cls-4" height="14" transform="translate(102 52) rotate(-180)" width="2" x="50" y="19"/>
+</g>
+</svg>

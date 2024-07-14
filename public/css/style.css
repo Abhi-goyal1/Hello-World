@@ -964,6 +964,12 @@ li {
 
   
 }
+.services-sec p{
+  color: #aaa !important;
+  margin-bottom: 20px !important;
+  font-size: 0.9rem !important;
+  
+}
 
 /* .color-full{
   background-color: #c3e4f7 !important;
@@ -1017,7 +1023,7 @@ background-color: #c3e4f7;
 
 }
 .services-small-item:hover p{
-color: black;
+color: black !important;
 
 }
 

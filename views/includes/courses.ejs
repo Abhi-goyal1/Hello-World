@@ -57,7 +57,7 @@
   .containers h1 span{
     color:white;
   }
-  .containers p{
+  .main-container p{
     background-color:black !important;
     border-radius:50px;
   }
@@ -147,39 +147,7 @@ background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(43,175,252,1) 1
       }
   }
   
-  .cta-button {
-      display: inline-block;
-      background-color: #e74c3c;
-      color: #fff;
-      padding: 12px 30px;
-      border-radius: 50px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-      animation: pulse 2s infinite;
-  }
-  
-  .cta-button:hover {
-      background-color: #c0392b;
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-  }
-  
-  @keyframes pulse {
-      0% {
-          transform: scale(1);
-      }
-      50% {
-          transform: scale(1.05);
-      }
-      100% {
-          transform: scale(1);
-      }
-  }
-  
+
   .course-categories {
       padding: 30px 0 60px;
       background-color: #000;
@@ -264,23 +232,6 @@ background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(43,175,252,1) 1
       transition: max-height 0.5s ease;
   }
   
-  .subcategories.open {
-      max-height: 500px;
-  }
-  
-  .subcategories li {
-      margin-bottom: 10px;
-  }
-  
-  .subcategories a {
-      color: #3498db;
-      text-decoration: none;
-      transition: color 0.3s ease;
-  }
-  
-  .subcategories a:hover {
-      color: #2980b9;
-  }
   
   @media (max-width: 768px) {
       .hero h1 {
@@ -390,7 +341,7 @@ button:hover .button-text {
 <body>
   <main>
       <section class="hero">
-          <div class="containers">
+          <div class="containers main-container">
             <h1>Enroll<span>.</span> Learn<span>.</span> Get Certified<span>.</span></h1>
               <p>Transform Your Skills with Our Best Expert-Led Courses</p>
               <a href="#categories"><button  class="learn-more">
