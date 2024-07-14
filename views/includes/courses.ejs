@@ -184,7 +184,7 @@ background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(43,175,252,1) 1
       box-shadow: 0 10px 30px rgba(255,255,255,0.05);
       transition: all 0.3s ease;
       position: relative;
-      cursor: pointer;
+      
   }
   
   .category-card:hover {
@@ -515,53 +515,47 @@ width: 30%;
             <h1 class="heading text-center">Courses <span class="cat-head">Categories</span></h1>
               <div class="row">
                 <div class="col-sm-12 col-md-12">
-                  <form id="searching" class="d-flex justify-content-center">
-                    <input id="searchInput" type="search" placeholder="Search e.g. HTML">
+                  <form id="searching"  class="d-flex justify-content-center">
+                    <input id="searchInput" maxlength="20"  type="search" placeholder="Search e.g. HTML">
                     <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
               </div>
               <div class="category-grid" id="categoryGrid">
-                  <a href=""><div class="category-card">
+                <div class="category-card">
                     <div class="category-content">
                         <div class="category-icon">💻</div>
                         <h3 class="category-title">Web Development</h3>
-                        <p class="category-description">Master the art of creating stunning websites and web applications.</p>
-                        <div class="subcategory-count">4 Subcategories</div>
+                        <!-- <p class="category-description">Master the art of creating stunning websites and web applications.</p> -->
+                        <a href=""> <div class="subcategory-count"> <i class="fa-solid fa-arrow-right px-2"></i>4 Subcategories</div></a>
                        
                     </div>
-                </div></a>
-                 <a href="">
-                    <div class="category-card">
-                        <div class="category-content">
-                            <div class="category-icon">📊</div>
-                            <h3 class="category-title">Data Science</h3>
-                            <p class="category-description">Unlock insights from data and drive informed decision-making.</p>
-                            <div class="subcategory-count">4 Subcategories</div>
-                            
-                        </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-content">
+                        <div class="category-icon">📊</div>
+                        <h3 class="category-title">Data Science</h3>
+                        <!-- <p class="category-description">Unlock insights from data and drive informed decision-making.</p> -->
+                        <a href=""> <div class="subcategory-count"> <i class="fa-solid fa-arrow-right px-2"></i>4 Subcategories</div></a>
+                        
                     </div>
-                 </a>
-                 <a href="">
-                    <div class="category-card">
-                        <div class="category-content">
-                            <div class="category-icon">📱</div>
-                            <h3 class="category-title">Mobile Development</h3>
-                            <p class="category-description">Build powerful mobile apps for iOS and Android platforms.</p>
-                            <div class="subcategory-count">4 Subcategories</div>
-                            
-                        </div>
+                </div>
+                 <div class="category-card">
+                    <div class="category-content">
+                        <div class="category-icon">📱</div>
+                        <h3 class="category-title">Mobile Development</h3>
+                        <!-- <p class="category-description">Build powerful mobile apps for iOS and Android platforms.</p> -->
+                        <a href=""> <div class="subcategory-count"> <i class="fa-solid fa-arrow-right px-2"></i>4 Subcategories</div></a>
+                        
                     </div>
-                 </a>
-                 <a href="">
-                     <div class="category-card">
-                      <div class="category-content">
-                          <div class="category-icon">🔒</div>
-                          <h3 class="category-title">Cybersecurity</h3>
-                          <p class="category-description">Protect digital assets and learn ethical hacking techniques.</p>
-                          <div class="subcategory-count">4 Subcategories</div>
-                      </div>
-                  </div>
-                 </a>
+                </div>
+                 <div class="category-card">
+                    <div class="category-content">
+                        <div class="category-icon">🔒</div>
+                        <h3 class="category-title">Cybersecurity</h3>
+                        <!-- <p class="category-description">Protect digital assets and learn ethical hacking techniques.</p> -->
+                        <a href=""> <div class="subcategory-count"> <i class="fa-solid fa-arrow-right px-2"></i>4 Subcategories</div></a>
+                    </div>
+                </div>
               </div>
           </div>
       </section>

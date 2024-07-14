@@ -234,6 +234,10 @@ margin: 0px;
   #searching input::placeholder {
     font-size: 13px;
   }
+  .containers p{
+    margin-bottom: 1rem;
+  }
+
 }
 @media screen and (max-width: 572px) {
   #skill-section1 {
@@ -500,7 +504,7 @@ button:hover .button-text {
         <div class="row">
           <div class="col-sm-12 col-md-12">
             <form id="searching" class="d-flex justify-content-center">
-              <input id="searchInput" type="search" placeholder="Search e.g. HTML">
+              <input id="searchInput" maxlength="20"  type="search" placeholder="Search e.g. HTML">
               <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
           </form>
         </div>

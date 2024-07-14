@@ -243,6 +243,9 @@ app.get("/logout", (req, res, next) => {
 app.get("/forget-password",(req, res, next)=>{
   res.render("users/forget-password.ejs", { active: "" });
 })
+app.get("/reset-confirmation",(req, res, next)=>{
+  res.render("users/reset-confirmation.ejs", { active: "" });
+})
 
 
 // Set up routes
