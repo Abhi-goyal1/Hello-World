@@ -1,97 +1,10 @@
 <% layout("/layouts/boilerplate") %>
 
 <style>
-
-/* !Courses section start---------------------------------------------------------- */
-
-.courses-content {
-  
-  margin-top: 50px;
-
- 
-  /* background-image: url(images/White.jpg); */
-  /* background-image: url(images/vecteezy_abstract-gradient-pastel-blue-and-purple-background-neon_8617161.jpg); */
-
-}
-.container .pikachu {
-  position: relative;
-  max-width: 200px;
-  height: 205px;
-  background-color: #fff;
-  margin: 30px 20px;
-  padding: 20px 15px;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
-  transition: 0.3s ease-in-out;
-  border-radius: 15px;
-  margin-top: 90px;
-}
-.container .pikachu:hover {
-  height: 250px;
-}
-.content h3 {
-  font-size: 20px;
-  font-family: "Caudex", serif;
-}
-
-.container .pikachu .image {
-  position: relative;
-  width: 140px;
-  top: -40%;
-  left: 15px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  border-radius: 20px;
-  background-color: white;
-}
-
-.container .pikachu .image img {
-  max-width: 140px;
-  border-radius: 15px;
-  object-fit: cover;
-}
-
-.container .pikachu .content {
-  position: relative;
-  top: -40px;
-  color: #111;
-  text-align: center;
-  opacity: 1;
-  transition: 0.3s ease-in-out;
-}
-.container .pikachu .content a {
-  visibility: hidden;
-  opacity: 0;
-  transition: 0.2s ease;
-}
-
-.container .pikachu:hover .content a {
-  /* margin-top : 30px; */
-  visibility: visible;
-  opacity: 1;
-  transition-delay: 0.2s;
-}
-.content a {
-  background-color: #000000;
-  border: none;
-  border-radius: 30px;
-}
-
-@media screen and (max-width: 500px) {
-  .container .pikachu {
-    max-width: 290px;
-  }
-  .container .pikachu .image {
-    left: 57px;
-  }
-}
-
-
-/* !Courses section End---------------------------------------------------------- */
-
-#searching {
-  margin-top: 1rem;
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+  #searching {
+  margin-top: 0%;
+  margin-bottom: 40px;
 }
 #searching input {
   box-shadow: rgba(43, 175, 252, 0.65) 0px 0px 20px;
@@ -120,194 +33,503 @@
     rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset; */
 }
 #searching button:hover {
-  background-color: #2baffc;
+  background-color: black;
 }
 #searching input:focus {
   outline: none;
   border: 1px solid #00acee;
 }
-.heading {
-  padding: 20px;
-  font-family: "Manrope", sans-serif;
-  font-size: 3rem !important;
-  color: #000;
-}
-.heading span {
-  color: #2baffc;
-}
-#heading-pera {
-  color: #000000;
-  font-family: "Caudex", serif;
-  font-size: 20px;
-}
-@media screen and (max-width: 700px) {
-  #searching input{
-    padding: 10px;
-    width: 60%;
+  .containers {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
   }
-  #searching input::placeholder{
-    font-size: 13px;
+  #searching{
+    margin-top:0% !important;
+    margin-bottom:5% !important;
   }
-}
-@media screen and (max-width: 530px) {
-    .heading {
-
-  font-size: 2rem !important;
- 
-}
-}
-@media screen and (max-width: 376px) {
-    .heading {
+  .footer-02{
+    margin-top:0% !important;
+  }
+  .containers h1{
+    color:white;
+  }
+  .containers h1 span{
+    color:white;
+  }
+  .containers p{
+    background-color:black !important;
+    border-radius:50px;
+  }
   
-  font-size: 1.7rem !important;
+
   
-}
-}
+  .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #3498db;
+  }
+  
+  .hero {
 
+    background: rgb(43,175,252);
+background: radial-gradient(circle, rgba(43,175,252,1) 1%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%);
+/* 
+    background: rgb(255,255,255);
+background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(43,175,252,1) 100%, rgba(255,255,255,1) 100%); */
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #ecf0f1;
+      text-align: center;
+      padding: 150px 0 100px;
+      position: relative;
+      overflow: hidden;
+  }
+  
+  .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('https://tutorialhub.io/images/pattern.png');
+      opacity: 0.1;
+      animation: backgroundScroll 20s linear infinite;
+  }
+  
+  @keyframes backgroundScroll {
+      from {background-position: 0 0;}
+      to {background-position: 100% 100%;}
+  }
+  
+  .hero h1 {
+    color: #000000;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(184, 177, 177, 0.893);
+    animation: fadeInDown 1s ease-out;
+  }
+  
+  .hero p {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      animation: fadeInUp 1s ease-out 0.5s both;
+  }
+  
+  @keyframes fadeInDown {
+      from {
+          opacity: 0;
+          transform: translateY(-20px);
+      }
+      to {
+          opacity: 1;
+          transform: translateY(0);
+      }
+  }
+  
+  @keyframes fadeInUp {
+      from {
+          opacity: 0;
+          transform: translateY(20px);
+      }
+      to {
+          opacity: 1;
+          transform: translateY(0);
+      }
+  }
+  
+  .cta-button {
+      display: inline-block;
+      background-color: #e74c3c;
+      color: #fff;
+      padding: 12px 30px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      animation: pulse 2s infinite;
+  }
+  
+  .cta-button:hover {
+      background-color: #c0392b;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  }
+  
+  @keyframes pulse {
+      0% {
+          transform: scale(1);
+      }
+      50% {
+          transform: scale(1.05);
+      }
+      100% {
+          transform: scale(1);
+      }
+  }
+  
+  .course-categories {
+      padding: 30px 0 60px;
+      background-color: #000;
+  }
+  
+  .course-categories h2 {
+      text-align: center;
+      margin-bottom: 50px;
+      font-size: 2.5rem;
+      color: #3498db;
+      position: relative;
+  }
+  
+  .course-categories h2::after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 3px;
+      background-color: #3498db;
+      margin: 20px auto 0;
+  }
+  
+  .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+  }
+  
+  .category-card {
+      background-color: #222222;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(255,255,255,0.05);
+      transition: all 0.3s ease;
+      position: relative;
+      cursor: pointer;
+  }
+  
+  .category-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(255,255,255,0.1);
+  }
+  
+  .category-icon {
+      font-size: 3rem;
+      color: #3498db;
+      margin-bottom: 15px;
+  }
+  
+  .category-content {
+      padding: 25px;
+      text-align: center;
+  }
+  
+  .category-title {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      color: #3498db;
+  }
+  
+  .category-description {
+      color: #aaa;
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+  }
+  
+  .subcategory-count {
+      display: inline-block;
+      background-color: #3498db;
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      margin-top: 10px;
+  }
+  
+  .subcategories {
+      list-style-type: none;
+      padding: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+  }
+  
+  .subcategories.open {
+      max-height: 500px;
+  }
+  
+  .subcategories li {
+      margin-bottom: 10px;
+  }
+  
+  .subcategories a {
+      color: #3498db;
+      text-decoration: none;
+      transition: color 0.3s ease;
+  }
+  
+  .subcategories a:hover {
+      color: #2980b9;
+  }
+  
+  @media (max-width: 768px) {
+      .hero h1 {
+          font-size: 2.5rem;
+      }
+      
+      .hero p {
+          font-size: 1rem;
+      }
+  }
 
-
-.abi{
-  background:url(images/White.jpg);
+/* Style for the active link */
+button {
+ position: relative;
+ display: inline-block;
+ cursor: pointer;
+ outline: none;
+ border: 0;
+ vertical-align: middle;
  
+ background: transparent;
+ padding: 0;
+ font-size: inherit;
+ font-family: inherit;
+}
+
+button.learn-more {
+ width: 13rem;
+ height: auto;
+}
+
+button.learn-more .circle {
+ transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+ position: relative;
+ display: block;
+ margin: 0;
+ width: 3rem;
+ height: 3rem;
+ background: #000;
+ border-radius: 1.625rem;
+}
+
+button.learn-more .circle .icon {
+ transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+ position: absolute;
+ top: 0;
+ bottom: 0;
+ margin: auto;
+ background: #fff;
+}
+
+button.learn-more .circle .icon.arrow {
+ transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+ left: 0.625rem;
+ width: 1.125rem;
+ height: 0.125rem;
+ background: none;
+}
+
+button.learn-more .circle .icon.arrow::before {
+ position: absolute;
+ content: "";
+ top: -0.29rem;
+ right: 0.0625rem;
+ width: 0.625rem;
+ height: 0.625rem;
+ border-top: 0.125rem solid #fff;
+ border-right: 0.125rem solid #fff;
+ transform: rotate(45deg);
+}
+
+button.learn-more .button-text {
+ transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ padding: 0.75rem 0;
+ margin: 0 0 0 1.85rem;
+ color: #000;
+ font-weight: 800;
+ line-height: 1.6;
+ text-align: center;
+
+ text-decoration: underline;
+}
+
+button:hover .circle {
+ width: 100%;
+}
+
+button:hover .circle .icon.arrow {
+ background: #fff;
+ transform: translate(1rem, 0);
+}
+
+button:hover .button-text {
+ color: #fff;
+}
+.cat-head{
+  color:#2baffc !important;
 }
 
 </style>
+</head>
+<body>
+  <main>
+      <section class="hero">
+          <div class="containers">
+            <h1>Enroll<span>.</span> Learn<span>.</span> Get Certified<span>.</span></h1>
+              <p>Transform Your Skills with Our Best Expert-Led Courses</p>
+              <a href="#categories"><button  class="learn-more">
+                <span class="circle" aria-hidden="true">
+                <span class="icon arrow"></span>
+                </span>
+                <span class="button-text">Explore Courses</span>
+              </button></a>
+                  </div>
+          </div>
+      </section>
+      
+      <section id="categories" class="course-categories">
+          <div class="containers">
+            <h1 class="heading text-center">Courses <span class="cat-head">Categories</span></h1>
+              <div class="row">
+                <div class="col-sm-12 col-md-12">
+                  <form id="searching" class="d-flex justify-content-center">
+                    <input id="searchInput" type="search" placeholder="Search e.g. HTML">
+                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+              </div>
+              <div class="category-grid" id="categoryGrid">
+                  <div class="category-card">
+                      <div class="category-content">
+                          <div class="category-icon">💻</div>
+                          <h3 class="category-title">Web Development</h3>
+                          <p class="category-description">Master the art of creating stunning websites and web applications.</p>
+                          <div class="subcategory-count">4 Subcategories</div>
+                         
+                      </div>
+                  </div>
+                  <div class="category-card">
+                      <div class="category-content">
+                          <div class="category-icon">📊</div>
+                          <h3 class="category-title">Data Science</h3>
+                          <p class="category-description">Unlock insights from data and drive informed decision-making.</p>
+                          <div class="subcategory-count">4 Subcategories</div>
+                          
+                      </div>
+                  </div>
+                  <div class="category-card">
+                      <div class="category-content">
+                          <div class="category-icon">📱</div>
+                          <h3 class="category-title">Mobile Development</h3>
+                          <p class="category-description">Build powerful mobile apps for iOS and Android platforms.</p>
+                          <div class="subcategory-count">4 Subcategories</div>
+                          
+                      </div>
+                  </div>
+                  <div class="category-card">
+                      <div class="category-content">
+                          <div class="category-icon">🔒</div>
+                          <h3 class="category-title">Cybersecurity</h3>
+                          <p class="category-description">Protect digital assets and learn ethical hacking techniques.</p>
+                          <div class="subcategory-count">4 Subcategories</div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+  </main>
 
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+              e.preventDefault();
+              document.querySelector(this.getAttribute('href')).scrollIntoView({
+                  behavior: 'smooth'
+              });
+          });
+      });
 
+      // Add animation to category cards on scroll
+      const categoryCards = document.querySelectorAll('.category-card');
+      const observerOptions = {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
+      };
 
- <!-- ! Courses Section start -->
- <div class="container courses ">
-    <h1 class="heading text-center">Courses <span>Categories</span></h1>
-    <div class=" underline2 separator text-center" style="margin-left: 49%;" ></div>
-    
-    <div class="row">
-      <div class="col-sm-12 col-md-12 ">
-        <form id="searching" class="d-flex justify-content-center" action="">
-          <input id="searchInputCourses" type="search" placeholder="Search Courses">
-          <button type="submit" id="searchInput" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-        </form>
-       
-      </div>
-    </div>
-   
-    <div class="row text-center justify-content-center courses-content " data-aos="fade-up" data-aos-duration="1800">
-    
-    <div class="pikachu  ">
-      <div class="image">
-        <img href="#" src="/images/web-design.png">
-      </div>
-      <div class="content ">
-        <h3>Graphic Design </h3>
-        <h3><i class="fa-solid fa-angles-down fa-bounce"></i></h3>
-        <a href="/courses/graphic-design" class="btn btn-primary">Explore Course</a>
-      </div>
-    </div>
+      const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                  entry.target.style.opacity = 1;
+                  entry.target.style.transform = 'translateY(0) scale(1)';
+                  observer.unobserve(entry.target);
+              }
+          });
+      }, observerOptions);
 
-    <div class="pikachu ">
-      <div class="image">
-        <img href="#" src="/images/responsive.png">
-      </div>
-      <div class="content">
-        <h3>Frontend Development</h3>
-        <h3><i class="fa-solid fa-angles-down fa-bounce"></i></h3>
-        <a href="#" class="btn btn-primary">Explore Course</a>
-      </div>
-    </div>
+      categoryCards.forEach((card, index) => {
+          card.style.opacity = 0;
+          card.style.transform = 'translateY(50px) scale(0.9)';
+          card.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
+          observer.observe(card);
 
-    <div class="pikachu ">
-      <div class="image">
-        <img href="#" src="/images/backend.png">
-      </div>
-      <div class="content">
-        <h3>Backend Development</h3>
-        <h3><i class="fa-solid fa-angles-down fa-bounce"></i></h3>
-        <a href="#" class="btn btn-primary">Explore Course</a>
-      </div>
-    </div>
+          // Add click event to toggle subcategories
+          card.addEventListener('click', function() {
+              const subcategories = this.querySelector('.subcategories');
+              subcategories.classList.toggle('open');
+              
+              // Close other open subcategories
+              categoryCards.forEach((otherCard) => {
+                  if (otherCard !== card) {
+                      otherCard.querySelector('.subcategories').classList.remove('open');
+                  }
+              });
+          });
+      });
 
-    <div class="pikachu ">
-      <div class="image">
-        <img href="#" src="/images/smartphone.png">
-      </div>
-      <div class="content">
-        <h3>App Development</h3>
-        <h3><i class="fa-solid fa-angles-down fa-bounce"></i></h3>
-        <a href="#" class="btn btn-primary">Explore Course</a>
-      </div>
-    </div>
+      // Search functionality
+      const searchInput = document.getElementById('searchInput');
+      const categoryGrid = document.getElementById('categoryGrid');
 
+      const filterCards = () => {
+          const filter = searchInput.value.toLowerCase();
+          const cards = categoryGrid.getElementsByClassName('category-card');
 
-    <div class="pikachu ">
-      <div class="image">
-        <img href="#" src="/images/web-development.png">
+          Array.from(cards).forEach(card => {
+              const title = card.querySelector('.category-title').innerText.toLowerCase();
+              const description = card.querySelector('.category-description').innerText.toLowerCase();
+              if (title.includes(filter) || description.includes(filter)) {
+                  card.style.display = '';
+              } else {
+                  card.style.display = 'none';
+              }
+          });
+      };
 
-      </div>
+      searchInput.addEventListener('input', filterCards);
 
-      <div class="content">
-        <h3>Web Development</h3>
-        <h3><i class="fa-solid fa-angles-down fa-bounce"></i></h3>
-        <a href="#" class="btn btn-primary">Explore Course</a>
-
-      </div>
-    </div>
-
-    <div class="pikachu ">
-      <div class="image">
-        <img href="#" src="/images/hacking.png">
-      </div>
-      <div class="content">
-        <h3>Cyber Security</h3>
-        <h3><i class="fa-solid fa-angles-down fa-bounce"></i></h3>
-        <a href="#" class="btn btn-primary">Explore Course</a>
-      </div>
-    </div>
-
-    <div class="pikachu ">
-      <div class="image">
-        <img href="#" src="/images/data-management.png">
-      </div>
-      <div class="content">
-        <h3>Cloud Computing</h3>
-        <h3><i class="fa-solid fa-angles-down fa-bounce"></i></h3>
-        <a href="#" class="btn btn-primary">Explore Course</a>
-      </div>
-    </div>
-
-    <div class="pikachu ">
-      <div class="image">
-        <img href="#" src="/images/programming-language.png">
-      </div>
-      <div class="content">
-        <h3>Programming</h3>
-        <h3><i class="fa-solid fa-angles-down fa-bounce"></i></h3>
-        <a href="#" class="btn btn-primary">Explore Course</a>
-      </div>
-    </div>
-
-    <!-- <div class="row  ">
-      <div id="more-tutorials" class="col-12 text-center" data-aos="fade-right" data-aos-duration="1000">
-        <a href="courses.html"><button class="btn  ">All Courses<i class="fa-solid fa-angles-right fa-bounce"></i></button></a>
-      </div>
-    </div> -->
-    </div>
-  </div>
-</div>
-<!-- ! Courses Section End -->
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script>
-     // Search functionality for courses
-     document.getElementById('searching').addEventListener('submit', function(event) {
-        event.preventDefault();
-        var searchTerm = document.getElementById('searchInputCourses').value.toLowerCase();
-
-        var courses = document.querySelectorAll('.pikachu');
-        courses.forEach(function(course) {
-            var title = course.querySelector('h3').textContent.toLowerCase();
-            if (title.includes(searchTerm)) {
-                course.style.display = 'block';
-            } else {
-                course.style.display = 'none';
-            }
-        });
-    });
-</script>
+      // Also filter when search button is clicked
+      document.getElementById('searching').addEventListener('submit', function(e) {
+          e.preventDefault();
+          filterCards();
+      });
+  });
+  </script>
+</body>
+</html>

@@ -2,8 +2,10 @@
 
 <% layout("/layouts/boilerplate") %>
 <style>
-  
-
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+.abi{
+  padding: 0px;
+}
 /* !Tutorial section start---------------------------------------------------------- */
 #searching {
   margin-top: 0%;
@@ -36,7 +38,7 @@
     rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset; */
 }
 #searching button:hover {
-  background-color: #2baffc;
+  background-color: black;
 }
 #searching input:focus {
   outline: none;
@@ -45,12 +47,10 @@
 .card-body {
   font-family: "Caudex", serif;
 }
-.skill-section {
-  /* border-radius: 20px; */
-
+.skill-section-2 {
+  background-color: #000 !important;
   margin: 0px;
-  /* background-image: linear-gradient(to right top, #6ac2f5, #c0d9fa, #cfd1e162); */
-  background-image: url(images/vecteezy_abstract-gradient-pastel-blue-and-purple-background-neon_8617161.jpg);
+
 }
 .skill-section img {
   max-width: 100%;
@@ -72,7 +72,7 @@
 #skill-section1 {
   padding: 20px;
   padding-bottom: 60px;
-  /* margin-top: 50px; */
+  margin-top: 0px;
 }
 #skill-section1 a {
   text-decoration: none;
@@ -119,6 +119,112 @@
 .bottom-img2 {
   max-width: 100%;
 }
+
+
+
+.containers {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background-color: #111111;
+    color: #ecf0f1;
+    padding: 1rem 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(255,255,255,0.1);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #3498db;
+}
+
+.containers p{
+    background-color:black !important;
+    border-radius:50px;
+  }
+
+.hero {
+  background: rgb(43,175,252);
+  background: radial-gradient(circle, rgba(43,175,252,1) 1%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%);    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 130px 0 100px;
+    
+    overflow: hidden;
+    
+}
+.skill-section-2-heading h1{
+color: white;
+padding: 40px 20px 30px 20px;
+margin: 0px;
+}
+
+
+@keyframes backgroundScroll {
+    from {background-position: 0 0;}
+    to {background-position: 100% 100%;}
+}
+
+.hero h1 {
+  color: #000000;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+    font-size: 6.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(184, 177, 177, 0.893);
+    animation: fadeInDown 1s ease-out;
+}
+.hero h1 span{
+  color: white;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeInUp 1s ease-out 0.5s both;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+
 @media screen and (max-width: 700px) {
   #searching input {
     padding: 10px;
@@ -130,7 +236,7 @@
 }
 @media screen and (max-width: 572px) {
   #skill-section1 {
-    margin-top: 30px;
+    /* margin-top: 30px; */
   }
 }
 @media screen and (max-width: 475px) {
@@ -166,302 +272,408 @@
  margin-top: 0;
 }
 /* Style for the active link */
+button {
+ position: relative;
+ display: inline-block;
+ cursor: pointer;
+ outline: none;
+ border: 0;
+ vertical-align: middle;
+ 
+ background: transparent;
+ padding: 0;
+ font-size: inherit;
+ font-family: inherit;
+}
 
+button.learn-more {
+ width: 13rem;
+ height: auto;
+}
+
+button.learn-more .circle {
+ transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+ position: relative;
+ display: block;
+ margin: 0;
+ width: 3rem;
+ height: 3rem;
+ background: #000;
+ border-radius: 1.625rem;
+}
+
+button.learn-more .circle .icon {
+ transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+ position: absolute;
+ top: 0;
+ bottom: 0;
+ margin: auto;
+ background: #fff;
+}
+
+button.learn-more .circle .icon.arrow {
+ transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+ left: 0.625rem;
+ width: 1.125rem;
+ height: 0.125rem;
+ background: none;
+}
+
+button.learn-more .circle .icon.arrow::before {
+ position: absolute;
+ content: "";
+ top: -0.29rem;
+ right: 0.0625rem;
+ width: 0.625rem;
+ height: 0.625rem;
+ border-top: 0.125rem solid #fff;
+ border-right: 0.125rem solid #fff;
+ transform: rotate(45deg);
+}
+
+button.learn-more .button-text {
+ transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ padding: 0.75rem 0;
+ margin: 0 0 0 1.85rem;
+ color: #000;
+ font-weight: 800;
+ line-height: 1.6;
+ text-align: center;
+
+ text-decoration: underline;
+}
+
+button:hover .circle {
+ width: 100%;
+}
+
+button:hover .circle .icon.arrow {
+ background: #fff;
+ transform: translate(1rem, 0);
+}
+
+button:hover .button-text {
+ color: #fff;
+}
 
 </style>
 
 
 <!-- !featured tutorial Section Start -->
  <div class="container-fluid abi">
-    <div >
-      <h1 class="heading text-center">Featured <span> Tutorials</span></h1>
-      <div class=" underline2 separator text-center" style="margin-left: 49%;"></div>
 
-    <div class="row">
-      <div class="col-sm-12 col-md-12">
-        <form id="searching" class="d-flex justify-content-center">
-          <input id="searchInput" type="search" placeholder="Search e.g. HTML">
-          <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-      </form>
+  <section class="hero ">
+    <div class="containers">
+        <h1>Search <span>.</span> Learn <span>.</span> Grow <span>.</span></h1>
+        <p>Unleash your potential and transform your skills.</p>
+        <!-- <a class="cta-button">Explore Courses</a> -->
+
+        <a href="#categories"><button  class="learn-more">
+  <span class="circle" aria-hidden="true">
+  <span class="icon arrow"></span>
+  </span>
+  <span class="button-text">Explore Tutorials</span>
+</button></a>
     </div>
-    </div>
-    </div>
-  </div>
+   
+</section>
 
-  <div class="skill-section">
-    <div class="container">
-     <div id="skill-section1" class="row" data-aos="fade-up" data-aos-duration="1000">
-        <div class="col-sm-6 col-md-4" >
-          <div id="skill-content" class="card text-center">
-            <a href="/html/html_intro">
-              <img src="images/html-5_5968267.png" class="card-img-top" alt="Image 1">
-              <div class="card-body">
-                <h4 class="card-title">HTML</h4>
-              </div>
-            </a>
-          </div>
-        </div>
-
-        <div class="col-sm-6 col-md-4" >
-          <div id="skill-content" class="card text-center">
-            <a href="/css/css_intro">
-              <img src="images/css-3_5968242.png" class="card-img-top" alt="Image 1">
-              <div class="card-body">
-                <h4 class="card-title">CSS</h4>
-              </div>
-            </a>
-          </div>
-        </div>
-
-        <div class="col-sm-6 col-md-4" >
-          <div id="skill-content" class="card text-center">
-            <a href="/js/js_intro">
-              <img src="images/js_5968292.png" class="card-img-top" alt="Image 1">
-              <div class="card-body">
-                <h4 class="card-title">JAVASCRIPT</h4>
-              </div>
-            </a>
-          </div>
-        </div>
-
-        <div class="col-sm-6 col-md-4">
-          <div id="skill-content" class="card text-center">
-            <a href="/bootstrap/bootstrap_intro">
-              <img src="images/bootstrap.png" class="card-img-top" alt="Image 1">
-              <div class="card-body">
-                <h4 class="card-title">BOOTSTRAP</h4>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4" >
-          <div id="skill-content" class="card text-center">
-            <a href="/react/react_intro">
-              <img src="images/react.png" class="card-img-top" alt="Image 1">
-              <div class="card-body">
-                <h4 class="card-title">REACT</h4>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4" >
-          <div id="skill-content" class="card text-center">
-            <a href="/nodejs/nodejs_intro">
-              <img src="images/nodejs.png" class="card-img-top" alt="Image 1">
-              <div class="card-body">
-                <h4 class="card-title">NODE.JS</h4>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4" >
-          <div id="skill-content" class="card text-center">
-            <a href="/c/c_intro">
-              <img src="images/c.png" class="card-img-top" alt="Image 1">
-              <div class="card-body">
-                <h4 class="card-title">C</h4>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4">
-          <div id="skill-content" class="card text-center">
-            <a href="/java/java_intro">
-              <img src="images/java.png" class="card-img-top" alt="Image 1">
-              <div class="card-body">
-                <h4 class="card-title">JAVA</h4>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4" >
-          <div id="skill-content" class="card text-center">
-            <a href="/python/python_intro">
-              <img src="images/python.png" class="card-img-top" alt="Image 1">
-              <div class="card-body">
-                <h4 class="card-title">PYTHON</h4>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4" >
-          <div id="skill-content" class="card text-center">
-            <a href="page1.html">
-              <img src="images/icons8-django-512.png" class="card-img-top" alt="Image 1">
-              <div class="card-body">
-                <h4 class="card-title">DJANGO</h4>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4">
-          <div id="skill-content" class="card text-center">
-            <a href="page1.html">
-              <img src="images/c-sharp.png" class="card-img-top" alt="Image 1">
-              <div class="card-body">
-                <h4 class="card-title">C-SHARP</h4>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4" >
-          <div id="skill-content" class="card text-center">
-            <a href="page1.html">
-              <img src="images/c-.png" class="card-img-top" alt="Image 1">
-              <div class="card-body">
-                <h4 class="card-title">C++</h4>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4" >
-          <div id="skill-content" class="card text-center">
-            <a href="page1.html">
-              <img src="images/php.png" class="card-img-top" alt="Image 1">
-              <div class="card-body">
-                <h4 class="card-title">PHP</h4>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4" >
-          <div id="skill-content" class="card text-center">
-            <a href="page1.html">
-              <img src="images/tailwind.png" class="card-img-top" alt="Image 1">
-              <div class="card-body">
-                <h4 class="card-title">TAILWIND</h4>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4" >
-          <div id="skill-content" class="card text-center">
-            <a href="page1.html">
-              <img src="images/angular.png" class="card-img-top" alt="Image 1">
-              <div class="card-body">
-                <h4 class="card-title">ANGULAR</h4>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4" >
-          <div id="skill-content" class="card text-center">
-            <a href="page1.html">
-              <img src="images/nextjs.png" class="card-img-top" alt="Image 1">
-              <div class="card-body">
-                <h4 class="card-title">NEXTJS</h4>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4" >
-          <div id="skill-content" class="card text-center">
-            <a href="page1.html">
-              <img src="images/vuejs.png" class="card-img-top" alt="Image 1">
-              <div class="card-body">
-                <h4 class="card-title">VUE.JS</h4>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4" >
-          <div id="skill-content" class="card text-center">
-            <a href="page1.html">
-              <img src="images/kotlin-512.png" class="card-img-top" alt="Image 1">
-              <div class="card-body">
-                <h4 class="card-title">KOTLIN</h4>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4" >
-          <div id="skill-content" class="card text-center">
-            <a href="page1.html">
-              <img src="images/jquery.png" class="card-img-top" alt="Image 1">
-              <div class="card-body">
-                <h4 class="card-title">JQUERY</h4>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4">
-          <div id="skill-content" class="card text-center">
-            <a href="page1.html">
-              <img src="images/json-file.png" class="card-img-top" alt="Image 1">
-              <div class="card-body">
-                <h4 class="card-title">JSON</h4>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4">
-          <div id="skill-content" class="card text-center">
-            <a href="/sql/sql_intro">
-              <img src="images/mysql.png" class="card-img-top" alt="Image 1">
-              <div class="card-body">
-                <h4 class="card-title">MySql</h4>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4" >
-          <div id="skill-content" class="card text-center">
-            <a href="page1.html">
-              <img src="images/mongodb.png" class="card-img-top" alt="Image 1">
-              <div class="card-body">
-                <h4 class="card-title">MONGODB</h4>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4" >
-          <div id="skill-content" class="card text-center">
-            <a href="page1.html">
-              <img src="images/postgresql.png" class="card-img-top" alt="Image 1">
-              <div class="card-body">
-                <h4 class="card-title">PostgreSQL</h4>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4" >
-          <div id="skill-content" class="card text-center">
-            <a href="page1.html">
-              <img src="images/sass.png" class="card-img-top" alt="Image 1">
-              <div class="card-body">
-                <h4 class="card-title">SASS</h4>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4" >
-          <div id="skill-content" class="card text-center">
-            <a href="page1.html">
-              <img src="images/ruby.png" class="card-img-top" alt="Image 1">
-              <div class="card-body">
-                <h4 class="card-title">RUBY</h4>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4" >
-          <div id="skill-content" class="card text-center">
-            <a href="page1.html">
-              <img src="images/git.png" class="card-img-top" alt="Image 1">
-              <div class="card-body">
-                <h4 class="card-title">GIT</h4>
-              </div>
-            </a>
-          </div>
+   <section id="categories" >
+    <div class="skill-section-2">
+      <div class="skill-section-2-heading" >
+        <h1 class="heading text-center">Featured <span> Tutorials</span></h1>
+        <!-- <div class=" underline2 separator text-center" style="margin-left: 49%;"></div> -->
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-12">
+            <form id="searching" class="d-flex justify-content-center">
+              <input id="searchInput" type="search" placeholder="Search e.g. HTML">
+              <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </form>
         </div>
       </div>
-      <!-- <div class="row  ">
-      <div id="more-tutorials" class="col-12 text-center" data-aos="fade-right" data-aos-duration="1000">
-        <a href=""><button class="btn  ">All Tutorials <i class="fa-solid fa-angles-right fa-bounce"></i></button></a>
-      </div> -->
+      <div class="container">
+       <div id="skill-section1" class="row" data-aos="fade-up" data-aos-duration="1000">
+          <div class="col-sm-6 col-md-4" >
+            <div id="skill-content" class="card text-center">
+              <a href="/html/html_intro">
+                <img src="images/html-5_5968267.png" class="card-img-top" alt="Image 1">
+                <div class="card-body">
+                  <h4 class="card-title">HTML</h4>
+                </div>
+              </a>
+            </div>
+          </div>
+  
+          <div class="col-sm-6 col-md-4" >
+            <div id="skill-content" class="card text-center">
+              <a href="/css/css_intro">
+                <img src="images/css-3_5968242.png" class="card-img-top" alt="Image 1">
+                <div class="card-body">
+                  <h4 class="card-title">CSS</h4>
+                </div>
+              </a>
+            </div>
+          </div>
+  
+          <div class="col-sm-6 col-md-4" >
+            <div id="skill-content" class="card text-center">
+              <a href="/js/js_intro">
+                <img src="images/js_5968292.png" class="card-img-top" alt="Image 1">
+                <div class="card-body">
+                  <h4 class="card-title">JAVASCRIPT</h4>
+                </div>
+              </a>
+            </div>
+          </div>
+  
+          <div class="col-sm-6 col-md-4">
+            <div id="skill-content" class="card text-center">
+              <a href="/bootstrap/bootstrap_intro">
+                <img src="images/bootstrap.png" class="card-img-top" alt="Image 1">
+                <div class="card-body">
+                  <h4 class="card-title">BOOTSTRAP</h4>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4" >
+            <div id="skill-content" class="card text-center">
+              <a href="/react/react_intro">
+                <img src="images/react.png" class="card-img-top" alt="Image 1">
+                <div class="card-body">
+                  <h4 class="card-title">REACT</h4>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4" >
+            <div id="skill-content" class="card text-center">
+              <a href="/nodejs/nodejs_intro">
+                <img src="images/nodejs.png" class="card-img-top" alt="Image 1">
+                <div class="card-body">
+                  <h4 class="card-title">NODE.JS</h4>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4" >
+            <div id="skill-content" class="card text-center">
+              <a href="/c/c_intro">
+                <img src="images/c.png" class="card-img-top" alt="Image 1">
+                <div class="card-body">
+                  <h4 class="card-title">C</h4>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <div id="skill-content" class="card text-center">
+              <a href="/java/java_intro">
+                <img src="images/java.png" class="card-img-top" alt="Image 1">
+                <div class="card-body">
+                  <h4 class="card-title">JAVA</h4>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4" >
+            <div id="skill-content" class="card text-center">
+              <a href="/python/python_intro">
+                <img src="images/python.png" class="card-img-top" alt="Image 1">
+                <div class="card-body">
+                  <h4 class="card-title">PYTHON</h4>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4" >
+            <div id="skill-content" class="card text-center">
+              <a href="page1.html">
+                <img src="images/icons8-django-512.png" class="card-img-top" alt="Image 1">
+                <div class="card-body">
+                  <h4 class="card-title">DJANGO</h4>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <div id="skill-content" class="card text-center">
+              <a href="page1.html">
+                <img src="images/c-sharp.png" class="card-img-top" alt="Image 1">
+                <div class="card-body">
+                  <h4 class="card-title">C-SHARP</h4>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4" >
+            <div id="skill-content" class="card text-center">
+              <a href="page1.html">
+                <img src="images/c-.png" class="card-img-top" alt="Image 1">
+                <div class="card-body">
+                  <h4 class="card-title">C++</h4>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4" >
+            <div id="skill-content" class="card text-center">
+              <a href="page1.html">
+                <img src="images/php.png" class="card-img-top" alt="Image 1">
+                <div class="card-body">
+                  <h4 class="card-title">PHP</h4>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4" >
+            <div id="skill-content" class="card text-center">
+              <a href="page1.html">
+                <img src="images/tailwind.png" class="card-img-top" alt="Image 1">
+                <div class="card-body">
+                  <h4 class="card-title">TAILWIND</h4>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4" >
+            <div id="skill-content" class="card text-center">
+              <a href="page1.html">
+                <img src="images/angular.png" class="card-img-top" alt="Image 1">
+                <div class="card-body">
+                  <h4 class="card-title">ANGULAR</h4>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4" >
+            <div id="skill-content" class="card text-center">
+              <a href="page1.html">
+                <img src="images/nextjs.png" class="card-img-top" alt="Image 1">
+                <div class="card-body">
+                  <h4 class="card-title">NEXTJS</h4>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4" >
+            <div id="skill-content" class="card text-center">
+              <a href="page1.html">
+                <img src="images/vuejs.png" class="card-img-top" alt="Image 1">
+                <div class="card-body">
+                  <h4 class="card-title">VUE.JS</h4>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4" >
+            <div id="skill-content" class="card text-center">
+              <a href="page1.html">
+                <img src="images/kotlin-512.png" class="card-img-top" alt="Image 1">
+                <div class="card-body">
+                  <h4 class="card-title">KOTLIN</h4>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4" >
+            <div id="skill-content" class="card text-center">
+              <a href="page1.html">
+                <img src="images/jquery.png" class="card-img-top" alt="Image 1">
+                <div class="card-body">
+                  <h4 class="card-title">JQUERY</h4>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <div id="skill-content" class="card text-center">
+              <a href="page1.html">
+                <img src="images/json-file.png" class="card-img-top" alt="Image 1">
+                <div class="card-body">
+                  <h4 class="card-title">JSON</h4>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <div id="skill-content" class="card text-center">
+              <a href="/sql/sql_intro">
+                <img src="images/mysql.png" class="card-img-top" alt="Image 1">
+                <div class="card-body">
+                  <h4 class="card-title">MySql</h4>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4" >
+            <div id="skill-content" class="card text-center">
+              <a href="page1.html">
+                <img src="images/mongodb.png" class="card-img-top" alt="Image 1">
+                <div class="card-body">
+                  <h4 class="card-title">MONGODB</h4>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4" >
+            <div id="skill-content" class="card text-center">
+              <a href="page1.html">
+                <img src="images/postgresql.png" class="card-img-top" alt="Image 1">
+                <div class="card-body">
+                  <h4 class="card-title">PostgreSQL</h4>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4" >
+            <div id="skill-content" class="card text-center">
+              <a href="page1.html">
+                <img src="images/sass.png" class="card-img-top" alt="Image 1">
+                <div class="card-body">
+                  <h4 class="card-title">SASS</h4>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4" >
+            <div id="skill-content" class="card text-center">
+              <a href="page1.html">
+                <img src="images/ruby.png" class="card-img-top" alt="Image 1">
+                <div class="card-body">
+                  <h4 class="card-title">RUBY</h4>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4" >
+            <div id="skill-content" class="card text-center">
+              <a href="page1.html">
+                <img src="images/git.png" class="card-img-top" alt="Image 1">
+                <div class="card-body">
+                  <h4 class="card-title">GIT</h4>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="row  ">
+        <div id="more-tutorials" class="col-12 text-center" data-aos="fade-right" data-aos-duration="1000">
+          <a href=""><button class="btn  ">All Tutorials <i class="fa-solid fa-angles-right fa-bounce"></i></button></a>
+        </div> -->
+      </div>
+      
     </div>
-    
-  </div>
+   </section>
+
+ 
   
 </div>
 </body>

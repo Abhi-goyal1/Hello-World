@@ -203,7 +203,7 @@ app.post(
         if (err) {
           return next(err);
         }
-        req.flash("success", "Welcome to Hello World ${username}!");
+        req.flash("success", "Welcome to Hello World !",);
         res.redirect("/");
       });
     } catch (error) {
@@ -226,7 +226,6 @@ app.post(
   }),
   async (req, res) => {
     req.flash("success", "Welcome To Hello World !");
-    // req.flash("success", "Welcome Back" , User.username);
     res.redirect("/");
   }
 );
@@ -241,6 +240,9 @@ app.get("/logout", (req, res, next) => {
     res.redirect("/");
   });
 });
+app.get("/forget-password",(req, res, next)=>{
+  res.render("users/forget-password.ejs", { active: "" });
+})
 
 
 // Set up routes
