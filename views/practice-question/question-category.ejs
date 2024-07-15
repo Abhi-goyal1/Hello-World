@@ -1,206 +1,558 @@
 <% layout("/layouts/boilerplate") %>
 
 
-<style>
- 
 
-.containerss {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+    
+    /* body {
+        font-family: 'Roboto', sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f4f4f4;
+    } */
+    
+   
+  
+    
+    .hero {
+       
+    background: rgb(43,175,252);
+background: radial-gradient(circle, rgba(43,175,252,1) 1%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%);
+        color: #fff;
+        text-align: center;
+        padding: 100px 0 10px;
+        margin-bottom: 30px;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    /* .hero::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255,255,255,0.1) 10%, transparent 10%),
+                    radial-gradient(circle, rgba(255,255,255,0.1) 10%, transparent 10%);
+        background-size: 50px 50px;
+        animation: bubbleFloat 30s linear infinite;
+        opacity: 0.5;
+    } */
+    
+    .hero h1 {
+        font-weight: 700;
+        text-transform: uppercase;
+        font-family: 'Roboto', sans-serif !important;
+        font-size: 5rem;
+        margin-bottom: 20px;
+        animation: fadeInDown 1s ease-out, glowText 2s ease-in-out infinite alternate;
+        text-shadow: 0 0 10px rgba(255,255,255,0.5);
+    }
+    
+    .hero p {
+        font-family: 'Roboto', sans-serif !important;
+        font-size: 1.2rem;
+        max-width: 600px;
+        margin: 0 auto 30px;
+        animation: fadeInUp 1s ease-out 0.5s both;
+    }
+    
+    .search-container {
+        max-width: 600px;
+        margin: 0 auto 30px;
+        animation: fadeInUp 1s ease-out 0.7s both;
+        position: relative;
+    }
+    
+    .search-input {
+        padding-right: 40px;
+    }
+    
+    .search-icon {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #3498db;
+        pointer-events: none;
+    }
+    .search-container {
+    max-width: 600px;
+    margin: 0 auto 30px;
+    animation: fadeInUp 1s ease-out 0.7s both;
+    position: relative;
 }
 
-.containerss {
-    text-align: center;
+.search-input {
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    box-shadow: 0 6px 15px rgba(52, 152, 219, 0.3);
+}
+
+.search-icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #3498db;
+    font-size: 1.2rem;
+    pointer-events: none;
+}
+    
+    .category-card {
+        height: 100%;
+        transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+        cursor: pointer;
+        animation: fadeIn 0.5s ease-out;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+    }
+    
+    .category-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(45deg, #2baffc, #2baffc);
+        opacity: 0;
+        z-index: -1;
+        transition: opacity 0.5s ease;
+    }
+    
+    .category-card:hover {
+        transform: translateY(-15px);
+    }
+    
+    .category-card:hover::before {
+        opacity: 1;
+    }
+    
+    .category-card:hover .category-icon,
+    .category-card:hover .card-title,
+    .category-card:hover .card-text {
+        color: #fff !important;
+    }
+    
+    .category-icon {
+        font-size: 4rem;
+        margin-bottom: 20px;
+        color: #3498db;
+        transition: all 0.5s ease;
+    }
+    
+    .category-card:hover .category-icon {
+        transform: scale(1.2);
+    }
+    
+  
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
     padding: 20px;
 }
 
-h1 {
-    font-family: "Manrope", sans-serif;
-    text-align: center;
-    margin-top: 20px;
-    font-size: 3.5rem;
-    color: #2baffc;
-}
-h1 span{
-    color: black;
-}
-
-.categories {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 15px;
-    justify-items: center;
-    margin-top: 30px;
-}
-
-.category {
-    background-color: white;
-    color: black;
-    padding: 10px;
-    margin: 20px;
-    text-decoration: none;
-    border-radius: 10px;
-    transition: transform 0.3s, box-shadow 0.3s;
+.category-card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    cursor: pointer;
+    animation: fadeIn 0.5s ease-out;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+    padding: 10PX;
+    z-index: 1;
 }
 
-.category img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
+.category-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #2baffc, #2baffc);
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.5s ease;
 }
 
-.category span {
-    padding: 15px;
-    font-size: 1.2em;
-    font-weight: bold;
+.category-card:hover {
+    transform: translateY(-15px) scale(1.03);
+    box-shadow: 0 20px 30px rgba(0,0,0,0.2);
 }
 
-.category:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+.category-card:hover::before {
+    opacity: 1;
 }
 
-.question {
-    background-color: white;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.category-card:hover .category-icon,
+.category-card:hover .category-info h3,
+.category-card:hover .category-info p {
+    color: #fff;
 }
 
-pre {
-    background-color: #f8f8f8;
-    padding: 10px;
-    border-radius: 5px;
-    overflow-x: auto;
+.category-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    color: #3498db;
+    transition: all 0.5s ease;
 }
 
-button.show-answer {
-    background-color: #28a745;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+.category-card:hover .category-icon {
+    transform: scale(1.2);
 }
 
-button.show-answer:hover {
-    background-color: #218838;
+.category-info {
+    text-align: center;
 }
 
-p.answer {
-    display: none;
-    margin-top: 10px;
-    color: #333;
-    background-color: #e9ecef;
-    padding: 10px;
-    border-radius: 5px;
+.category-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #2c3e50;
+    transition: color 0.5s ease;
+}
+
+.category-info p {
+    font-size: 1rem;
+    color: #7f8c8d;
+    transition: color 0.5s ease;
+}
+
+.section-title {
+    font-size: 2rem;
+    text-align: center;
+    margin: 50px 0 30px;
+    color: BLACK;
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 140px;
+    height: 3px;
+    background: #3498db;
+    margin: 10px auto 0;
+    border-radius: 20px;
+}
+
+.card-text{
+    font-family: 'Roboto', sans-serif;
+    color: #aaa;
+}
+.card-title{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
 }
 
 
 
-.fun-underline {
-  position: relative;
+
+.no-results {
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 1.4rem;
+    color: #7f8c8d;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    margin-top: 30px;
+}
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes fadeInDown {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes gradientText {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+    
+    @keyframes glowText {
+        from { text-shadow: 0 0 5px rgba(255,255,255,0.5); }
+        to { text-shadow: 0 0 20px rgba(255,255,255,0.8); }
+    }
+    
+    @keyframes bubbleFloat {
+        0% { transform: translateY(0) rotate(0deg); }
+        100% { transform: translateY(-100%) rotate(360deg); }
+    }
+
+
+
+
+
+
+    @media screen and (max-width: 1210px) {
+        .hero h1{
+            font-size: 4.5rem;
+        }
+}
+    @media screen and (max-width: 1000px) {
+        .hero h1{
+            font-size: 3.5rem;
+        }
+}
+    @media screen and (max-width: 770px) {
+        .hero h1{
+            font-size: 2.5rem;
+        }
+        .hero p{
+            font-size: 0.8rem;
+        }
+}
+    @media screen and (max-width: 515px) {
+        .hero h1{
+            font-size: 2rem;
+        }
+        .hero p{
+            font-size: 0.6rem;
+        }
 }
 
-.fun-underline::after {
-  content: '';
-  position: absolute;
-  left: 35%;
-  bottom: -10px;
-  height: 3px;
-  width: 30%;
-background: black;
-  border-radius: 5px;
 
-  animation: underline-animation 5s linear infinite;
-}
+
     </style>
-
-
-<div class="containerss">
-    <h1  data-aos="fade-right" data-aos-duration="1000" class="fun-underline"> <span>Practice</span> Questions</h1>
-   
-    <div class="categories">
-        <a  data-aos="fade-up" data-aos-duration="1000" href="/question/python" class="category">
-            <img src="/images/python.png" alt="Python">
-            <span>Python</span>
-        </a>
-        <a  data-aos="fade-up" data-aos-duration="1000 " href="/question/java" class="category">
-            <img src="/images/java.png" alt="Java">
-            <span>Java</span>
-        </a>
-        <a  data-aos="fade-up" data-aos-duration="1000" href="/question/html" class="category">
-            <img src="/images/html.png" alt="HTML">
-            <span>HTML</span>
-        </a>
-        <a  data-aos="fade-up" data-aos-duration="1000" href="/question/css" class="category">
-            <img src="/images/python.png" alt="CSS">
-            <span>CSS</span>
-        </a>
-        <a  data-aos="fade-up" data-aos-duration="1000" href="/question/C" class="category">
-            <img src="/images/c.png" alt="CSS">
-            <span>C</span>
-        </a>
-        <a  data-aos="fade-up" data-aos-duration="1000" href="/question/React" class="category">
-            <img src="/images/react.png" alt="CSS">
-            <span>React</span>
-        </a>
-        <a  data-aos="fade-up" data-aos-duration="1000" href="/question/Node.js" class="category">
-            <img src="/images/nodejs.png" alt="CSS">
-            <span>Node.js</span>
-        </a>
-        <a  data-aos="fade-up" data-aos-duration="1000" href="/question/Express.js" class="category">
-            <img src="/images/expres.png" alt="CSS">
-            <span>Express.js</span>
-        </a>
-        <a  data-aos="fade-up" data-aos-duration="1000" href="/question/JavaScript" class="category">
-            <img src="/images/js_5968292.png" alt="CSS">
-            <span>JavaScript</span>
-        </a>
-        <a  data-aos="fade-up" data-aos-duration="1000" href="/question/C++" class="category">
-            <img src="/images/c-.png" alt="CSS">
-            <span>C++</span>
-        </a>
-        <a  data-aos="fade-up" data-aos-duration="1000" href="/question/Angular" class="category">
-            <img src="/images/angular.png" alt="CSS">
-            <span>Angular</span>
-        </a>
-        <a  data-aos="fade-up" data-aos-duration="1000" href="/question/Next.js" class="category">
-            <img src="/images/nextjs.png" alt="CSS">
-            <span>Next.js</span>
-        </a>
-        <a  data-aos="fade-up" data-aos-duration="1000" href="/question/PHP" class="category">
-            <img src="/images/php.png" alt="CSS">
-            <span>PHP</span>
-        </a>
-        <a  data-aos="fade-up" data-aos-duration="1000" href="/question/Bootstrap" class="category">
-            <img src="/images/bootstrap.png" alt="CSS">
-            <span>Bootstrap</span>
-        </a>
-        <a  data-aos="fade-up" data-aos-duration="1000" href="/question/Kotlin" class="category">
-            <img src="/images/kotlin-512.png" alt="CSS">
-            <span>Kotlin</span>
-        </a>
-    </div>
-</div>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-    const buttons = document.querySelectorAll(".show-answer");
-    buttons.forEach(button => {
-        button.addEventListener("click", function () {
-            const answer = this.nextElementSibling;
-            answer.style.display = answer.style.display === "block" ? "none" : "block";
-        });
-    });
-});
-
-  </script>
+    </head>
+    <body>
+       
+    
+        <main>
+            <section class="hero">
+                <div class="container">
+                    <h1>Top 100 Interview Q&As</h1>
+                    <p class="lead">Your one-stop resource for mastering your next interview.</p>
+                    <div class="search-container">
+                        <input type="text" class="form-control search-input" placeholder="Search interview questions... Python, Java" id="searchInput">
+                        <i class="fas fa-search search-icon"></i>
+                    </div>
+                </div>
+            </section>
+    
+            <section class="container category-section" id="programmingLanguages">
+                <h2 class="section-title">Programming Languages</h2>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                    <div class="col">
+                        <div class="card category-card h-100" onclick="location.href='/questions/java-interview'" data-keywords="java object-oriented programming application development">
+                            <div class="card-body text-center">
+                                <div class="category-icon"><i class="fab fa-java"></i></div>
+                                <h5 class="card-title">Java Interview Q&As</h5>
+                                <p class="card-text">Top 100 Java interview questions and answers</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card category-card h-100" data-keywords="python beginner-friendly web development data science">
+                            <div class="card-body text-center">
+                                <div class="category-icon"><i class="fab fa-python"></i></div>
+                                <h5 class="card-title">Python Interview Q&As</h5>
+                                <p class="card-text">100 Must-know Python interview questions</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card category-card h-100" data-keywords="javascript dynamic interactive web development">
+                            <div class="card-body text-center">
+                                <div class="category-icon"><i class="fab fa-js-square"></i></div>
+                                <h5 class="card-title">JavaScript Interview Q&As</h5>
+                                <p class="card-text">Top 100 JS questions for web dev interviews</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card category-card h-100" data-keywords="c# csharp windows applications game development">
+                            <div class="card-body text-center">
+                                <div class="category-icon"><i class="fab fa-microsoft"></i></div>
+                                <h5 class="card-title">C# Interview Q&As</h5>
+                                <p class="card-text">100 Crucial C# questions for .NET interviews</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card category-card h-100" data-keywords="ruby dynamic simplicity productivity">
+                            <div class="card-body text-center">
+                                <div class="category-icon"><i class="fas fa-gem"></i></div>
+                                <h5 class="card-title">Ruby Interview Q&As</h5>
+                                <p class="card-text">Top 100 Ruby programming interview questions</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card category-card h-100" data-keywords="go golang efficient fast modern software development">
+                            <div class="card-body text-center">
+                                <div class="category-icon"><i class="fab fa-golang"></i></div>
+                                <h5 class="card-title">Go Interview Q&As</h5>
+                                <p class="card-text">100 Essential Go lang interview questions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    
+            <section class="container category-section" id="computerScience">
+                <h2 class="section-title">Computer Science Fundamentals</h2>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                    <div class="col">
+                        <div class="card category-card h-100" data-keywords="computer networks protocols TCP/IP OSI model">
+                            <div class="card-body text-center">
+                                <div class="category-icon"><i class="fas fa-network-wired"></i></div>
+                                <h5 class="card-title">Computer Networks Q&As</h5>
+                                <p class="card-text">Top 100 networking interview questions</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card category-card h-100" data-keywords="operating systems process management memory management file systems">
+                            <div class="card-body text-center">
+                                <div class="category-icon"><i class="fas fa-desktop"></i></div>
+                                <h5 class="card-title">Operating Systems Q&As</h5>
+                                <p class="card-text">100 Critical OS concepts for tech interviews</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card category-card h-100" data-keywords="data structures algorithms complexity analysis">
+                            <div class="card-body text-center">
+                                <div class="category-icon"><i class="fas fa-project-diagram"></i></div>
+                                <h5 class="card-title">DSA Interview Q&As</h5>
+                                <p class="card-text">Top 100 Data Structures & Algorithms questions</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card category-card h-100" data-keywords="database management SQL NoSQL ACID">
+                            <div class="card-body text-center">
+                                <div class="category-icon"><i class="fas fa-database"></i></div>
+                                <h5 class="card-title">Database Systems Q&As</h5>
+                                <p class="card-text">100 Essential database interview questions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    
+            <section class="container category-section" id="webDevelopment">
+                <h2 class="section-title">Web Development Roles</h2>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                    <div class="col">
+                        <div class="card category-card h-100" data-keywords="frontend HTML CSS JavaScript React Angular Vue responsive design">
+                            <div class="card-body text-center">
+                                <div class="category-icon"><i class="fas fa-laptop-code"></i></div>
+                                <h5 class="card-title">Frontend Dev Q&As</h5>
+                                <p class="card-text">Top 100 frontend interview questions</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card category-card h-100" data-keywords="backend server-side programming APIs databases scalability">
+                            <div class="card-body text-center">
+                                <div class="category-icon"><i class="fas fa-server"></i></div>
+                                <h5 class="card-title">Backend Dev Q&As</h5>
+                                <p class="card-text">100 Must-know backend interview questions</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card category-card h-100" data-keywords="fullstack frontend backend devops system design">
+                            <div class="card-body text-center">
+                                <div class="category-icon"><i class="fas fa-layer-group"></i></div>
+                                <h5 class="card-title">Full Stack Dev Q&As</h5>
+                                <p class="card-text">Top 100 full stack developer interview questions</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card category-card h-100" data-keywords="devops CI/CD containerization cloud infrastructure automation">
+                            <div class="card-body text-center">
+                                <div class="category-icon"><i class="fas fa-infinity"></i></div>
+                                <h5 class="card-title">DevOps Q&As</h5>
+                                <p class="card-text">100 Essential DevOps interview questions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    
+            <section class="container mt-5" id="noResults" style="display: none;">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-search fa-3x text-primary mb-3"></i>
+                        <p class="card-text">No results found. Please try a different search term.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    
+    
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const searchInput = document.getElementById('searchInput');
+                const categoryCards = document.querySelectorAll('.category-card');
+                const categorySections = document.querySelectorAll('.category-section');
+                const noResultsSection = document.getElementById('noResults');
+    
+                searchInput.addEventListener('input', function() {
+                    const searchTerm = this.value.toLowerCase();
+                    let foundResults = false;
+    
+                    categoryCards.forEach(card => {
+                        const keywords = card.dataset.keywords.toLowerCase();
+                        if (keywords.includes(searchTerm)) {
+                            card.closest('.col').style.display = 'block';
+                            foundResults = true;
+                        } else {
+                            card.closest('.col').style.display = 'none';
+                        }
+                    });
+    
+                    if (foundResults) {
+                        categorySections.forEach(section => {
+                            const visibleCards = section.querySelectorAll('.col[style="display: block;"]');
+                            section.style.display = visibleCards.length > 0 ? 'block' : 'none';
+                        });
+                        noResultsSection.style.display = 'none';
+                    } else {
+                        categorySections.forEach(section => {
+                            section.style.display = 'none';
+                        });
+                        noResultsSection.style.display = 'block';
+                    }
+                });
+            });
+        </script>
+    </body>
+    </html>

@@ -431,79 +431,11 @@ app.get('/auth/google/callback',
 
 //! ---------------------------------Category routes-------------------------------------
 
-const questionsData = {
-  python: [
-      { question: "What is Python?", answer: "Python is a high-level, interpreted programming language." },
-      { question: "What is a list in Python?", answer: "A list is a collection which is ordered and changeable." }
-  ],
-  java: [
-      { question: "What is Java?", answer: "Java is a high-level, class-based, object-oriented programming language." },
-      { question: "What is a class in Java?", answer: "A class is a blueprint for creating objects." }
-  ],
-  html: [
-      { question: "What is HTML?", answer: "HTML stands for HyperText Markup Language." },
-      { question: "What is a tag in HTML?", answer: "A tag is used to create elements in HTML." }
-  ],
-  css: [
-      { question: "What is CSS?", answer: "CSS stands for Cascading Style Sheets." },
-      { question: "What is a class selector in CSS?", answer: "A class selector selects elements with a specific class attribute." }
-  ]
-};
 
 
-// const questions = {
-//   python: [
-//       {
-//           text: 'What is the output of the following code?',
-//           code: 'def add(a, b):\n    return a + b\n\nprint(add(1, 2))',
-//           answer: '3'
-//       },
-//       {
-//           text: 'What is the output of the following code?',
-//           code: 'def add(a, b):\n    return a + b\n\nprint(add(1, 2))',
-//           answer: '3'
-//       },
-//       {
-//           text: 'What is the output of the following code?',
-//           code: 'def add(a, b):\n    return a + b\n\nprint(add(1, 2))',
-//           answer: '3'
-//       }
-//       // Add more Python questions here
-//   ],
-//   java: [
-//       {
-//           text: 'What does the following Java code output?',
-//           code: 'public class Main {\n    public static void main(String[] args) {\n        System.out.println("Hello, World!");\n    }\n}',
-//           answer: 'Hello, World!'
-//       }
-//       // Add more Java questions here
-//   ],
-//   html: [
-//       {
-//           text: 'What does the following HTML code do?',
-//           code: '<!DOCTYPE html>\n<html>\n<head>\n    <title>Page Title</title>\n</head>\n<body>\n    <h1>This is a Heading</h1>\n    <p>This is a paragraph.</p>\n</body>\n</html>',
-//           answer: 'It displays a heading and a paragraph.'
-//       }
-//       // Add more HTML questions here
-//   ],
-//   css: [
-//       {
-//           text: 'What does the following CSS code do?',
-//           code: 'body {\n    background-color: lightblue;\n}',
-//           answer: 'It sets the background color of the body to light blue.'
-//       }
-//       // Add more CSS questions here
-//   ]
-// };
 
-// app.get('/category/:name', (req, res) => {
-//   const category = req.params.name;
-//   res.render('practice-question/category', { category, questions: questions[category] || [],  active: ''  });
-// });
-app.get('/question/:category', (req, res) => {
-  const category = req.params.category;
-  const questions = questionsData[category] || [];
-  res.render('practice-question/category', { category, questions, active: ''   });
+app.get('/questions/java-interview', (req, res) => {
+  res.render("practice-question/java-interview",{ active: "" } );
 });
 
 app.get('/questions', (req, res) => {
