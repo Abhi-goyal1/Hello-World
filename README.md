@@ -1,5 +1,7 @@
+![brandbird (3)](https://github.com/user-attachments/assets/d99ea3fc-d76f-464d-9b89-e13780036d53)
 
-# Hello World E-Learning Project
+
+# Hello World E-Learning Platform
 
 ## Table of Contents
 1. [Introduction of Project](#introduction-of-project)
