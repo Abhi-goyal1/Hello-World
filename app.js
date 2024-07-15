@@ -427,7 +427,15 @@ app.get('/auth/google/callback',
 //   }
 // );
 
+function simulateServerDelay(req, res, next) {
+  setTimeout(next, 1000); // Simulate 1 second delay
+}
 
+// Route handler
+app.get('/some-data-endpoint', simulateServerDelay, (req, res) => {
+  // Send some data
+  res.json({ message: 'Data fetched successfully' });
+});
 
 //! ---------------------------------Category routes-------------------------------------
 
