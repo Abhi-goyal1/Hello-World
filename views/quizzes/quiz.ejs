@@ -2,21 +2,40 @@
 
 
 <style>
-
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 #quiz-img{
   max-width: 35%;
 }
+.btn{
+    width: 100%;
+}
+.card-body h5{
+    /* color: black; */
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif !important;
+}
+.card-body p{
+    color: #aaa;
+    font-family: 'Poppins', sans-serif !important;
+}
 
 .main-sec h1{
+    font-family: 'Poppins', sans-serif;
     font-size: 5rem;
     font-weight: 600;
+    color: black;
 }
 .main-sec p{
+    
     font-weight: 500;
+    color: #aaa;
+   
 }
 .card{
-    background-color: #2baffc;
-    color: white;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    /* background-color: #2baffc; */
+    /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+    /* color: white; */
     border: none;
 }
 .btn{ 
@@ -26,7 +45,7 @@
 }
 @media  (max-width: 1200px) {
     .main-sec h1{
-    font-size: 4.4rem;
+    font-size: 4.2rem;
     font-weight: 600;
 }
 .main-sec p{
@@ -39,7 +58,7 @@
 }
 @media  (max-width: 994px) {
     .main-sec h1{
-    font-size: 3.3rem;
+    font-size: 3rem;
     font-weight: 600;
 }
 .main-sec p{
@@ -51,7 +70,7 @@
 }
 @media  (max-width: 770px) {
     .main-sec h1{
-    font-size: 2.4rem;
+    font-size: 2rem;
     font-weight: 600;
 }
 .main-sec p{
@@ -63,7 +82,7 @@
 }
 @media  (max-width: 510px) {
     .main-sec h1{
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 600;
 }
 .main-sec p{
@@ -75,11 +94,25 @@
 }
 @media  (max-width: 436px) {
     .main-sec h1{
-    font-size: 1.7rem;
+    font-size: 1.4rem;
     font-weight: 600;
 }
 .main-sec p{
     font-size: 8px;
+   
+}
+#quiz-img{
+  max-width: 90%;
+}
+}
+@media  (max-width: 340px) {
+    .main-sec h1{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.main-sec p{
+    font-size: 8px;
+   
 }
 #quiz-img{
   max-width: 90%;
@@ -103,7 +136,8 @@
         <div class="row">
             <div class="col-md-4 mb-4">
                 <div class="card"  data-aos="fade-up" data-aos-duration="1000">
-                    <div class="card-body">
+                    <div class="card-body text-center">
+                        <img src="/images/html.svg" alt="nnnn" width="80" height="80" class="py-2">
                         <h5 class="card-title">HTML Quiz</h5>
                         <p class="card-text">Test your knowledge of HTML.</p>
                        
@@ -113,7 +147,8 @@
             </div>
             <div class="col-md-4 mb-4"  data-aos="fade-up" data-aos-duration="1000">
                 <div class="card">
-                    <div class="card-body">
+                    <div class="card-body text-center">
+                        <img src="/images/css.svg" alt="nnnn" width="80" height="80" class="py-2">
                         <h5 class="card-title">CSS Quiz</h5>
                         <p class="card-text">Test your knowledge of CSS.</p>
                         <a href="/quizzes-content?category=css" class="btn btn-primary"  >Start Quiz</a>
@@ -122,7 +157,8 @@
             </div>
             <div class="col-md-4 mb-4"  data-aos="fade-up" data-aos-duration="1000">
                 <div class="card">
-                    <div class="card-body">
+                    <div class="card-body text-center">
+                        <img src="/images/js.svg" alt="nnnn" width="80" height="80" class="py-2">
                         <h5 class="card-title">JavaScript Quiz</h5>
                         <p class="card-text">Test your knowledge of JavaScript.</p>
                         <a href="/quizzes-content?category=javascript" class="btn btn-primary"  >Start Quiz</a>
@@ -131,7 +167,8 @@
             </div>
             <div class="col-md-4 mb-4"  data-aos="fade-up" data-aos-duration="1000">
                 <div class="card">
-                    <div class="card-body">
+                    <div class="card-body text-center">
+                        <img src="/images/bootstrap.svg" alt="nnnn" width="80" height="80" class="py-2">
                         <h5 class="card-title">Bootstrap Quiz</h5>
                         <p class="card-text">Test your knowledge of HTML.</p>
                         <a href="/quizzes-content?category=bootstrap" class="btn btn-primary"  >Start Quiz</a>
@@ -140,7 +177,8 @@
             </div>
             <div class="col-md-4 mb-4"  data-aos="fade-up" data-aos-duration="1000">
                 <div class="card">
-                    <div class="card-body">
+                    <div class="card-body text-center">
+                        <img src="/images/react.svg" alt="nnnn" width="80" height="80" class="py-2">
                         <h5 class="card-title">React Quiz</h5>
                         <p class="card-text">Test your knowledge of CSS.</p>
                         <a href="/quizzes-content?category=react" class="btn btn-primary"  >Start Quiz</a>
@@ -149,7 +187,8 @@
             </div>
             <div class="col-md-4 mb-4"  data-aos="fade-up" data-aos-duration="1000">
                 <div class="card">
-                    <div class="card-body">
+                    <div class="card-body text-center">
+                        <img src="/images/nodej.svg" alt="nnnn" width="80" height="80" class="py-2">
                         <h5 class="card-title">Nodejs Quiz</h5>
                         <p class="card-text">Test your knowledge of JavaScript.</p>
                         <a href="/quizzes-content?category=nodejs" class="btn btn-primary"  >Start Quiz</a>
@@ -158,7 +197,8 @@
             </div>
             <div class="col-md-4 mb-4"  data-aos="fade-up" data-aos-duration="1000">
                 <div class="card">
-                    <div class="card-body">
+                    <div class="card-body text-center">
+                        <img src="/images/java.svg" alt="nnnn" width="80" height="80" class="py-2">
                         <h5 class="card-title">Java Quiz</h5>
                         <p class="card-text">Test your knowledge of HTML.</p>
                         <a href="/quizzes-content?category=java" class="btn btn-primary"  >Start Quiz</a>
@@ -167,7 +207,8 @@
             </div>
             <div class="col-md-4 mb-4"  data-aos="fade-up" data-aos-duration="1000">
                 <div class="card">
-                    <div class="card-body">
+                    <div class="card-body text-center">
+                        <img src="/images/c.png" alt="nnnn" width="80" height="80" class="py-2">
                         <h5 class="card-title">C Quiz</h5>
                         <p class="card-text">Test your knowledge of CSS.</p>
                         <a href="/quizzes-content?category=c" class="btn btn-primary"  >Start Quiz</a>
@@ -176,7 +217,8 @@
             </div>
             <div class="col-md-4 mb-4"  data-aos="fade-up" data-aos-duration="1000">
                 <div class="card">
-                    <div class="card-body">
+                    <div class="card-body  text-center">
+                        <img src="/images/python.svg" alt="nnnn" width="80" height="80" class="py-2">
                         <h5 class="card-title">Python Quiz</h5>
                         <p class="card-text">Test your knowledge of JavaScript.</p>
                         <a href="/quizzes-content?category=python" class="btn btn-primary"  >Start Quiz</a>
