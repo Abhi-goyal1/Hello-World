@@ -272,6 +272,9 @@ app.get("/reset-confirmation",(req, res, next)=>{
 
 
 
+app.get("/report-error", (req, res, next) => {
+  res.render("includes/report-error",{ active: "" } )
+});
 app.get("/terms-and-condition", (req, res, next) => {
   res.render("includes/terms-and-condition",{ active: "" } )
 });
