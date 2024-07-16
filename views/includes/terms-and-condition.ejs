@@ -1,0 +1,244 @@
+    
+<% layout("/layouts/boilerplate") %>
+
+
+
+
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        /* line-height: 1.6; */
+        /* color: #f4f4f4; */
+        background-color: #000000;
+    }
+    
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+ 
+    .terms-header {
+        background-color: #111111;
+        text-align: center;
+        padding: 100px 0 50px;
+        position: relative;
+    }
+    
+    .terms-icon {
+        font-size: 100px;
+        color: #3498db;
+        margin-bottom: 20px;
+    }
+    
+    .terms-title {
+        font-size: 3rem;
+        color: #ecf0f1;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        font-weight: 700;
+    }
+    
+    .terms-subtitle {
+        font-size: 1.2rem;
+        color: #bdc3c7;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    .terms-content {
+        padding: 50px 0;
+        background-color: #1F1F1F;
+    }
+    
+    .terms-section {
+        background-color: #191919;
+        padding: 30px;
+        margin-bottom: 30px;
+        border-radius: 10px;
+        box-shadow: 3px 3px 15px rgb(0, 0, 0), -3px -3px 15px rgb(58, 58, 58);
+        transition: all 0.3s ease;
+    }
+    
+    .terms-section:hover {
+        transform: translateY(-5px);
+        box-shadow: 3px 3px 15px rgb(0, 0, 0), -3px -3px 15px rgb(58, 58, 58);
+    }
+    
+    .terms-section h2 {
+        color: #3498db;
+        margin-bottom: 20px;
+        font-size: 1.8rem;
+    }
+    
+    .terms-section p, .terms-section ul {
+        color: #aaa;
+        margin-bottom: 15px;
+    }
+    
+    .terms-section ul {
+        padding-left: 20px;
+    }
+    
+    .terms-section li {
+        margin-bottom: 10px;
+    }
+    
+    .terms-navigation {
+        position: fixed;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+        background-color: rgba(52, 152, 219, 0.1);
+        padding: 10px;
+        border-radius: 10px;
+    }
+    
+    .terms-navigation ul {
+        list-style-type: none;
+    }
+    
+    .terms-navigation li {
+        margin-bottom: 10px;
+    }
+    
+    .terms-navigation a {
+        color: #3498db;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: color 0.3s ease;
+    }
+    
+    .terms-navigation a:hover {
+        color: #2980b9;
+    }
+    
+  
+    
+    @media (max-width: 768px) {
+        .terms-title {
+            font-size: 2.5rem;
+        }
+        
+        .terms-subtitle {
+            font-size: 1rem;
+        }
+        
+        .terms-section h2 {
+            font-size: 1.5rem;
+        }
+    
+        .terms-navigation {
+            display: none;
+        }
+    }
+    </style>
+    </head>
+    <body>
+       
+    
+        <main>
+            <section class="terms-header">
+                <div class="container">
+                    <div class="terms-icon">📜</div>
+                    <h1 class="terms-title">Terms & Conditions</h1>
+                    <p class="terms-subtitle">Please read these terms carefully before using our services.</p>
+                </div>
+            </section>
+    
+            <section class="terms-content">
+                <div class="container">
+                    <div class="terms-section" id="acceptance">
+                        <h2>1. Acceptance of Terms</h2>
+                        <p>By accessing or using TutorialHub's services, you agree to be bound by these Terms and Conditions. If you disagree with any part of the terms, you may not use our services.</p>
+                    </div>
+    
+                    <div class="terms-section" id="user-accounts">
+                        <h2>2. User Accounts</h2>
+                        <p>To access certain features of TutorialHub, you may be required to create an account. You are responsible for:</p>
+                        <ul>
+                            <li>Maintaining the confidentiality of your account information</li>
+                            <li>All activities that occur under your account</li>
+                            <li>Notifying us immediately of any unauthorized use of your account</li>
+                        </ul>
+                    </div>
+    
+                    <div class="terms-section" id="content">
+                        <h2>3. Content</h2>
+                        <p>We regularly review our tutorials, references, and examples to ensure accuracy, but we cannot guarantee the complete correctness of all content. By using Hello World, you indicate that you have read and accepted our terms of use, cookie policy, and privacy policy.</p>
+                    </div>
+    
+                    <div class="terms-section" id="intellectual-property">
+                        <h2>4. Intellectual Property</h2>
+                        <p>The service and its original content, features, and functionality are and will remain the exclusive property of TutorialHub and its licensors. Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of TutorialHub.</p>
+                    </div>
+    
+                    <div class="terms-section" id="termination">
+                        <h2>5. Termination</h2>
+                        <p>We may terminate or suspend your account and bar access to the service immediately, without prior notice or liability, under our sole discretion, for any reason whatsoever and without limitation, including but not limited to a breach of the Terms.</p>
+                    </div>
+    
+                    <div class="terms-section" id="limitations">
+                        <h2>6. Limitation of Liability</h2>
+                        <p>In no event shall TutorialHub, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the service.</p>
+                    </div>
+    
+                    <div class="terms-section" id="disclaimer">
+                        <h2>7. Disclaimer</h2>
+                        <p>Your use of the service is at your sole risk. The service is provided on an "AS IS" and "AS AVAILABLE" basis. The service is provided without warranties of any kind, whether express or implied, including, but not limited to, implied warranties of merchantability, fitness for a particular purpose, non-infringement or course of performance.</p>
+                    </div>
+    
+                    <div class="terms-section" id="governing-law">
+                        <h2>8. Governing Law</h2>
+                        <p>These Terms shall be governed and construed in accordance with the laws of [Your Country/State], without regard to its conflict of law provisions.</p>
+                    </div>
+    
+                    <div class="terms-section" id="changes">
+                        <h2>9. Changes to Terms</h2>
+                        <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. What constitutes a material change will be determined at our sole discretion. By continuing to access or use our service after those revisions become effective, you agree to be bound by the revised terms.</p>
+                    </div>
+    
+                    <div class="terms-section" id="contact">
+                        <h2>10. Contact Us</h2>
+                        <p>If you have any questions about these Terms, please contact us at:</p>
+                        <p>Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c2b6a7b0afb182b6b7b6adb0aba3aeaab7a0ecabad">Helloworldinfo1@gmail.com</a></p>
+                        <p>Address: Noida, India</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    
+     
+    
+        <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const termsSections = document.querySelectorAll('.terms-section');
+            
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+    
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+    
+            termsSections.forEach((section, index) => {
+                section.style.opacity = 0;
+                section.style.transform = 'translateY(50px)';
+                section.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
+                observer.observe(section);
+            });
+        });
+        </script>
+    </body>
+    </html>

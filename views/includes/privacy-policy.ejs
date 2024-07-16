@@ -1,51 +1,326 @@
 <% layout("/layouts/boilerplate") %>
 
-<h1>Privacy Policy for Hello World</h1>
 
-<p>At Hello World, accessible from https://helloworld-qbjo.onrender.com/, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Hello World and how we use it.</p>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+   
+    
+    body {
+      
+        background-color: #000000;
+    }
+    
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+  
+    
+    .privacy-header {
+        background-color: #111111;
+        text-align: center;
+        padding: 100px 0 50px;
+        position: relative;
+    }
+    
+    .lock-icon {
+        font-size: 100px;
+        color: #3498db;
+        margin-bottom: 20px;
+    }
+    
+    .privacy-title {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        font-size: 3rem;
+        color: #ecf0f1;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+    
+    .privacy-subtitle {
+        font-size: 1.2rem;
+        color: #bdc3c7;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .privacy-policy {
+        padding: 50px 0;
+        background-color: #1F1F1F;
 
-<p>If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.</p>
+    }
+    
+    .policy-section {
+        background-color: #191919;
+        padding: 30px;
+        margin-bottom: 30px;
+        border-radius: 10px;
+        box-shadow: 3px 3px 15px rgb(0, 0, 0), -3px -3px 15px rgb(58, 58, 58);
+        transition: all 0.3s ease;
+    }
+    
 
-<h2>Log Files</h2>
-
-<p>Hello World follows a standard procedure of using log files. These files log visitors when they visit websites. All hosting companies do this and a part of hosting services' analytics. The information collected by log files include internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. These are not linked to any information that is personally identifiable. The purpose of the information is for analyzing trends, administering the site, tracking users' movement on the website, and gathering demographic information. Our Privacy Policy was created with the help of the <a href="https://www.privacypolicyonline.com/privacy-policy-generator/">Privacy Policy Generator</a>.</p>
-
-<h2>Cookies and Web Beacons</h2>
-
-<p>Like any other website, Hello World uses "cookies". These cookies are used to store information including visitors' preferences, and the pages on the website that the visitor accessed or visited. The information is used to optimize the users' experience by customizing our web page content based on visitors' browser type and/or other information.</p>
-
-<p>For more general information on cookies, please read <a href="https://www.privacypolicyonline.com/what-are-cookies/">the "Cookies" article from the Privacy Policy Generator</a>.</p>
->>>>>>> parent of e1b9ab7 ([brands] Updated credits link)
-
-<h2>Google DoubleClick DART Cookie</h2>
-
-<p>Google is one of a third-party vendor on our site. It also uses cookies, known as DART cookies, to serve ads to our site visitors based upon their visit to www.website.com and other sites on the internet. However, visitors may choose to decline the use of DART cookies by visiting the Google ad and content network Privacy Policy at the following URL – <a href="https://policies.google.com/technologies/ads">https://policies.google.com/technologies/ads</a></p>
-
-
-<h2>Privacy Policies</h2>
-
-<P>You may consult this list to find the Privacy Policy for each of the advertising partners of Hello World.</p>
-
-<p>Third-party ad servers or ad networks uses technologies like cookies, JavaScript, or Web Beacons that are used in their respective advertisements and links that appear on Hello World, which are sent directly to users' browser. They automatically receive your IP address when this occurs. These technologies are used to measure the effectiveness of their advertising campaigns and/or to personalize the advertising content that you see on websites that you visit.</p>
-
-<p>Note that Hello World has no access to or control over these cookies that are used by third-party advertisers.</p>
-
-<h2>Third Party Privacy Policies</h2>
-
-<p>Hello World's Privacy Policy does not apply to other advertisers or websites. Thus, we are advising you to consult the respective Privacy Policies of these third-party ad servers for more detailed information. It may include their practices and instructions about how to opt-out of certain options. </p>
-
-<p>You can choose to disable cookies through your individual browser options. To know more detailed information about cookie management with specific web browsers, it can be found at the browsers' respective websites. What Are Cookies?</p>
-
-<h2>Children's Information</h2>
-
-<p>Another part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity.</p>
-
-<p>Hello World does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.</p>
-
-<h2>Online Privacy Policy Only</h2>
-
-<p>This Privacy Policy applies only to our online activities and is valid for visitors to our website with regards to the information that they shared and/or collect in Hello World. This policy is not applicable to any information collected offline or via channels other than this website.</p>
-
-<h2>Consent</h2>
-
-<p>By using our website, you hereby consent to our Privacy Policy and agree to its Terms and Conditions.</p>
+    
+    .policy-section h2 {
+        font-family: 'Poppins', sans-serif;
+        color: #3498db;
+        margin-bottom: 20px;
+        font-size: 1.8rem;
+    }
+    
+    .policy-section p, .policy-section ul {
+        color: #aaa;
+        margin-bottom: 15px;
+    }
+    
+    .policy-section ul {
+        padding-left: 20px;
+    }
+    
+    .policy-section li {
+        margin-bottom: 10px;
+    }
+    
+    .policy-navigation {
+        position: fixed;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+        background-color: rgba(52, 152, 219, 0.1);
+        padding: 10px;
+        border-radius: 10px;
+    }
+    
+    .policy-navigation ul {
+        list-style-type: none;
+    }
+    
+    .policy-navigation li {
+        margin-bottom: 10px;
+    }
+    
+    .policy-navigation a {
+        color: #3498db;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: color 0.3s ease;
+    }
+    
+    .policy-navigation a:hover {
+        color: #2980b9;
+    }
+    
+    .interactive-element {
+        background-color: #2c3e50;
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+    
+    .interactive-element h3 {
+        color: #3498db;
+        margin-bottom: 10px;
+    }
+    
+    .toggle-button {
+        background-color: #3498db;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    .toggle-button:hover {
+        background-color: #2980b9;
+    }
+    
+    .hidden-content {
+        display: none;
+        margin-top: 10px;
+        padding: 10px;
+        background-color: #34495e;
+        border-radius: 5px;
+    }
+    
+    
+    
+    @media (max-width: 768px) {
+        .privacy-header{
+            padding-top: 60px;
+            padding-bottom: 90px;
+        }
+        .privacy-title {
+            font-size: 2.5rem;
+        }
+        
+        .privacy-subtitle {
+            font-size: 1rem;
+        }
+        
+        .policy-section h2 {
+            font-size: 1.5rem;
+        }
+    
+        .policy-navigation {
+            display: none;
+        }
+    }
+    </style>
+    </head>
+    <body>
+    
+        <main>
+            <section class="privacy-header">
+                <div class="container">
+                    <div class="lock-icon">🔒</div>
+                    <h1 class="privacy-title">Privacy Policy</h1>
+                    <p class="privacy-subtitle">Your privacy is important to us. This policy outlines how we collect, use, and protect your personal information.</p>
+                </div>
+            </section>
+    
+            <section class="privacy-policy">
+                <div class="container">
+                    <div class="policy-section" id="information-collection">
+                        <h2>1. Information We Collect</h2>
+                        <p>We collect information you provide directly to us, such as:</p>
+                        <ul>
+                            <li>Personal information (name, email address, etc.) when you create an account</li>
+                            <li>Course progress and completion data</li>
+                            <li>Payment information when you make a purchase</li>
+                            <li>Communications you send to us</li>
+                            <li>Information about your device and internet connection</li>
+                            <li>Usage data through cookies and similar technologies</li>
+                        </ul>
+                    </div>
+    
+                    <div class="policy-section" id="information-use">
+                        <h2>2. How We Use Your Information</h2>
+                        <p>We use the information we collect to:</p>
+                        <ul>
+                            <li>Provide, maintain, and improve our services</li>
+                            <li>Process transactions and send related information</li>
+                            <li>Send you technical notices, updates, and support messages</li>
+                            <li>Respond to your comments and questions</li>
+                            <li>Personalize and improve your experience</li>
+                            <li>Analyze usage patterns and optimize our platform</li>
+                            <li>Detect and prevent fraud or abuse of our services</li>
+                        </ul>
+                    </div>
+    
+                    <div class="policy-section" id="information-sharing">
+                        <h2>3. Information Sharing and Disclosure</h2>
+                        <p>We do not sell or rent your personal information to third parties. We may share your information in the following situations:</p>
+                        <ul>
+                            <li>With your consent</li>
+                            <li>To comply with legal obligations</li>
+                            <li>To protect our rights and prevent fraud</li>
+                            <li>With service providers who help us operate our business</li>
+                            <li>In connection with a merger, sale, or acquisition of our company</li>
+                        </ul>
+                    </div>
+    
+                    <div class="policy-section" id="data-security">
+                        <h2>4. Data Security</h2>
+                        <p>We take reasonable measures to help protect your personal information from loss, theft, misuse, unauthorized access, disclosure, alteration, and destruction. These measures include:</p>
+                        <ul>
+                            <li>Encryption of data in transit and at rest</li>
+                            <li>Regular security audits and penetration testing</li>
+                            <li>Employee training on data protection and privacy</li>
+                            <li>Access controls and authentication mechanisms</li>
+                        </ul>
+                        <div class="interactive-element">
+                            <h3>Learn More About Our Security Practices</h3>
+                            <button class="toggle-button" onclick="toggleContent('security-details')">Show Details</button>
+                            <div id="security-details" class="hidden-content">
+                                <p>Our security measures include state-of-the-art firewalls, intrusion detection systems, and regular vulnerability assessments. We also employ a dedicated security team that monitors our systems 24/7 to detect and respond to any potential threats.</p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="policy-section" id="user-choices">
+                        <h2>5. Your Choices</h2>
+                        <p>You have several choices regarding your personal information:</p>
+                        <ul>
+                            <li>Access, update, or delete your account information at any time by logging into your account settings</li>
+                            <li>Opt-out of promotional communications by following the instructions in those messages</li>
+                            <li>Adjust your browser settings to refuse cookies or to alert you when cookies are being sent</li>
+                            <li>Request a copy of your personal data that we hold</li>
+                        </ul>
+                    </div>
+    
+                    <div class="policy-section" id="children-privacy">
+                        <h2>6. Children's Privacy</h2>
+                        <p>Our services are not intended for children under the age of 13. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe that your child has provided us with personal information, please contact us immediately.</p>
+                    </div>
+    
+                    <div class="policy-section" id="international-transfers">
+                        <h2>7. International Data Transfers</h2>
+                        <p>Your information may be transferred to and processed in countries other than the country you live in. These countries may have data protection laws that are different from the laws of your country. We have taken appropriate safeguards to require that your personal information will remain protected in accordance with this Privacy Policy.</p>
+                    </div>
+    
+                    <div class="policy-section" id="policy-changes">
+                        <h2>8. Changes to This Policy</h2>
+                        <p>We may update this privacy policy from time to time. We will notify you of any changes by posting the new privacy policy on this page and updating the "Last Updated" date. You are advised to review this privacy policy periodically for any changes.</p>
+                    </div>
+    
+                    <div class="policy-section" id="contact-us">
+                        <h2>9. Contact Us</h2>
+                        <p>If you have any questions about this privacy policy, please contact us at:</p>
+                        <p>Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c0b0b2a9b6a1a3b980b4b5b4afb2a9a1aca8b5a2eea9af">Helloworldinfo1@gmail.com</a></p>
+                        <p>Address: Noida, India</p>
+                        <div class="interactive-element">
+                            <h3>Have a Question?</h3>
+                            <button class="toggle-button" onclick="">Contact Us</button>
+                           
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    
+      
+    
+    
+        <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const policySections = document.querySelectorAll('.policy-section');
+            
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+    
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+    
+            policySections.forEach((section, index) => {
+                section.style.opacity = 0;
+                section.style.transform = 'translateY(50px)';
+                section.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
+                observer.observe(section);
+            });
+        });
+    
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+            } else {
+                content.style.display = 'none';
+            }
+        }
+        </script>
+    </body>
+    </html>

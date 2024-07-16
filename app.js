@@ -272,20 +272,24 @@ app.get("/reset-confirmation",(req, res, next)=>{
 
 
 
+app.get("/terms-and-condition", (req, res, next) => {
+  res.render("includes/terms-and-condition",{ active: "" } )
+});
+
 app.get("/privacy-policy", (req, res, next) => {
-  res.render("includes/privacy-policy",{ active: "" } )
+  res.render("includes/privacy-policy",{ active: "" } );
 });
 
 app.get("/quizzes", (req, res, next) => {
-res.render("quizzes/quiz",{ active: "" } )
+res.render("quizzes/quiz",{ active: "" } );
 });
 app.get("/resume-builder", (req, res, next) => {
-res.render("resume-builder/resume-builder",{ active: "" } )
+res.render("resume-builder/resume-builder",{ active: "" } );
 });
 
 
 app.get("/faq", (req, res, next) => {
-res.render("includes/faq",{ active: "" } )
+res.render("includes/faq",{ active: "" } );
 });
 
 
@@ -301,8 +305,8 @@ app.get('/quizzes-content', (req, res , next) => {
 app.get("/courses/graphic-design", (req, res) => {
   // res.render("includes/courses", { active: "courses" });
   if(!req.isAuthenticated()){
-    req.flash("error", "You must be logged in for Explore courses!")
-    return res.redirect("/login")
+    req.flash("error", "You must be logged in for Explore courses!");
+    return res.redirect("/login");
   }
   // res.send("This is graphic designing course");
   res.render('courses/courses-category/graphic-design', { active: "" });
@@ -427,15 +431,15 @@ app.get('/auth/google/callback',
 //   }
 // );
 
-function simulateServerDelay(req, res, next) {
-  setTimeout(next, 1000); // Simulate 1 second delay
-}
+// function simulateServerDelay(req, res, next) {
+//   setTimeout(next, 1000); // Simulate 1 second delay
+// }
 
-// Route handler
-app.get('/some-data-endpoint', simulateServerDelay, (req, res) => {
-  // Send some data
-  res.json({ message: 'Data fetched successfully' });
-});
+// // Route handler
+// app.get('/some-data-endpoint', simulateServerDelay, (req, res) => {
+//   // Send some data
+//   res.json({ message: 'Data fetched successfully' });
+// });
 
 //! ---------------------------------Category routes-------------------------------------
 
