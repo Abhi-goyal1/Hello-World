@@ -10,6 +10,7 @@
   justify-content: flex-end;
   height: 100%;
   overflow: hidden;
+  margin-top: 30px;
     }
 #rays {
   z-index: 2;
@@ -61,13 +62,48 @@
         align-items: center;
         justify-content: center;
       } */
-    
+    .ERF{
+     padding: 10px;
+     padding-top: 20px;
+      font-weight: 900;
+      color: black;
+
+    }
      .feed-main{
-        background-color: #000;
+        /* background-color: #000; */
+     padding: 30px;
+background: #e0e0e0;
+
      }
     
+     #feedbackForm{
+        padding: 20px;
+        border-radius: 32px;
+background: #e0e0e0;
+box-shadow:  8px 8px 16px #acacac,
+             -8px -8px 16px #ffffff;
+     }
       
-    
+     .faq{
+        
+        background: #e0e0e0;
+             /* margin: 50px; */
+             padding: 30px;
+     }
+     .faq-container{
+      border-radius: 32px;
+      padding: 40px;
+      background: #e0e0e0;
+box-shadow:  8px 8px 16px #acacac,
+             -8px -8px 16px #ffffff;
+     }
+    .faq-heading{
+      font-weight: 900;
+      color: black;
+    }
+     .footer{
+margin-top: 0px;
+     }
       .form-container, .faq-container {
         overflow: hidden;
       }
@@ -93,13 +129,17 @@
     
       .form-control, .form-select {
         background: rgba(255, 255, 255, 0.5);
-        border: 1px solid rgba(0, 0, 0, 0.1);
+        
         transition: all 0.3s ease;
         padding: 1rem 0.75rem;
         font-size: 16px;
-        border-radius: 10px;
+        border-radius: 32px;
         color: #333;
         height: auto;
+       
+background: linear-gradient(145deg, #f0f0f0, #cacaca);
+box-shadow:  7px 7px 11px #b1b1b1,
+             -7px -7px 11px #ffffff;
       }
     
       .form-control:focus, .form-select:focus {
@@ -109,7 +149,8 @@
       }
     
       .form-control::placeholder, .form-select::placeholder {
-        color: transparent;
+        color: #aaa;
+        font-weight: 700;
       }
     
       .form-control:focus + .form-label,
@@ -119,8 +160,9 @@
         transform: translateY(-1.5rem) scale(0.85);
         background-color: rgba(255, 255, 255, 0.8);
         padding: 0 0.5rem;
-        border-radius: 5px;
+        border-radius: 32px;
         color: #007bff;
+        
       }
     
       .form-group {
@@ -129,17 +171,21 @@
       }
     
       .btn-primary {
-        background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+     
         border: none;
         transition: all 0.3s ease;
         padding: 12px 24px;
-        font-size: 18px;
+        font-size: 20px;
         color: #ffffff;
-        font-weight: 600;
+        font-weight: 900;
+        border-radius: 32px;
+        background: linear-gradient(145deg, #000, #000);
+box-shadow:  7px 7px 11px #b1b1b1,
+             -7px -7px 11px #ffffff;
       }
     
       .btn-primary:hover {
-        background: linear-gradient(135deg, #0056b3 0%, #004085 100%);
+        background: linear-gradient(135deg, #2baffc 0%, #2baffc 100%);
         transform: translateY(-2px);
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
       }
@@ -148,7 +194,7 @@
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
-        margin-top: 10px;
+        margin: 10px;
       }
     
       .image-preview img {
@@ -166,6 +212,7 @@
       }
     
       .faq-item {
+        
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         padding: 15px 0;
       }
@@ -191,24 +238,45 @@
       }
     
       .media-input-container {
+        border-radius: 32px;
         position: relative;
         overflow: hidden;
         margin-bottom: 20px;
         width: 100%;
+        height: 8rem;
+        background: linear-gradient(145deg, #f0f0f0, #cacaca);
+box-shadow:  7px 7px 11px #b1b1b1,
+             -7px -7px 11px #ffffff;
       }
     
       .media-input-label {
+        height: 8rem;
         display: flex;
         align-items: center;
         justify-content: center;
         width: 100%;
         padding: 12px 20px;
-        background: rgba(255, 255, 255, 0.5);
-        color: #333;
-        border-radius: 10px;
+        
+        border-radius: 32px;
         cursor: pointer;
         transition: all 0.3s ease;
-        border: 1px solid rgba(0, 0, 0, 0.1);
+        
+       
+      }
+     
+      .media-input-label {
+        height: 8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 12px 20px;
+        
+        border-radius: 32px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        
+       
       }
     
       .media-input-label:hover {
@@ -218,8 +286,9 @@
       }
     
       .media-input-label i {
+        color: #000;
         margin-right: 10px;
-        font-size: 24px;
+        font-size: 85px;
       }
     
       .media-input {
@@ -227,27 +296,28 @@
         left: -9999px;
       }
     
-      @keyframes pulse {
-        0% {
-          box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.7);
-        }
-        70% {
-          box-shadow: 0 0 0 10px rgba(0, 123, 255, 0);
-        }
-        100% {
-          box-shadow: 0 0 0 0 rgba(0, 123, 255, 0);
-        }
-      }
+  
     
-      .pulse {
-        animation: pulse 1.5s infinite;
-      }
     
+      .footer-02{
+        margin-top: 0px;
+      }
+      .arrow{
+        margin-left: 40%;
+        max-width: 50%;
+        
+      }
+      @media screen and (max-width: 770px) {
+    .arrow {
+        display: none;
+    }
+}
+
       
     </style>
    
       <div class="container-fluid feed-main">
-        <div class="row mx-md-5 my-md-3">
+        <div class="row mx-md-5 ">
             <div class="col-md-6 side-image">
 
                 <div>
@@ -510,18 +580,19 @@
                         </svg>
                       </div>
                     </div>
-                     
+                    <h1 class="mb-4 ERF text-center">Error Report and Feedback</h1>
+                    <img class="arrow"  src="/images/new-arrow.png" alt="">
             </div>
               <div class="col-md-6 p-4 ">
-                <h1 class="mb-4 text-center">Feedback Form</h1>
+                
                 <form id="feedbackForm">
                   <div class="form-group">
-                    <input type="text" class="form-control" id="name" placeholder=" " required>
-                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Full Name " required>
+                   
                   </div>
                   <div class="form-group">
-                    <input type="email" class="form-control" id="email" placeholder=" " required>
-                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter Your Email" required>
+                    
                   </div>
                   <div class="form-group">
                     <select class="form-select" id="type" required>
@@ -529,16 +600,19 @@
                       <option value="feedback">Feedback</option>
                       <option value="error">Error Report</option>
                     </select>
-                    <label for="type" class="form-label">Type</label>
+                  
                   </div>
                   <div class="form-group">
-                    <textarea class="form-control" id="message" placeholder=" " rows="4" required></textarea>
-                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" id="message" placeholder="Write about the issue or Feedback " rows="4" required></textarea>
+                    
+                  </div>
+                  <div class="form-group">
+                    <textarea class="form-control" id="message" placeholder="Suggest the Solution (If any)" rows="4" required></textarea>
+                    
                   </div>
                   <div class="media-input-container">
                     <label for="images" class="media-input-label pulse">
-                      <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJmZWF0aGVyIGZlYXRoZXItaW1hZ2UiPjxyZWN0IHg9IjMiIHk9IjMiIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIgcng9IjIiIHJ5PSIyIj48L3JlY3Q+PGNpcmNsZSBjeD0iOC41IiBjeT0iOC41IiByPSIxLjUiPjwvY2lyY2xlPjxwb2x5bGluZSBwb2ludHM9IjIxIDE1IDE2IDEwIDUgMjEiPjwvcG9seWxpbmU+PC9zdmc+" alt="Upload Icon" class="logo">
-                      Attach Images
+                      <i class="fa-solid fa-cloud-arrow-up"></i>
                     </label>
                     <input type="file" class="media-input" id="images" accept="image/*" multiple>
                   </div>
@@ -546,10 +620,63 @@
                   <button type="submit" class="btn btn-primary w-100">Submit</button>
                 </form>
               </div>
+             
             </div>
+            </div>
+<div class="container-fluid">
+
+  <div class="row faq">
+    <div class="col-lg-10 mx-auto faq-container ">
+      <h1 class="mb-4 text-center faq-heading">Frequently Asked Questions</h1>
+      <div class="faq-item">
+        <div class="faq-question">
+          How long does it take to get a response? <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          We aim to respond to all feedback and error reports within 24-48 hours.
         </div>
       </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          Can I track the status of my report? <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          Yes, you will receive a tracking number via email after submitting your report.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          What types of images can I attach? <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          You can attach PNG, JPG, or GIF images up to 5MB each.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          Is my feedback anonymous? <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          By default, your feedback is not anonymous. However, you can request anonymity in your message if desired.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          How can I update my submitted feedback? <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          To update your feedback, please contact our support team with your tracking number and the updated information.
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+</div>
         
+      </div>
+        
+
+      
       
       </div>
     
