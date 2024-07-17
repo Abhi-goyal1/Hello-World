@@ -1,461 +1,887 @@
 <% layout("/layouts/boilerplate") %>
 
 
-    <style>
-      :root {
-        --primary-color: #4a90e2;
-        --secondary-color: #f4f4f4;
-        --text-color: #333;
-        --border-color: #ddd;
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;600&display=swap');
+  
+  :root {
+      --primary-color: #2c3e50;
+      --secondary-color: #3498db;
+      --background-color: #f8f9fa;
+      --text-color: #333;
+      --accent-color: #e74c3c;
+      --success-color: #2ecc71;
+  }
+  
+  /* body {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--background-color);
+  } */
+  
+  .hero {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: #fff;
+      text-align: center;
+      padding: 5rem 0 3rem;
+      position: relative;
+      overflow: hidden;
+  }
+  
+  .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 10px,
+          rgba(255,255,255,0.05) 10px,
+          rgba(255,255,255,0.05) 20px
+      );
+      animation: moveBackground 20s linear infinite;
+  }
+  
+  @keyframes moveBackground {
+      0% {
+          transform: translate(0, 0);
       }
-    
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
+      100% {
+          transform: translate(50%, 50%);
       }
-    
-      body {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        color: var(--text-color);
-        background-color: var(--secondary-color);
+  }
+  
+  .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      font-family: 'Poppins', sans-serif;
+      position: relative;
+      z-index: 1;
+  }
+  
+  .hero p {
+      font-size: 1.2rem;
+      position: relative;
+      z-index: 1;
+  }
+  
+  .resume-builder, .resume-preview {
+      background-color: #fff;
+      border-radius: 0.5rem;
+      box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+      padding: 2rem;
+      margin: 2rem 0;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .resume-builder:hover, .resume-preview:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0.8rem 1.5rem rgba(0,0,0,0.2);
+  }
+  
+  .form-label {
+      font-weight: 500;
+      color: var(--primary-color);
+  }
+  
+  .form-control {
+      border: 2px solid #e0e0e0;
+      border-radius: 0.25rem;
+      padding: 0.75rem;
+      transition: all 0.3s ease;
+  }
+  
+  .form-control:focus {
+      border-color: var(--secondary-color);
+      box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+      transform: translateY(-2px);
+  }
+  
+  .btn-primary {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+      transition: all 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+      background-color: var(--secondary-color);
+      border-color: var(--secondary-color);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  
+  .resume-section {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #eee;
+      transition: all 0.3s ease;
+  }
+  
+  .resume-section:hover {
+      transform: translateX(5px);
+  }
+  
+  .resume-section:last-child {
+      border-bottom: none;
+  }
+  
+  .resume-section h3 {
+      color: var(--secondary-color);
+      margin-bottom: 0.75rem;
+      font-size: 1.2rem;
+  }
+  
+  .skill-tag {
+      display: inline-block;
+      background-color: var(--accent-color);
+      color: #fff;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.25rem;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.875rem;
+      transition: all 0.3s ease;
+  }
+  
+  .skill-tag:hover {
+      transform: translateY(-2px) rotate(3deg);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .draggable {
+      cursor: move;
+  }
+  
+  .draggable:active {
+      cursor: grabbing;
+  }
+  
+  .ats-tips {
+      background-color: #fff;
+      padding: 4rem 0;
+  }
+  
+  .tips-list {
+      list-style-type: none;
+      padding: 0;
+  }
+  
+  .tips-list li {
+      background-color: var(--background-color);
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 0.2rem 0.6rem rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+  }
+  
+  .tips-list li:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 0.4rem 0.8rem rgba(0,0,0,0.1);
+  }
+  
+  .tips-list li h3 {
+      color: var(--secondary-color);
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+  }
+  
+  .feature-section {
+      padding: 4rem 0;
+      background-color: #f1f8fe;
+  }
+  
+  .feature-card {
+      text-align: center;
+      padding: 2rem;
+      background-color: #fff;
+      border-radius: 0.5rem;
+      box-shadow: 0 0.3rem 0.6rem rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+  }
+  
+  .feature-card:hover {
+      transform: translateY(-5px) scale(1.03);
+      box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+  }
+  
+  .feature-icon {
+      font-size: 3rem;
+      color: var(--secondary-color);
+      margin-bottom: 1rem;
+      transition: all 0.3s ease;
+  }
+  
+  .feature-card:hover .feature-icon {
+      transform: scale(1.1) rotate(10deg);
+  }
+  
+  .feature-title {
+      font-size: 1.2rem;
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+  }
+  
+ 
+  
+  .animate__animated {
+      animation-duration: 1s;
+      animation-fill-mode: both;
+  }
+  
+  .animate__fadeIn {
+      animation-name: fadeIn;
+  }
+  
+  @keyframes fadeIn {
+      from {
+          opacity: 0;
       }
-    
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 20px;
-        display: flex;
-        flex-wrap: wrap;
+      to {
+          opacity: 1;
       }
-    
-      .editor {
-        flex: 1;
-        min-width: 300px;
-        padding: 20px;
-        background-color: white;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        margin-right: 20px;
+  }
+  
+  .animate__fadeInUp {
+      animation-name: fadeInUp;
+  }
+  
+  @keyframes fadeInUp {
+      from {
+          opacity: 0;
+          transform: translate3d(0, 40px, 0);
       }
-    
-      .preview {
-        flex: 1;
-        min-width: 300px;
-        padding: 20px;
-        background-color: white;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      to {
+          opacity: 1;
+          transform: translate3d(0, 0, 0);
       }
-    
-      h1, h2, h3 {
-        margin-bottom: 20px;
+  }
+  
+  .animate__bounceIn {
+      animation-name: bounceIn;
+      animation-duration: .75s;
+  }
+  
+  @keyframes bounceIn {
+      from, 20%, 40%, 60%, 80%, to {
+          animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
       }
-    
-      .form-group {
-        margin-bottom: 20px;
+      0% {
+          opacity: 0;
+          transform: scale3d(0.3, 0.3, 0.3);
       }
-    
-      label {
-        display: block;
-        margin-bottom: 5px;
-        font-weight: bold;
+      20% {
+          transform: scale3d(1.1, 1.1, 1.1);
       }
-    
-      input[type="text"],
-      input[type="email"],
-      textarea,
-      select {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid var(--border-color);
-        border-radius: 4px;
-        font-size: 16px;
+      40% {
+          transform: scale3d(0.9, 0.9, 0.9);
       }
-    
-      button {
-        background-color: var(--primary-color);
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 16px;
-        transition: background-color 0.3s ease;
+      60% {
+          opacity: 1;
+          transform: scale3d(1.03, 1.03, 1.03);
       }
-    
-      button:hover {
-        background-color: #3a7bc8;
+      80% {
+          transform: scale3d(0.97, 0.97, 0.97);
       }
-    
-      .section {
-        margin-bottom: 20px;
-        padding: 10px;
-        border: 1px solid var(--border-color);
-        border-radius: 4px;
-        position: relative;
+      to {
+          opacity: 1;
+          transform: scale3d(1, 1, 1);
       }
-    
-      .section h3 {
-        border-bottom: 2px solid var(--primary-color);
-        padding-bottom: 5px;
-      }
-    
-      .editable {
-        min-height: 20px;
-        padding: 5px;
-        border: 1px dashed transparent;
-        transition: border-color 0.3s ease;
-      }
-    
-      .editable:hover {
-        border-color: var(--primary-color);
-      }
-    
-      .editable:focus {
-        outline: none;
-        border-color: var(--primary-color);
-        background-color: #f0f8ff;
-      }
-    
-      .template-selector {
-        margin-bottom: 20px;
-      }
-    
-      .template-preview {
-        width: 100px;
-        height: 150px;
-        margin-right: 10px;
-        cursor: pointer;
-        border: 2px solid transparent;
-      }
-    
-      .template-preview.selected {
-        border-color: var(--primary-color);
-      }
-    
-      #resumePreview {
-        min-height: 800px;
-        position: relative;
-        border: 1px solid var(--border-color);
-        padding: 20px;
-      }
-    
-      .preview-section {
-        position: absolute;
-        width: 100%;
-        padding: 10px;
-        background-color: rgba(255, 255, 255, 0.8);
-        border: 1px dashed var(--border-color);
-      }
-    
-      .drag-handle {
-        position: absolute;
-        top: 5px;
-        right: 5px;
-        width: 20px;
-        height: 20px;
-        background-color: var(--primary-color);
-        color: white;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: move;
-        font-weight: bold;
-      }
-    
-      .drag-over {
-        border: 2px dashed var(--primary-color);
-      }
-    
-      .dragging {
-        opacity: 0.5;
-      }
-    
-      @media print {
-        .editor, .no-print {
-          display: none;
-        }
-        .preview {
-          box-shadow: none;
-        }
-      }
-    
-      @media (max-width: 768px) {
-        .container {
-          flex-direction: column;
-        }
-        .editor, .preview {
-          margin-right: 0;
-          margin-bottom: 20px;
-        }
-      }
-    </style>
-    </head>
-    <body>
-      <div class="container">
-        <div class="editor">
-          <h2>Resume Editor</h2>
-          <div class="template-selector">
-            <h3>Choose a Template:</h3>
-            <img src="template1.jpg" alt="Classic Template" class="template-preview selected" data-template="classic">
-            <img src="template2.jpg" alt="Modern Template" class="template-preview" data-template="modern">
-            <img src="template3.jpg" alt="Creative Template" class="template-preview" data-template="creative">
-          </div>
-          <form id="resumeForm" method="GET" action="https://dynamic-resume-builder.websim.ai/update">
-            <div id="sectionContainer">
-              <div class="section" data-section="personal">
-                <div class="drag-handle">+</div>
-                <h3>Personal Information</h3>
-                <div class="form-group">
-                  <label for="name">Full Name:</label>
-                  <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                  <label for="title">Professional Title:</label>
-                  <input type="text" id="title" name="title" required>
-                </div>
-                <div class="form-group">
-                  <label for="contact">Email</label>
-                  <input type="text" id="contact" name="contact" required>
-                </div>
-              </div>
-    
-              <div class="section" data-section="summary">
-                <div class="drag-handle">+</div>
-                <h3>Professional Summary</h3>
-                <div class="form-group">
-                  <textarea id="summary" name="summary" rows="4" required></textarea>
-                </div>
-              </div>
-    
-              <div class="section" data-section="experience">
-                <div class="drag-handle">+</div>
-                <h3>Work Experience</h3>
-                <div class="form-group">
-                  <textarea id="experience" name="experience" rows="6" required></textarea>
-                </div>
-              </div>
-    
-              <div class="section" data-section="education">
-                <div class="drag-handle">+</div>
-                <h3>Education</h3>
-                <div class="form-group">
-                  <textarea id="education" name="education" rows="4" required></textarea>
-                </div>
-              </div>
-    
-              <div class="section" data-section="skills">
-                <div class="drag-handle">+</div>
-                <h3>Skills</h3>
-                <div class="form-group">
-                  <textarea id="skills" name="skills" rows="4" required></textarea>
-                </div>
-              </div>
-            </div>
-    
-            <button type="button" id="addSection">Add Custom Section</button>
-            <button type="submit">Update Resume</button>
-          </form>
-        </div>
-    
-        <div class="preview">
-          <h2>Resume Preview</h2>
-          <div id="resumePreview">
-            <!-- Preview content will be dynamically generated here -->
-          </div>
-          <button id="printResume" class="no-print">Print Resume</button>
-        </div>
-      </div>
-    
-      <script>
-        const form = document.getElementById('resumeForm');
-        const sectionContainer = document.getElementById('sectionContainer');
-        const resumePreview = document.getElementById('resumePreview');
-        const addSectionButton = document.getElementById('addSection');
-        const templateSelectors = document.querySelectorAll('.template-preview');
-        let currentTemplate = 'classic';
-        let dragSrcEl = null;
-    
-        const templates = {
-          classic: {
-            personal: { top: '0%', left: '0%', width: '100%' },
-            summary: { top: '15%', left: '0%', width: '100%' },
-            experience: { top: '30%', left: '0%', width: '100%' },
-            education: { top: '60%', left: '0%', width: '100%' },
-            skills: { top: '80%', left: '0%', width: '100%' }
-          },
-          modern: {
-            personal: { top: '0%', left: '0%', width: '30%' },
-            summary: { top: '0%', left: '35%', width: '65%' },
-            experience: { top: '20%', left: '35%', width: '65%' },
-            education: { top: '50%', left: '35%', width: '65%' },
-            skills: { top: '30%', left: '0%', width: '30%' }
-          },
-          creative: {
-            personal: { top: '5%', left: '5%', width: '90%' },
-            summary: { top: '25%', left: '5%', width: '90%' },
-            experience: { top: '45%', left: '5%', width: '42.5%' },
-            education: { top: '45%', left: '52.5%', width: '42.5%' },
-            skills: { top: '75%', left: '5%', width: '90%' }
-          }
-        };
-    
-        // Initialize drag and drop
-        initDragAndDrop();
-    
-        // Template selection
-        templateSelectors.forEach(selector => {
-          selector.addEventListener('click', function() {
-            templateSelectors.forEach(s => s.classList.remove('selected'));
-            this.classList.add('selected');
-            currentTemplate = this.dataset.template;
-            updatePreview();
-          });
-        });
-    
-        // Update preview when form is submitted
-        form.addEventListener('submit', function(e) {
-          e.preventDefault();
-          updatePreview();
-        });
-    
-        // Update preview in real-time as user types
-        form.addEventListener('input', updatePreview);
-    
-        function updatePreview() {
-          resumePreview.innerHTML = ''; // Clear previous content
-    
-          // Generate preview based on form data and current template
-          sectionContainer.querySelectorAll('.section').forEach(section => {
-            const sectionType = section.dataset.section;
-            const sectionTitle = section.querySelector('h3').textContent;
-            const sectionContent = Array.from(section.querySelectorAll('input, textarea'))
-              .map(input => input.value)
-              .filter(value => value.trim() !== '')
-              .join('<br>');
-    
-            if (sectionContent) {
-              const previewSection = document.createElement('div');
-              previewSection.className = 'preview-section';
-              previewSection.innerHTML = `
-                <h3>${sectionTitle}</h3>
-                <div class="editable" contenteditable="true">${sectionContent}</div>
-              `;
+  }
+  
+
+
+/* -------------------------------- 
+
+File#: _1_feature
+Title: Feature
+Descr: Content group containing text + media (img, video, iframe, inline SVG)
+Usage: codyhouse.co/license
+
+-------------------------------- */
+
+/* reset */
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+* {
+  font: inherit;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: hsl(0, 0%, 100%);
+  font-family: system-ui, sans-serif;
+  color: hsl(230, 7%, 23%);
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.4;
+}
+
+h1, h2, h3, h4 {
+  line-height: 1.2;
+  color: hsl(230, 13%, 9%);
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2.5rem; /* 40px */
+}
+
+h2 {
+  font-size: 2.125rem; /* 34px */
+}
+
+h3 {
+  font-size: 1.75rem; /* 28px */
+}
+
+h4 {
+  font-size: 1.375rem; /* 22px */
+}
+
+ol, ul, menu {
+  list-style: none;
+}
+
+button, input, textarea, select {
+  background-color: transparent;
+  border-radius: 0;
+  color: inherit;
+  line-height: inherit;
+  -webkit-appearance: none;
+          appearance: none;
+}
+
+textarea {
+  resize: vertical;
+  overflow: auto;
+  vertical-align: top;
+}
+
+a {
+  color: hsl(250, 84%, 54%);
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+img, video, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* -------------------------------- 
+
+Buttons 
+
+-------------------------------- */
+
+.cd-btn {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375em;
+  font-size: 1em;
+  font-weight: 500;
+  text-decoration: none;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: 0.2s;
+  will-change: transform;
+}
+
+.cd-btn:focus-visible {
+  outline: none;
+}
+
+.cd-btn:active {
+  transform: translateY(2px);
+}
+
+.cd-btn--primary {
+  background: hsl(250, 84%, 54%);
+  box-shadow: inset 0 1px 0 hsla(0, 0%, 100%, 0.15), 
+              0 1px 3px hsla(250, 84%, 38%, 0.25), 
+              0 2px 6px hsla(250, 84%, 38%, 0.1), 
+              0 6px 10px -2px hsla(250, 84%, 38%, 0.25);
+  color: hsl(0, 0%, 100%);
+}
+
+.cd-btn--primary:hover {
+  background: hsl(250, 84%, 60%);
+  box-shadow: inset 0 1px 0 hsla(0, 0%, 100%, 0.15), 
+              0 1px 2px hsla(250, 84%, 38%, 0.25), 
+              0 1px 4px hsla(250, 84%, 38%, 0.1), 
+              0 3px 6px -2px hsla(250, 84%, 38%, 0.25);
+}
+
+.cd-btn--primary:focus-visible {
+  box-shadow: inset 0 1px 0 hsla(0, 0%, 100%, 0.15), 
+              0 1px 2px hsla(250, 84%, 38%, 0.25), 
+              0 1px 4px hsla(250, 84%, 38%, 0.1), 
+              0 3px 6px -2px hsla(250, 84%, 38%, 0.25), 
+              0 0 0 2px hsl(0, 0%, 100%), 
+              0 0 0 4px hsl(250, 84%, 54%);
+}
+
+/* --------------------------------
+
+Component 
+
+-------------------------------- */
+
+.feature {}
+
+.feature__grid {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+.feature__grid > * {
+  min-width: 0;
+}
+
+.feature__content {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.feature__label {
+  font-size: 0.9375rem;
+  color: hsl(240, 4%, 65%);
+  text-transform: capitalize;
+}
+
+.feature__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+.feature--center-x .feature__actions {
+  justify-content: center;
+}
+
+.feature__img {
+  width: 100%;
+  border-radius: 0.75em;
+}
+
+@media (min-width: 64rem) {
+  .feature__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .feature--invert .feature__grid > *:first-child {
+    order: 2;
+  }
+}
+
+/* -------------------------------- 
+
+Utilities 
+
+-------------------------------- */
+
+.cd-container {
+  width: calc(100% - 3rem);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cd-max-width-adaptive-lg {
+  max-width: 32rem;
+}
+
+@media (min-width: 48rem) {
+  .cd-max-width-adaptive-lg {
+    max-width: 48rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .cd-max-width-adaptive-lg {
+    max-width: 64rem;
+  }
+}
+
+@media (min-width: 80rem) {
+  .cd-max-width-adaptive-lg {
+    max-width: 80rem;
+  }
+}
+
+.cd-position-relative {
+  position: relative;
+}
+
+.cd-z-index-1 {
+  z-index: 1;
+}
+
+.cd-margin-y-2xl {
+  margin-top: 8rem;
+  margin-bottom: 8rem;
+}
+
+.cd-text-center {
+  text-align: center;
+}
+
+.cd-line-height-lg {
+  line-height: 1.58;
+}
+
+.cd-link {
+  color: hsl(250, 84%, 54%);
+  text-decoration: none;
+  background-image: linear-gradient(to right, hsl(250, 84%, 54%) 50%, hsla(250, 84%, 54%, 0.2) 50%);
+  background-size: 200% 1px;
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  transition: background-position 0.2s;
+}
+
+.cd-link:hover {
+  background-position: 0% 100%;
+}
+
+  </style>
+  </head>
+  <body>
+      <main>
+        <section class="feature cd-position-relative cd-z-index-1 cd-margin-y-2xl">
+          <div class="cd-container cd-max-width-adaptive-lg">
+            <div class="feature__grid">
+              <div>
+                <div class="feature__content">
+                  <p class="feature__label">Pills &amp; potions</p>
+                  <h1>I have a dream</h1>
+                  <p class="cd-line-height-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, rem neque doloribus impedit explicabo minus laborum cupiditate atque esse consectetur.</p>
               
-              // Apply template-specific positioning
-              const position = templates[currentTemplate][sectionType] || { top: '0%', left: '0%', width: '100%' };
-              Object.assign(previewSection.style, position);
-              
-              resumePreview.appendChild(previewSection);
-            }
-          });
-        }
-    
-        // Add custom section
-        addSectionButton.addEventListener('click', function() {
-          const sectionId = `custom-${Date.now()}`;
-          const newSection = document.createElement('div');
-          newSection.className = 'section';
-          newSection.dataset.section = sectionId;
-          newSection.innerHTML = `
-            <div class="drag-handle">+</div>
-            <h3>Custom Section</h3>
-            <div class="form-group">
-              <label for="${sectionId}-title">Section Title:</label>
-              <input type="text" id="${sectionId}-title" name="${sectionId}-title" required>
-            </div>
-            <div class="form-group">
-              <label for="${sectionId}-content">Section Content:</label>
-              <textarea id="${sectionId}-content" name="${sectionId}-content" rows="4" required></textarea>
-            </div>
-            <button type="button" class="remove-section">Remove Section</button>
-          `;
-          sectionContainer.appendChild(newSection);
-    
-          // Add event listener for removing the section
-          newSection.querySelector('.remove-section').addEventListener('click', function() {
-            sectionContainer.removeChild(newSection);
-            updatePreview();
-          });
-    
-          // Update templates object with default position for new section
-          Object.values(templates).forEach(template => {
-            template[sectionId] = { top: '90%', left: '0%', width: '100%' };
-          });
-    
-          initDragAndDrop();
-          updatePreview();
-        });
-    
-        // Print functionality
-        document.getElementById('printResume').addEventListener('click', function() {
-          window.print();
-        });
-    
-        function initDragAndDrop() {
-          const sections = document.querySelectorAll('.section');
-          
-          sections.forEach(section => {
-            section.addEventListener('dragstart', dragStart);
-            section.addEventListener('dragover', dragOver);
-            section.addEventListener('dragleave', dragLeave);
-            section.addEventListener('drop', drop);
-            section.addEventListener('dragend', dragEnd);
-    
-            const handle = section.querySelector('.drag-handle');
-            handle.addEventListener('mousedown', function() {
-              section.draggable = true;
-            });
-            handle.addEventListener('mouseup', function() {
-              section.draggable = false;
-            });
-          });
-        }
-    
-        function dragStart(e) {
-          this.classList.add('dragging');
-          dragSrcEl = this;
-          e.dataTransfer.effectAllowed = 'move';
-          e.dataTransfer.setData('text/html', this.innerHTML);
-        }
-    
-        function dragOver(e) {
-          e.preventDefault();
-          e.dataTransfer.dropEffect = 'move';
-          this.classList.add('drag-over');
-        }
-    
-        function dragLeave(e) {
-          this.classList.remove('drag-over');
-        }
-    
-        function drop(e) {
-          e.stopPropagation();
-          if (dragSrcEl !== this) {
-            dragSrcEl.innerHTML = this.innerHTML;
-            this.innerHTML = e.dataTransfer.getData('text/html');
+                  <div class="feature__actions">
+                    <a href="#0" class="cd-btn cd-btn--primary">Download</a>
+                    <a href="#0" class="cd-link">Learn more</a>
+                  </div>
+                </div>
+              </div>
             
-            // Swap data-section attributes
-            const tempSection = dragSrcEl.dataset.section;
-            dragSrcEl.dataset.section = this.dataset.section;
-            this.dataset.section = tempSection;
-          }
-          return false;
-        }
-    
-        function dragEnd(e) {
-          this.classList.remove('dragging');
-          document.querySelectorAll('.section').forEach(function (section) {
-            section.classList.remove('drag-over');
-          });
-          this.draggable = false;
+              <div>
+                <figure>
+                  <img class="feature__img" data-img-light src="https://d3ae4wrz2ljkbq.cloudfront.net/components/img-3-2-light-1.svg" alt="Image description">
+                </figure>
+              </div>
+            </div>
+          </div>
+        </section>
+  
+          <section class="feature-section">
+              <div class="container">
+                  <h2 class="text-center mb-5 animate__animated animate__fadeIn">Why Choose ResumeAI?</h2>
+                  <div class="row">
+                      <div class="col-md-4 mb-4">
+                          <div class="feature-card animate__animated animate__bounceIn">
+                              <i class="fas fa-robot feature-icon"></i>
+                              <h3 class="feature-title">AI-Powered</h3>
+                              <p>Our advanced AI analyzes job descriptions and optimizes your resume for maximum impact.</p>
+                          </div>
+                      </div>
+                      <div class="col-md-4 mb-4">
+                          <div class="feature-card animate__animated animate__bounceIn" style="animation-delay: 0.2s;">
+                              <i class="fas fa-check-circle feature-icon"></i>
+                              <h3 class="feature-title">ATS-Friendly</h3>
+                              <p>Ensure your resume passes through Applicant Tracking Systems with our optimized formats.</p>
+                          </div>
+                      </div>
+                      <div class="col-md-4 mb-4">
+                          <div class="feature-card animate__animated animate__bounceIn" style="animation-delay: 0.4s;">
+                              <i class="fas fa-paint-brush feature-icon"></i>
+                              <h3 class="feature-title">Customizable</h3>
+                              <p>Choose from a variety of professional templates and customize to fit your personal style.</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </section>
+  
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-6">
+                      <div class="resume-builder animate__animated animate__fadeInLeft">
+                          <h2 class="mb-4">Build Your ATS-Optimized Resume</h2>
+                          <form id="resumeForm">
+                              <div class="mb-3 draggable" draggable="true">
+                                  <label for="fullName" class="form-label">Full Name</label>
+                                  <input type="text" class="form-control" id="fullName" name="fullName" required placeholder="John Doe">
+                              </div>
+                              <div class="mb-3 draggable" draggable="true">
+                                  <label for="email" class="form-label">Email</label>
+                                  <input type="email" class="form-control" id="email" name="email" required placeholder="johndoe@example.com">
+                              </div>
+                              <div class="mb-3 draggable" draggable="true">
+                                  <label for="phone" class="form-label">Phone</label>
+                                  <input type="tel" class="form-control" id="phone" name="phone" required placeholder="(123) 456-7890">
+                              </div>
+                              <div class="mb-3 draggable" draggable="true">
+                                  <label for="location" class="form-label">Location</label>
+                                  <input type="text" class="form-control" id="location" name="location" required placeholder="City, State">
+                              </div>
+                              <div class="mb-3 draggable" draggable="true">
+                                  <label for="jobTitle" class="form-label">Desired Job Title</label>
+                                  <input type="text" class="form-control" id="jobTitle" name="jobTitle" required placeholder="Software Engineer">
+                              </div>
+                              <div class="mb-3 draggable" draggable="true">
+                                  <label for="summary" class="form-label">Professional Summary</label>
+                                  <textarea class="form-control" id="summary" name="summary" rows="3" required placeholder="Brief overview of your professional experience and key skills"></textarea>
+                              </div>
+                              <div class="mb-3 draggable" draggable="true">
+                                  <label for="experience" class="form-label">Work Experience</label>
+                                  <textarea class="form-control" id="experience" name="experience" rows="4" required placeholder="Job Title | Company Name | Start Date - End Date&#10;• Key responsibility or achievement&#10;• Another key responsibility or achievement"></textarea>
+                              </div>
+                              <div class="mb-3 draggable" draggable="true">
+                                  <label for="education" class="form-label">Education</label>
+                                  <textarea class="form-control" id="education" name="education" rows="3" required placeholder="Degree | Institution | Graduation Date"></textarea>
+                              </div>
+                              <div class="mb-3 draggable" draggable="true">
+                                  <label for="skills" class="form-label">Skills (comma-separated)</label>
+                                  <input type="text" class="form-control" id="skills" name="skills" required placeholder="JavaScript, React, Node.js, SQL">
+                              </div>
+                              <div class="mb-3 draggable" draggable="true">
+                                  <label for="certifications" class="form-label">Certifications</label>
+                                  <input type="text" class="form-control" id="certifications" name="certifications" placeholder="AWS Certified Solutions Architect, PMP">
+                              </div>
+                              <button type="submit" class="btn btn-primary">Generate ATS-Friendly Resume</button>
+                          </form>
+                      </div>
+                  </div>
+                  
+                  <div class="col-lg-6">
+                      <div class="resume-preview animate__animated animate__fadeInRight">
+                          <h2 class="mb-4">ATS-Optimized Resume Preview</h2>
+                          <div id="resumeSections">
+                              <div class="resume-section draggable" draggable="true">
+                                  <h3>Personal Information</h3>
+                                  <p id="previewName"></p>
+                                  <p id="previewEmail"></p>
+                                  <p id="previewPhone"></p>
+                                  <p id="previewLocation"></p>
+                              </div>
+                              <div class="resume-section draggable" draggable="true">
+                                  <h3>Desired Job Title</h3>
+                                  <p id="previewJobTitle"></p>
+                              </div>
+                              <div class="resume-section draggable" draggable="true">
+                                  <h3>Professional Summary</h3>
+                                  <p id="previewSummary"></p>
+                              </div>
+                              <div class="resume-section draggable" draggable="true">
+                                  <h3>Work Experience</h3>
+                                  <p id="previewExperience"></p>
+                              </div>
+                              <div class="resume-section draggable" draggable="true">
+                                  <h3>Education</h3>
+                                  <p id="previewEducation"></p>
+                              </div>
+                              <div class="resume-section draggable" draggable="true">
+                                  <h3>Skills</h3>
+                                  <div id="previewSkills"></div>
+                              </div>
+                              <div class="resume-section draggable" draggable="true">
+                                  <h3>Certifications</h3>
+                                  <p id="previewCertifications"></p>
+                              </div>
+                          </div>
+                          <button id="downloadResume" class="btn btn-primary mt-3">Download Resume</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+  
+          <section class="ats-tips">
+              <div class="container">
+                  <h2 class="text-center mb-4 animate__animated animate__fadeIn">ATS-Friendly Resume Tips</h2>
+                  <ul class="tips-list">
+                      <li class="animate__animated animate__fadeInUp">
+                          <h3>Use Standard Formatting</h3>
+                          <p>Stick to simple, clean layouts and standard fonts like Arial or Calibri to ensure ATS readability.</p>
+                      </li>
+                      <li class="animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+                          <h3>Include Keywords</h3>
+                          <p>Incorporate relevant keywords from the job description to improve your resume's ATS score.</p>
+                      </li>
+                      <li class="animate__animated animate__fadeInUp" style="animation-delay: 0.4s;">
+                          <h3>Avoid Graphics and Tables</h3>
+                          <p>Many ATS have trouble parsing complex formatting. Stick to plain text for best results.</p>
+                      </li>
+                      <li class="animate__animated animate__fadeInUp" style="animation-delay: 0.6s;">
+                          <h3>Use Standard Section Headings</h3>
+                          <p>Use clear, recognizable headings like "Work Experience" and "Education" for easy parsing.</p>
+                      </li>
+                      <li class="animate__animated animate__fadeInUp" style="animation-delay: 0.8s;">
+                          <h3>Save as a Simple File Format</h3>
+                          <p>Submit your resume as a .doc, .docx, or .pdf file, as these are most compatible with ATS.</p>
+                      </li>
+                  </ul>
+              </div>
+          </section>
+      </main>
+  
+      
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('resumeForm');
+      const previewName = document.getElementById('previewName');
+      const previewEmail = document.getElementById('previewEmail');
+      const previewPhone = document.getElementById('previewPhone');
+      const previewLocation = document.getElementById('previewLocation');
+      const previewJobTitle = document.getElementById('previewJobTitle');
+      const previewSummary = document.getElementById('previewSummary');
+      const previewExperience = document.getElementById('previewExperience');
+      const previewEducation = document.getElementById('previewEducation');
+      const previewSkills = document.getElementById('previewSkills');
+      const previewCertifications = document.getElementById('previewCertifications');
+      const downloadButton = document.getElementById('downloadResume');
+  
+      form.addEventListener('submit', (e) => {
+          e.preventDefault();
           updatePreview();
-        }
-    
-        // Initial preview update
-        updatePreview();
-      </script>
-    </body></html>
+      });
+  
+      function updatePreview() {
+          const fullName = document.getElementById('fullName').value;
+          const email = document.getElementById('email').value;
+          const phone = document.getElementById('phone').value;
+          const location = document.getElementById('location').value;
+          const jobTitle = document.getElementById('jobTitle').value;
+          const summary = document.getElementById('summary').value;
+          const experience = document.getElementById('experience').value;
+          const education = document.getElementById('education').value;
+          const skills = document.getElementById('skills').value;
+          const certifications = document.getElementById('certifications').value;
+  
+          previewName.textContent = fullName;
+          previewEmail.textContent = email;
+          previewPhone.textContent = phone;
+          previewLocation.textContent = location;
+          previewJobTitle.textContent = jobTitle;
+          previewSummary.textContent = summary;
+          previewExperience.textContent = experience;
+          previewEducation.textContent = education;
+          previewCertifications.textContent = certifications;
+  
+          // Clear previous skills
+          previewSkills.innerHTML = '';
+          // Add new skill tags
+          skills.split(',').forEach(skill => {
+              const skillTag = document.createElement('span');
+              skillTag.className = 'skill-tag animate__animated animate__fadeIn';
+              skillTag.textContent = skill.trim();
+              previewSkills.appendChild(skillTag);
+          });
+  
+          // Add animation to updated sections
+          document.querySelectorAll('.resume-section').forEach(section => {
+              section.classList.add('animate__animated', 'animate__fadeIn');
+              section.addEventListener('animationend', () => {
+                  section.classList.remove('animate__animated', 'animate__fadeIn');
+              });
+          });
+      }
+  
+      // Make resume sections draggable
+      const resumeSections = document.getElementById('resumeSections');
+      let draggedItem = null;
+  
+      resumeSections.addEventListener('dragstart', (e) => {
+          draggedItem = e.target;
+          setTimeout(() => {
+              e.target.style.opacity = '0.5';
+          }, 0);
+      });
+  
+      resumeSections.addEventListener('dragend', (e) => {
+          setTimeout(() => {
+              e.target.style.opacity = '1';
+              draggedItem = null;
+          }, 0);
+      });
+  
+      resumeSections.addEventListener('dragover', (e) => {
+          e.preventDefault();
+          const afterElement = getDragAfterElement(resumeSections, e.clientY);
+          const draggable = document.querySelector('.dragging');
+          if (afterElement == null) {
+              resumeSections.appendChild(draggedItem);
+          } else {
+              resumeSections.insertBefore(draggedItem, afterElement);
+          }
+      });
+  
+      function getDragAfterElement(container, y) {
+          const draggableElements = [...container.querySelectorAll('.draggable:not(.dragging)')];
+  
+          return draggableElements.reduce((closest, child) => {
+              const box = child.getBoundingClientRect();
+              const offset = y - box.top - box.height / 2;
+              if (offset < 0 && offset > closest.offset) {
+                  return { offset: offset, element: child };
+              } else {
+                  return closest;
+              }
+          }, { offset: Number.NEGATIVE_INFINITY }).element;
+      }
+  
+      // Download resume functionality (this is a placeholder, actual PDF generation would require a backend or a library)
+      downloadButton.addEventListener('click', () => {
+          alert('Your resume is being prepared for download. In a real application, this would generate and download a PDF.');
+      });
+  
+      // Add animations on scroll
+      const animateOnScroll = () => {
+          const elements = document.querySelectorAll('.animate__animated:not(.animate__animated--triggered)');
+          elements.forEach(element => {
+              if (isElementInViewport(element)) {
+                  element.classList.add('animate__animated--triggered');
+              }
+          });
+      };
+  
+      function isElementInViewport(el) {
+          const rect = el.getBoundingClientRect();
+          return (
+              rect.top >= 0 &&
+              rect.left >= 0 &&
+              rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+              rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+          );
+      }
+  
+      window.addEventListener('scroll', animateOnScroll);
+      animateOnScroll(); // Initial check on page load
+  });
+  </script>
+  
+  </body>
+  </html>
