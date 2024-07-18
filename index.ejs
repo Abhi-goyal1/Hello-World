@@ -1,252 +1,476 @@
 <% layout("/layouts/boilerplate") %>
 
 <style>
-   .suggestions {
-      position: absolute;
-      background: #fff;
-      border: 1px solid #ccc;
-      width: calc(80% - 25px);
-      max-width: 280px;
-      margin-top: px;
-      display: none;
-      z-index: 10;
-      /* border-bottom-left-radius: 50px; */
-left: 123px;
-list-style-type:none;
-
-    
-    }
-    .suggestions li {
-      padding: 10px;
-      cursor: pointer;
-      list-style-type:none;
-    }
-    .suggestions li:hover {
-      background: #2baffc;
-      color: white;
-    }
-    /* Modal styles */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 100;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgb(0,0,0);
-      background-color: rgba(0,0,0,0.4);
-      padding-top: 60px;
-    }
-    .modal-content {
-      background-color: #fefefe;
-      margin: 5% auto;
-      padding: 20px;
-      border: 1px solid #888;
-      width: 80%;
-      max-width: 500px;
-      position: relative;
-      text-align: center;
-    }
-    .close {
-      color: #aaa;
-      position: absolute;
-      right: 20px;
-      top: 10px;
-      font-size: 28px;
-      font-weight: bold;
-    }
-    .close:hover,
-    .close:focus {
-      color: black;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-
-    .graph h1 span{
-      color: #ff9d00;
-     
-    }
-    .course-categories {
-      padding: 30px 20px 60px 20px;
-     
+  .suggestions {
+    position: absolute;
+    background: #fff;
+    border: 1px solid #ccc;
+    width: calc(80% - 25px);
+    max-width: 280px;
+    margin-top: px;
+    display: none;
+    z-index: 10;
+    /* border-bottom-left-radius: 50px; */
+    left: 123px;
+    list-style-type: none;
   }
-  
+
+  .suggestions li {
+    padding: 10px;
+    cursor: pointer;
+    list-style-type: none;
+  }
+
+  .suggestions li:hover {
+    background: #2baffc;
+    color: white;
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+  }
+
+  .modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+    text-align: center;
+  }
+
+  .close {
+    color: #aaa;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .graph h1 span {
+    color: #ff9d00;
+  }
+
+  .course-categories {
+    padding: 30px 20px 60px 20px;
+  }
+
   .course-categories h2 {
-      text-align: center;
-      margin-bottom: 50px;
-      font-size: 2.5rem;
-      color: #3498db;
-      position: relative;
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+    color: #3498db;
+    position: relative;
   }
-  
+
   .course-categories h2::after {
-      content: '';
-      display: block;
-      width: 50px;
-      height: 3px;
-      background-color: #3498db;
-      margin: 20px auto 0;
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #3498db;
+    margin: 20px auto 0;
   }
-  
+
   .category-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
   }
-  
+
   .category-card {
-      /* background-color: #222222; */
-      
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(255,255,255,0.05);
-      transition: all 0.3s ease;
-      position: relative;
-      cursor: pointer;
-      color: black;
-      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    /* background-color: #222222; */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    cursor: pointer;
+    color: black;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
-  
+
   .category-card:hover {
-      transform: translateY(-10px);
-      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transform: translateY(-10px);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
-  
+
   .category-icon {
-      font-size: 3rem;
-      color: #3498db;
-      margin-bottom: 15px;
+    font-size: 3rem;
+    color: #3498db;
+    margin-bottom: 15px;
   }
-  
+
   .category-content {
-      padding: 25px;
-      text-align: center;
+    padding: 25px;
+    text-align: center;
   }
-  
+
   .category-title {
-      font-size: 1.3rem;
-      margin-bottom: 15px;
-      color: #3498db;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #3498db;
   }
-  
+
   .category-description {
-      color: #aaa;
-      margin-bottom: 20px;
-      font-size: 0.9rem;
+    color: #aaa;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
   }
-  
+
   .subcategory-count {
-      display: inline-block;
-      background-color: #3498db;
-      color: #fff;
-      padding: 5px 10px;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      margin-top: 10px;
+    display: inline-block;
+    background-color: #3498db;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-top: 10px;
   }
-  
+
   .subcategories {
-      list-style-type: none;
-      padding: 0;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.5s ease;
+    list-style-type: none;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
   }
-  
-/* styles.css */
-#loader {
+
+  /* styles.css */
+  #loader {
     position: fixed;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgb(255, 255, 255); /* semi-transparent white background */
-    z-index: 9999; /* Ensure it's on top */
+    background-color: rgb(255, 255, 255);
+    /* semi-transparent white background */
+    z-index: 9999;
+    /* Ensure it's on top */
     display: flex;
     justify-content: center;
     align-items: center;
-}
+  }
 
-.spinner {
+  .spinner {
     /* Define your spinner styles */
     border: 4px solid rgba(0, 0, 0, 0.3);
     border-radius: 50%;
-    border-top: 4px solid #3498db; /* Blue color for spinner */
+    border-top: 4px solid #3498db;
+    /* Blue color for spinner */
     width: 40px;
     height: 40px;
     animation: spin 1s linear infinite;
-}
+  }
 
 
-.beating-spinner {
-  
-   
+  .beating-spinner {
+
+
     animation: beat 1s infinite alternate;
-}
+  }
 
-@keyframes beat {
+  @keyframes beat {
     0% {
-        transform: scale(1);
+      transform: scale(1);
     }
     50% {
-        transform: scale(1.2);
+      transform: scale(1.2);
     }
     100% {
-        transform: scale(1);
+      transform: scale(1);
     }
+  }
+
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Fira+Code:wght@400;500&display=swap');
+
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #f39c12;
+  
+    --text-color: #333;
+    --code-bg-color: #000;
 }
 
 
+
+.dsa-visualization-section {
+
+
+    position: relative;
+    overflow: hidden;
+}
+
+.section-header h2 {
+    color: var(--primary-color);
+    animation: fadeInDown 1s ease-out;
+}
+
+.section-header p {
+    color: var(--text-color);
+    animation: fadeInUp 1s ease-out 0.5s both;
+}
+
+.feature-card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 0.5s ease-out both;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    color: var(--secondary-color);
+    animation: pulse 2s infinite;
+}
+
+.feature-card h3 {
+    color: var(--primary-color);
+}
+
+.visualization-example {
+    background-color: var(--code-bg-color);
+    border-radius: 10px;
+    color: #fff;
+}
+
+.visualization-example h3 {
+    color: var(--secondary-color);
+}
+
+.visualization-container {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Bubble Sort Animation */
+@keyframes bubbleSort {
+    0%, 100% { height: 50px; }
+    50% { height: 100px; }
+}
+
+.bubble-sort .bar {
+    width: 20px;
+    background-color: var(--secondary-color);
+    margin: 0 5px;
+    border-radius: 5px 5px 0 0;
+    animation: bubbleSort 2s infinite;
+}
+
+.bubble-sort .bar:nth-child(2) { animation-delay: 0.2s; }
+.bubble-sort .bar:nth-child(3) { animation-delay: 0.4s; }
+.bubble-sort .bar:nth-child(4) { animation-delay: 0.6s; }
+.bubble-sort .bar:nth-child(5) { animation-delay: 0.8s; }
+
+
+/* Binary Search Tree Animation */
+@keyframes treeGrow {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes arrowDraw {
+    0% { stroke-dashoffset: 100; }
+    100% { stroke-dashoffset: 0; }
+}
+
+.bst-tree {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+.bst-node {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    animation: treeGrow 1s ease-out forwards;
+}
+
+.bst-node:nth-child(1) { top: 0; left: 80px; }
+.bst-node:nth-child(2) { top: 60px; left: 40px; }
+.bst-node:nth-child(3) { top: 60px; left: 120px; }
+.bst-node:nth-child(4) { top: 120px; left: 20px; }
+.bst-node:nth-child(5) { top: 120px; left: 60px; }
+
+.bst-arrow {
+    stroke: var(--secondary-color);
+    stroke-width: 2;
+    fill: none;
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    animation: arrowDraw 1s ease-out forwards;
+}
+/* Linked List Animation */
+@keyframes linkedListMove {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(20px); }
+}
+
+.linked-list {
+    display: flex;
+    align-items: center;
+}
+
+.list-node {
+    width: 40px;
+    height: 40px;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin-right: 20px;
+    position: relative;
+    animation: linkedListMove 2s infinite alternate;
+}
+
+.list-node::after {
+    content: '→';
+    position: absolute;
+    right: -15px;
+    color: var(--secondary-color);
+}
+
+.list-node:last-child::after {
+    content: none;
+}
+
+
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.floating-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.shape {
+    position: absolute;
+    opacity: 0.1;
+    animation: float 20s infinite linear;
+}
+
+.shape-1 {
+    top: 10%;
+    left: 10%;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+}
+
+.shape-2 {
+    top: 70%;
+    right: 10%;
+    width: 70px;
+    height: 70px;
+    background-color: var(--secondary-color);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.shape-3 {
+    top: 40%;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary-color);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+@keyframes float {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(180deg); }
+    100% { transform: translateY(0) rotate(360deg); }
+}
 </style>
+
 <body id="index html">
- <!-- !Navigation Bar -->
+  <!-- ! Loader -->
 
- <div id="loader">
-  <img class="beating-spinner" src="/images/logo1.png" alt="" width="80">
-  <!-- Your loader animation or spinner -->
-   
-  <!-- <div class="spinner"><img src="/images/logo2.png" alt=""></div> -->
-</div>
+  <div id="loader">
+    <img class="beating-spinner" src="/images/logo1.png" alt="" width="80">
+    <!-- Your loader animation or spinner -->
+    <!-- <div class="spinner"><img src="/images/logo2.png" alt=""></div> -->
+  </div>
 
-<!-- !Navigation Bar End -->
+<!-- ! Loader -->
 
-
-
-  <!-- !Main Container Start -->
+<!-- !Main Container Start -->
   <div id="mainbody" class="container-fluid">
-  
-     <!-- Spinner Start -->
-     <!-- <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-      <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-          <span class="sr-only">Loading...</span>
-      </div>
-  </div> -->
-  <!-- Spinner End -->
-
     <div class="row text-center align-items-center mainbody2">
       <div class="col-lg-6 mainbody-text">
         <h1>Ignite The Passion For Developing.</h1>
-
         <h3>One platform for master all technologies.</h3>
 
-
         <form id="searching" class="d-flex justify-content-center" onsubmit="searchTutorials(event)">
-          <input type="search" id="searchInput" maxlength="20" class="search-box" placeholder="Search Tutorials, e.g. HTML" required oninput="showSuggestions(event)">
+          <input type="search" id="searchInput" maxlength="20" class="search-box"
+            placeholder="Search Tutorials, e.g. HTML" required oninput="showSuggestions(event)">
           <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
-        <!-- <ul id="suggestions" class="suggestions text-left"></ul> -->
-
-
+       
         <div id="errorModal" class="modal">
           <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
             <p>No tutorials found for your search query.</p>
           </div>
         </div>
-        
+
         <div class="roadmap">
           <a class="" href="/roadmaps">To Start with Road-maps.</a>
         </div>
@@ -408,7 +632,8 @@ list-style-type:none;
       </div>
       <div class="row  ">
         <div id="more-tutorials" class="col-12 text-center" data-aos="fade-right" data-aos-duration="1000">
-          <a href="/tutorial"><button class="btn  ">All Tutorials <i class="fa-solid fa-angles-right fa-bounce"></i></button></a>
+          <a href="/tutorial"><button class="btn  ">All Tutorials <i
+                class="fa-solid fa-angles-right fa-bounce"></i></button></a>
         </div>
       </div>
     </div>
@@ -424,59 +649,68 @@ list-style-type:none;
       <div class="separator text-center"></div>
       <p id="heading-pera" class="text-center" data-aos="fade-right" data-aos-duration="1000">Let the journey of
         organizing your own learning.</p>
-      
-     
 
-    
-        <section id="categories" class="course-categories">
-          <div class="containers">
-              <div class="category-grid" id="categoryGrid">
-                  <div class="category-card " data-aos="fade-up" data-aos-duration="1000">
-                      <div class="category-content">
-                          <div class="category-icon">💻</div>
-                          <h3 class="category-title">Web Development</h3>
-                          <!-- <p class="category-description">Master the art of creating stunning websites and web applications.</p> -->
-                          <a href=""> <div class="subcategory-count"> <i class="fa-solid fa-arrow-right px-2"></i>4 Subcategories</div></a>
-                         
-                      </div>
-                  </div>
-                  <div class="category-card" data-aos="fade-up" data-aos-duration="1000">
-                      <div class="category-content">
-                          <div class="category-icon">📊</div>
-                          <h3 class="category-title">Data Science</h3>
-                          <!-- <p class="category-description">Unlock insights from data and drive informed decision-making.</p> -->
-                          <a href=""> <div class="subcategory-count"> <i class="fa-solid fa-arrow-right px-2"></i>4 Subcategories</div></a>
-                          
-                      </div>
-                  </div>
-                  <div class="category-card" data-aos="fade-up" data-aos-duration="1000">
-                      <div class="category-content">
-                          <div class="category-icon">📱</div>
-                          <h3 class="category-title">Mobile Development</h3>
-                          <!-- <p class="category-description">Build powerful mobile apps for iOS and Android platforms.</p> -->
-                          <a href=""> <div class="subcategory-count"> <i class="fa-solid fa-arrow-right px-2"></i>4 Subcategories</div></a>
-                          
-                      </div>
-                  </div>
-                  <div class="category-card" data-aos="fade-up" data-aos-duration="1000">
-                    <div class="category-content">
-                      <div class="category-icon">🔒</div>
-                      <h3 class="category-title">Cybersecurity</h3>
-                      <!-- <p class="category-description">Protect digital assets and learn ethical hacking techniques.</p> -->
-                      <a href=""> <div class="subcategory-count"> <i class="fa-solid fa-arrow-right px-2"></i>4 Subcategories</div></a>
-                    </div>
-                  </div>
+
+
+
+      <section id="categories" class="course-categories">
+        <div class="containers">
+          <div class="category-grid" id="categoryGrid">
+            <div class="category-card " data-aos="fade-up" data-aos-duration="1000">
+              <div class="category-content">
+                <div class="category-icon">💻</div>
+                <h3 class="category-title">Web Development</h3>
+                <!-- <p class="category-description">Master the art of creating stunning websites and web applications.</p> -->
+                <a href="">
+                  <div class="subcategory-count"> <i class="fa-solid fa-arrow-right px-2"></i>4 Subcategories</div>
+                </a>
+
               </div>
-          </div>
-      </section>
-    
+            </div>
+            <div class="category-card" data-aos="fade-up" data-aos-duration="1000">
+              <div class="category-content">
+                <div class="category-icon">📊</div>
+                <h3 class="category-title">Data Science</h3>
+                <!-- <p class="category-description">Unlock insights from data and drive informed decision-making.</p> -->
+                <a href="">
+                  <div class="subcategory-count"> <i class="fa-solid fa-arrow-right px-2"></i>4 Subcategories</div>
+                </a>
 
-      
+              </div>
+            </div>
+            <div class="category-card" data-aos="fade-up" data-aos-duration="1000">
+              <div class="category-content">
+                <div class="category-icon">📱</div>
+                <h3 class="category-title">Mobile Development</h3>
+                <!-- <p class="category-description">Build powerful mobile apps for iOS and Android platforms.</p> -->
+                <a href="">
+                  <div class="subcategory-count"> <i class="fa-solid fa-arrow-right px-2"></i>4 Subcategories</div>
+                </a>
+
+              </div>
+            </div>
+            <div class="category-card" data-aos="fade-up" data-aos-duration="1000">
+              <div class="category-content">
+                <div class="category-icon">🔒</div>
+                <h3 class="category-title">Cybersecurity</h3>
+                <!-- <p class="category-description">Protect digital assets and learn ethical hacking techniques.</p> -->
+                <a href="">
+                  <div class="subcategory-count"> <i class="fa-solid fa-arrow-right px-2"></i>4 Subcategories</div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
 
 
       <div class="row  ">
         <div id="more-tutorials" class="col-12 text-center" data-aos="fade-right" data-aos-duration="1000">
-          <a href="/courses"><button class="btn  ">All Courses<i class="fa-solid fa-angles-right fa-bounce"></i></button></a>
+          <a href="/courses"><button class="btn  ">All Courses<i
+                class="fa-solid fa-angles-right fa-bounce"></i></button></a>
         </div>
       </div>
 
@@ -596,7 +830,8 @@ list-style-type:none;
             <img src="images/question_5277568.png" alt="" style="max-width: 60%;">
           </div>
           <h3 class="services-title">Interview Q/A</h3>
-          <p>Top 100 Interview Questions Series, a comprehensive collection of carefully curated questions and answers designed to help you ace your next job interview. </p>
+          <p>Top 100 Interview Questions Series, a comprehensive collection of carefully curated questions and answers
+            designed to help you ace your next job interview. </p>
           <div class="button">
             <i class="fa fa-chevron-right"></i>
           </div>
@@ -640,11 +875,147 @@ list-style-type:none;
     </div>
     <div class="row  ">
       <div id="more-tutorials" class="col-12 text-center" data-aos="fade-right" data-aos-duration="1000">
-        <a href="/services"><button class="btn  ">Explore Services <i class="fa-solid fa-angles-right fa-bounce"></i></button></a>
+        <a href="/services"><button class="btn  ">Explore Services <i
+              class="fa-solid fa-angles-right fa-bounce"></i></button></a>
       </div>
     </div>
   </div>
   <!-- !Our Services section End -->
+
+  
+
+  <!-- !DSA Visualizer Section start -->
+  <div class="container-fluid certificate-main">
+    <img src="images/wave2.png" alt="" style="max-width: 100%; padding: 0%; ">
+    <div class="row m-0">
+      <h1 class="heading text-center">DSA <span>Visualizer</span> </h1>
+      <div class="separator text-center"></div>
+
+
+
+      <div class="container">
+        <section class="dsa-visualization-section p-4 p-md-5">
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+          
+            <div class="row g-4 mb-5">
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card h-100 p-4 text-center">
+                        <div class="feature-icon mb-3">🔍</div>
+                        <h3 class="h4 mb-3">Step-by-Step Breakdown</h3>
+                        <p>Watch algorithms unfold one step at a time, gaining deeper insights into their inner workings.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card h-100 p-4 text-center">
+                        <div class="feature-icon mb-3">🎨</div>
+                        <h3 class="h4 mb-3">Color-Coded Elements</h3>
+                        <p>Easily track different components and their roles with our intuitive color-coding system.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card h-100 p-4 text-center">
+                        <div class="feature-icon mb-3">⏯️</div>
+                        <h3 class="h4 mb-3">Interactive Controls</h3>
+                        <p>Pause, rewind, or speed up visualizations to study algorithms at your own pace.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card h-100 p-4 text-center">
+                        <div class="feature-icon mb-3">📊</div>
+                        <h3 class="h4 mb-3">Real-time Analytics</h3>
+                        <p>Monitor performance metrics and complexity analysis as algorithms execute.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row g-4 mb-5">
+                <div class="col-md-4">
+                    <div class="visualization-example p-4 text-center h-100">
+                        <h3 class="h4 mb-3">Bubble Sort</h3>
+                        <div class="visualization-container bubble-sort">
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="visualization-example p-4 text-center h-100">
+                      <h3 class="h4 mb-3">Binary Search Tree</h3>
+                      <div class="visualization-container">
+                          <svg width="200" height="200">
+                              <path class="bst-arrow" d="M100,20 L60,60" style="animation-delay: 0.5s;"/>
+                              <path class="bst-arrow" d="M100,20 L140,60" style="animation-delay: 0.5s;"/>
+                              <path class="bst-arrow" d="M60,60 L40,120" style="animation-delay: 1s;"/>
+                              <path class="bst-arrow" d="M60,60 L80,120" style="animation-delay: 1s;"/>
+                              <g class="bst-tree">
+                                  <circle class="bst-node" cx="100" cy="20" r="20"/>
+                                  <circle class="bst-node" cx="60" cy="60" r="20" style="animation-delay: 0.2s;"/>
+                                  <circle class="bst-node" cx="140" cy="60" r="20" style="animation-delay: 0.2s;"/>
+                                  <circle class="bst-node" cx="40" cy="120" r="20" style="animation-delay: 0.4s;"/>
+                                  <circle class="bst-node" cx="80" cy="120" r="20" style="animation-delay: 0.4s;"/>
+                                  <text x="100" y="25" text-anchor="middle" fill="white" font-size="12">50</text>
+                                  <text x="60" y="65" text-anchor="middle" fill="white" font-size="12">25</text>
+                                  <text x="140" y="65" text-anchor="middle" fill="white" font-size="12">75</text>
+                                  <text x="40" y="125" text-anchor="middle" fill="white" font-size="12">10</text>
+                                  <text x="80" y="125" text-anchor="middle" fill="white" font-size="12">35</text>
+                              </g>
+                          </svg>
+                      </div>
+                  </div>
+              </div>
+                <div class="col-md-4">
+                    <div class="visualization-example p-4 text-center h-100">
+                        <h3 class="h4 mb-3">Linked List</h3>
+                        <div class="visualization-container">
+                            <div class="linked-list">
+                                <div class="list-node">1</div>
+                                <div class="list-node">2</div>
+                                <div class="list-node">3</div>
+                                <div class="list-node">4</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="more-tutorials" class="col-12 text-center" data-aos="fade-right" data-aos-duration="1000">
+              <a href="/dsa-visualization"><button class="btn  ">Explore More<i
+                    class="fa-solid fa-angles-right fa-bounce"></i></button></a>
+            </div>
+        
+        </section>
+        
+    </div>
+
+
+      <!-- <div class="col-sm-12 col-md-6 graph text-center" data-aos="fade-up" data-aos-duration="1100">
+
+
+      </div>
+      <div class="col-sm-12 col-md-6 text-center" data-aos="fade-up" data-aos-duration="1100">
+    
+
+      </div> -->
+    </div>
+    <img src="images/wave1.png" alt="" style="max-width: 100%; padding: 0%; ">
+  </div>
+  <!-- !DSA Visualizer Section End -->
+
+
+  <!-- !Newsletter section start -->
+  <div class="container-fluid">
+    <div class="row">
+     
+    </div>
+
+  </div>
+  <!-- !Newsletter section End -->
 
 
   <!-- !get certificate section start -->
@@ -658,14 +1029,15 @@ list-style-type:none;
 
 
       <div class="col-sm-12 col-md-6 graph text-center" data-aos="fade-up" data-aos-duration="1100">
-        <h1><span>Unlock </span>Your Potential and <span>Achieve</span> Excellence with <span>Certified </span>Course Completion.</h1>
+        <h1><span>Unlock </span>Your Potential and <span>Achieve</span> Excellence with <span>Certified </span>Course
+          Completion.</h1>
         <a href="" class="btn" data-aos="fade-right" data-aos-duration="1400">Get Certified <i
             class="fa-solid fa-certificate fa-spin"></i></a>
 
       </div>
       <div class="col-sm-12 col-md-6 text-center" data-aos="fade-up" data-aos-duration="1100">
         <img src="images/badge.png" alt="" class="badge-img" style="max-width: 65%; margin-left: ;">
-       
+
       </div>
     </div>
     <img src="images/wave1.png" alt="" style="max-width: 100%; padding: 0%; ">
@@ -765,7 +1137,7 @@ list-style-type:none;
     }
 
     // Hide modal when clicking outside of it
-    window.onclick = function(event) {
+    window.onclick = function (event) {
       const modal = document.getElementById('errorModal');
       if (event.target == modal) {
         modal.style.display = 'none';
@@ -783,27 +1155,27 @@ list-style-type:none;
 
 
     // scripts.js
-document.addEventListener("DOMContentLoaded", function () {
-    // Hide the loader once content is fully loaded
-    var loader = document.getElementById("loader");
-    loader.style.display = "none";
+    document.addEventListener("DOMContentLoaded", function () {
+      // Hide the loader once content is fully loaded
+      var loader = document.getElementById("loader");
+      loader.style.display = "none";
 
-    // Optionally, show loader during AJAX requests or other async operations
-    // Example using Fetch API
-    fetch('/some-data-endpoint')
+      // Optionally, show loader during AJAX requests or other async operations
+      // Example using Fetch API
+      fetch('/some-data-endpoint')
         .then(response => response.json())
         .then(data => {
-            // Process data
-            // Hide loader when data is loaded
-            loader.style.display = "none";
+          // Process data
+          // Hide loader when data is loaded
+          loader.style.display = "none";
         })
         .catch(error => {
-            console.error('Error fetching data:', error);
-            // Hide loader on error as well
-            loader.style.display = "none";
+          console.error('Error fetching data:', error);
+          // Hide loader on error as well
+          loader.style.display = "none";
         });
-});
+    });
 
   </script>
-  
- </body> 
+
+</body>
