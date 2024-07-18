@@ -438,6 +438,244 @@
     50% { transform: translateY(-20px) rotate(180deg); }
     100% { transform: translateY(0) rotate(360deg); }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+
+/* body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f3f7;
+    overflow-x: hidden;
+} */
+
+.banner {
+   
+    overflow: hidden;
+  
+    position: relative;
+}
+
+.banner::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+   
+    z-index: 1;
+}
+
+
+
+.banner-content {
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.banner-content h1{
+  font-family: 'Poppins', sans-serif;
+    color: #000;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    font-size: 2.8rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.banner-content p{
+  font-family: 'Poppins', sans-serif;
+    color: #34495e;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.btn-primary {
+    background-color: #000;
+    border-color: #000;
+    padding: 0.75rem 2rem;
+    font-weight: 500;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary:hover {
+    background-color: #2baffc;
+    border-color: #2baffc;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(3, 4, 5, 0.4);
+}
+
+.btn-primary::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255, 255, 255, 0.117),
+        transparent
+    );
+    transform: rotate(45deg);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover::after {
+    left: 100%;
+    top: 100%;
+}
+
+.banner-image {
+    position: relative;
+    height: 100%;
+    min-height: 500px;
+    overflow: hidden;
+    border-radius: 0 20px 20px 0;
+}
+
+.resume-preview {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.resume-preview img {
+    position: absolute;
+    height: 90%;
+    width: auto;
+    max-width: 80%;
+    object-fit: cover;
+    
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.5s ease;
+}
+
+.resume-preview img:nth-child(1) {
+    transform: translateX(-30%) scale(0.9);
+    z-index: 1;
+}
+
+.resume-preview img:nth-child(2) {
+    z-index: 2;
+}
+
+.resume-preview img:nth-child(3) {
+    transform: translateX(30%) scale(0.9);
+    z-index: 1;
+}
+
+.resume-preview img:hover {
+    transform: scale(1.05);
+    z-index: 3;
+}
+
+.feature-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 2rem;
+}
+
+.feature-list li {
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.feature-list li:hover {
+    transform: translateX(5px);
+}
+
+.feature-list li::before {
+    content: "\f00c";
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: #3498db;
+    position: absolute;
+    left: 0;
+    top: 2px;
+}
+
+.animated-text {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.animated-text.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 991px) {
+    .banner-image {
+        min-height: 400px;
+    }
+    
+    .resume-preview img {
+        height: auto;
+        width: 80%;
+        max-width: 300px;
+    }
+    
+    .resume-preview img:nth-child(1) {
+        transform: translateX(-20%) scale(0.9);
+    }
+    
+    .resume-preview img:nth-child(3) {
+        transform: translateX(20%) scale(0.9);
+    }
+}
+
+@media (max-width: 767px) {
+    .banner-image {
+        min-height: 400px;
+    }
+    
+    .resume-preview img {
+        width: 80%;
+        max-width: 300px;
+    }
+    
+    .resume-preview img:nth-child(1) {
+        transform: translateX(-15%) scale(0.9);
+    }
+    
+    .resume-preview img:nth-child(3) {
+        transform: translateX(15%) scale(0.9);
+    }
+    .btn-primary {
+      display: flex;
+      justify-content: center;
+    }
+}
 </style>
 
 <body id="index html">
@@ -801,7 +1039,7 @@
 
   <!-- !Our Services section start -->
   <div class="container-fluid " id="services-main">
-    <div class="row">
+    <div class="row justify-content-center">
       <h1 class="heading text-center ">Our <span>Services</span></h1>
 
       <div class="separator text-center"></div>
@@ -854,19 +1092,6 @@
         <div class="item-bg"></div>
       </div>
 
-      <div class="col-lg-3 col-sm-6 services-sec" data-aos="fade-up" data-aos-duration="1200">
-        <a href="/resume-builder" class="services-small-item color-full">
-          <div class="icon">
-            <img src="images/resume-icon.png" alt="" style="max-width: 60%;">
-          </div>
-          <h3 class="services-title">Resume Builder</h3>
-          <p>Our resume builder feature streamlines the process of creating professional and ATS Friendly resumes.</p>
-          <div class="button">
-            <i class="fa fa-chevron-right"></i>
-          </div>
-        </a>
-        <div class="item-bg"></div>
-      </div>
 
       <div class="col-lg-12 col-sm-6 resume-sec">
 
@@ -890,7 +1115,7 @@
     <div class="row m-0">
       <h1 class="heading text-center">DSA <span>Visualizer</span> </h1>
       <div class="separator text-center"></div>
-
+      <p id="heading-pera" class="text-center " data-aos="fade-right" data-aos-duration="900">Bringing Clarity to Data Structures and Algorithms Through Interactive Visualizations</p>
 
 
       <div class="container">
@@ -1008,14 +1233,42 @@
   <!-- !DSA Visualizer Section End -->
 
 
-  <!-- !Newsletter section start -->
+  <!-- !Resume Builder section start -->
   <div class="container-fluid">
-    <div class="row">
-     
+    <div class="banner row g-0 align-items-stretch">
+        <div class="col-lg-6">
+            <div class="banner-content d-flex flex-column justify-content-center h-100">
+                <h1>
+                    <span class="animated-text">Craft Your</span>
+                    <span class="animated-text">Career-Launching</span>
+                    <span class="animated-text">Resume</span>
+                </h1>
+                <p class="animated-text">Transform your career journey with a resume that opens doors. Our AI-powered builder creates stunning, ATS-friendly resumes tailored to your industry.</p>
+                <ul class="feature-list">
+                    <li class="animated-text">50+ professionally designed templates</li>
+                    <li class="animated-text">Smart content suggestions powered by AI</li>
+                    <li class="animated-text">ATS-optimized formats for higher pass rates</li>
+                    <li class="animated-text">Real-time preview and easy editing</li>
+                    <li class="animated-text">Export in PDF, Word, or TXT formats</li>
+                </ul>
+                <div>
+                    <a href="/resume-builder" class="btn btn-primary animated-text">Build My Standout Resume</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="banner-image">
+                <div class="resume-preview">
+                    <img src="/images/resume-sample1 (1).jpeg" alt="Resume Preview 1">
+                    <img src="/images/resume-sample1 (2).png" alt="Resume Preview 3">
+                    <img src="/images/resume-sample1 (1).png" alt="Resume Preview 2">
+                   
+                </div>
+            </div>
+        </div>
     </div>
-
-  </div>
-  <!-- !Newsletter section End -->
+</div>
+  <!-- !resume Builder section End -->
 
 
   <!-- !get certificate section start -->
@@ -1177,5 +1430,21 @@
     });
 
   </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const animatedElements = document.querySelectorAll('.animated-text');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
 
+        animatedElements.forEach(element => {
+            observer.observe(element);
+        });
+    });
+</script>
 </body>
