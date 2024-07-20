@@ -390,6 +390,9 @@ Buttons
 
 -------------------------------- */
 
+.ats-tips {
+    background-color: #fff;
+    padding: 2rem 0;}
 .cd-btn {
   position: relative;
   display: inline-flex;
@@ -448,7 +451,9 @@ Component
 
 -------------------------------- */
 
-.feature {}
+.feature {
+ 
+}
 
 .feature__grid {
   display: grid;
@@ -484,7 +489,7 @@ Component
 }
 
 .feature__img {
-  width: 100%;
+  width: 90%;
   border-radius: 0.75em;
 }
 
@@ -566,30 +571,56 @@ Utilities
 .cd-link:hover {
   background-position: 0% 100%;
 }
+.do {
+    background-color: rgba(172, 240, 172, 0.827) !important;
+  
+}
+.do h3{
+    color: green !important;
+}
+.do p{
+    color: #6d6d6d !important;
+    font-weight: 600;
+    font-size: 15px;
+    
+}
+.dont {
+    background-color: rgba(240, 172, 172, 0.827) !important;
+  
+}
+.dont h3{
+    color: rgb(128, 0, 0) !important;
+}
+.dont p{
+    color: #6d6d6d !important;
+    font-weight: 600;
+    font-size: 15px;
+    
+}
 
   </style>
   </head>
   <body>
       <main>
-        <section class="feature cd-position-relative cd-z-index-1 cd-margin-y-2xl">
+        <section class="feature cd-position-relative cd-z-index-1">
           <div class="cd-container cd-max-width-adaptive-lg">
             <div class="feature__grid">
               <div>
                 <div class="feature__content">
-                  <p class="feature__label">Pills &amp; potions</p>
-                  <h1>I have a dream</h1>
-                  <p class="cd-line-height-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, rem neque doloribus impedit explicabo minus laborum cupiditate atque esse consectetur.</p>
+                  <p class="feature__label">Resume Builder</p>
+                  <h1>Build a Resume That Grabs Recruiter's Attention Instantly</h1>
+                  <p class="cd-line-height-lg"> First impressions matter, and a well-crafted resume can make all the difference. Optimize your resume for quick review by ensuring it's clear, concise, and highlights your key skills and achievements effectively.</p>
               
                   <div class="feature__actions">
-                    <a href="#0" class="cd-btn cd-btn--primary">Download</a>
-                    <a href="#0" class="cd-link">Learn more</a>
+                    <a href="#resume-builder" class="cd-btn cd-btn--primary">Build Resume</a>
+                    <a href="#ats-resume " class="cd-link">Resume Tips</a>
                   </div>
                 </div>
               </div>
             
               <div>
                 <figure>
-                  <img class="feature__img" data-img-light src="https://d3ae4wrz2ljkbq.cloudfront.net/components/img-3-2-light-1.svg" alt="Image description">
+                  <img class="feature__img" data-img-light src="/images/profile-data-concept-illustration.png" alt="Image description">
                 </figure>
               </div>
             </div>
@@ -625,7 +656,7 @@ Utilities
               </div>
           </section>
   
-          <div class="container">
+          <div class="container" id="resume-builder">
               <div class="row">
                   <div class="col-lg-6">
                       <div class="resume-builder animate__animated animate__fadeInLeft">
@@ -720,27 +751,57 @@ Utilities
   
           <section class="ats-tips">
               <div class="container">
-                  <h2 class="text-center mb-4 animate__animated animate__fadeIn">ATS-Friendly Resume Tips</h2>
-                  <ul class="tips-list">
-                      <li class="animate__animated animate__fadeInUp">
-                          <h3>Use Standard Formatting</h3>
-                          <p>Stick to simple, clean layouts and standard fonts like Arial or Calibri to ensure ATS readability.</p>
+                  <h1 class="text-center mb-4 animate__animated animate__fadeIn">Do's for Crafting an Effective Resume</h1>
+                  <!-- <h2 class="text-center mb-4 animate__animated animate__fadeIn do">DO:</h2> -->
+                  <ul class="tips-list ">
+                      <li class="animate__animated animate__fadeInUp do">
+                          <h3>Be consistent in format and content</h3>
+                          <p>Choose a clean, easy-to-read layout with clear headings and consistent formatting.</p>
                       </li>
-                      <li class="animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
-                          <h3>Include Keywords</h3>
-                          <p>Incorporate relevant keywords from the job description to improve your resume's ATS score.</p>
+                      <li class="animate__animated animate__fadeInUp do" style="animation-delay: 0.2s;">
+                          <h3>Showcase Achievements:</h3>
+                            <p>Highlight specific projects, awards, and recognitions that set you apart from other candidates.</p>
                       </li>
-                      <li class="animate__animated animate__fadeInUp" style="animation-delay: 0.4s;">
-                          <h3>Avoid Graphics and Tables</h3>
-                          <p>Many ATS have trouble parsing complex formatting. Stick to plain text for best results.</p>
+                      <li class="animate__animated animate__fadeInUp do" style="animation-delay: 0.4s;">
+                          <h3>Tailor Your Resume:</h3>
+                          <p>Customize your resume for each job application to match the job description and requirements.</p>
                       </li>
-                      <li class="animate__animated animate__fadeInUp" style="animation-delay: 0.6s;">
-                          <h3>Use Standard Section Headings</h3>
-                          <p>Use clear, recognizable headings like "Work Experience" and "Education" for easy parsing.</p>
+                      <li class="animate__animated animate__fadeInUp do" style="animation-delay: 0.6s;">
+                          <h3>Proofread Thoroughly</h3>
+                          <p>Check for spelling, grammar, and punctuation errors.</p>
                       </li>
-                      <li class="animate__animated animate__fadeInUp" style="animation-delay: 0.8s;">
-                          <h3>Save as a Simple File Format</h3>
-                          <p>Submit your resume as a .doc, .docx, or .pdf file, as these are most compatible with ATS.</p>
+                      <li class="animate__animated animate__fadeInUp do" style="animation-delay: 0.8s;">
+                          <h3>Use Keywords</h3>
+                          <p>Incorporate keywords from the job description to pass through applicant tracking systems (ATS).</p>
+                      </li>
+                  </ul>
+              </div>
+          </section>
+
+          <section class="ats-tips" id="ats-tips">
+              <div class="container">
+                  <h1 class="text-center mb-4 animate__animated animate__fadeIn">Don'ts for Crafting an Effective Resume</h1>
+                  <!-- <h2 class="text-center mb-4 animate__animated animate__fadeIn do">DO:</h2> -->
+                  <ul class="tips-list ">
+                      <li class="animate__animated animate__fadeInUp dont">
+                          <h3>Avoid Overcrowding</h3>
+                          <p>Don’t cram too much information onto the page. Use white space effectively to make the document readable.</p>
+                      </li>
+                      <li class="animate__animated animate__fadeInUp dont" style="animation-delay: 0.2s;">
+                          <h3>Don’t Use Unprofessional Elements</h3>
+                          <p>Steer clear of overly artistic fonts, images, or graphics that can distract from the content.</p>
+                      </li>
+                      <li class="animate__animated animate__fadeInUp dont" style="animation-delay: 0.4s;">
+                          <h3>Don’t Include Irrelevant Information</h3>
+                          <p>Exclude personal information such as age, marital status, and social security number.</p>
+                      </li>
+                      <li class="animate__animated animate__fadeInUp dont" style="animation-delay: 0.6s;">
+                          <h3>Don’t Use Generic Language</h3>
+                          <p>Be specific about your contributions and the value you brought to past roles.</p>
+                      </li>
+                      <li class="animate__animated animate__fadeInUp dont" style="animation-delay: 0.8s;">
+                          <h3>Don’t Neglect Formatting Consistency</h3>
+                          <p>Make sure fonts, sizes, and styles are consistent throughout the document.</p>
                       </li>
                   </ul>
               </div>
