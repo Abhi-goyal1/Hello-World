@@ -272,6 +272,12 @@ app.get("/reset-confirmation",(req, res, next)=>{
 
 
 
+app.get("/dsa-visualizer", (req, res, next) => {
+  res.render("DSA/dsa-visualizer",{ active: "" } )
+});
+app.get("/dsa-visualizer/array", (req, res, next) => {
+  res.render("DSA/array",{ active: "" } )
+});
 app.get("/report-error", (req, res, next) => {
   res.render("includes/report-error",{ active: "" } )
 });

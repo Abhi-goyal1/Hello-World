@@ -1,0 +1,179 @@
+<% layout("/layouts/boilerplate") %>
+
+
+
+
+<style>
+    /* body {
+        font-family: 'Poppins', sans-serif;
+        line-height: 1.6;
+        color: #f8f9fa;
+        background-color: #000000;
+    } */
+   
+    .hero {
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        color: #f8f9fa;
+        background-color: #000000;
+    }
+    .hero h1 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+    .hero p {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+    }
+    .btn-primary {
+        background-color: #3498db;
+        border-color: #3498db;
+    }
+    .btn-primary:hover {
+        background-color: #2980b9;
+        border-color: #2980b9;
+    }
+    #features{
+        font-family: 'Poppins', sans-serif !important;
+        color: #f8f9fa;
+        background-color: #000000;
+    }
+    #features h1{
+       font-weight: 600;
+    }
+    .feature-card {
+        font-family: 'Poppins', sans-serif !important;
+        background-color: #1a1a1a;
+        border-radius: 10px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        transition: transform 0.3s ease;
+       
+    }
+    #structures{
+        background: #000 !important;
+        color: white;
+    }
+    #structures h1{
+        font-family: 'Poppins', sans-serif !important;
+        font-weight: 600;
+    }
+    .card{
+        height:100%;
+    }
+    .card-body{
+        font-family: 'Poppins', sans-serif !important;
+    }
+    .card-body h4{
+        font-weight: 600;
+    }
+   
+    .feature-card:hover {
+        transform: translateY(-10px);
+    }
+    .feature-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        color: #3498db;
+    }
+    .footer-02{
+        margin-top: 0;
+    }
+</style>
+
+  
+
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="text-white">Master Data Structures & Algorithms</h1>
+                    <p class="lead text-white-50 mb-4">Interactive visualizations and animations to make learning DSA intuitive and engaging</p>
+                    <a href="#structures" class="btn btn-primary btn-lg">Start Learning</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5" id="features">
+        <div class="container">
+            <h1 class="text-center mb-5">Why Choose DSA Viz?</h2>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="feature-card text-center">
+                        <i class="fas fa-eye feature-icon"></i>
+                        <h3>Visual Learning</h3>
+                        <p>Complex concepts simplified through interactive visualizations</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="feature-card text-center">
+                        <i class="fas fa-code feature-icon"></i>
+                        <h3>Practice Coding</h3>
+                        <p>Implement what you learn with our integrated code editor</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="feature-card text-center">
+                        <i class="fas fa-chart-line feature-icon"></i>
+                        <h3>Track Progress</h3>
+                        <p>Monitor your learning journey with detailed analytics</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5" id="structures">
+        <div class="container">
+            <h1 class="text-center mb-5">Explore Data Structures</h1>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="card bg-dark text-white">
+                        <img src="/images/array.png" class="card-img-top" alt="Array Visualization"width="50" height="200">
+                        <div class="card-body">
+                            <h4 class="card-title">Arrays</h4>
+                            <p class="card-text">Dive into the fundamentals of linear data structures.</p>
+                            <a href="/dsa-visulizer/array" class="btn btn-primary">Learn Arrays</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card bg-dark text-white">
+                        <img src="/images/list.png" class="card-img-top" alt="Linked List Visualization"width="50" height="200">
+                        <div class="card-body">
+                            <h4 class="card-title">Linked Lists</h4>
+                            <p class="card-text">Explore dynamic, non-contiguous memory structures.</p>
+                            <a href="/learn/linked-lists" class="btn btn-primary">Learn Linked Lists</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card bg-dark text-white">
+                        <img src="/images/list.png" class="card-img-top" alt="Linked List Visualization"width="50" height="200">
+                        <div class="card-body">
+                            <h4 class="card-title">Linked Lists</h4>
+                            <p class="card-text">Explore dynamic, non-contiguous memory structures.</p>
+                            <a href="/learn/linked-lists" class="btn btn-primary">Learn Linked Lists</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card bg-dark text-white">
+                        <img src="/images/tree.png" class="card-img-top" alt="Tree Visualization" width="50" height="200">
+                        <div class="card-body">
+                            <h4 class="card-title">Trees</h4>
+                            <p class="card-text">Understand hierarchical data organizations.</p>
+                            <a href="/learn/trees" class="btn btn-primary">Learn Trees</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
