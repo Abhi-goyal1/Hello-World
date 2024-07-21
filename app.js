@@ -278,6 +278,24 @@ app.get("/dsa-visualizer", (req, res, next) => {
 app.get("/dsa-visualizer/array", (req, res, next) => {
   res.render("DSA/array",{ active: "" } )
 });
+app.get("/dsa-visualizer/linked-list", (req, res, next) => {
+  res.render("DSA/linked-list",{ active: "" } )
+});
+app.get("/dsa-visualizer/stack", (req, res, next) => {
+  res.render("DSA/stack",{ active: "" } )
+});
+app.get("/dsa-visualizer/queue", (req, res, next) => {
+  res.render("DSA/queue",{ active: "" } )
+});
+app.get("/dsa-visualizer/trees", (req, res, next) => {
+  res.render("DSA/trees",{ active: "" } )
+});
+
+
+
+
+
+
 app.get("/report-error", (req, res, next) => {
   res.render("includes/report-error",{ active: "" } )
 });
