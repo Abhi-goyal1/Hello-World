@@ -1315,9 +1315,13 @@
 
         </h1>
         <div class="email1  text-start">
-          <input type="email" name="" id="" placeholder="Enter your E-mail">
-          <a href="">Subscribe <i class="fa-solid fa-arrow-right"></i></a>
+         <form action="/subscribe" method="post" id="subscribe-form">
+          <input type="email" name="email" id="email" placeholder="Enter your E-mail" required>
+          <button>Subscribe <i class="fa-solid fa-arrow-right"></i></button>
+         </form>
+        
         </div>
+        <div id="message"></div>
       </div>
     </div>
 
@@ -1448,5 +1452,40 @@
             observer.observe(element);
         });
     });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('subscribe-form');
+    const messageDiv = document.getElementById('message');
+
+    form.addEventListener('submit', async (event) => {
+        event.preventDefault(); // Prevent form from submitting the default way
+
+        const email = document.getElementById('email').value;
+
+        try {
+            const response = await fetch('/subscribe', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email })
+            });
+
+            if (response.ok) {
+                messageDiv.innerHTML = '<p>Subscription successful! A confirmation email has been sent.</p>';
+                // Optionally, you can also use JavaScript alert for a popup
+                alert('Subscription successful! A confirmation email has been sent.');
+            } else {
+                const error = await response.text();
+                messageDiv.innerHTML = `<p>Error: ${error}</p>`;
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            messageDiv.innerHTML = `<p>Error: ${error.message}</p>`;
+        }
+    });
+});
+
 </script>
 </body>

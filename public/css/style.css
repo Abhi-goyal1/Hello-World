@@ -1290,7 +1290,8 @@ color: black !important;
 .email1 input::placeholder {
   font-size: 20px;
 }
-.email1 a {
+.email1 button {
+  border: none;
   background-color: black;
   padding: 15px;
   font-family: "Lexend", sans-serif;
@@ -1300,7 +1301,7 @@ color: black !important;
   margin-left: 10px;
   color: white;
 }
-.email1 a:hover {
+.email1 button:hover {
   background-color: #2baffc;
 }
 @media screen and (max-width: 620px) {
@@ -1318,7 +1319,7 @@ color: black !important;
   .email1 input {
   }
 
-  .email1 a {
+  .email1 button {
     margin-left: 5px;
     font-size: 17px;
     padding: 10px;
@@ -1340,7 +1341,7 @@ color: black !important;
     padding-bottom: 20px;
   }
 
-  .email1 a {
+  .email1 button {
     margin-left: -2px;
     font-size: 10px;
     padding: 15px;
@@ -1367,7 +1368,7 @@ color: black !important;
     padding-bottom: 10px;
   }
 
-  .email1 a {
+  .email1 button{
     margin-left: -3px;
     font-size: 10px;
     padding: 10px;

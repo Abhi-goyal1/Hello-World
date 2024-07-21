@@ -11,8 +11,11 @@ require('dotenv').config();
 // !Module
 const User = require("./models/user");
 const Content = require("./models/content");
+const Subscriber = require('./models/Subscriber');
 
 const bodyParser = require('body-parser');
+const nodemailer = require('nodemailer');
+
 
 const wrapAsync = require("./utils/wrapAsync");
 const ExpressError = require("./utils/ExpressError");
@@ -272,6 +275,111 @@ app.get("/reset-confirmation",(req, res, next)=>{
 
 
 
+
+// !Nodemailer Newsletter Subscription.
+const EMAIL_USER = process.env.EMAIL_USER;
+const EMAIL_PASS = process.env.EMAIL_PASS;
+
+
+// Nodemailer setup
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: EMAIL_USER,
+    pass: EMAIL_PASS
+  }
+});
+
+
+app.post('/subscribe', async (req, res, next) => {
+  const { email } = req.body;
+
+  if (!email) {
+      return next(new ExpressError(400, 'Email is required'));
+  }
+
+  try {
+      // Check if email already exists
+      const existingSubscriber = await Subscriber.findOne({ email });
+      if (existingSubscriber) {
+          return next(new ExpressError(409, 'Email is already subscribed'));
+      }
+
+      // Create and save new subscriber
+      const subscriber = new Subscriber({ email });
+      await subscriber.save();
+      console.log('Subscriber saved!');
+      // Send confirmation email
+      const mailOptions = {
+          from: process.env.EMAIL_USER,
+          to: email,
+          subject: 'Subscription Confirmation',
+          text: 'Thank you for subscribing to our newsletter!'
+      };
+      transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            console.log('Error:', error);
+        } else {
+            console.log('Email sent:', info.response);
+        }
+      });
+      await transporter.sendMail(mailOptions);
+
+      res.status(201).send({ message: 'Subscription successful! A confirmation email has been sent.' });
+  } catch (error) {
+      if (error.code === 11000) { // Duplicate key error
+          return next(new ExpressError(409, 'Email is already subscribed'));
+      } else {
+          console.error('Subscription error:', error);
+          next(new ExpressError(500, 'Error subscribing: ' + error.message));
+      }
+  }
+});
+
+
+
+// Unsubscribe endpoint
+app.post('/unsubscribe', async (req, res) => {
+  const { email } = req.body;
+  try {
+    await Subscriber.deleteOne({ email });
+    res.status(200).send('Unsubscribed successfully');
+  } catch (error) {
+    res.status(400).send('Error unsubscribing');
+  }
+});
+
+
+
+// // Send newsletter endpoint (admin only)
+// app.post('/send-newsletter', async (req, res) => {
+//   const { subject, text } = req.body;
+
+//   try {
+//     const subscribers = await Subscriber.find();
+//     const emails = subscribers.map(subscriber => subscriber.email);
+
+//     const mailOptions = {
+//       from: EMAIL_USER,
+//       to: emails,
+//       subject: subject,
+//       text: text
+//     };
+
+//     await transporter.sendMail(mailOptions);
+//     res.status(200).send('Newsletter sent successfully');
+//   } catch (error) {
+//     res.status(500).send('Error sending newsletter');
+//   }
+// });
+
+
+
+
+
+
+
+
 app.get("/dsa-visualizer", (req, res, next) => {
   res.render("DSA/dsa-visualizer",{ active: "" } )
 });
@@ -343,7 +451,8 @@ app.get("/courses/graphic-design", (req, res) => {
 
 // ! Google Authentication 
 
-const googleStrategy = require("passport-google-oauth20")
+const googleStrategy = require("passport-google-oauth20");
+const { error } = require("console");
 passport.use(new googleStrategy(
   {
   clientID : process.env.clientID,
@@ -537,7 +646,8 @@ app.get('/roadmaps/full-stack', (req, res) => {
 
 //! Route for undefine.
 app.all("*", (req, res, next) => {
-  res.render("/error", { err: new ExpressError(404, "Page Not Found"), active: '' });
+  res.render("includes/error", { err: new ExpressError(404, "Page Not Found"), active: '' });
+ 
  
 });
 
