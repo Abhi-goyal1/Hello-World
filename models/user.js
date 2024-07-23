@@ -4,7 +4,7 @@ const passportLocalMongoose = require("passport-local-mongoose");
 
 
 const userSchema = new Schema({
-   linkedinId: { type: String, unique: true, sparse: true },
+  //  linkedinId: { type: String, unique: true, sparse: true },
   googleId: { type: String, unique: true, sparse: true },
   username: String,
   displayName: String,

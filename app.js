@@ -228,7 +228,7 @@ app.post(
     failureFlash:true,
   }),
   async (req, res) => {
-    req.flash("success", "Welcome To Hello World !");
+    req.flash("success", "Welcome To Hello World !")
     res.redirect("/");
   }
 );
@@ -450,42 +450,60 @@ app.get("/courses/graphic-design", (req, res) => {
 
 
 // ! Google Authentication 
+const GoogleStrategy = require("passport-google-oauth20").Strategy;
 
-const googleStrategy = require("passport-google-oauth20");
 const { error } = require("console");
-passport.use(new googleStrategy(
-  {
-  clientID : process.env.clientID,
-  clientSecret : process.env.clientSecret, 
-  callbackURL :process.env.callbackURL,
-}
-,  async (accessToken, refreshToken, profile, done) => {
-  try {
-    let user = await User.findOne({ googleId: profile.id });
-    console.log(accessToken)
-    console.log(refreshToken)
-    console.log(profile)
-    if (user) {
-      // If user already exists, return the user
-      return done(null, user);
-    } else {
-      // If user doesn't exist, create a new user
-      const newUser = new User({
-        googleId: profile.id,
-        username: profile.emails[0].value, // Using email as username in this example
-        displayName: profile.displayName,
-        email: profile.emails[0].value
-      });
 
-      user = await newUser.save();
-      return done(null, user);
+passport.use(new GoogleStrategy(
+  {
+    clientID: process.env.CLIENT_ID,
+    clientSecret: process.env.CLIENT_SECRET,
+    callbackURL: process.env.CALLBACK_URL,
+  },
+  async (accessToken, refreshToken, profile, done) => {
+    try {
+      console.log('Access Token:', accessToken);
+      console.log('Refresh Token:', refreshToken);
+      console.log('Profile:', profile);
+
+      let user = await User.findOne({ googleId: profile.id });
+      if (user) {
+        return done(null, user);
+      } else {
+        const newUser = new User({
+          googleId: profile.id,
+          username: profile.emails[0].value,
+          displayName: profile.displayName,
+          email: profile.emails[0].value
+        });
+
+        user = await newUser.save();
+        return done(null, user);
+      }
+    } catch (err) {
+      console.error('Error in Google Strategy:', err);
+      return done(err, null);
     }
-  } catch (err) {
-    console.error(err);
-    return done(err, null);
   }
-}
-))
+));
+app.use((err, req, res, next) => {
+  console.error('Unhandled error:', err);
+  res.status(500).send('Internal Server Error');
+});
+
+passport.serializeUser((user, done) => {
+  done(null, user.id);
+});
+
+passport.deserializeUser(async (id, done) => {
+  try {
+    const user = await User.findById(id);
+    done(null, user);
+  } catch (err) {
+    done(err, null);
+  }
+});
+
 
 app.get("/auth/google", passport.authenticate("google",{
 scope: ["profile","email"]

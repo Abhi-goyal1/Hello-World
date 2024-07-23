@@ -10,24 +10,18 @@
 
   }
 
-  .action .profile {
-    position: relative;
+  /* .action .profile {
+    line-height: 20px !important;
+  } */
 
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    overflow: hidden;
-    cursor: pointer;
-  }
-
-  .action .profile img {
+  /* .action .profile img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
+  } */
 
   .action .menu {
     position: absolute;
@@ -140,23 +134,23 @@
       display: block;
     }
   }
+.dropbtn{
+width:40px;
+height: 4;
+font-size: 20px;
+font-weight: 600;
+border-radius: 50%;
+padding: 4px;
+margin-top: -10px;
+
+}
+.profile{
+  display: flex;
 
 
 
+}
 
-  .dropbtn {
-      background-color: #333;
-      color: white;
-      padding: 10px;
-      font-size: 16px;
-      border: none;
-      cursor: pointer;
-      border-radius: 50%;
-    }
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
 </style>
 
 <div class="nav-sum sticky-top">
@@ -209,7 +203,7 @@
                   class="fa-solid fa-right-to-bracket px-1 pt-1"></i></button></a> -->
              <div class="action">
                <div class="profile" onclick="menuToggle();">
-                <button class="dropbtn"><%= user.username.charAt(0).toUpperCase() %></button>
+                          <button class="dropbtn"><%= currUser.username.charAt(0).toUpperCase() %></button>
                </div>
                <div class="menu">
                  <ul>
@@ -220,7 +214,7 @@
                      <i class="fa-solid fa-pen px-2"></i><a href="/editprofile">Edit profile</a>
                    </li>
                    <li>
-                     <!-- <i class="fa-solid fa-right-to-bracket px-2"></i><a href="/logout">Logout</a> -->
+                     <i class="fa-solid fa-right-to-bracket px-2"></i><a href="/logout">Logout</a>
                    </li>
                   </ul>
                 </div>
