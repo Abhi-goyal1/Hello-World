@@ -463,6 +463,10 @@ passport.use(new GoogleStrategy(
       console.log('Refresh Token:', refreshToken);
       console.log('Profile:', profile);
 
+console.log('CLIENT_ID:', clientId);
+console.log('CLIENT_SECRET:', clientSecret);
+console.log('CALLBACK_URL:', callbackUrl);
+
       let user = await User.findOne({ googleId: profile.id });
       if (user) {
         return done(null, user);
