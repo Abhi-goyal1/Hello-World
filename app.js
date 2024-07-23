@@ -273,9 +273,6 @@ app.get("/reset-confirmation",(req, res, next)=>{
 //   res.render('content/html.ejs', { active: "" });
 // });
 
-
-
-
 // !Nodemailer Newsletter Subscription.
 const EMAIL_USER = process.env.EMAIL_USER;
 const EMAIL_PASS = process.env.EMAIL_PASS;
