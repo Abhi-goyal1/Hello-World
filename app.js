@@ -84,6 +84,7 @@ passport.deserializeUser(User.deserializeUser());
 //! EJS Template.
 app.use(express.static(path.join(__dirname, "/public")));
 app.use(express.static(path.join(__dirname, "/views")));
+app.use(express.static(path.join(__dirname, "/views/")));
 app.engine("ejs", ejsMate);
 app.set("view engine", "ejs");
 
@@ -373,6 +374,14 @@ app.post('/unsubscribe', async (req, res) => {
 
 
 
+
+
+
+
+app.get("/user-dashboard", (req, res, next) => {
+  res.render("users/Student-Dashboard/user-dashboard",{ active: "" } )
+ 
+});
 
 
 

@@ -27,8 +27,9 @@
     position: absolute;
     top: 120px;
     right: -20px;
-    padding: 10px 20px;
-    background: #fff;
+    /* padding: 10px 0px; */
+    background-color: #d2e3ecfb;
+    border: 2px solid #2baffc;
     width: 200px;
     box-sizing: 0 5px 25px rgba(0, 0, 0, 0.1);
     border-radius: 15px;
@@ -50,7 +51,8 @@
     right: 28px;
     width: 20px;
     height: 20px;
-    background: #fff;
+    background-color: #d2e3ecfb;
+    /* border: 2px solid #2baffc; */
     transform: rotate(45deg);
   }
 
@@ -73,7 +75,7 @@
   .action .menu ul li {
     list-style: none;
     padding: 15px 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    color: black;
     display: flex;
     align-items: center;
   }
@@ -100,13 +102,13 @@
   .action .menu ul li a {
     display: inline-block;
     text-decoration: none;
-    color: #555;
-    font-weight: 500;
+    color: black;
+    font-weight: 700;
     transition: 0.5s;
   }
 
   .action .menu ul li:hover a {
-    color: #ff5d94;
+    color: #2baffc;
   }
 
   .btn-close {
@@ -138,11 +140,13 @@
 width:40px;
 height: 4;
 font-size: 20px;
-font-weight: 600;
+font-weight: 700;
 border-radius: 50%;
 padding: 4px;
 margin-top: -10px;
-
+background-color: #2baffc1e;
+color: black ;
+border:2px solid #2baffc;
 }
 .profile{
   display: flex;
@@ -208,13 +212,13 @@ margin-top: -10px;
                <div class="menu">
                  <ul>
                    <li>
-                     <i class="fa-solid fa-user px-2"></i><a href="/myprofile">My profile</a>
+                    <a href="/user-dashboard"> <i class="fa-solid fa-user px-2"></i> Dashboard</a>
                    </li>
                    <li>
-                     <i class="fa-solid fa-pen px-2"></i><a href="/editprofile">Edit profile</a>
+                     <a href="/editprofile"> <i class="fa-solid fa-pen px-2"></i> Edit profile</a>
                    </li>
                    <li>
-                     <i class="fa-solid fa-right-to-bracket px-2"></i><a href="/logout">Logout</a>
+                    <a href="/logout"> <i class="fa-solid fa-right-to-bracket px-2"></i>Logout</a>
                    </li>
                   </ul>
                 </div>
@@ -314,7 +318,7 @@ margin-top: -10px;
       <li class="nav-item nav-items" id="sql1">
         <a class="nav-link nav-links" href="/sql/sql_intro">SQL</a>
       </li>
-      <li class="nav-item nav-items   last-tab ">
+      <!-- <li class="nav-item nav-items   last-tab ">
         <div class="mode">
           <input type="checkbox" class="checkbox" id="checkbox">
           <label for="checkbox" class="checkbox-label">
@@ -323,7 +327,7 @@ margin-top: -10px;
             <span class="ball"></span>
           </label>
         </div>
-      </li>
+      </li> -->
     </ul>
 
 
