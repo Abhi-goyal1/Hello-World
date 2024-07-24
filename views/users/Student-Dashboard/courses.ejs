@@ -1,0 +1,394 @@
+<% layout("/layouts/dashboard-sidebar") %>
+
+
+    <style>
+      :root {
+        --primary-color: #4a90e2;
+        --secondary-color: #50c878;
+        --accent-color: #ff6b6b;
+        --bg-color: #f8f9fa;
+        --text-color: #333333;
+        --card-bg: #ffffff;
+        --hover-color: #e9ecef;
+      }
+    
+      /* body {
+        font-family: 'Roboto', sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+      }
+     */
+    
+      .card {
+        background: var(--card-bg);
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        transition: all 0.3s;
+      }
+    
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+      }
+    
+      .card-header {
+        background-color: var(--primary-color);
+        color: white;
+        border-radius: 10px 10px 0 0;
+      }
+    
+      .progress {
+        height: 10px;
+        border-radius: 5px;
+      }
+    
+      .btn-primary {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+      }
+    
+      .btn-primary:hover {
+        background-color: var(--secondary-color);
+        border-color: var(--secondary-color);
+      }
+    
+      .main-content {
+        transition: margin-left 0.3s;
+      }
+    
+      @media (max-width: 768px) {
+        .sidebar {
+          width: 0;
+          overflow-x: hidden;
+        }
+        
+        .sidebar.active {
+          width: 250px;
+        }
+    
+        .main-content {
+          margin-left: 0 !important;
+        }
+      }
+    
+      #sidebarCollapse {
+        display: none;
+      }
+    
+      @media (max-width: 768px) {
+        #sidebarCollapse {
+          display: block;
+          position: fixed;
+          top: 10px;
+          left: 10px;
+          z-index: 1001;
+        }
+      }
+    
+      .course-card {
+        height: 100%;
+      }
+    
+      .course-image {
+        height: 200px;
+        object-fit: cover;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+    
+      .course-progress {
+        height: 5px;
+        margin-top: 10px;
+      }
+    
+      .course-stats {
+        font-size: 0.9rem;
+        color: #6c757d;
+      }
+    
+      .course-rating {
+        color: #ffc107;
+      }
+    
+      .filter-dropdown {
+        width: 200px;
+      }
+    
+      .list-view .course-card {
+        flex-direction: row;
+        height: auto;
+      }
+    
+      .list-view .course-image {
+        width: 200px;
+        height: 100%;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 10px;
+      }
+    
+      .list-view .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+    
+      .hidden {
+        display: none;
+      }
+    </style>
+    </head>
+    <body>
+      <button id="sidebarCollapse" class="btn btn-primary">
+        <i class="bi bi-list"></i>
+      </button>
+    
+      <div class="container-fluid">
+        <div class="row">
+        
+          <!-- Main content -->
+          <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 main-content">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+              <h1 class="h2">My Courses</h1>
+              <div class="btn-toolbar mb-2 mb-md-0">
+                <div class="btn-group me-2">
+                  <button type="button" class="btn btn-sm btn-outline-secondary" id="gridViewBtn">
+                    <i class="bi bi-grid me-1"></i>Grid
+                  </button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary" id="listViewBtn">
+                    <i class="bi bi-list-ul me-1"></i>List
+                  </button>
+                </div>
+                <div class="dropdown">
+                  <button class="btn btn-sm btn-outline-secondary dropdown-toggle filter-dropdown" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-funnel me-1"></i>Filter
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item" href="#" data-filter="all">All Courses</a></li>
+                    <li><a class="dropdown-item" href="#" data-filter="in-progress">In Progress</a></li>
+                    <li><a class="dropdown-item" href="#" data-filter="completed">Completed</a></li>
+                    <li><a class="dropdown-item" href="#" data-filter="not-started">Not Started</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+    
+            <div id="courseContainer" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+              <!-- Course 1 -->
+              <div class="col course-item" data-status="in-progress">
+                <div class="card course-card">
+                  <img src="https://source.unsplash.com/random/800x600?ai" class="card-img-top course-image" alt="Advanced AI Course">
+                  <div class="card-body">
+                    <h5 class="card-title">Advanced AI</h5>
+                    <p class="card-text">Dive deep into artificial intelligence algorithms and applications.</p>
+                    <div class="progress course-progress">
+                      <div class="progress-bar bg-success" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                      <small class="course-stats">
+                        <i class="bi bi-clock me-1"></i>10h 30m left
+                      </small>
+                      <div class="course-rating">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-footer">
+                    <a href="#" class="btn btn-primary btn-sm">Continue Course</a>
+                  </div>
+                </div>
+              </div>
+    
+              <!-- Course 2 -->
+              <div class="col course-item" data-status="in-progress">
+                <div class="card course-card">
+                  <img src="https://source.unsplash.com/random/800x600?quantum" class="card-img-top course-image" alt="Quantum Computing Course">
+                  <div class="card-body">
+                    <h5 class="card-title">Quantum Computing</h5>
+                    <p class="card-text">Explore the principles of quantum mechanics and their application in computing.</p>
+                    <div class="progress course-progress">
+                      <div class="progress-bar bg-warning" role="progressbar" style="width: 30%;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">30%</div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                      <small class="course-stats">
+                        <i class="bi bi-clock me-1"></i>20h 15m left
+                      </small>
+                      <div class="course-rating">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-footer">
+                    <a href="#" class="btn btn-primary btn-sm">Continue Course</a>
+                  </div>
+                </div>
+              </div>
+    
+              <!-- Course 3 -->
+              <div class="col course-item" data-status="in-progress">
+                <div class="card course-card">
+                  <img src="https://source.unsplash.com/random/800x600?blockchain" class="card-img-top course-image" alt="Blockchain Fundamentals Course">
+                  <div class="card-body">
+                    <h5 class="card-title">Blockchain Fundamentals</h5>
+                    <p class="card-text">Learn the core concepts of blockchain technology and its applications.</p>
+                    <div class="progress course-progress">
+                      <div class="progress-bar bg-info" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                      <small class="course-stats">
+                        <i class="bi bi-clock me-1"></i>3h 45m left
+                      </small>
+                      <div class="course-rating">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-footer">
+                    <a href="#" class="btn btn-primary btn-sm">Continue Course</a>
+                  </div>
+                </div>
+              </div>
+    
+              <!-- Course 4 -->
+              <div class="col course-item" data-status="in-progress">
+                <div class="card course-card">
+                  <img src="https://source.unsplash.com/random/800x600?vr" class="card-img-top course-image" alt="Virtual Reality Development Course">
+                  <div class="card-body">
+                    <h5 class="card-title">Virtual Reality Development</h5>
+                    <p class="card-text">Create immersive VR experiences using cutting-edge technologies.</p>
+                    <div class="progress course-progress">
+                      <div class="progress-bar bg-danger" role="progressbar" style="width: 45%;" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">45%</div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                      <small class="course-stats">
+                        <i class="bi bi-clock me-1"></i>15h 20m left
+                      </small>
+                      <div class="course-rating">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                        <i class="bi bi-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-footer">
+                    <a href="#" class="btn btn-primary btn-sm">Continue Course</a>
+                  </div>
+                </div>
+              </div>
+    
+              <!-- Course 5 -->
+              <div class="col course-item" data-status="completed">
+                <div class="card course-card">
+                  <img src="https://source.unsplash.com/random/800x600?nanotechnology" class="card-img-top course-image" alt="Introduction to Nanotechnology Course">
+                  <div class="card-body">
+                    <h5 class="card-title">Introduction to Nanotechnology</h5>
+                    <p class="card-text">Discover the world of nanoscale materials and their applications.</p>
+                    <div class="progress course-progress">
+                      <div class="progress-bar bg-success" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                      <small class="course-stats">
+                        <i class="bi bi-check-circle-fill me-1"></i>Completed
+                      </small>
+                      <div class="course-rating">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-footer">
+                    <a href="#" class="btn btn-secondary btn-sm">Review Course</a>
+                  </div>
+                </div>
+              </div>
+    
+              <!-- Course 6 -->
+              <div class="col course-item" data-status="not-started">
+                <div class="card course-card">
+                  <img src="https://source.unsplash.com/random/800x600?genetics" class="card-img-top course-image" alt="Genetic Engineering Basics Course">
+                  <div class="card-body">
+                    <h5 class="card-title">Genetic Engineering Basics</h5>
+                    <p class="card-text">Understand the fundamentals of genetic engineering and its ethical implications.</p>
+                    <div class="progress course-progress">
+                      <div class="progress-bar bg-primary" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                      <small class="course-stats">
+                        <i class="bi bi-clock me-1"></i>30h total
+                      </small>
+                      <div class="course-rating">
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-footer">
+                    <a href="#" class="btn btn-primary btn-sm">Start Course</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+    
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+      <script>
+       
+        
+    
+        // Grid and List view toggle
+        const gridViewBtn = document.getElementById('gridViewBtn');
+        const listViewBtn = document.getElementById('listViewBtn');
+        const courseContainer = document.getElementById('courseContainer');
+    
+        gridViewBtn.addEventListener('click', function() {
+          courseContainer.classList.remove('list-view');
+          courseContainer.classList.add('row-cols-1', 'row-cols-md-2', 'row-cols-lg-3');
+        });
+    
+        listViewBtn.addEventListener('click', function() {
+          courseContainer.classList.add('list-view');
+          courseContainer.classList.remove('row-cols-1', 'row-cols-md-2', 'row-cols-lg-3');
+        });
+    
+        // Filter functionality
+        const filterButtons = document.querySelectorAll('.dropdown-item');
+        const courseItems = document.querySelectorAll('.course-item');
+    
+        filterButtons.forEach(button => {
+          button.addEventListener('click', function(e) {
+            e.preventDefault();
+            const filter = this.dataset.filter;
+            
+            courseItems.forEach(item => {
+              if (filter === 'all' || item.dataset.status === filter) {
+                item.classList.remove('hidden');
+              } else {
+                item.classList.add('hidden');
+              }
+            });
+          });
+        });
+      </script>
+    </body></html>

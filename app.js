@@ -378,10 +378,33 @@ app.post('/unsubscribe', async (req, res) => {
 
 
 
+
 app.get("/user-dashboard", (req, res, next) => {
   res.render("users/Student-Dashboard/user-dashboard",{ active: "" } )
  
 });
+app.get("/user-dashboard/edit-profile", (req, res, next) => {
+  res.render("users/Student-Dashboard/edit-profile",{ active: "" } )
+ 
+});
+app.get("/user-dashboard/timetable", (req, res, next) => {
+  res.render("users/Student-Dashboard/timetable",{ active: "" } )
+ 
+});
+app.get("/user-dashboard/notification", (req, res, next) => {
+  res.render("users/Student-Dashboard/notification",{ active: "" } )
+ 
+});
+app.get("/user-dashboard/calendar", (req, res, next) => {
+  res.render("users/Student-Dashboard/calendar",{ active: "" } )
+ 
+});
+app.get("/user-dashboard/courses", (req, res, next) => {
+  res.render("users/Student-Dashboard/courses",{ active: "" } )
+ 
+});
+
+
 
 
 

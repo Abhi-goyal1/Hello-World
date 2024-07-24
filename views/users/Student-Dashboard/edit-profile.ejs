@@ -1,0 +1,348 @@
+<% layout("/layouts/dashboard-sidebar") %>
+
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+    
+      :root {
+        --primary-color: #4e54c8;
+        --secondary-color: #8f94fb;
+        --accent-color: #ff6b6b;
+        --bg-color: #f0f3f9;
+        --text-color: #333333;
+        --card-bg: #ffffff;
+        --hover-color: #e9ecef;
+      }
+    
+      /* body {
+        font-family: 'Poppins', sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+      }
+     */
+     
+    
+      .main-content {
+        transition: margin-left 0.3s;
+        padding: 30px;
+        background-color: var(--bg-color);
+      }
+    
+      @media (max-width: 768px) {
+        .sidebar {
+          width: 0;
+          overflow-x: hidden;
+        }
+        
+        .sidebar.active {
+          width: 250px;
+        }
+    
+        .main-content {
+          margin-left: 0 !important;
+        }
+      }
+    
+      #sidebarCollapse {
+        display: none;
+      }
+    
+      @media (max-width: 768px) {
+        #sidebarCollapse {
+          display: block;
+          position: fixed;
+          top: 20px;
+          left: 20px;
+          z-index: 1001;
+        }
+      }
+    
+      .profile-picture {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid white;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        transition: all 0.3s;
+      }
+    
+      .profile-picture:hover {
+        transform: scale(1.05);
+      }
+    
+      .profile-card {
+        background-color: var(--card-bg);
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        transition: all 0.3s;
+      }
+    
+      .profile-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+      }
+    
+      .form-label {
+        font-weight: 600;
+        color: var(--primary-color);
+        margin-bottom: 8px;
+      }
+    
+      .btn-primary {
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        border: none;
+        padding: 12px 30px;
+        font-weight: 600;
+        transition: all 0.3s;
+      }
+    
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(78, 84, 200, 0.4);
+      }
+    
+      .form-control {
+        border-radius: 10px;
+        padding: 12px;
+        border: 2px solid #e0e0e0;
+        transition: all 0.3s;
+      }
+    
+      .form-control:focus {
+        border-color: var(--secondary-color);
+        box-shadow: 0 0 0 0.2rem rgba(143, 148, 251, 0.25);
+      }
+    
+      .section-title {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--primary-color);
+        position: relative;
+        padding-bottom: 15px;
+        margin-bottom: 30px;
+      }
+    
+      .section-title::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 50px;
+        height: 4px;
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        border-radius: 2px;
+      }
+    
+      .social-media-input {
+        margin-bottom: 20px;
+      }
+    
+      .input-group-text {
+        background-color: var(--primary-color);
+        border: none;
+        color: white;
+      }
+    
+      /* Animated background */
+      .animated-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        overflow: hidden;
+      }
+    
+      .animated-bg li {
+        position: absolute;
+        display: block;
+        list-style: none;
+        width: 20px;
+        height: 20px;
+        background: rgba(78, 84, 200, 0.1);
+        animation: animate 25s linear infinite;
+        bottom: -150px;
+      }
+    
+      @keyframes animate {
+        0% {
+          transform: translateY(0) rotate(0deg);
+          opacity: 1;
+          border-radius: 0;
+        }
+        100% {
+          transform: translateY(-1000px) rotate(720deg);
+          opacity: 0;
+          border-radius: 50%;
+        }
+      }
+    </style>
+    </head>
+    <body>
+   
+    
+      <button id="sidebarCollapse" class="btn btn-primary">
+        <i class="bi bi-list"></i>
+      </button>
+    
+      <div class="container-fluid">
+        <div class="row">
+          <!-- Sidebar -->
+  
+    
+          <!-- Main content -->
+          <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 main-content">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-4">
+              <h1 class="h2 fw-bold text-primary">Edit Profile</h1>
+            </div>
+    
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <div class="profile-card">
+                  <form id="editProfileForm">
+                    <div class="text-center mb-5">
+                      <img src="https://i.pravatar.cc/180?img=68" alt="Profile Picture" class="profile-picture mb-3">
+                      <div>
+                        <button type="button" class="btn btn-outline-primary btn-sm mt-3" id="changeProfilePicture">
+                          <i class="bi bi-camera"></i> Change Picture
+                        </button>
+                        <input type="file" id="profilePictureInput" accept="image/*" style="display: none;">
+                      </div>
+                    </div>
+    
+                    <div class="section-title">Personal Information</div>
+    
+                    <div class="row mb-4">
+                      <div class="col-md-6">
+                        <label for="fullName" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="fullName" value="John Doe" required>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="email" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="email" value="john.doe@example.com" required>
+                      </div>
+                    </div>
+    
+                    <div class="row mb-4">
+                      <div class="col-md-6">
+                        <label for="phoneNumber" class="form-label">Phone Number</label>
+                        <input type="tel" class="form-control" id="phoneNumber" value="+1 (555) 123-4567">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="dateOfBirth" class="form-label">Date of Birth</label>
+                        <input type="date" class="form-control" id="dateOfBirth" value="1990-01-01">
+                      </div>
+                    </div>
+    
+                    <div class="mb-4">
+                      <label for="bio" class="form-label">Bio</label>
+                      <textarea class="form-control" id="bio" rows="4">I am a passionate learner always eager to acquire new skills and knowledge.</textarea>
+                    </div>
+    
+                    <div class="mb-4">
+                      <label for="interests" class="form-label">Interests</label>
+                      <input type="text" class="form-control" id="interests" value="Programming, Data Science, AI">
+                    </div>
+    
+                    <div class="section-title">Social Media Links</div>
+    
+                    <div class="social-media-input">
+                      <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-linkedin"></i></span>
+                        <input type="url" class="form-control" id="linkedinUrl" placeholder="LinkedIn URL" value="https://www.linkedin.com/in/johndoe">
+                      </div>
+                    </div>
+    
+                    <div class="social-media-input">
+                      <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-github"></i></span>
+                        <input type="url" class="form-control" id="githubUrl" placeholder="GitHub URL" value="https://github.com/johndoe">
+                      </div>
+                    </div>
+    
+                    <div class="social-media-input">
+                      <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-twitter"></i></span>
+                        <input type="url" class="form-control" id="twitterUrl" placeholder="Twitter URL" value="https://twitter.com/johndoe">
+                      </div>
+                    </div>
+    
+                    <div class="text-center mt-5">
+                      <button type="submit" class="btn btn-primary btn-lg px-5">Save Changes</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+    
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+      <script>
+        // Animated background
+        const animatedBg = document.querySelector('.animated-bg');
+        for (let i = 0; i < 10; i++) {
+          const li = document.createElement('li');
+          const size = Math.random() * 80 + 20;
+          const position = Math.random() * 100;
+          const delay = Math.random() * 5;
+          const duration = Math.random() * 20 + 10;
+    
+          li.style.left = `${position}%`;
+          li.style.width = `${size}px`;
+          li.style.height = `${size}px`;
+          li.style.animationDelay = `${delay}s`;
+          li.style.animationDuration = `${duration}s`;
+          li.style.animationTimingFunction = `cubic-bezier(${Math.random()}, ${Math.random()}, ${Math.random()}, ${Math.random()})`;
+    
+          animatedBg.appendChild(li);
+        }
+    
+        // Sidebar toggle functionality
+        document.getElementById('sidebarCollapse').addEventListener('click', function() {
+          document.getElementById('sidebar').classList.toggle('active');
+          document.querySelector('.main-content').classList.toggle('active');
+        });
+    
+        // Profile picture change functionality
+        document.getElementById('changeProfilePicture').addEventListener('click', function() {
+          document.getElementById('profilePictureInput').click();
+        });
+    
+        document.getElementById('profilePictureInput').addEventListener('change', function(event) {
+          const file = event.target.files[0];
+          if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+              document.querySelector('.profile-picture').src = e.target.result;
+            }
+            reader.readAsDataURL(file);
+          }
+        });
+    
+        // Form submission
+        document.getElementById('editProfileForm').addEventListener('submit', function(event) {
+          event.preventDefault();
+          // Here you would typically send the form data to a server
+          // For this example, we'll just show an alert
+          alert('Profile updated successfully!');
+        });
+    
+        // Add subtle hover effects to form inputs
+        const formInputs = document.querySelectorAll('.form-control');
+        formInputs.forEach(input => {
+          input.addEventListener('focus', function() {
+            this.style.transform = 'translateY(-2px)';
+            this.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+          });
+          input.addEventListener('blur', function() {
+            this.style.transform = 'translateY(0)';
+            this.style.boxShadow = 'none';
+          });
+        });
+      </script>
+    </body></html>

@@ -1,5 +1,5 @@
-<% layout("/layouts/contentboilerplate") %>
 
+<% layout("/layouts/dashboard-sidebar") %>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
   :root {
@@ -17,88 +17,7 @@
     background-color: var(--bg-color);
     color: var(--text-color);
   } */
-  @media (min-width: 768px) and (max-width: 991.98px) {
-    .footer-02 {
-        position: relative;
-        left: 0;
-    }
 
-   
-}
-
-@media (min-width: 992px) {
-    .footer-02 {
-        position: relative;
-        left: 0;
-    }
-
-    .footer-offset-lg {
-        margin-left: 213px !important;
-    }
-}
-
-/* For small screens, make it full width */
-@media (max-width: 767.98px) {
-    .footer-02 {
-        width: 100%;
-        left: 0;
-    }
-}
-
-  .sidebar {
-   
-   background-color: black;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    transition: all 0.3s;
-  }
-.das-nav-item{
-  width: 100% !important;
-  padding: 10px;
-  border-radius: 5px;
-  font-weight: 600;
-  margin: 3px;
- 
-}
-
-
-  .das-nav-link {
-    
-    padding: 10px;
-    text-decoration: none;
-    color: var(--text-color);
-    transition: all 0.3s;
-    border-radius: 5px;
-    margin: 5px 0;
-    color: white;
-  
-  }
-  .das-nav-item:hover{
-    background-color: #a5d5f152;
-  }
-  .das-nav-link.active{
-   
-  }
-
-  .das-nav-item.active{
- background-color: #2baffc;
-}
-.active::after{
-    display: none;
-  }
-
-
-  /* .das-nav-link:hover, .das-nav-link.active {
-    background-color: var(--primary-color);
-    color: white;
-
-  } */
-
- 
   .card {
     background: var(--card-bg);
     border: none;
@@ -226,8 +145,7 @@
     font-weight: 700;
   }
 </style>
-</head>
-<body>
+
   <button id="sidebarCollapse" class="btn btn-primary">
     <i class="bi bi-list"></i>
   </button>
@@ -235,49 +153,7 @@
   <div class="container-fluid">
     <div class="row">
       <!-- Sidebar -->
-      <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block sidebar collapse">
-        <div class="position-sticky pt-3">
-          <div class="text-center mb-4">
-            <div class="profile-pic-container">
-              <img src="https://i.pravatar.cc/300" alt="Profile Picture" class="profile-pic" id="profile-pic">
-              <button class="edit-profile-btn" data-bs-toggle="modal" data-bs-target="#editProfileModal">Edit Profile</button>
-            </div>
-            <h5 class="user-name" id="user-name">John Doe</h5>
-          </div>
-          <ul class="nav flex-column">
-            <li class="das-nav-item active">
-              <a class="das-nav-link " href="#dashboard">
-                <i class="fa-solid fa-gauge"></i> Dashboard
-              </a>
-            </li>
-            <li class="das-nav-item">
-              <a class="das-nav-link" href="#courses">
-                <i class="fa-solid fa-laptop-file"></i> My Courses
-              </a>
-            </li>
-            <li class="das-nav-item">
-              <a class="das-nav-link" href="#assignments">
-                <i class="fa-regular fa-paste"></i> Assignments
-              </a>
-            </li>
-            <li class="das-nav-item">
-              <a class="das-nav-link" href="#calendar">
-                <i class="fa-solid fa-calendar-days"></i> Calendar
-              </a>
-            </li>
-            <li class="das-nav-item">
-              <a class="das-nav-link" href="#messages">
-                <i class="fa-solid fa-envelope"></i> Messages
-              </a>
-            </li>
-            <li class="das-nav-item">
-              <a class="das-nav-link" href="#settings">
-                <i class="fa-solid fa-gear"></i> Settings
-              </a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+      
 
       <!-- Main content -->
       <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 main-content">
@@ -498,15 +374,7 @@
 
     updateProgress();
 
-    // Add interactivity to nav items
-    document.querySelectorAll('.das-nav-item').forEach(item => {
-      item.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelectorAll('.das-nav-item').forEach(el => el.classList.remove('active'));
-        this.classList.add('active');
-      });
-    });
-
+   
     // Todo list functionality
     const todoList = document.getElementById('todo-list');
     const newTodoInput = document.getElementById('new-todo');
@@ -645,4 +513,3 @@
       }
     });
   </script>
-</body></html>

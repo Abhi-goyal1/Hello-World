@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <title>Dashboard</title>
+  <style>
+    /* Your existing styles here */
+    :root {
+      --primary-color: #4a90e2;
+      --secondary-color: #50c878;
+      --accent-color: #ff6b6b;
+      --bg-color: #f8f9fa;
+      --text-color: #333333;
+      --card-bg: #ffffff;
+      --hover-color: #e9ecef;
+    }
+
+    @media (min-width: 768px) and (max-width: 991.98px) {
+      .footer-02 {
+          position: relative;
+          left: 0;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .footer-02 {
+          position: relative;
+          left: 0;
+      }
+      .footer-offset-lg {
+          margin-left: 213px !important;
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      .footer-02 {
+          width: 100%;
+          left: 0;
+      }
+    }
+
+    .sidebar {
+      background-color: black;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      transition: all 0.3s;
+      overflow-y: auto;
+    }
+
+    .das-nav-item{
+      width: 100% !important;
+      padding: 10px;
+      border-radius: 5px;
+      font-weight: 600;
+      margin: 3px;
+    }
+
+    .das-nav-link {
+      padding: 10px;
+      text-decoration: none;
+      color: var(--text-color);
+      transition: all 0.3s;
+      border-radius: 5px;
+      margin: 5px 0;
+      color: white;
+    }
+
+    .das-nav-item:hover {
+      background-color: #a5d5f152;
+    }
+
+    .das-nav-link.active {
+    }
+
+    .das-nav-item.active {
+      background-color: #2baffc;
+    }
+
+    .active::after {
+      display: none;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: all 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+
+    .card-header {
+      background-color: var(--primary-color);
+      color: white;
+      border-radius: 10px 10px 0 0;
+    }
+
+    .progress {
+      height: 10px;
+      border-radius: 5px;
+    }
+
+    .btn-primary {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--secondary-color);
+      border-color: var(--secondary-color);
+    }
+
+    .profile-pic-container {
+      position: relative;
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 1rem;
+    }
+
+    .profile-pic {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--primary-color);
+      transition: all 0.3s;
+    }
+
+    .edit-profile-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: opacity 0.3s;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .profile-pic-container:hover .edit-profile-btn {
+      opacity: 1;
+    }
+
+    .profile-pic-container:hover .profile-pic {
+      filter: brightness(70%);
+    }
+
+    .chart-container {
+      position: relative;
+      margin: auto;
+      height: 250px;
+      width: 100%;
+    }
+
+    .main-content {
+      transition: margin-left 0.3s;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 0;
+        overflow-x: hidden;
+      }
+      .sidebar.active {
+        width: 250px;
+      }
+      .main-content {
+        margin-left: 0 !important;
+      }
+    }
+
+    .task-list {
+      max-height: 300px;
+      overflow-y: auto;
+    }
+
+    .course-progress {
+      height: 5px;
+      margin-top: 5px;
+    }
+
+    #sidebarCollapse {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      #sidebarCollapse {
+        display: block;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 1001;
+      }
+    }
+
+    .user-name {
+      color: white;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <button id="sidebarCollapse" class="btn btn-primary">
+    <i class="bi bi-list"></i>
+  </button>
+
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar -->
+      <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block sidebar collapse">
+        <div class="position-sticky pt-3">
+          <div class="text-center mb-4">
+            <div class="profile-pic-container">
+              <img src="https://i.pravatar.cc/300" alt="Profile Picture" class="profile-pic" id="profile-pic">
+              <button class="edit-profile-btn" data-bs-toggle="modal" data-bs-target="#editProfileModal">Edit Profile</button>
+            </div>
+            <h5 class="user-name" id="user-name"><%= currUser.displayName %></h5>
+          </div>
+          <ul class="nav flex-column">
+            <li class="das-nav-item">
+              <a class="das-nav-link" href="/user-dashboard">
+                <i class="fa-solid fa-gauge"></i> Dashboard
+              </a>
+            </li>
+           
+            <li class="das-nav-item">
+              <a class="das-nav-link" href="/user-dashboard/edit-profile">
+                <i class="fa-solid fa-pen"></i> Edit Profile
+              </a>
+            </li>
+            <li class="das-nav-item">
+              <a class="das-nav-link" href="/user-dashboard/courses">
+                <i class="fa-solid fa-laptop-file"></i> My Courses
+              </a>
+            </li>
+           
+            <li class="das-nav-item">
+              <a class="das-nav-link" href="/user-dashboard/calendar">
+                <i class="fa-solid fa-calendar-days"></i> Calendar
+              </a>
+            </li>
+            <li class="das-nav-item">
+              <a class="das-nav-link" href="/user-dashboard/timetable">
+                <i class="fa-solid fa-clock"></i> Timetable
+              </a>
+            </li>
+            <li class="das-nav-item">
+              <a class="das-nav-link" href="/user-dashboard/notification">
+                <i class="fa-solid fa-bell"></i> Notification
+              </a>
+            </li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get all nav links
+      const navLinks = document.querySelectorAll('.das-nav-link');
+
+      // Highlight active link based on current URL
+      const currentPath = window.location.pathname;
+      navLinks.forEach(link => {
+        if (link.getAttribute('href') === currentPath) {
+          link.parentElement.classList.add('active');
+        }
+      });
+
+      // Add click event listeners to nav items
+      document.querySelectorAll('.das-nav-item').forEach(item => {
+        item.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetHref = this.querySelector('a').getAttribute('href');
+
+          // Remove active class from all items
+          document.querySelectorAll('.das-nav-item').forEach(el => el.classList.remove('active'));
+          // Add active class to clicked item
+          this.classList.add('active');
+
+          // Navigate to the target href
+          window.location.href = targetHref;
+        });
+      });
+    });
+  </script>
+</body>
+</html>

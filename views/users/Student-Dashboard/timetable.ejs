@@ -1,0 +1,466 @@
+<% layout("/layouts/dashboard-sidebar") %>
+
+    <style>
+      :root {
+        --primary-color: #3a7bd5;
+        --secondary-color: #00d2ff;
+        --accent-color: #ff6b6b;
+        --bg-color: #f8f9fa;
+        --text-color: #333333;
+        --card-bg: #ffffff;
+        --hover-color: #e9ecef;
+      }
+    
+      /* body {
+        font-family: 'Roboto', sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+      } */
+    
+     
+    
+      .main-content {
+        transition: margin-left 0.3s;
+        padding: 20px;
+      }
+    
+      @media (max-width: 768px) {
+        .sidebar {
+          width: 0;
+          overflow-x: hidden;
+        }
+        
+        .sidebar.active {
+          width: 250px;
+        }
+    
+        .main-content {
+          margin-left: 0 !important;
+        }
+      }
+    
+      #sidebarCollapse {
+        display: none;
+      }
+    
+      @media (max-width: 768px) {
+        #sidebarCollapse {
+          display: block;
+          position: fixed;
+          top: 10px;
+          left: 10px;
+          z-index: 1001;
+        }
+      }
+    
+      .timetable-container {
+        background-color: var(--card-bg);
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      }
+    
+      .timetable {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 5px;
+      }
+    
+      .timetable th, .timetable td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: center;
+        vertical-align: middle;
+      }
+    
+      .timetable th {
+        background-color: var(--primary-color);
+        color: white;
+      }
+    
+      .timetable td {
+        height: 100px;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+    
+      .timetable td:hover {
+        background-color: var(--hover-color);
+      }
+    
+      .timetable .time-slot {
+        font-weight: bold;
+        background-color: var(--secondary-color);
+        color: white;
+      }
+    
+      .class-item {
+        background-color: var(--accent-color);
+        color: white;
+        padding: 5px;
+        border-radius: 5px;
+        margin-bottom: 5px;
+      }
+    
+      .modal-content {
+        border-radius: 10px;
+      }
+    
+      .modal-header {
+        background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+        color: white;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+    
+      .btn-primary {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+      }
+    
+      .btn-primary:hover {
+        background-color: var(--secondary-color);
+        border-color: var(--secondary-color);
+      }
+    
+      .profile-picture {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid white;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      }
+    
+      .class-list {
+        max-height: 300px;
+        overflow-y: auto;
+      }
+    
+      .class-list-item {
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 5px;
+        transition: all 0.3s;
+      }
+    
+      .class-list-item:hover {
+        background-color: var(--hover-color);
+      }
+    
+      .drag-handle {
+        cursor: move;
+      }
+    
+      .edit-class-btn, .delete-class-btn {
+        padding: 2px 5px;
+        font-size: 0.8rem;
+      }
+    </style>
+    </head>
+    <body>
+      <button id="sidebarCollapse" class="btn btn-primary">
+        <i class="bi bi-list"></i>
+      </button>
+    
+      <div class="container-fluid">
+        <div class="row">
+        
+    
+          <!-- Main content -->
+          <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 main-content">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+              <h1 class="h2">Advanced Timetable Maker</h1>
+              <div class="btn-toolbar mb-2 mb-md-0">
+                <button type="button" class="btn btn-sm btn-outline-secondary me-2" data-bs-toggle="modal" data-bs-target="#addClassModal">
+                  <i class="bi bi-plus-circle me-1"></i>Add Class
+                </button>
+                <button type="button" class="btn btn-sm btn-outline-secondary" onclick="generatePDF()">
+                  <i class="bi bi-download me-1"></i>Export PDF
+                </button>
+              </div>
+            </div>
+    
+            <div class="row mb-4">
+              <div class="col-md-3">
+                <div class="card">
+                  <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">My Classes</h5>
+                  </div>
+                  <div class="card-body class-list" id="classList">
+                    <!-- Classes will be dynamically added here -->
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-9">
+                <div class="timetable-container">
+                  <table class="timetable" id="timetable">
+                    <thead>
+                      <tr>
+                        <th>Time</th>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+                        <th>Friday</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- Time slots will be dynamically added here -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+    
+      <!-- Add/Edit Class Modal -->
+      <div class="modal fade" id="addClassModal" tabindex="-1" aria-labelledby="addClassModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="addClassModalLabel">Add/Edit Class</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form id="addClassForm">
+                <input type="hidden" id="classId">
+                <div class="mb-3">
+                  <label for="className" class="form-label">Class Name</label>
+                  <input type="text" class="form-control" id="className" required>
+                </div>
+                <div class="mb-3">
+                  <label for="classColor" class="form-label">Class Color</label>
+                  <input type="color" class="form-control form-control-color" id="classColor" value="#ff6b6b" required>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" id="saveClass">Save Class</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Delete Class Confirmation Modal -->
+      <div class="modal fade" id="deleteClassModal" tabindex="-1" aria-labelledby="deleteClassModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="deleteClassModalLabel">Delete Class</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              Are you sure you want to delete this class?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-danger" id="confirmDeleteClass">Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+      <script>
+        // Sidebar toggle functionality
+        document.getElementById('sidebarCollapse').addEventListener('click', function() {
+          document.getElementById('sidebar').classList.toggle('active');
+          document.querySelector('.main-content').classList.toggle('active');
+        });
+    
+        // Initialize timetable
+        const timeSlots = ['9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM'];
+        const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+        const timetableBody = document.querySelector('#timetable tbody');
+    
+        timeSlots.forEach(time => {
+          const row = document.createElement('tr');
+          const timeCell = document.createElement('td');
+          timeCell.textContent = time;
+          timeCell.classList.add('time-slot');
+          row.appendChild(timeCell);
+    
+          days.forEach(day => {
+            const cell = document.createElement('td');
+            cell.setAttribute('data-day', day);
+            cell.setAttribute('data-time', time);
+            cell.addEventListener('click', () => addClassToTimetable(cell));
+            row.appendChild(cell);
+          });
+    
+          timetableBody.appendChild(row);
+        });
+    
+        // Class management
+        let classes = [];
+        let editingClassId = null;
+    
+        document.getElementById('saveClass').addEventListener('click', function() {
+          const className = document.getElementById('className').value;
+          const classColor = document.getElementById('classColor').value;
+          const classId = document.getElementById('classId').value;
+    
+          if (className) {
+            if (classId) {
+              // Edit existing class
+              const index = classes.findIndex(c => c.id === parseInt(classId));
+              if (index !== -1) {
+                classes[index] = { id: parseInt(classId), name: className, color: classColor };
+              }
+            } else {
+              // Add new class
+              const newId = classes.length > 0 ? Math.max(...classes.map(c => c.id)) + 1 : 1;
+              classes.push({ id: newId, name: className, color: classColor });
+            }
+            updateClassList();
+            $('#addClassModal').modal('hide');
+            document.getElementById('addClassForm').reset();
+            document.getElementById('classId').value = '';
+          } else {
+            alert('Please enter a class name.');
+          }
+        });
+    
+        function updateClassList() {
+          const classList = document.getElementById('classList');
+          classList.innerHTML = '';
+    
+          classes.forEach((cls) => {
+            const classItem = document.createElement('div');
+            classItem.classList.add('class-list-item');
+            classItem.style.backgroundColor = cls.color;
+            classItem.style.color = 'white';
+            classItem.innerHTML = `
+              <i class="bi bi-grip-vertical drag-handle"></i>
+              ${cls.name}
+              <div class="float-end">
+                <button class="btn btn-sm btn-light edit-class-btn" onclick="editClass(${cls.id})">
+                  <i class="bi bi-pencil"></i>
+                </button>
+                <button class="btn btn-sm btn-danger delete-class-btn" onclick="showDeleteConfirmation(${cls.id})">
+                  <i class="bi bi-trash"></i>
+                </button>
+              </div>
+            `;
+            classList.appendChild(classItem);
+          });
+    
+          // Initialize drag and drop for class list
+          new Sortable(classList, {
+            animation: 150,
+            handle: '.drag-handle',
+            onEnd: function (evt) {
+              const oldIndex = evt.oldIndex;
+              const newIndex = evt.newIndex;
+              const movedClass = classes.splice(oldIndex, 1)[0];
+              classes.splice(newIndex, 0, movedClass);
+            }
+          });
+        }
+    
+        function editClass(id) {
+          const classToEdit = classes.find(c => c.id === id);
+          if (classToEdit) {
+            document.getElementById('classId').value = classToEdit.id;
+            document.getElementById('className').value = classToEdit.name;
+            document.getElementById('classColor').value = classToEdit.color;
+            $('#addClassModal').modal('show');
+          }
+        }
+    
+        function showDeleteConfirmation(id) {
+          editingClassId = id;
+          $('#deleteClassModal').modal('show');
+        }
+    
+        document.getElementById('confirmDeleteClass').addEventListener('click', function() {
+          if (editingClassId !== null) {
+            removeClass(editingClassId);
+            $('#deleteClassModal').modal('hide');
+            editingClassId = null;
+          }
+        });
+    
+        function removeClass(id) {
+          classes = classes.filter(c => c.id !== id);
+          updateClassList();
+          // Remove class from timetable
+          document.querySelectorAll('.class-item').forEach(item => {
+            if (item.getAttribute('data-class-id') === id.toString()) {
+              item.remove();
+            }
+          });
+        }
+    
+        function addClassToTimetable(cell) {
+          if (classes.length === 0) {
+            alert('Please add a class first.');
+            return;
+          }
+    
+          // Remove existing class if any
+          while (cell.firstChild) {
+            cell.removeChild(cell.firstChild);
+          }
+    
+          const classSelector = document.createElement('select');
+          classSelector.classList.add('form-select', 'form-select-sm', 'mb-2');
+          classSelector.innerHTML = '<option value="">Select a class</option>';
+          classes.forEach(cls => {
+            classSelector.innerHTML += `<option value="${cls.id}">${cls.name}</option>`;
+          });
+    
+          classSelector.addEventListener('change', function() {
+            const selectedClassId = parseInt(this.value);
+            const selectedClass = classes.find(c => c.id === selectedClassId);
+            if (selectedClass) {
+              const classItem = document.createElement('div');
+              classItem.classList.add('class-item');
+              classItem.style.backgroundColor = selectedClass.color;
+              classItem.textContent = selectedClass.name;
+              classItem.setAttribute('data-class-id', selectedClass.id);
+              
+              const removeBtn = document.createElement('button');
+              removeBtn.classList.add('btn', 'btn-sm', 'btn-danger', 'float-end');
+              removeBtn.innerHTML = '<i class="bi bi-x"></i>';
+              removeBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                cell.removeChild(classItem);
+              });
+              
+              classItem.appendChild(removeBtn);
+              cell.innerHTML = '';
+              cell.appendChild(classItem);
+            }
+          });
+    
+          cell.appendChild(classSelector);
+        }
+    
+        // Export to PDF functionality
+        function generatePDF() {
+          const { jsPDF } = window.jspdf;
+          const doc = new jsPDF();
+    
+          html2canvas(document.querySelector("#timetable")).then(canvas => {
+            const imgData = canvas.toDataURL('image/png');
+            const imgProps= doc.getImageProperties(imgData);
+            const pdfWidth = doc.internal.pageSize.getWidth();
+            const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+            doc.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+            doc.save("timetable.pdf");
+          });
+        }
+    
+        // Initialize the class list
+        updateClassList();
+      </script>
+    </body></html>
