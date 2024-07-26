@@ -1,75 +1,86 @@
 <% layout("/layouts/contentboilerplate") %>
-  <style>
-    .sidebar {
-      padding-bottom: 120px;
-      height: 100%;
-      width: 250px;
-      position: fixed;
-      top: 90px;
-      left: -250px;
-      background-color: #000000;
-      padding-top: 20px;
-      color: white;
-      transition: 0.5s;
-      z-index: 1;
-      overflow-y: auto; /* Make the sidebar scrollable */
-    }
-    .sidebar a {
-      padding:8px;
-      text-decoration: none;
-      font-size: 18px;
-      color: white;
-      display: block;
-    }
-    .sidebar h4{
-      background-color: #beb7b76b;
-    }
-    .sidebar a:hover {
-      background-color: #555;
-    }
-    .menu-icon {
-      cursor: pointer;
-      font-size: 24px;
-      margin-left: 10px;
-      margin-top: 10px;
-    }
-    .content {
-      margin-left: 0;
-      transition: margin-left 0.5s;
-      padding: 16px;
-      flex: 1; /* Fill the remaining vertical space */
-      overflow-y: auto; /* Make the content area scrollable */
-    }
-    .tab-content{
-      background-color: white;
-    }
-    .tab-pane.active::after {
-      background-color: transparent;
-    }
- /* Style for the active link in the sidebar */
- .sidebar a.active {
+<style>
+  .sidebar {
+    padding-bottom: 120px;
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 90px;
+    left: -250px;
+    background-color: #000000;
+    padding-top: 20px;
+    color: white;
+    transition: 0.5s;
+    z-index: 1;
+    overflow-y: auto;
+    /* Make the sidebar scrollable */
+  }
+
+  .sidebar a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+  }
+
+  .sidebar h4 {
+    background-color: #beb7b76b;
+  }
+
+  .sidebar a:hover {
+    background-color: #555;
+  }
+
+  .menu-icon {
+    cursor: pointer;
+    font-size: 24px;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+
+  .content {
+    margin-left: 0;
+    transition: margin-left 0.5s;
+    padding: 16px;
+    flex: 1;
+    /* Fill the remaining vertical space */
+    overflow-y: auto;
+    /* Make the content area scrollable */
+  }
+
+  .tab-content {
+    background-color: white;
+  }
+
+  .tab-pane.active::after {
+    background-color: transparent;
+  }
+
+  /* Style for the active link in the sidebar */
+  .sidebar a.active {
     background-color: #2baffc;
   }
+
   .sidebar a:hover {
     background-color: #2baffc;
   }
 
-.checkbox-label .ball{
-  display: none;
-}
+  .checkbox-label .ball {
+    display: none;
+  }
 
-span {
- display: none;
-}
+  span {
+    display: none;
+  }
 
-#touch {
-  position: absolute;
-  opacity: 0;
-   height: 0px;
-}    
+  #touch {
+    position: absolute;
+    opacity: 0;
+    height: 0px;
+  }
 
-
-code {
+  code {
     background-color: #e0e0e0;
     padding: 2px 4px;
     border-radius: 4px;
@@ -83,173 +94,124 @@ code {
     overflow-x: auto;
   }
 
+  #touch:checked+.slide {
+    height: 300px;
+  }
 
+  @media screen and (min-width: 998px) {
+    .sidebar {
+      height: 100%;
+      width: 250px;
+      position: fixed;
+      top: 85px;
+      left: 0px;
+      background-color: #000000;
+      padding-top: 20px;
+      color: white;
+      transition: 0.5s;
+    }
+    #main-content {
+      margin-left: 230px;
+    }
+  }
 
-#touch:checked + .slide {
-  height: 300px;
-} 
- @media screen and (min-width: 998px) {
-      .sidebar {
-        height: 100%;
-        width: 250px;
-        position: fixed;
-        top: 85px;
-        left: 0px;
-        background-color: #000000;
-        padding-top: 20px;
-        color: white;
-        transition: 0.5s;
-}
-#main-content{
-  margin-left: 230px;
- }
+  @media screen and (max-width: 998px) {
+    .nav-items h5 {
+      display: block !important;
+    }
+  }
 
-
-}
- @media screen and (max-width: 998px) {
-  .nav-items h5{
-  display: block !important;
-}
-
-}
-
-
-.tab-pane {
+  .tab-pane {
     display: none;
   }
 
-  .active-tab {
-   
-    
-    }
+  .main-heading {
+    font-size: 3rem;
+    font-weight: 700;
 
-
-/* Content CSS */
-
-.main-heading{
-font-size: 3rem;
-font-weight: 700;
-
-}
-
-
-
+  }
+  
 </style>
 
 <body>
-    
-<div class="sidebar" id="sidebar">
-  <h4 class="text-center py-2"><b>HTML BASICS</b></h4>
-  <a href="#intro">HTML Introduction</a>
-  <a href="#about">HTML Basic</a>
-  <a href="#services">HTML Tags</a>
-  <a href="#services">HTML Heading</a>
-  <a href="#services">HTML Attribute</a>
-  <a href="#services">HTML Paragraph</a>
-  <a href="#services">HTML Lists</a>
-  <a href="#services">HTML Links</a>
-  <a href="#services">HTML Images</a>
-  <a href="#services">HTML Table</a>
-  <a href="#services">HTML Colors</a>
-  <a href="#services">HTML Div</a>
-  <a href="#services">HTML Iframe</a>
-  <a href="#services">HTML Symbols</a>
-  <a href="#services">HTML Block & Inline</a>
-  <a href="#services">HTML File Paths</a>
-  <h4 class="text-center py-2 my-2"><b> HTML LAYOUT AND STYLING</b></h4>
-  <a href="#services">HTML Head</a>
-  <a href="#services">HTML Responsive</a>
-  <a href="#services">HTML Layout</a>
-  <a href="#services">HTML Entities</a>
-  <a href="#services">HTML Emojis</a>
-  <a href="#services">HTML Charsets</a>
-  <a href="#services">HTML URL Encode</a>
-  <a href="#services">HTML vs. XHTML</a>
-  <h4 class="text-center py-2 my-2"><b>HTML Forms and Input</b></h4>
-  <a href="#services">HTML Forms</a>
-  <a href="#services">HTML Form Attributes</a>
-  <a href="#services">HTML Form Elements</a>
-  <a href="#services">HTML Input Types</a>
-  <a href="#services">HTML Input Attributes</a>
-  <a href="#services">HTML Input Form Attributes</a>
-  <h4 class="text-center py-2 my-2"><b>HTML Graphics and Media</b></h4>
-  <a href="#services">HTML Graphics</a> 
-  <a href="#services">HTML Canvas</a> 
-  <a href="#services">HTML SVG</a> 
-  <a href="#services">HTML Media</a> 
-  <a href="#services">HTML Video</a> 
-  <a href="#services">HTML Audio</a> 
-  <a href="#services">HTML Plug-ins</a> 
-  <a href="#services">HTML YouTube</a> 
-  <h4 class="text-center py-2 my-2"><b>HTML APIs and Advanced Topics</b></h4>
-  <a href="#services">HTML APIs</a>
-  <a href="#services">HTML Geolocation</a>
-  <a href="#services">HTML Web Storage</a>
-  <a href="#services">HTML SSE</a>
-  <a href="#services">HTML Web Workers</a>
-  <h4 class="text-center py-2 my-2 last"><b>REFERENCE</b></h4>
-  <a href="#services">Quizzes</a>
-  <a href="#services">Practice Question</a>
- 
- 
-</div>
+
+  <div class="sidebar" id="sidebar">
+    <h4 class="text-center py-2"><b>HTML BASICS</b></h4>
+    <a href="#intro">HTML Introduction</a>
+    <a href="#about">HTML Basic</a>
+    <a href="#services">HTML Tags</a>
+    <a href="#services">HTML Heading</a>
+    <a href="#services">HTML Attribute</a>
+    <a href="#services">HTML Paragraph</a>
+    <a href="#services">HTML Lists</a>
+    <a href="#services">HTML Links</a>
+    <a href="#services">HTML Images</a>
+    <a href="#services">HTML Table</a>
+    <a href="#services">HTML Colors</a>
+    <a href="#services">HTML Div</a>
+    <a href="#services">HTML Iframe</a>
+    <a href="#services">HTML Symbols</a>
+    <a href="#services">HTML Block & Inline</a>
+    <a href="#services">HTML File Paths</a>
+    <h4 class="text-center py-2 my-2"><b> HTML LAYOUT AND STYLING</b></h4>
+    <a href="#services">HTML Head</a>
+    <a href="#services">HTML Responsive</a>
+    <a href="#services">HTML Layout</a>
+    <a href="#services">HTML Entities</a>
+    <a href="#services">HTML Emojis</a>
+    <a href="#services">HTML Charsets</a>
+    <a href="#services">HTML URL Encode</a>
+    <a href="#services">HTML vs. XHTML</a>
+    <h4 class="text-center py-2 my-2"><b>HTML Forms and Input</b></h4>
+    <a href="#services">HTML Forms</a>
+    <a href="#services">HTML Form Attributes</a>
+    <a href="#services">HTML Form Elements</a>
+    <a href="#services">HTML Input Types</a>
+    <a href="#services">HTML Input Attributes</a>
+    <a href="#services">HTML Input Form Attributes</a>
+    <h4 class="text-center py-2 my-2"><b>HTML Graphics and Media</b></h4>
+    <a href="#services">HTML Graphics</a>
+    <a href="#services">HTML Canvas</a>
+    <a href="#services">HTML SVG</a>
+    <a href="#services">HTML Media</a>
+    <a href="#services">HTML Video</a>
+    <a href="#services">HTML Audio</a>
+    <a href="#services">HTML Plug-ins</a>
+    <a href="#services">HTML YouTube</a>
+    <h4 class="text-center py-2 my-2"><b>HTML APIs and Advanced Topics</b></h4>
+    <a href="#services">HTML APIs</a>
+    <a href="#services">HTML Geolocation</a>
+    <a href="#services">HTML Web Storage</a>
+    <a href="#services">HTML SSE</a>
+    <a href="#services">HTML Web Workers</a>
+    <h4 class="text-center py-2 my-2 last"><b>REFERENCE</b></h4>
+    <a href="#services">Quizzes</a>
+    <a href="#services">Practice Question</a>
 
 
-<div class="content" id="main-content">
-  <div class="tab-content">
-    <div class="tab-pane fade show active" id="intro">
+  </div>
 
 
+  <div class="content" id="main-content">
+    <div class="tab-content">
+      <div class="tab-pane fade show active" id="intro">
 
-      <div class="container">
+        
 
-        <h1 class="main-heading">HTML Introduction.</h1>
-<p>Certainly! Here is the introductory content for HTML explained in a paragraph format:
-
-  ---
-  
-  HTML, or HyperText Markup Language, is the standard language used to create web pages. It defines the structure and layout of a web document using a variety of tags and attributes. These tags form the building blocks of all websites, allowing web browsers to render content correctly. An HTML document is structured in a hierarchical manner with nested elements, starting with the `<!DOCTYPE html>` declaration, followed by the `<html>`, `<head>`, and `<body>` tags. The `<head>` tag contains meta-information such as the document's title, while the `<body>` tag contains the content visible to users, including headings (`<h1>` to `<h6>`), paragraphs (`<p>`), links (`<a>`), images (`<img>`), and lists (`<ul>`, `<ol>`, and `<li>`). Understanding these basic components is essential for creating and designing web pages effectively.
-  
-    <pre><code>
-      POST https://api.websim.ai/v1/simulations
-      Content-Type: application/json
-      
-      {
-        "url": "https://example.com",
-        "parameters": {
-          "theme": "futuristic",
-          "language": "en"
-        }
-      }
-              </code></pre>
-  
-  This paragraph provides an overview of HTML, its purpose, and its basic structure without including the code itself.</p>
 
       </div>
+     
+      <div class="tab-pane fade" id="services">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, repellat! Vitae porro, architecto dolor quis ex,
+          blanditiis incidunt obcaecati tenetur molestiae quos repudiandae illo? Obcaecati qui molestiae vel eos? Cum?
+        </p>
+      </div>
 
+      <div class="tab-pane fade" id="contact">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, repellat! Vitae porro, architecto dolor quis ex,
+          blanditiis incidunt obcaecati tenetur molestiae quos repudiandae illo? Obcaecati qui molestiae vel eos? Cum?
+        </p>
+      </div>
 
-
-    </div>
-    <div class="tab-pane fade" id="about">
-      <pre><code>
-        POST https://api.websim.ai/v1/simulations
-        Content-Type: application/json
-        
-        {
-          "url": "https://example.com",
-          "parameters": {
-            "theme": "futuristic",
-            "language": "en"
-          }
-        }
-                </code></pre>
-    </div>
-    <div class="tab-pane fade" id="services">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, repellat! Vitae porro, architecto dolor quis ex, blanditiis incidunt obcaecati tenetur molestiae quos repudiandae illo? Obcaecati qui molestiae vel eos? Cum?</p>
-    </div>
-    <div class="tab-pane fade" id="contact">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, repellat! Vitae porro, architecto dolor quis ex, blanditiis incidunt obcaecati tenetur molestiae quos repudiandae illo? Obcaecati qui molestiae vel eos? Cum?</p>
     </div>
   </div>
-</div>
-
