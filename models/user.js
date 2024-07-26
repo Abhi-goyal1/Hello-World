@@ -13,6 +13,10 @@ const userSchema = new Schema({
     required: true,
     unique: true
   },
+  image: {
+    url :String,
+    filename : String,
+   },
   
   
    

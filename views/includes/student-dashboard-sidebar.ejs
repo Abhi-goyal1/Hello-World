@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <title>Dashboard</title>
+
   <style>
     /* Your existing styles here */
     :root {
@@ -19,31 +13,32 @@
 
     @media (min-width: 768px) and (max-width: 991.98px) {
       .footer-02 {
-          position: relative;
-          left: 0;
+        position: relative;
+        left: 0;
       }
     }
 
     @media (min-width: 992px) {
       .footer-02 {
-          position: relative;
-          left: 0;
+        position: relative;
+        left: 0;
       }
+
       .footer-offset-lg {
-          margin-left: 213px !important;
+        margin-left: 213px !important;
       }
     }
 
     @media (max-width: 767.98px) {
       .footer-02 {
-          width: 100%;
-          left: 0;
+        width: 100%;
+        left: 0;
       }
     }
 
     .sidebar {
       background-color: black;
-      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
       height: 100vh;
       position: fixed;
       top: 0;
@@ -53,7 +48,7 @@
       overflow-y: auto;
     }
 
-    .das-nav-item{
+    .das-nav-item {
       width: 100% !important;
       padding: 10px;
       border-radius: 5px;
@@ -75,9 +70,6 @@
       background-color: #a5d5f152;
     }
 
-    .das-nav-link.active {
-    }
-
     .das-nav-item.active {
       background-color: #2baffc;
     }
@@ -90,13 +82,13 @@
       background: var(--card-bg);
       border: none;
       border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       transition: all 0.3s;
     }
 
     .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     }
 
     .card-header {
@@ -175,9 +167,11 @@
         width: 0;
         overflow-x: hidden;
       }
+
       .sidebar.active {
         width: 250px;
       }
+
       .main-content {
         margin-left: 0 !important;
       }
@@ -212,8 +206,9 @@
       font-weight: 700;
     }
   </style>
-</head>
-<body>
+
+
+
   <button id="sidebarCollapse" class="btn btn-primary">
     <i class="bi bi-list"></i>
   </button>
@@ -225,8 +220,8 @@
         <div class="position-sticky pt-3">
           <div class="text-center mb-4">
             <div class="profile-pic-container">
-              <img src="https://i.pravatar.cc/300" alt="Profile Picture" class="profile-pic" id="profile-pic">
-              <button class="edit-profile-btn" data-bs-toggle="modal" data-bs-target="#editProfileModal">Edit Profile</button>
+              <img src="" alt="Profile Picture" class="profile-pic" id="profile-pic">
+              <!-- <button class="edit-profile-btn" data-bs-toggle="modal" data-bs-target="#editProfileModal">Edit Profile</button> -->
             </div>
             <h5 class="user-name" id="user-name"><%= currUser.displayName %></h5>
           </div>
@@ -236,7 +231,7 @@
                 <i class="fa-solid fa-gauge"></i> Dashboard
               </a>
             </li>
-           
+
             <li class="das-nav-item">
               <a class="das-nav-link" href="/user-dashboard/edit-profile">
                 <i class="fa-solid fa-pen"></i> Edit Profile
@@ -247,7 +242,7 @@
                 <i class="fa-solid fa-laptop-file"></i> My Courses
               </a>
             </li>
-           
+
             <li class="das-nav-item">
               <a class="das-nav-link" href="/user-dashboard/calendar">
                 <i class="fa-solid fa-calendar-days"></i> Calendar
@@ -263,7 +258,7 @@
                 <i class="fa-solid fa-bell"></i> Notification
               </a>
             </li>
-            
+
           </ul>
         </div>
       </nav>
@@ -271,7 +266,7 @@
   </div>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       // Get all nav links
       const navLinks = document.querySelectorAll('.das-nav-link');
 
@@ -285,7 +280,7 @@
 
       // Add click event listeners to nav items
       document.querySelectorAll('.das-nav-item').forEach(item => {
-        item.addEventListener('click', function(e) {
+        item.addEventListener('click', function (e) {
           e.preventDefault();
           const targetHref = this.querySelector('a').getAttribute('href');
 
@@ -300,5 +295,3 @@
       });
     });
   </script>
-</body>
-</html>

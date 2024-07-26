@@ -81,6 +81,17 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 
+
+// !Cloudinary and multer
+
+
+const multer = require("multer");
+const {storage} = require('./cloudConfig.js') ;
+const upload = multer({storage});
+
+
+
+
 //! EJS Template.
 app.use(express.static(path.join(__dirname, "/public")));
 app.use(express.static(path.join(__dirname, "/views")));
@@ -687,6 +698,38 @@ app.get('/roadmaps/full-stack', (req, res) => {
 
 
 
+
+app.post('/upload', upload.single('profilePicture'), async (req, res) => {
+  try {
+    if (!req.file) {
+      return res.status(400).send('No file uploaded');
+    }
+
+    const result = await cloudinary.uploader.upload_stream({ resource_type: 'image' }, (error, result) => {
+      if (error) {
+        console.error(error);
+        return res.status(500).send('Upload failed');
+      }
+      return result;
+    }).end(req.file.buffer);
+
+    res.render('index', { imageUrl: result.secure_url });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Server error');
+  }
+});
+
+
+app.get('/image/:id', async (req, res) => {
+  const user = await User.findById(req.params.id);
+
+  if (user && user.image) {
+    res.redirect(user.image);
+  } else {
+    res.status(404).send('Image not found');
+  }
+});
 
 
 
