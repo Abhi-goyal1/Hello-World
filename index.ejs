@@ -208,7 +208,7 @@
 
 :root {
     --primary-color: #4a90e2;
-    --secondary-color: #f39c12;
+    --secondary-color: #2baffc;
   
     --text-color: #333;
     --code-bg-color: #000;
@@ -259,6 +259,7 @@
     background-color: var(--code-bg-color);
     border-radius: 10px;
     color: #fff;
+    cursor: pointer;
 }
 
 .visualization-example h3 {
@@ -271,6 +272,7 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    cursor: pointer;
 }
 
 /* Bubble Sort Animation */
@@ -896,7 +898,7 @@
         <div class="containers">
           <div class="category-grid" id="categoryGrid">
             <div class="category-card " data-aos="fade-up" data-aos-duration="1000">
-              <div class="category-content">
+              <div class="category-content" onclick="window.location.replace('/web-development')">
                 <div class="category-icon">💻</div>
                 <h3 class="category-title">Web Development</h3>
                 <!-- <p class="category-description">Master the art of creating stunning websites and web applications.</p> -->
@@ -907,7 +909,7 @@
               </div>
             </div>
             <div class="category-card" data-aos="fade-up" data-aos-duration="1000">
-              <div class="category-content">
+              <div class="category-content"  onclick="window.location.replace('/data-science')">
                 <div class="category-icon">📊</div>
                 <h3 class="category-title">Data Science</h3>
                 <!-- <p class="category-description">Unlock insights from data and drive informed decision-making.</p> -->
@@ -918,7 +920,7 @@
               </div>
             </div>
             <div class="category-card" data-aos="fade-up" data-aos-duration="1000">
-              <div class="category-content">
+              <div class="category-content"  onclick="window.location.replace('/mobile-development')">
                 <div class="category-icon">📱</div>
                 <h3 class="category-title">Mobile Development</h3>
                 <!-- <p class="category-description">Build powerful mobile apps for iOS and Android platforms.</p> -->
@@ -929,7 +931,7 @@
               </div>
             </div>
             <div class="category-card" data-aos="fade-up" data-aos-duration="1000">
-              <div class="category-content">
+              <div class="category-content"  onclick="window.location.replace('/Cybersecurity')">
                 <div class="category-icon">🔒</div>
                 <h3 class="category-title">Cybersecurity</h3>
                 <!-- <p class="category-description">Protect digital assets and learn ethical hacking techniques.</p> -->
@@ -1128,28 +1130,28 @@
             </div>
           
             <div class="row g-4 mb-5">
-                <div class="col-md-6 col-lg-3">
+                <div class="col-md-6 col-lg-4">
                     <div class="feature-card h-100 p-4 text-center">
                         <div class="feature-icon mb-3">🔍</div>
                         <h3 class="h4 mb-3">Step-by-Step Breakdown</h3>
                         <p>Watch algorithms unfold one step at a time, gaining deeper insights into their inner workings.</p>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3">
+                <!-- <div class="col-md-6 col-lg-3">
                     <div class="feature-card h-100 p-4 text-center">
                         <div class="feature-icon mb-3">🎨</div>
                         <h3 class="h4 mb-3">Color-Coded Elements</h3>
                         <p>Easily track different components and their roles with our intuitive color-coding system.</p>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
+                </div> -->
+                <div class="col-md-6 col-lg-4">
                     <div class="feature-card h-100 p-4 text-center">
                         <div class="feature-icon mb-3">⏯️</div>
                         <h3 class="h4 mb-3">Interactive Controls</h3>
                         <p>Pause, rewind, or speed up visualizations to study algorithms at your own pace.</p>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3">
+                <div class="col-md-6 col-lg-4">
                     <div class="feature-card h-100 p-4 text-center">
                         <div class="feature-icon mb-3">📊</div>
                         <h3 class="h4 mb-3">Real-time Analytics</h3>
@@ -1158,9 +1160,9 @@
                 </div>
             </div>
             
-            <div class="row g-4 mb-5">
+            <div class="row g-4 mb-2">
                 <div class="col-md-4">
-                    <div class="visualization-example p-4 text-center h-100">
+                    <div class="visualization-example p-4 text-center h-100"  onclick="window.location.replace('/web-development')">
                         <h3 class="h4 mb-3">Bubble Sort</h3>
                         <div class="visualization-container bubble-sort">
                             <div class="bar"></div>
@@ -1210,13 +1212,11 @@
                     </div>
                 </div>
             </div>
-            <div id="more-tutorials" class="col-12 text-center" data-aos="fade-right" data-aos-duration="1000">
-              <a href="/dsa-visualization"><button class="btn  ">Explore More<i
-                    class="fa-solid fa-angles-right fa-bounce"></i></button></a>
-            </div>
-        
         </section>
-        
+        <div id="more-tutorials" class="col-12 text-center" >
+          <a href="/dsa-visualizer"><button class="btn  ">Explore More<i
+                class="fa-solid fa-angles-right fa-bounce"></i></button></a>
+        </div>
     </div>
 
 
